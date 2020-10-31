@@ -1,7 +1,3 @@
-//
-// Created by Miro-Manuel on 31/10/2020.
-//
-
 #ifndef INFO_H417_GROUP_15_INPUTSTREAM_H
 #define INFO_H417_GROUP_15_INPUTSTREAM_H
 
@@ -15,11 +11,13 @@ private:
     string fileName;
     ifstream file;
 public:
-    InputStream(string fName);
+    explicit InputStream(string fName);
 
-    string getFileName(void);
+    void open();
 
-    void open(void);
+    void close();
+
+    void seek(int pos);
 };
 
 

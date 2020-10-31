@@ -1,22 +1,36 @@
-//
-// Created by Miro-Manuel on 31/10/2020.
-//
-
 #include "InputStream.h"
-#include <iostream>
-#include <fstream>
 #include <string>
+#include <utility>
 
 using namespace std;
 
+/**
+ * Constructor storing the chosen file's name in the fileName
+ * field of the InputStream class
+ * @param fName : string corresponding to the filename the user chose
+ */
 InputStream::InputStream(string fName) {
-    fileName = fName;
+    fileName = move(fName);
 }
 
-string InputStream::getFileName(void) {
-    return fileName;
-}
-
-void InputStream::open(void) {
+/**
+ * Opens the file and stores it in the file field of the InputStream class.
+ */
+void InputStream::open() {
     file = ifstream(fileName);
+}
+
+/**
+ * Closes the file.
+ */
+void InputStream::close() {
+    file.close();
+}
+
+/**
+ * Moves the cursor of the file to a certain position specified by the user.
+ * @param pos : desired position of the cursor
+ */
+void InputStream::seek(int pos) {
+    file.seekg(pos);
 }

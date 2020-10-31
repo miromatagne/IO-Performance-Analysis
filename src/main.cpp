@@ -1,7 +1,3 @@
-//
-// Created by minhx on 30-10-20.
-//
-#include <iostream>
 #include "InputStream.h"
 
 int main() {
