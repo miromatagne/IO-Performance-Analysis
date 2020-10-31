@@ -1,7 +1,7 @@
 #ifndef INFO_H417_GROUP_15_INPUTSTREAM_H
 #define INFO_H417_GROUP_15_INPUTSTREAM_H
 
-#include <iostream>
+#include <istream>
 #include <fstream>
 
 using namespace std;
