@@ -8,11 +8,11 @@ using namespace std;
 
 class OutputStream {
 private:
-    string fileName;
-    ofstream file;
+    const char *fileName;
+    FILE* file;
 
 public:
-    explicit OutputStream(string fName);
+    explicit OutputStream(const char* fName);
 
     void create();
 
