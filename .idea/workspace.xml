@@ -29,9 +29,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="OutPutStream class">
+    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="InputStream change in include">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStream.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStream.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStream.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStream.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStream.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,9 +63,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
     <property name="settings.editor.selected.configurable" value="settings.saveactions" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\minhx\CLionProjects\info-h417-group-15\src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\minhx\CLionProjects\info-h417-group-15\data" />
     </key>
@@ -94,6 +101,10 @@
       <updated>1604101386905</updated>
       <workItem from="1604101400704" duration="1980000" />
       <workItem from="1604136759133" duration="3558000" />
+      <workItem from="1604157283218" duration="1758000" />
+      <workItem from="1604159219477" duration="155000" />
+      <workItem from="1604159445410" duration="1719000" />
+      <workItem from="1604161346761" duration="10807000" />
     </task>
     <task id="LOCAL-00001" summary="classes">
       <created>1604102118724</created>
@@ -116,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604156434340</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="InputStream change in include">
+      <created>1604156648052</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1604156648052</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,49 +157,72 @@
     <MESSAGE value="classes" />
     <MESSAGE value="open input stream" />
     <MESSAGE value="OutPutStream class" />
-    <option name="LAST_COMMIT_MESSAGE" value="OutPutStream class" />
+    <MESSAGE value="InputStream change in include" />
+    <option name="LAST_COMMIT_MESSAGE" value="InputStream change in include" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604156019653">
+    <state x="65" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604161437012">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1604156019653" />
+    <state x="65" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1604161437012" />
+    <state x="392" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604161519404">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="392" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1604161519404" />
     <state x="175" y="0" key="CommitChangelistDialog2" timestamp="1604139680935">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="175" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1604139680935" />
-    <state x="1164" y="699" key="FileChooserDialogImpl" timestamp="1604096378392">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="582" y="192" key="FileChooserDialogImpl" timestamp="1604161451206">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="1164" y="699" key="FileChooserDialogImpl/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096378392" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1604156377909">
+    <state x="582" y="192" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604161451206" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1604172857353">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604156377909" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1604156377908">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604172857353" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1604172857352">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1604156377908" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1604156377908">
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1604172857352" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1604172857352">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1604156377908" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1604156377909">
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1604172857352" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1604172857353">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1604156377909" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1604172857353" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1604164698370">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604164698370" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1604164698370">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1604164698370" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1604164698370">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1604164698370" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1604164698370">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1604164698370" />
     <state x="137" y="0" key="SettingsEditor" timestamp="1604136966370">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="137" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1604136966370" />
-    <state x="436" y="147" key="Vcs.Push.Dialog.v2" timestamp="1604156501873">
+    <state x="436" y="147" key="Vcs.Push.Dialog.v2" timestamp="1604156652311">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="872" y="453" key="Vcs.Push.Dialog.v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096481395" />
-    <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604156501873" />
-    <state x="1097" y="634" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604093387163">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604156652311" />
+    <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604159257364">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="1097" y="634" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604093387163" />
+    <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1604159257364" />
   </component>
 </project>

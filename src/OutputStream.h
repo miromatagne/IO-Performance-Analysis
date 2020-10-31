@@ -10,6 +10,7 @@ class OutputStream {
 private:
     string fileName;
     ofstream file;
+
 public:
     explicit OutputStream(string fName);
 

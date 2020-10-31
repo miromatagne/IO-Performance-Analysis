@@ -1,7 +1,6 @@
 #include "OutputStream.h"
 #include <string>
 #include <utility>
-
 using namespace std;
 
 /**
@@ -24,9 +23,10 @@ void OutputStream::create() {
  * @param  text : string to be written in the file
  */
 void OutputStream::writeln(string text) {
-    text = text + "\n";
-    file.write( (char *) &text, sizeof(text) );
-}
+    char* c = const_cast<char*>(text.c_str());
+    write(fileno(*file),c,sizeof(c)); // ici c la fonction write casse couille. fileno()  c une fonction pour avoir le file descriptor mais on a besoin d'un pointeur FILE* pour l'utiliser (faut du C pour l'avoir)
+}    //
+    // ce qu'il faut c pouvoir recup le file descriptor en c++
 /**
  * Closes the file.
  */
