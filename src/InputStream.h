@@ -1,17 +1,16 @@
 #ifndef INFO_H417_GROUP_15_INPUTSTREAM_H
 #define INFO_H417_GROUP_15_INPUTSTREAM_H
 
-#include <istream>
-#include <fstream>
+#include <string>
 
 using namespace std;
 
 class InputStream {
 private:
-    string fileName;
-    ifstream file;
+    char *fileName;
+    FILE *file;
 public:
-    explicit InputStream(string fName);
+    explicit InputStream(char *fName);
 
     void open();
 

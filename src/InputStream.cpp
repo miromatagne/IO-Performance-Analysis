@@ -2,6 +2,7 @@
 #include <string>
 #include <utility>
 
+
 using namespace std;
 
 /**
@@ -9,22 +10,22 @@ using namespace std;
  * field of the InputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-InputStream::InputStream(string fName) {
-    fileName = move(fName);
+InputStream::InputStream(char *fName) {
+    fileName = fName;
 }
 
 /**
  * Opens the file and stores it in the file field of the InputStream class.
  */
 void InputStream::open() {
-    file = ifstream(fileName);
+    file = fopen(fileName, "r");
 }
 
 /**
  * Closes the file.
  */
 void InputStream::close() {
-    file.close();
+    fclose(file);
 }
 
 /**
@@ -32,5 +33,5 @@ void InputStream::close() {
  * @param pos : desired position of the cursor
  */
 void InputStream::seek(int pos) {
-    file.seekg(pos);
+    fseek(file, pos, SEEK_SET);
 }
