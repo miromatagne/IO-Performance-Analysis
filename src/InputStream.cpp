@@ -3,3 +3,20 @@
 //
 
 #include "InputStream.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+InputStream::InputStream(string fName) {
+    fileName = fName;
+}
+
+string InputStream::getFileName(void) {
+    return fileName;
+}
+
+void InputStream::open(void) {
+    file = ifstream(fileName);
+}

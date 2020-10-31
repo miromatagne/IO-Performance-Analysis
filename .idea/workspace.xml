@@ -29,13 +29,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="database">
-      <change beforePath="$PROJECT_DIR$/.idea/info-h417-group-15.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/info-h417-group-15.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-10-20_21_54__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-10-20_21_54__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_10_2020_21_59__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_10_2020_21_59__Default_Changelist_1.xml" beforeDir="false" />
+    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStream.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStream.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStream.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +48,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1jcRJvxpahLkeyjt0NFKXxkguoq" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -58,6 +59,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
+    <property name="settings.editor.selected.configurable" value="settings.saveactions" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -65,12 +67,12 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="info_h417_group_15" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="info_h417_group_15" TARGET_NAME="info_h417_group_15" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="info_h417_group_15" RUN_TARGET_NAME="info_h417_group_15">
+    <configuration name="info_h417_group_15" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="info_h417_group_15" RUN_TARGET_NAME="info_h417_group_15" EXPLICIT_BUILD_TARGET_NAME="all">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -89,8 +91,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604101386905</updated>
-      <workItem from="1604101400704" duration="558000" />
+      <workItem from="1604101400704" duration="1980000" />
+      <workItem from="1604136759133" duration="2703000" />
     </task>
+    <task id="LOCAL-00001" summary="classes">
+      <created>1604102118724</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604102118724</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,21 +121,47 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="database" />
-    <option name="LAST_COMMIT_MESSAGE" value="database" />
+    <MESSAGE value="classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="classes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604101709810">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604138795994">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1604101709810" />
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1604138795994" />
+    <state x="175" y="0" key="CommitChangelistDialog2" timestamp="1604102116870">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="175" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1604102116870" />
     <state x="1164" y="699" key="FileChooserDialogImpl" timestamp="1604096378392">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1164" y="699" key="FileChooserDialogImpl/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096378392" />
-    <state x="872" y="453" key="Vcs.Push.Dialog.v2" timestamp="1604096481395">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1604139553736">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604139553736" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1604139553736">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1604139553736" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1604139553736">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1604139553736" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1604139553736">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1604139553736" />
+    <state x="137" y="0" key="SettingsEditor" timestamp="1604136966370">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="137" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1604136966370" />
+    <state x="436" y="147" key="Vcs.Push.Dialog.v2" timestamp="1604102152333">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="872" y="453" key="Vcs.Push.Dialog.v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096481395" />
+    <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604102152333" />
     <state x="1097" y="634" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604093387163">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
