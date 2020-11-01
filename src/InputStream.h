@@ -3,20 +3,25 @@
 
 #include <string>
 #include <fstream>
+#include <istream>
 
 using namespace std;
 
 class InputStream {
 private:
     char *fileName;
-    FILE *file;
+    FILE *file{};
 
 public:
     explicit InputStream(char *fName);
 
     void open();
 
-    void readln();
+    char* readln1();
+
+    //char* readln2();
+
+    char* readln3();
 
     void close();
 

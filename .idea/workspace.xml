@@ -23,16 +23,18 @@
       <config projectName="info_h417_group_15" targetName="info_h417_group_15" />
     </generated>
   </component>
-  <component name="CMakeSettings">
+  <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="write function problem">
+    <list default="true" id="67ec6c52-a890-493f-ae35-47840d633ede" name="Default Changelist" comment="readln() implemented but not tested yet">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-10-20_21_54__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-10-20_21_54__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStream.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStream.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStream.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStream.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStream.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStream.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,13 +48,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/OutputStream.h" root0="SKIP_INSPECTION" />
-  </component>
-  <component name="ProjectId" id="1jcRJvxpahLkeyjt0NFKXxkguoq" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1jhIkMXnNIrR0AC6wqbaVgw4Ucz" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -61,19 +57,26 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
-    <property name="settings.editor.selected.configurable" value="settings.saveactions" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\minhx\CLionProjects\info-h417-group-15\src" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\minhx\CLionProjects\info-h417-group-15\data" />
     </key>
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="?" />
+    </option>
+  </component>
   <component name="RunManager">
-    <configuration name="info_h417_group_15" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="info_h417_group_15" RUN_TARGET_NAME="info_h417_group_15" EXPLICIT_BUILD_TARGET_NAME="all">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="info_h417_group_15" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="info_h417_group_15" TARGET_NAME="info_h417_group_15" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="info_h417_group_15" RUN_TARGET_NAME="info_h417_group_15">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -86,60 +89,39 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="database" />
-      <created>1604101386905</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1604101386905</updated>
-      <workItem from="1604101400704" duration="1980000" />
-      <workItem from="1604136759133" duration="3558000" />
-      <workItem from="1604157283218" duration="1758000" />
-      <workItem from="1604159219477" duration="155000" />
-      <workItem from="1604159445410" duration="1719000" />
-      <workItem from="1604161346761" duration="12023000" />
-      <workItem from="1604177721473" duration="1037000" />
-    </task>
-    <task id="LOCAL-00001" summary="classes">
-      <created>1604102118724</created>
+    <task id="LOCAL-00001" summary="readln() implemented but not tested yet">
+      <created>1604250002940</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1604102118724</updated>
+      <updated>1604250002940</updated>
     </task>
-    <task id="LOCAL-00002" summary="open input stream">
-      <created>1604139682659</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1604139682659</updated>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="67ec6c52-a890-493f-ae35-47840d633ede" name="Default Changelist" comment="readln() implemented but not tested yet" />
+      <created>1604250042582</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604250042582</updated>
+      <workItem from="1604250045643" duration="60000" />
+      <workItem from="1604250108348" duration="4629000" />
+      <workItem from="1604255573806" duration="23000" />
+      <workItem from="1604255599258" duration="9356000" />
     </task>
-    <task id="LOCAL-00003" summary="OutPutStream class">
-      <created>1604156434340</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1604156434340</updated>
-    </task>
-    <task id="LOCAL-00004" summary="InputStream change in include">
-      <created>1604156648052</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1604156648052</updated>
-    </task>
-    <task id="LOCAL-00005" summary="write function problem">
-      <created>1604175776197</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1604175776197</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -155,76 +137,68 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="database" />
-    <MESSAGE value="classes" />
-    <MESSAGE value="open input stream" />
-    <MESSAGE value="OutPutStream class" />
-    <MESSAGE value="InputStream change in include" />
-    <MESSAGE value="write function problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="write function problem" />
+    <MESSAGE value="readln() implemented but not tested yet" />
+    <option name="LAST_COMMIT_MESSAGE" value="readln() implemented but not tested yet" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="65" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604161437012">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="508" y="236" key="#Notifications" timestamp="1604184238257">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="65" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1604161437012" />
-    <state x="392" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604161519404">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="508" y="236" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1604184238257" />
+    <state x="223" y="39" width="1089" height="785" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604251427822">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="392" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1604161519404" />
-    <state x="175" y="0" key="CommitChangelistDialog2" timestamp="1604139680935">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="175" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1604139680935" />
-    <state x="582" y="192" key="FileChooserDialogImpl" timestamp="1604161451206">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="223" y="39" width="1089" height="785" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1604251427822" />
+    <state x="698" y="335" key="FileChooserDialogImpl" timestamp="1604255589195">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="1164" y="699" key="FileChooserDialogImpl/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096378392" />
-    <state x="582" y="192" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604161451206" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1604178664333">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="698" y="335" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604255589195" />
+    <state width="1493" height="288" key="GridCell.Tab.0.bottom" timestamp="1604271188747">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604178664333" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1604178664333">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1493" height="288" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604271188747" />
+    <state width="1493" height="288" key="GridCell.Tab.0.center" timestamp="1604271188746">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1604178664333" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1604178664333">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1493" height="288" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604271188746" />
+    <state width="1493" height="288" key="GridCell.Tab.0.left" timestamp="1604271188746">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1604178664333" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1604178664333">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1493" height="288" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604271188746" />
+    <state width="1493" height="288" key="GridCell.Tab.0.right" timestamp="1604271188746">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1604178664333" />
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1604177456965">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1493" height="288" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604271188746" />
+    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1604255593966">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604177456965" />
-    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1604177456965">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel/0.0.1536.824@0.0.1536.824" timestamp="1604255593966" />
+    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel" timestamp="1604255593966">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1604177456965" />
-    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1604177456965">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel/0.0.1536.824@0.0.1536.824" timestamp="1604255593966" />
+    <state x="147" y="65" key="MergeDialog" timestamp="1604269986599">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1604177456965" />
-    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1604177456965">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1604269986599" />
+    <state x="542" y="75" key="SettingsEditor" timestamp="1604255440195">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1604177456965" />
-    <state x="137" y="0" key="SettingsEditor" timestamp="1604136966370">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="137" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1604136966370" />
-    <state x="436" y="147" key="Vcs.Push.Dialog.v2" timestamp="1604175779749">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="542" y="75" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604255440195" />
+    <state x="523" y="259" key="Vcs.Push.Dialog.v2" timestamp="1604250011475">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="872" y="453" key="Vcs.Push.Dialog.v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096481395" />
-    <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604175779749" />
-    <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604159257364">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="523" y="259" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604250011475" />
+    <state x="658" y="363" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604269948882">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="1097" y="634" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604093387163" />
-    <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1604159257364" />
+    <state x="658" y="363" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1604269948882" />
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1604265378709">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1604265378709" />
   </component>
 </project>

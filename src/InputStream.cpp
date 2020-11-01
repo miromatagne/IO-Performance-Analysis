@@ -1,6 +1,8 @@
 #include "InputStream.h"
 #include <string>
 #include <utility>
+#include <io.h>
+#include <cstring>
 
 
 using namespace std;
@@ -40,22 +42,27 @@ void InputStream::seek(int pos) {
  * Read the next line from the stream by reading one character at a time
  * using the read system calls until the end-of-line symbol is reached.
  */
-void InputStream::readln() {
+char* InputStream::readln1() {
     int count = 0;
     int maxLineLength = 128;
-    char *lineBuffer = (char *)malloc(maxLineLength*sizeof(char));
-    char c = fgetc(file)
-    while((c != '\n') && (c != EOF)) {
-        if (count == maxLineLength) {
-            maxLineLength += 128;
-            lineBuffer = realloc(lineBuffer, maxLineLength);
-            if (lineBuffer == NULL) {
-                printf("Error reallocating space for line buffer.");
-                exit(1);
-            }
+    char *lineBuffer = (char *) malloc(maxLineLength * sizeof(char));
+    char c;
+    read(fileno(file), &c, sizeof(c));
+    while ((c != '\n') && (c != EOF)) {
+        if(count == maxLineLength){
+           maxLineLength += 128;
+           lineBuffer = (char*)realloc(lineBuffer, maxLineLength);
+        }
+        read(fileno(file), &c, sizeof(c));
         lineBuffer[count] = c;
         count++;
-        c = getc(file);
     }
-    read(fileno(file),lineBuffer, strlen(lineBuffer))
+    lineBuffer[count] = '\0';
+    return lineBuffer;
+}
+
+char* InputStream::readln3() {
+    char *lineBuffer = (char *) malloc(sizeof(char*));
+    read(fileno(file), &lineBuffer, sizeof(lineBuffer));
+    return lineBuffer;
 }
