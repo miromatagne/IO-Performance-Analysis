@@ -35,3 +35,27 @@ void InputStream::close() {
 void InputStream::seek(int pos) {
     fseek(file, pos, SEEK_SET);
 }
+
+/**
+ * Read the next line from the stream by reading one character at a time
+ * using the read system calls until the end-of-line symbol is reached.
+ */
+void InputStream::readln() {
+    int count = 0;
+    int maxLineLength = 128;
+    char *lineBuffer = (char *)malloc(maxLineLength*sizeof(char));
+    char c = fgetc(file)
+    while((c != '\n') && (c != EOF)) {
+        if (count == maxLineLength) {
+            maxLineLength += 128;
+            lineBuffer = realloc(lineBuffer, maxLineLength);
+            if (lineBuffer == NULL) {
+                printf("Error reallocating space for line buffer.");
+                exit(1);
+            }
+        lineBuffer[count] = c;
+        count++;
+        c = getc(file);
+    }
+    read(fileno(file),lineBuffer, strlen(lineBuffer))
+}
