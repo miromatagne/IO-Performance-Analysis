@@ -16,7 +16,8 @@ public:
 
     void create();
 
-    void writeln(string text);
+    void writeln3(string text);
+    void writeln1(string text);
 
     void close();
 };
