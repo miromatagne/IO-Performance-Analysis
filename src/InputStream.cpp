@@ -47,14 +47,18 @@ char *InputStream::readln1() {
     int maxLineLength = 128;
     char *lineBuffer = (char *) malloc(maxLineLength * sizeof(char));
     char c;
-    read(fileno(file), &c, sizeof(c));
+    if (read(fileno(file), &c, sizeof(c)) == 0) {
+        return nullptr;
+    }
     lineBuffer[0] = c;
-    while ((c != '\n') && (c != EOF)) {
+    while (c != '\n') {
         if (count == maxLineLength) {
             maxLineLength += 128;
             lineBuffer = (char *) realloc(lineBuffer, maxLineLength);
         }
-        read(fileno(file), &c, sizeof(c));
+        if (read(fileno(file), &c, sizeof(c)) == 0) {
+            break;
+        }
         lineBuffer[count] = c;
         count++;
     }
@@ -65,5 +69,6 @@ char *InputStream::readln1() {
 char *InputStream::readln3() {
     char *lineBuffer = (char *) malloc(sizeof(char *));
     read(fileno(file), &lineBuffer, sizeof(lineBuffer));
+    lineBuffer = lineBuffer;
     return lineBuffer;
 }
