@@ -5,7 +5,7 @@
 #include <tchar.h>
 #include <fcntl.h>
 
-
+//
 
 using namespace std;
 extern int errno ;

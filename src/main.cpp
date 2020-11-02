@@ -1,7 +1,7 @@
 #include "InputStream.h"
 #include "OutputStream.h"
 #include <iostream>
-
+//
 using namespace std;
 
 int main() {

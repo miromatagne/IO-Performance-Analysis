@@ -5,7 +5,7 @@
 #include <fstream>
 #include <windows.h>
 using namespace std;
-
+//
 class OutputStream {
 private:
     const char *fileName;
