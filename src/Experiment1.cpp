@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Experiment1.h"
 
 typedef void (*callback_function)(void); // type for conciseness
@@ -12,11 +13,11 @@ int Experiment1::length(char *fileName) {
     char *line;
     line = inputStream.readln1();
     sum += strlen(line);
-    int i = 0;
-    while (i < 2) {
+    while (line != nullptr) {
         line = function(inputStream);
-        sum += strlen(line);
-        i++;
+        if (line != nullptr) {
+            sum += strlen(line);
+        }
     }
     inputStream.close();
     return sum;
