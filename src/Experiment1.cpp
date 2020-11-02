@@ -1,8 +1,6 @@
 #include <iostream>
 #include "Experiment1.h"
 
-typedef void (*callback_function)(void); // type for conciseness
-
 Experiment1::Experiment1() {
 }
 
