@@ -1,6 +1,7 @@
 #include "InputStream.h"
 #include "OutputStream.h"
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
