@@ -3,7 +3,6 @@
 #include <utility>
 #include <io.h>
 #include <cstring>
-#include <iostream>
 
 
 using namespace std;
@@ -48,23 +47,32 @@ char *InputStream::readln1() {
     int maxLineLength = 128;
     char *lineBuffer = (char *) malloc(maxLineLength * sizeof(char));
     char c;
-    read(_fileno(file), &c, sizeof(c));
+    int readBuffer = read(fileno(file), &c, sizeof(c));
     lineBuffer[0] = c;
-    while ((c != '\n') && (c != EOF)) {
+
+    if (readBuffer == 0) {
+        return nullptr;
+    }
+
+    while ((c != '\n') && (readBuffer != 0)) {
         if (count == maxLineLength) {
             maxLineLength += 128;
             lineBuffer = (char *) realloc(lineBuffer, maxLineLength);
         }
-        read(_fileno(file), &c, sizeof(c));
+
+        readBuffer = read(fileno(file), &c, sizeof(c));
         lineBuffer[count] = c;
         count++;
+        printf(" C : %c", c);
     }
+
     lineBuffer[count] = '\0';
     return lineBuffer;
 }
 
 char *InputStream::readln3() {
     char *lineBuffer = (char *) malloc(sizeof(char *));
-    read(_fileno(file), &lineBuffer, sizeof(lineBuffer));
+    read(fileno(file), &lineBuffer, sizeof(lineBuffer));
+    lineBuffer = lineBuffer;
     return lineBuffer;
 }
