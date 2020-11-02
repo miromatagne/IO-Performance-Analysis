@@ -1,9 +1,6 @@
 #include "OutputStream.h"
 #include <io.h>
-#include <string.h>
-#include <sys/stat.h>
 #include <windows.h>
-#include <stdio.h>
 #include <conio.h>
 #include <tchar.h>
 #include <fcntl.h>
@@ -18,7 +15,7 @@ extern int errno ;
  * field of the OutputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-OutputStream::OutputStream(char* fName) {
+OutputStream::OutputStream(const char* fName) {
     fileName = fName;
 }
 /**
@@ -55,7 +52,7 @@ void OutputStream::create() {
  * this stream with the newline character using the write system calls.
  * @param  text : string to be written in the file
  */
-void OutputStream::writeln1(string text) {
+void OutputStream::writeln1(string text) const {
     char c = text[0];
     int i = 0;
     while (c != '\0'){
@@ -73,7 +70,8 @@ void OutputStream::writeln1(string text) {
  * @param  text : string to be written in the file
  */
 void OutputStream::writeln2(string text) {
-    const char* c = (text+"\n").c_str();
+    text+="\n";
+    const char* c = text.c_str();
     if (fputs(c, file) < 0)
     {
         int err = errno;
@@ -87,8 +85,9 @@ void OutputStream::writeln2(string text) {
  * in internal memory and terminate this stream with the newline character.
  * @param  text : string to be written in the file
  */
-void OutputStream::writeln3(string text) {
-    const char* c = (text+"\n").c_str();
+void OutputStream::writeln3(string text) const {
+    text+="\n";
+    const char* c = text.c_str();
     write(fd,c,strlen(c));
 }
 /**
@@ -118,7 +117,7 @@ void OutputStream::writeln4(string text) {
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
-        ExitProcess(GetLastError());
+        fprintf(stderr, "Error of CreateFileMapping function: %s\n", strerror( err ));
     }
     writeBuffer = (LPTSTR) MapViewOfFile(hMapFile,   // handle to map object
                                   FILE_MAP_ALL_ACCESS, // read/write permission
@@ -128,8 +127,10 @@ void OutputStream::writeln4(string text) {
 
     if (writeBuffer == NULL)
     {
-        _tprintf(TEXT("Could not map view of file (%d).\n"),
-                 GetLastError());
+        int err = errno;
+        fprintf(stderr, "Value of errno: %d\n", errno);
+        perror("Error printed by perror");
+        fprintf(stderr, "Error of the MapViewOfFile function: %s\n", strerror( err ));
         CloseHandle(hMapFile);
     }
 
