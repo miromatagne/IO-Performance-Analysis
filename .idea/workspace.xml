@@ -30,9 +30,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-10-20_21_54__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30-10-20_21_54__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/comp_cast_type.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/comp_cast_type.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStream.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStream.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,9 +75,19 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="info_h417_group_15" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="info_h417_group_15" RUN_TARGET_NAME="info_h417_group_15" EXPLICIT_BUILD_TARGET_NAME="all">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -95,7 +106,8 @@
       <workItem from="1604159445410" duration="1719000" />
       <workItem from="1604161346761" duration="12023000" />
       <workItem from="1604177721473" duration="1037000" />
-      <workItem from="1604272877940" duration="1325000" />
+      <workItem from="1604272877940" duration="2165000" />
+      <workItem from="1604330702602" duration="5407000" />
     </task>
     <task id="LOCAL-00001" summary="classes">
       <created>1604102118724</created>
@@ -132,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604175776197</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Correction of readln">
+      <created>1604274282361</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1604274282361</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,7 +176,8 @@
     <MESSAGE value="OutPutStream class" />
     <MESSAGE value="InputStream change in include" />
     <MESSAGE value="write function problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="write function problem" />
+    <MESSAGE value="Correction of readln" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction of readln" />
   </component>
   <component name="WindowStateProjectService">
     <state x="65" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604161437012">
@@ -168,31 +188,31 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="392" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1604161519404" />
-    <state x="175" y="0" key="CommitChangelistDialog2" timestamp="1604139680935">
+    <state x="175" y="0" key="CommitChangelistDialog2" timestamp="1604274280673">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="175" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1604139680935" />
+    <state x="175" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1604274280673" />
     <state x="582" y="192" key="FileChooserDialogImpl" timestamp="1604161451206">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="1164" y="699" key="FileChooserDialogImpl/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096378392" />
     <state x="582" y="192" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604161451206" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1604274209435">
+    <state width="1237" height="195" key="GridCell.Tab.0.bottom" timestamp="1604335921019">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604274209435" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1604274209434">
+    <state width="1237" height="195" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604335921019" />
+    <state width="1237" height="195" key="GridCell.Tab.0.center" timestamp="1604335921019">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1604274209434" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1604274209433">
+    <state width="1237" height="195" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1604335921019" />
+    <state width="1237" height="195" key="GridCell.Tab.0.left" timestamp="1604335921019">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1604274209433" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1604274209434">
+    <state width="1237" height="195" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1604335921019" />
+    <state width="1237" height="195" key="GridCell.Tab.0.right" timestamp="1604335921019">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1604274209434" />
+    <state width="1237" height="195" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1604335921019" />
     <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1604177456965">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -213,15 +233,23 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="137" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1604136966370" />
-    <state x="436" y="147" key="Vcs.Push.Dialog.v2" timestamp="1604175779749">
+    <state x="436" y="147" key="Vcs.Push.Dialog.v2" timestamp="1604274286860">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="872" y="453" key="Vcs.Push.Dialog.v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096481395" />
-    <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604175779749" />
-    <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604159257364">
+    <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604274286860" />
+    <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604331468934">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="1097" y="634" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604093387163" />
-    <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1604159257364" />
+    <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1604331468934" />
+    <state x="75" y="0" width="898" height="476" key="dock-window-1" timestamp="1604334606129">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="75" y="0" width="898" height="476" key="dock-window-1/0.0.1280.680@0.0.1280.680" timestamp="1604334606129" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1604331121807">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1604331121807" />
   </component>
 </project>
