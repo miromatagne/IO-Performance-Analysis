@@ -30,7 +30,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="readln2 works">
-      <change beforePath="$PROJECT_DIR$/src/OutputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStream.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStream.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +81,11 @@
     <configuration name="nobuild" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="info_h417_group_15" TARGET_NAME="info_h417_group_15" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="info_h417_group_15" RUN_TARGET_NAME="info_h417_group_15">
       <method v="2" />
     </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="CMake Application.info_h417_group_15" />
       <item itemvalue="CMake Application.nobuild" />
@@ -104,7 +111,7 @@
       <workItem from="1604356683597" duration="434000" />
       <workItem from="1604357121119" duration="42000" />
       <workItem from="1604357176592" duration="247000" />
-      <workItem from="1604402032912" duration="6162000" />
+      <workItem from="1604402032912" duration="10520000" />
     </task>
     <task id="LOCAL-00001" summary="classes">
       <created>1604102118724</created>
@@ -176,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604416724763</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="readln2 works">
+      <created>1604416788623</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1604416788623</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,32 +236,36 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="175" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1604352465928" />
+    <state x="294" y="98" key="DiffContextDialog" timestamp="1604416819422">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="294" y="98" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1604416819422" />
     <state x="698" y="233" key="FileChooserDialogImpl" timestamp="1604357112397">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="1164" y="699" key="FileChooserDialogImpl/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096378392" />
     <state x="582" y="192" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604161451206" />
     <state x="698" y="233" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604357112397" />
-    <state width="1493" height="224" key="GridCell.Tab.0.bottom" timestamp="1604416685111">
+    <state width="1493" height="198" key="GridCell.Tab.0.bottom" timestamp="1604420691632">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1237" height="126" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604352671106" />
-    <state width="1493" height="224" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604416685111" />
-    <state width="1493" height="224" key="GridCell.Tab.0.center" timestamp="1604416685110">
+    <state width="1493" height="198" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604420691632" />
+    <state width="1493" height="198" key="GridCell.Tab.0.center" timestamp="1604420691630">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1237" height="126" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1604352671106" />
-    <state width="1493" height="224" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604416685110" />
-    <state width="1493" height="224" key="GridCell.Tab.0.left" timestamp="1604416685110">
+    <state width="1493" height="198" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604420691630" />
+    <state width="1493" height="198" key="GridCell.Tab.0.left" timestamp="1604420691630">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1237" height="126" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1604352671106" />
-    <state width="1493" height="224" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604416685110" />
-    <state width="1493" height="224" key="GridCell.Tab.0.right" timestamp="1604416685110">
+    <state width="1493" height="198" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604420691630" />
+    <state width="1493" height="198" key="GridCell.Tab.0.right" timestamp="1604420691631">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1237" height="126" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1604352671106" />
-    <state width="1493" height="224" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604416685110" />
+    <state width="1493" height="198" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604420691631" />
     <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1604177456965">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -285,12 +303,12 @@
     </state>
     <state x="137" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1604136966370" />
     <state x="164" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604357069178" />
-    <state x="523" y="178" key="Vcs.Push.Dialog.v2" timestamp="1604416733073">
+    <state x="523" y="178" key="Vcs.Push.Dialog.v2" timestamp="1604417512117">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="872" y="453" key="Vcs.Push.Dialog.v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096481395" />
     <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604342034550" />
-    <state x="523" y="178" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604416733073" />
+    <state x="523" y="178" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604417512117" />
     <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604341533190">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

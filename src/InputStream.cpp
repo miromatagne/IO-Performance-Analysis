@@ -6,6 +6,7 @@
 
 
 using namespace std;
+extern int errno;
 
 /**
  * Constructor storing the chosen file's name in the fileName
@@ -39,7 +40,7 @@ void InputStream::seek(int pos) {
 }
 
 /**
- * Read the next line from the stream by reading one character at a time
+ * Read the next line from the file of the InputStream by reading one character at a time
  * using the read system calls until the end-of-line symbol is reached.
  */
 char *InputStream::readln1() {
@@ -66,17 +67,39 @@ char *InputStream::readln1() {
     return lineBuffer;
 }
 
+/**
+ * Read the next line from the file of the InputStream
+ * using fgets function from the C stdio library.
+ */
 void InputStream::readln2() {
     char str[128];
-    int B = 256;
-    if (fgets(str, B, file) != NULL) {
+    int n = 256;
+    if (fgets(str, n, file) != NULL) {
         puts(str);
+    }
+    else {
+        int err = errno;
+        fprintf(stderr, "Value of errno: %d\n", errno);
+        perror("Error printed by perror");
+        fprintf(stderr, "Error while writing in file: %s\n", strerror( err ));
     }
 }
 
+/**
+ * Read the next line from the file of the InputStream
+ * through a buffer in internal memory using the read
+ * system calls until the end-of-line symbol is reached.
+ */
 char *InputStream::readln3() {
-    char *lineBuffer = (char *) malloc(sizeof(char *));
-    read(fileno(file), &lineBuffer, sizeof(lineBuffer));
-    lineBuffer = lineBuffer;
-    return lineBuffer;
+    int sizeB = 512;
+    char *lineBuffer2 = (char *) calloc(1, sizeB);
+    read(fileno(file), lineBuffer2, sizeof(lineBuffer2));
+    lineBuffer2 += '\0';
+    return lineBuffer2;
 }
+
+/**
+ * Read the next line from the file of the InputStream
+ * through a buffer in internal memory using the read
+ * system calls until the end-of-line symbol is reached.
+ */
