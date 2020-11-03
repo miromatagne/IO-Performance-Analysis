@@ -19,7 +19,7 @@ public:
 
     char* readln1();
 
-    //char* readln2();
+    void readln2();
 
     char* readln3();
 

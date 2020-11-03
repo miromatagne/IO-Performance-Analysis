@@ -66,6 +66,14 @@ char *InputStream::readln1() {
     return lineBuffer;
 }
 
+void InputStream::readln2() {
+    char str[128];
+    int B = 256;
+    if (fgets(str, B, file) != NULL) {
+        puts(str);
+    }
+}
+
 char *InputStream::readln3() {
     char *lineBuffer = (char *) malloc(sizeof(char *));
     read(fileno(file), &lineBuffer, sizeof(lineBuffer));

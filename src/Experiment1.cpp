@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 #include "Experiment1.h"
 
 Experiment1::Experiment1() {

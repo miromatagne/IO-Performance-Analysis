@@ -27,8 +27,11 @@ double getChrono() {
 }
 
 int main() {
-//    InputStream inputStream("../data/comp_cast_type.csv");
-//    inputStream.open();
+    InputStream inputStream("../data/comp_cast_type.csv");
+    inputStream.open();
+    for (int i = 0; i<4; i++) {
+        inputStream.readln2();
+    }
 //    inputStream.close();
 //    OutputStream outputStream("file_test");
 //    outputStream.create();
