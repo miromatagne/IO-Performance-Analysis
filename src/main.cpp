@@ -27,10 +27,11 @@ double getChrono() {
 }
 
 int main() {
-    InputStream inputStream("../data/aka_name.csv");
+    InputStream inputStream("../data/comp_cast_type.csv");
     inputStream.open();
-
-    cout << inputStream.readln3();
+    cout << inputStream.readln3() << endl;
+    cout << inputStream.readln3() << endl;
+    cout << inputStream.readln3() << endl;
 
     /*for (int i = 0; i<5; i++) {
         cout << inputStream.readln3();
