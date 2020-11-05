@@ -29,7 +29,7 @@ void OutputStream::create() {
         perror("Error printed by perror");
         fprintf(stderr, "Error while creating the file: %s\n", strerror( err ));
     }
-    fd = _open_osfhandle((long)hFile, _O_APPEND);
+    fd = _open_osfhandle((intptr_t)hFile, _O_APPEND); //(long) or (intptr_t)
     if (fd == -1) {
         ::CloseHandle(hFile);
         int err = errno;

@@ -27,24 +27,25 @@ double getChrono() {
 }
 
 int main() {
-    InputStream inputStream("../data/comp_cast_type.csv");
+    InputStream inputStream("../data/aka_name.csv");
     inputStream.open();
-    /*for (int i = 0; i<4; i++) {
-        inputStream.readln2();
-    }*/
-    for (int i = 0; i<5; i++) {
+
+    cout << inputStream.readln3();
+
+    /*for (int i = 0; i<5; i++) {
         cout << inputStream.readln3();
-    }
+    }*/
 //    inputStream.close();
 //    OutputStream outputStream("file_test");
 //    outputStream.create();
 //    outputStream.writeln1("Bonjour");
 //    outputStream.close();
 
-    Experiment1 experiment1;
+    /*Experiment1 experiment1;
     startChrono();
     cout << experiment1.length1("../data/comp_cast_type.csv") << endl;
     cout << getChrono() << endl;
+    */
     return 0;
 }
 

@@ -3,6 +3,7 @@
 #include <utility>
 #include <io.h>
 #include <cstring>
+#include <iostream>
 
 
 using namespace std;
@@ -48,6 +49,7 @@ char *InputStream::readln1() {
     int maxLineLength = 128;
     char *lineBuffer = (char *) malloc(maxLineLength * sizeof(char));
     char c;
+
     if (read(fileno(file), &c, sizeof(c)) == 0) {
         return nullptr;
     }
@@ -71,11 +73,20 @@ char *InputStream::readln1() {
  * Read the next line from the file of the InputStream
  * using fgets function from the C stdio library.
  */
-void InputStream::readln2() {
+char *InputStream::readln2() {
     char str[128];
     int n = 256;
-    if (fgets(str, n, file) != NULL) {
-        puts(str);
+    char* result = (char *) malloc(n * sizeof(char));
+    fgets(result, n, file);
+    int i = 1;
+    while(strlen(result) >= (n-1)*i) {
+        result = (char*) realloc(result, n);
+        fgets(result, (i+1)*n, file);
+        i++;
+    }
+
+    if (result != NULL) {
+        return result;
     }
     else {
         int err = errno;
@@ -91,11 +102,31 @@ void InputStream::readln2() {
  * system calls until the end-of-line symbol is reached.
  */
 char *InputStream::readln3() {
-    int sizeB = 512;
-    char *lineBuffer2 = (char *) calloc(1, sizeB);
-    read(fileno(file), lineBuffer2, sizeof(lineBuffer2));
-    lineBuffer2 += '\0';
-    return lineBuffer2;
+    int sizeB =4;
+    char *lineBuffer = (char *) malloc(sizeB*sizeof(char));
+    int nbChar = read(fileno(file), lineBuffer, sizeB*sizeof(char));
+    char* lineRead = lineBuffer;
+    //int i = 2;
+    printf("Buffer : %s'\n'", lineRead);
+    while(strstr(lineBuffer, "\n") == NULL) {
+        lineBuffer = (char*) realloc(lineBuffer, sizeB);
+        nbChar += read(fileno(file), lineBuffer, sizeB*sizeof(char));
+        strcat(lineRead, lineBuffer);
+        //i++;
+        printf("Buffer : %s'\n'", lineRead);
+    }
+    printf("Buffer : %s'\n'", lineRead);
+    char *firstOcc = strstr(lineBuffer, "\n");
+    int pos = firstOcc - lineBuffer;                 //pos determines the number of characters before the '\n'occurrence
+
+    //lineBuffer  = (char*) realloc(lineBuffer, pos);
+    //read(fileno(file), lineBuffer, sizeB*sizeof(char));
+
+    //char* lineRead2[nbChar];
+    //strcpy(lineRead2, );
+    //lineRead[nbChar - 1] = '\0';
+
+    return lineRead;
 }
 
 /**
