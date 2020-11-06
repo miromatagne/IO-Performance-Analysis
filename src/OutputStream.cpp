@@ -4,11 +4,14 @@
 #include <conio.h>
 #include <tchar.h>
 #include <fcntl.h>
-
+#include <cmath>
+#include <algorithm>
+#include <iostream>
 //
 
 using namespace std;
 extern int errno ;
+#define SIZE_BUFFER 3
 
 /**
  * Constructor storing the chosen file's name in the fileName
@@ -18,6 +21,7 @@ extern int errno ;
 OutputStream::OutputStream(const char* fName) {
     fileName = fName;
 }
+
 /**
  * Creates a file and stores it in the file field of the OutputStream class.
  */
@@ -70,6 +74,13 @@ void OutputStream::writeln1(string text) const {
  * @param  text : string to be written in the file
  */
 void OutputStream::writeln2(string text) {
+    /*
+    char tmp = '\n';
+    char c[strlen(text)+2];
+    sprintf(c,text);
+    int size = strlen(c);
+    snprintf(c + size, sizeof c - size, "%c", tmp);
+     */
     text+="\n";
     const char* c = text.c_str();
     if (fputs(c, file) < 0)
@@ -88,7 +99,26 @@ void OutputStream::writeln2(string text) {
 void OutputStream::writeln3(string text) const {
     text+="\n";
     const char* c = text.c_str();
-    write(fd,c,strlen(c));
+
+    char buffer [SIZE_BUFFER];
+    int size = strlen(c);
+    int start = 0;
+    if(size<=SIZE_BUFFER)
+    {
+        strcpy (buffer,c);
+        write(fd,buffer,size);
+    }
+    else
+    {
+        while((start+SIZE_BUFFER)<size){
+            strncpy ( buffer, c+start, SIZE_BUFFER);
+            write(fd,buffer,SIZE_BUFFER);
+            start+=SIZE_BUFFER;
+        }
+        strncpy ( buffer, c+start, (size-start));
+        write(fd,buffer,(size-start));
+    }
+
 }
 /**
  * Write a string in the file of the OutputStream class by mapping the characters
@@ -98,45 +128,84 @@ void OutputStream::writeln3(string text) const {
  */
 
 void OutputStream::writeln4(string text) {
-    LPCTSTR writeBuffer;
     text+="\n";
+    const char* c = text.c_str();
+    int sizeByteSource = strlen(c)*sizeof(c[0]);
+    //adaption du SIZE_BUFFER en nombre de bytes tout en étant un multiple de la size d'une page de notre OS.
+    SYSTEM_INFO info;
+    GetSystemInfo(&info);
+    //printf("  Page size: %u\n", info.dwPageSize);
+    DWORD sizePageBuffer = info.dwAllocationGranularity*ceil((double)SIZE_BUFFER*sizeof(char)/(double)info.dwAllocationGranularity);
+    int nbExtension=ceil((double)sizeByteSource/(double)sizePageBuffer);
+    //cout<< multipleOfPageSize << endl;
+    //
 
-    //TCHAR c[]=TEXT("test");
-    int size = strlen(text.c_str());
+
+    //
     HANDLE hMapFile;
-    hMapFile = CreateFileMapping(
-            hFile,    // use paging file
-            NULL,                    // default security
-            PAGE_READWRITE,
-            0,                       // max. object size
-            size,                    // buffer size
-            _T("INFO-H417"));                 // name of mapping object
-
-    if (hMapFile == NULL)
-    {
-        int err = errno;
-        fprintf(stderr, "Value of errno: %d\n", errno);
-        perror("Error printed by perror");
-        fprintf(stderr, "Error of CreateFileMapping function: %s\n", strerror( err ));
+    char buffer [sizePageBuffer];
+    DWORD start = 0;
+    int i = 1;
+    int end = sizePageBuffer;
+    int toMapWrite=sizePageBuffer;
+    int lastPage = sizeByteSource - ((nbExtension-1)*sizePageBuffer);
+    printf(" info.dwAllocationGranularity %d \n",  info.dwAllocationGranularity);
+    printf("nbExtension %d \n", nbExtension);
+    if (sizeByteSource<sizePageBuffer){
+        toMapWrite=sizeByteSource;
+        end = sizeByteSource;
     }
-    writeBuffer = (LPTSTR) MapViewOfFile(hMapFile,   // handle to map object
-                                  FILE_MAP_ALL_ACCESS, // read/write permission
-                                  0,
-                                  0,
-                                  size);
 
-    if (writeBuffer == NULL)
-    {
-        int err = errno;
-        fprintf(stderr, "Value of errno: %d\n", errno);
-        perror("Error printed by perror");
-        fprintf(stderr, "Error of the MapViewOfFile function: %s\n", strerror( err ));
+
+    while(i<=nbExtension) {
+
+        if (i==nbExtension && nbExtension!=1) {
+            toMapWrite = lastPage;
+            end = start + lastPage;
+        }
+        hMapFile = CreateFileMapping(
+                hFile,    // use paging file
+                NULL,                    // default security
+                PAGE_READWRITE,
+                0,
+                end,
+                _T("INFO-H417"));                 // name of mapping object
+
+        if (hMapFile == NULL)
+        {
+            int err = errno;
+            fprintf(stderr, "Value of errno: %d\n", errno);
+            perror("Error printed by perror");
+            fprintf(stderr, "Error of CreateFileMapping function: %s\n", strerror( err ));
+        }
+        LPCTSTR writeBuffer;
+        strncpy(buffer, c + start, toMapWrite);
+        writeBuffer = (LPTSTR) MapViewOfFile(hMapFile,   // handle to map object
+                                             FILE_MAP_ALL_ACCESS, // read/write permission
+                                             0,
+                                             start,
+                                             toMapWrite); //null
+
+        if (writeBuffer == NULL) {
+            int err = errno;
+            fprintf(stderr, "Value of errno: %d\n", errno);
+            perror("Error printed by perror");
+            fprintf(stderr, "Error of the MapViewOfFile function: %s\n", strerror(err));
+            CloseHandle(hMapFile);
+        }
+        printf("start %d \n", start);
+        printf("toMapWrite %d \n", toMapWrite);
+        printf("end %d \n", end);
+
+        CopyMemory((PVOID) (writeBuffer), _T(buffer), (toMapWrite));
+        //memcpy(writeBuffer,buffer,toMapWrite);
+        UnmapViewOfFile(writeBuffer);
         CloseHandle(hMapFile);
+        start+=sizePageBuffer;
+        end = start+sizePageBuffer;
+        i++;
     }
 
-    CopyMemory((PVOID)writeBuffer, _T(text.c_str()), (size * sizeof(TCHAR)));
-    UnmapViewOfFile(writeBuffer);
-    CloseHandle(hMapFile);
 
 
 }
