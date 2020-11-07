@@ -126,7 +126,7 @@ void OutputStream::writeln3(string text) const {
  * the newline character.
  * @param  text : string to be written in the file
  */
-
+// com juste pr pouvoir commit
 void OutputStream::writeln4(string text) {
     text+="\n";
     const char* c = text.c_str();

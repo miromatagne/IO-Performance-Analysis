@@ -39,7 +39,7 @@ int main() {
 //    inputStream.close();
     OutputStream outputStream("file_test");
     outputStream.create();
-    outputStream.writeln1("LA CONSTITUTION\n"
+    outputStream.writeln4("LA CONSTITUTION\n"
                           "BELGE\n"
                           "Sénat\n"
                           "2019\n"
