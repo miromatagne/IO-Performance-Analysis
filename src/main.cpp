@@ -32,6 +32,7 @@ int main() {
     cout << inputStream.readln3() << endl;
     cout << inputStream.readln3() << endl;
     cout << inputStream.readln3() << endl;
+    cout << inputStream.readln3() << endl;
 
     /*for (int i = 0; i<5; i++) {
         cout << inputStream.readln3();

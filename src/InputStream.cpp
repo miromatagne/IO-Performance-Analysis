@@ -110,7 +110,7 @@ char *InputStream::readln3() {
     strcpy(line, lineBuffer);
     int i = 2;
     char *firstOcc;
-    while ((firstOcc = strstr(line, "\n")) == NULL) {
+    while ((firstOcc = strstr(line, "\n")) == NULL && nbChar == sizeB * (i - 1)) {
         line = (char *) realloc(line, i * sizeB + 1);
         line[nbChar] = '\0';
         int nbRead = read(fileno(file), lineBuffer, sizeB);
@@ -119,7 +119,10 @@ char *InputStream::readln3() {
         strcat(line, lineBuffer);
         i++;
     }
-    int position = firstOcc - line;
+    int position = strlen(line);
+    if (firstOcc != 0) {
+        position = firstOcc - line;
+    }
     char *resultLine = (char *) malloc(nbChar + 1);
     memcpy(resultLine, line, position);
     resultLine[position] = '\0';
