@@ -10,7 +10,9 @@
 //
 
 using namespace std;
-extern int errno ;
+
+extern int errno;
+
 #define SIZE_BUFFER 3
 
 /**
@@ -18,7 +20,7 @@ extern int errno ;
  * field of the OutputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-OutputStream::OutputStream(const char* fName) {
+OutputStream::OutputStream(const char *fName) {
     fileName = fName;
 }
 
@@ -26,20 +28,21 @@ OutputStream::OutputStream(const char* fName) {
  * Creates a file and stores it in the file field of the OutputStream class.
  */
 void OutputStream::create() {
-    hFile = CreateFile(_T(fileName), GENERIC_READ | GENERIC_WRITE,FILE_SHARE_READ,NULL,CREATE_ALWAYS,FILE_ATTRIBUTE_NORMAL,NULL);
+    hFile = CreateFile(_T(fileName), GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ, NULL, CREATE_ALWAYS,
+                       FILE_ATTRIBUTE_NORMAL, NULL);
     if (hFile == INVALID_HANDLE_VALUE) {
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
-        fprintf(stderr, "Error while creating the file: %s\n", strerror( err ));
+        fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
     }
-    fd = _open_osfhandle((intptr_t)hFile, _O_APPEND); //(long) or (intptr_t)
+    fd = _open_osfhandle((intptr_t) hFile, _O_APPEND); //(long) or (intptr_t)
     if (fd == -1) {
         ::CloseHandle(hFile);
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
-        fprintf(stderr, "Error while creating the file: %s\n", strerror( err ));
+        fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
     }
     file = _fdopen(fd, "w");
     if (!file) {
@@ -47,10 +50,11 @@ void OutputStream::create() {
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
-        fprintf(stderr, "Error while creating the file: %s\n", strerror( err ));
+        fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
     }
 
 }
+
 /**
  * Write a string in the file of the OutputStream class one character at a time and terminate
  * this stream with the newline character using the write system calls.
@@ -59,14 +63,15 @@ void OutputStream::create() {
 void OutputStream::writeln1(string text) const {
     char c = text[0];
     int i = 0;
-    while (c != '\0'){
+    while (c != '\0') {
         i++;
-        write(fd,&c,sizeof(c));
+        write(fd, &c, sizeof(c));
         c = text[i];
     }
     c = '\n';
-    write(fd,&c,sizeof(c));
+    write(fd, &c, sizeof(c));
 }
+
 /**
  * Write a string in the file of the OutputStream class and terminate
  * this stream with the newline character using fputs functions from the
@@ -81,42 +86,39 @@ void OutputStream::writeln2(string text) {
     int size = strlen(c);
     snprintf(c + size, sizeof c - size, "%c", tmp);
      */
-    text+="\n";
-    const char* c = text.c_str();
-    if (fputs(c, file) < 0)
-    {
+    text += "\n";
+    const char *c = text.c_str();
+    if (fputs(c, file) < 0) {
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
-        fprintf(stderr, "Error while writing in file: %s\n", strerror( err ));
+        fprintf(stderr, "Error while writing in file: %s\n", strerror(err));
     }
 }
+
 /**
  * Write a string in the file of the OutputStream class trough a buffer
  * in internal memory and terminate this stream with the newline character.
  * @param  text : string to be written in the file
  */
 void OutputStream::writeln3(string text) const {
-    text+="\n";
-    const char* c = text.c_str();
+    text += "\n";
+    const char *c = text.c_str();
 
-    char buffer [SIZE_BUFFER];
+    char buffer[SIZE_BUFFER];
     int size = strlen(c);
     int start = 0;
-    if(size<=SIZE_BUFFER)
-    {
-        strcpy (buffer,c);
-        write(fd,buffer,size);
-    }
-    else
-    {
-        while((start+SIZE_BUFFER)<size){
-            strncpy ( buffer, c+start, SIZE_BUFFER);
-            write(fd,buffer,SIZE_BUFFER);
-            start+=SIZE_BUFFER;
+    if (size <= SIZE_BUFFER) {
+        strcpy(buffer, c);
+        write(fd, buffer, size);
+    } else {
+        while ((start + SIZE_BUFFER) < size) {
+            strncpy(buffer, c + start, SIZE_BUFFER);
+            write(fd, buffer, SIZE_BUFFER);
+            start += SIZE_BUFFER;
         }
-        strncpy ( buffer, c+start, (size-start));
-        write(fd,buffer,(size-start));
+        strncpy(buffer, c + start, (size - start));
+        write(fd, buffer, (size - start));
     }
 
 }
@@ -128,38 +130,39 @@ void OutputStream::writeln3(string text) const {
  */
 // com juste pr pouvoir commit
 void OutputStream::writeln4(string text) {
-    text+="\n";
-    const char* c = text.c_str();
-    int sizeByteSource = strlen(c)*sizeof(c[0]);
+    text += "\n";
+    const char *c = text.c_str();
+    int sizeByteSource = strlen(c) * sizeof(c[0]);
     //adaption du SIZE_BUFFER en nombre de bytes tout en étant un multiple de la size d'une page de notre OS.
     SYSTEM_INFO info;
     GetSystemInfo(&info);
     //printf("  Page size: %u\n", info.dwPageSize);
-    DWORD sizePageBuffer = info.dwAllocationGranularity*ceil((double)SIZE_BUFFER*sizeof(char)/(double)info.dwAllocationGranularity);
-    int nbExtension=ceil((double)sizeByteSource/(double)sizePageBuffer);
+    DWORD sizePageBuffer = info.dwAllocationGranularity *
+                           ceil((double) SIZE_BUFFER * sizeof(char) / (double) info.dwAllocationGranularity);
+    int nbExtension = ceil((double) sizeByteSource / (double) sizePageBuffer);
     //cout<< multipleOfPageSize << endl;
     //
 
 
     //
     HANDLE hMapFile;
-    char buffer [sizePageBuffer];
+    char *buffer = (char *) malloc(sizePageBuffer);
     DWORD start = 0;
     int i = 1;
     int end = sizePageBuffer;
-    int toMapWrite=sizePageBuffer;
-    int lastPage = sizeByteSource - ((nbExtension-1)*sizePageBuffer);
-    printf(" info.dwAllocationGranularity %d \n",  info.dwAllocationGranularity);
+    int toMapWrite = sizePageBuffer;
+    int lastPage = sizeByteSource - ((nbExtension - 1) * sizePageBuffer);
+    printf(" info.dwAllocationGranularity %d \n", info.dwAllocationGranularity);
     printf("nbExtension %d \n", nbExtension);
-    if (sizeByteSource<sizePageBuffer){
-        toMapWrite=sizeByteSource;
+    if (sizeByteSource < sizePageBuffer) {
+        toMapWrite = sizeByteSource;
         end = sizeByteSource;
     }
 
 
-    while(i<=nbExtension) {
+    while (i <= nbExtension) {
 
-        if (i==nbExtension && nbExtension!=1) {
+        if (i == nbExtension && nbExtension != 1) {
             toMapWrite = lastPage;
             end = start + lastPage;
         }
@@ -171,12 +174,11 @@ void OutputStream::writeln4(string text) {
                 end,
                 _T("INFO-H417"));                 // name of mapping object
 
-        if (hMapFile == NULL)
-        {
+        if (hMapFile == NULL) {
             int err = errno;
             fprintf(stderr, "Value of errno: %d\n", errno);
             perror("Error printed by perror");
-            fprintf(stderr, "Error of CreateFileMapping function: %s\n", strerror( err ));
+            fprintf(stderr, "Error of CreateFileMapping function: %s\n", strerror(err));
         }
         LPCTSTR writeBuffer;
         strncpy(buffer, c + start, toMapWrite);
@@ -201,14 +203,13 @@ void OutputStream::writeln4(string text) {
         //memcpy(writeBuffer,buffer,toMapWrite);
         UnmapViewOfFile(writeBuffer);
         CloseHandle(hMapFile);
-        start+=sizePageBuffer;
-        end = start+sizePageBuffer;
+        start += sizePageBuffer;
+        end = start + sizePageBuffer;
         i++;
     }
-
-
-
+    free(buffer);
 }
+
 /**
  * Closes the file.
  */

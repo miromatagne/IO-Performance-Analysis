@@ -63,8 +63,10 @@ char *InputStream::readln1() {
         if (read(fileno(file), &c, sizeof(c)) == 0) {
             break;
         }
-        lineBuffer[count] = c;
-        count++;
+        if (c != '\n') {
+            lineBuffer[count] = c;
+            count++;
+        }
     }
     lineBuffer[count] = '\0';
     return lineBuffer;
@@ -75,24 +77,23 @@ char *InputStream::readln1() {
  * using fgets function from the C stdio library.
  */
 char *InputStream::readln2() {
-    char str[128];
     int n = 256;
     char *result = (char *) malloc(n * sizeof(char));
-    fgets(result, n, file);
+    char *response = fgets(result, n, file);
     int i = 1;
     while (strlen(result) >= (n - 1) * i) {
         result = (char *) realloc(result, n);
-        fgets(result, (i + 1) * n, file);
+        response = fgets(result, (i + 1) * n, file);
         i++;
     }
-
+    if (response == nullptr) {
+        return nullptr;
+    }
+    strtok(result, "\n");
     if (result != NULL) {
         return result;
     } else {
-        int err = errno;
-        fprintf(stderr, "Value of errno: %d\n", errno);
-        perror("Error printed by perror");
-        fprintf(stderr, "Error while writing in file: %s\n", strerror(err));
+        return nullptr;
     }
 }
 
@@ -102,10 +103,13 @@ char *InputStream::readln2() {
  * system calls until the end-of-line symbol is reached.
  */
 char *InputStream::readln3() {
-    int sizeB = 2;
+    int sizeB = 200;
     char *lineBuffer = (char *) malloc(sizeB + 1);
     char *line = (char *) malloc(sizeB);
     int nbChar = read(fileno(file), lineBuffer, sizeB);
+    if (nbChar == 0) {
+        return nullptr;
+    }
     lineBuffer[nbChar] = '\0';
     strcpy(line, lineBuffer);
     int i = 2;

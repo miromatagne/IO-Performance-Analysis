@@ -16,6 +16,10 @@ public:
     int length(char *fileName);
 
     int length1(char *fileName);
+
+    int length2(char *fileName);
+
+    int length3(char *fileName);
 };
 
 
