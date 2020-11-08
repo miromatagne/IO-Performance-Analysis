@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include <istream>
+#include <windows.h>
 
 using namespace std;
 
@@ -11,6 +12,8 @@ class InputStream {
 private:
     char *fileName;
     FILE *file{};
+    HANDLE hFile;
+    int fd;
 
 public:
     explicit InputStream(char *fName);
@@ -22,6 +25,8 @@ public:
     char* readln2();
 
     char* readln3();
+
+    char* readln4();
 
     void close();
 
