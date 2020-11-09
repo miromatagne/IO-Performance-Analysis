@@ -11,7 +11,9 @@
 
 
 using namespace std;
+
 extern int errno;
+
 #define SIZE_BUFFER 3
 
 /**
@@ -30,13 +32,13 @@ void InputStream::open() {
 
     file = fopen(fileName, "r");
     hFile = (HANDLE) _get_osfhandle(_fileno(file));
-    fd = _open_osfhandle((intptr_t)hFile, _O_RDONLY);
+    fd = _open_osfhandle((intptr_t) hFile, _O_RDONLY);
     if (fd == -1) {
         ::CloseHandle(hFile);
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
-        fprintf(stderr, "Error while creating the file: %s\n", strerror( err ));
+        fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
     }
 }
 
@@ -75,6 +77,7 @@ char *InputStream::readln1() {
             lineBuffer = (char *) realloc(lineBuffer, maxLineLength);
         }
         if (read(fd, &c, sizeof(c)) == 0) {
+            count++;
             break;
         }
         if (c != '\n') {
@@ -82,7 +85,7 @@ char *InputStream::readln1() {
             count++;
         }
     }
-    lineBuffer[count] = '\0';
+    lineBuffer[count - 1] = '\0';
     return lineBuffer;
 }
 
@@ -117,7 +120,7 @@ char *InputStream::readln2() {
  * system calls until the end-of-line symbol is reached.
  */
 char *InputStream::readln3() {
-    int sizeB = 200;
+    int sizeB = 10;
     char *lineBuffer = (char *) malloc(sizeB + 1);
     char *line = (char *) malloc(sizeB);
     int nbChar = read(fd, lineBuffer, sizeB);
@@ -128,7 +131,7 @@ char *InputStream::readln3() {
     strcpy(line, lineBuffer);
     int i = 2;
     char *firstOcc;
-    while ((firstOcc = strstr(line, "\n")) == NULL && nbChar == sizeB*(i-1)) {
+    while ((firstOcc = strstr(line, "\n")) == NULL && nbChar == sizeB * (i - 1)) {
         line = (char *) realloc(line, i * sizeB + 1);
         line[nbChar] = '\0';
         int nbRead = read(fd, lineBuffer, sizeB);
@@ -143,7 +146,11 @@ char *InputStream::readln3() {
     }
     char *resultLine = (char *) malloc(nbChar + 1);
     memcpy(resultLine, line, position);
-    resultLine[position] = '\0';
+    if (firstOcc == NULL) {
+        resultLine[position] = '\0';
+    } else {
+        resultLine[position - 1] = '\0';
+    }
     fseek(file, position - strlen(line) + 1, SEEK_CUR);
     free(line);
     free(lineBuffer);
@@ -161,14 +168,15 @@ char *InputStream::readln4() {
     int nbChar = read(fd, lineBuffer, sizeLine);
     SYSTEM_INFO info;
     GetSystemInfo(&info);
-    DWORD sizePageBuffer = info.dwAllocationGranularity*ceil((double)SIZE_BUFFER*sizeof(char)/(double)info.dwAllocationGranularity);
+    DWORD sizePageBuffer = info.dwAllocationGranularity *
+                           ceil((double) SIZE_BUFFER * sizeof(char) / (double) info.dwAllocationGranularity);
     //int nbExtension=ceil((double)sizeByteSource/(double)sizePageBuffer);
 
     HANDLE hMapFile;
     //char buffer[sizePageBuffer];
     DWORD start = sizePageBuffer;
     int i = 1;
-    int end = 2*sizePageBuffer;
+    int end = 2 * sizePageBuffer;
     int toMapWrite = sizePageBuffer;
     //int lastPage = sizeByteSource - ((nbExtension-1)*sizePageBuffer);
     LPCTSTR readBuffer;
@@ -203,8 +211,8 @@ char *InputStream::readln4() {
     UnmapViewOfFile(readBuffer);
     CloseHandle(hMapFile);
 
-    while(strstr((char*)readBuffer, "\n") == NULL) {
-        lineBuffer = (char*) realloc(lineBuffer, sizeLine);
+    while (strstr((char *) readBuffer, "\n") == NULL) {
+        lineBuffer = (char *) realloc(lineBuffer, sizeLine);
 
 
         hMapFile = CreateFileMapping(
@@ -223,10 +231,10 @@ char *InputStream::readln4() {
         }
 
         readBuffer = (LPTSTR) MapViewOfFile(hMapFile,   // handle to map object
-                                             FILE_MAP_ALL_ACCESS, // read/write permission
-                                             0,
-                                             start,
-                                             toMapWrite); //null
+                                            FILE_MAP_ALL_ACCESS, // read/write permission
+                                            0,
+                                            start,
+                                            toMapWrite); //null
 
         if (readBuffer == NULL) {
             int err = errno;
@@ -239,10 +247,10 @@ char *InputStream::readln4() {
         strncpy(lineBuffer, readBuffer + start, toMapWrite);
         UnmapViewOfFile(readBuffer);
         CloseHandle(hMapFile);
-        start+=sizePageBuffer;
-        end = start+sizePageBuffer;
+        start += sizePageBuffer;
+        end = start + sizePageBuffer;
         i++;
     }
-    lineBuffer[i*toMapWrite + 1] = '\n';
+    lineBuffer[i * toMapWrite + 1] = '\n';
     return lineBuffer;
 }

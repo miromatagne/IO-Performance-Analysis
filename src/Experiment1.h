@@ -3,6 +3,7 @@
 
 
 #include "InputStream.h"
+#include "Chrono.h"
 
 class Experiment1 {
 private:
@@ -12,6 +13,8 @@ private:
 
 public:
     explicit Experiment1();
+
+    void getDurations(char *fileName);
 
     int length(char *fileName);
 
