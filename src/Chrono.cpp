@@ -13,7 +13,7 @@ void Chrono::startChrono() {
 
     QueryPerformanceCounter(&li);
     CounterStart = li.QuadPart;
-};
+}
 
 double Chrono::getChrono() {
     LARGE_INTEGER li2;

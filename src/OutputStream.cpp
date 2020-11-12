@@ -152,8 +152,8 @@ void OutputStream::writeln4(string text) {
     int end = sizePageBuffer;
     int toMapWrite = sizePageBuffer;
     int lastPage = sizeByteSource - ((nbExtension - 1) * sizePageBuffer);
-    printf(" info.dwAllocationGranularity %d \n", info.dwAllocationGranularity);
-    printf("nbExtension %d \n", nbExtension);
+    //printf(" info.dwAllocationGranularity %d \n", info.dwAllocationGranularity);
+    //printf("nbExtension %d \n", nbExtension);
     if (sizeByteSource < sizePageBuffer) {
         toMapWrite = sizeByteSource;
         end = sizeByteSource;

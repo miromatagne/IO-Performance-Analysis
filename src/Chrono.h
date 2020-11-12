@@ -2,6 +2,8 @@
 #define INFO_H417_GROUP_15_CHRONO_H
 
 
+#include <windows.h>
+
 class Chrono {
 private:
     double PCFreq = 0.0;
