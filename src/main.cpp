@@ -32,7 +32,7 @@ int main() {
     inputStream.open();
     int i = 0;
     while(i<32552) {  //32552
-        cout << inputStream.readln4() << endl;
+        inputStream.readln4();
         i++;
     }
 //    inputStream.close();
