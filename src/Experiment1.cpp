@@ -9,11 +9,14 @@ Experiment1::Experiment1() {
 void Experiment1::getDurations(char *fileName) {
     Chrono *chrono = new Chrono();
     chrono->startChrono();
-    cout << "Length1: " << this->length1(fileName) << "\t" << "Time: " << chrono->getChrono() << endl;
+    cout << "Length1: " << this->length1(fileName) << endl;
+    cout << "Time: " << chrono->getChrono() << endl;
     chrono->startChrono();
-    cout << "Length2: " << this->length2(fileName) << "\t" << "Time: " << chrono->getChrono() << endl;
+    cout << "Length2: " << this->length2(fileName) << endl;
+    cout << "Time: " << chrono->getChrono() << endl;
     chrono->startChrono();
-    cout << "Length3: " << this->length3(fileName) << "\t" << "Time: " << chrono->getChrono() << endl;
+    cout << "Length3: " << this->length3(fileName) << endl;
+    cout << "Time: " << chrono->getChrono() << endl;
 }
 
 int Experiment1::length(char *fileName) {

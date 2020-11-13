@@ -92,6 +92,7 @@ char *InputStream::readln1() {
             lineBuffer = (char *) realloc(lineBuffer, maxLineLength);
         }
         if (read(fd, &c, sizeof(c)) == 0) {
+            count++;
             break;
         }
         if (c != '\n') {
@@ -99,7 +100,7 @@ char *InputStream::readln1() {
             count++;
         }
     }
-    lineBuffer[count] = '\0';
+    lineBuffer[count - 1] = '\0';
     return lineBuffer;
 }
 
@@ -121,7 +122,12 @@ char *InputStream::readln2() {
         return nullptr;
     }
     strtok(result, "\n");
+    const char c = result[strlen(result) - 1];
     if (result != NULL) {
+        const char c = result[strlen(result) - 1];
+        if ((int) c == 13) {
+            strtok(result, "\r");
+        }
         return result;
     } else {
         return nullptr;
