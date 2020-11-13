@@ -30,9 +30,15 @@ int main() {
     //InputStream inputStream("../data/comp_cast_type.csv");
     InputStream inputStream("../data/movie_companies.csv");
     inputStream.open();
+
     int i = 0;
     while(i<32552) {  //32552
-        inputStream.readln4();
+        if (i > 25000){
+            cout << inputStream.readln4() << endl;
+        }
+        else {
+            inputStream.readln4();
+            }
         i++;
     }
 //    inputStream.close();
