@@ -20,13 +20,13 @@ public:
 
     void open();
 
-    char* readln1();
+    char *readln1();
 
-    char* readln2();
+    char *readln2();
 
-    char* readln3();
+    char *readln3();
 
-    char* readln4();
+    char *readln4();
 
     void close();
 

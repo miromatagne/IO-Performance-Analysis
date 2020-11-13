@@ -140,10 +140,10 @@ char *InputStream::readln2() {
  * system calls until the end-of-line symbol is reached.
  */
 char *InputStream::readln3() {
-    int sizeB = 40;
-    char *lineBuffer = (char *) malloc(sizeB + 1);
-    char *line = (char *) malloc(sizeB + 1);
-    int nbChar = read(fd, lineBuffer, sizeB);
+    int B = 40;
+    char *lineBuffer = (char *) malloc(B + 1);
+    char *line = (char *) malloc(B + 1);
+    int nbChar = read(fd, lineBuffer, B);
     if (nbChar == 0) {
         return nullptr;
     }
@@ -152,10 +152,10 @@ char *InputStream::readln3() {
     //cout << line << endl;
     int i = 2;
     char *firstOcc = strstr(line, "\n");
-    while ((firstOcc = strstr(line, "\n")) == NULL && nbChar == sizeB * (i - 1)) {
-        line = (char *) realloc(line, i * sizeB + 1);
+    while ((firstOcc = strstr(line, "\n")) == NULL && nbChar == B * (i - 1)) {
+        line = (char *) realloc(line, i * B + 1);
         line[nbChar] = '\0';
-        int nbRead = read(fd, lineBuffer, sizeB);
+        int nbRead = read(fd, lineBuffer, B);
         nbChar += nbRead;
         lineBuffer[nbRead] = '\0';
         strcat(line, lineBuffer);
