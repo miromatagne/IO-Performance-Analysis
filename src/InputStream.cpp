@@ -37,13 +37,13 @@ void InputStream::open() {
         perror("Error printed by perror");
         fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
     }
-    fd = _open_osfhandle((intptr_t)hFile, _O_RDONLY);
+    fd = _open_osfhandle((intptr_t) hFile, _O_RDONLY);
     if (fd == -1) {
         ::CloseHandle(hFile);
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
-        fprintf(stderr, "Error while creating the file: %s\n", strerror( err ));
+        fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
     }
     file = _fdopen(fd, "r");
     if (!file) {
@@ -90,6 +90,7 @@ char *InputStream::readln1() {
             lineBuffer = (char *) realloc(lineBuffer, maxLineLength);
         }
         if (read(fd, &c, sizeof(c)) == 0) {
+            count++;
             break;
         }
         if (c != '\n') {
@@ -97,7 +98,7 @@ char *InputStream::readln1() {
             count++;
         }
     }
-    lineBuffer[count] = '\0';
+    lineBuffer[count - 1] = '\0';
     return lineBuffer;
 }
 
@@ -119,7 +120,12 @@ char *InputStream::readln2() {
         return nullptr;
     }
     strtok(result, "\n");
+    const char c = result[strlen(result) - 1];
     if (result != NULL) {
+        const char c = result[strlen(result) - 1];
+        if ((int) c == 13) {
+            strtok(result, "\r");
+        }
         return result;
     } else {
         return nullptr;
@@ -132,21 +138,22 @@ char *InputStream::readln2() {
  * system calls until the end-of-line symbol is reached.
  */
 char *InputStream::readln3() {
-    int sizeB = 80;
-    char *lineBuffer = (char *) malloc(sizeB + 1);
-    char *line = (char *) malloc(sizeB);
-    int nbChar = read(fd, lineBuffer, sizeB);
+    int B = 40;
+    char *lineBuffer = (char *) malloc(B + 1);
+    char *line = (char *) malloc(B + 1);
+    int nbChar = read(fd, lineBuffer, B);
     if (nbChar == 0) {
         return nullptr;
     }
     lineBuffer[nbChar] = '\0';
     strcpy(line, lineBuffer);
+    //cout << line << endl;
     int i = 2;
-    char *firstOcc;
-    while ((firstOcc = strstr(line, "\n")) == NULL && nbChar == sizeB*(i-1)) {
-        line = (char *) realloc(line, i * sizeB + 1);
+    char *firstOcc = strstr(line, "\n");
+    while ((firstOcc = strstr(line, "\n")) == NULL && nbChar == B * (i - 1)) {
+        line = (char *) realloc(line, i * B + 1);
         line[nbChar] = '\0';
-        int nbRead = read(fd, lineBuffer, sizeB);
+        int nbRead = read(fd, lineBuffer, B);
         nbChar += nbRead;
         lineBuffer[nbRead] = '\0';
         strcat(line, lineBuffer);
