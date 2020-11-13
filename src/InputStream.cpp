@@ -11,7 +11,9 @@
 
 
 using namespace std;
+
 extern int errno;
+
 #define SIZE_BUFFER 3
 
 /**
@@ -37,13 +39,13 @@ void InputStream::open() {
         perror("Error printed by perror");
         fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
     }
-    fd = _open_osfhandle((intptr_t)hFile, _O_RDONLY);
+    fd = _open_osfhandle((intptr_t) hFile, _O_RDONLY);
     if (fd == -1) {
         ::CloseHandle(hFile);
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
-        fprintf(stderr, "Error while creating the file: %s\n", strerror( err ));
+        fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
     }
     file = _fdopen(fd, "r");
     if (!file) {
@@ -132,18 +134,19 @@ char *InputStream::readln2() {
  * system calls until the end-of-line symbol is reached.
  */
 char *InputStream::readln3() {
-    int sizeB = 80;
+    int sizeB = 40;
     char *lineBuffer = (char *) malloc(sizeB + 1);
-    char *line = (char *) malloc(sizeB);
+    char *line = (char *) malloc(sizeB + 1);
     int nbChar = read(fd, lineBuffer, sizeB);
     if (nbChar == 0) {
         return nullptr;
     }
     lineBuffer[nbChar] = '\0';
     strcpy(line, lineBuffer);
+    //cout << line << endl;
     int i = 2;
-    char *firstOcc;
-    while ((firstOcc = strstr(line, "\n")) == NULL && nbChar == sizeB*(i-1)) {
+    char *firstOcc = strstr(line, "\n");
+    while ((firstOcc = strstr(line, "\n")) == NULL && nbChar == sizeB * (i - 1)) {
         line = (char *) realloc(line, i * sizeB + 1);
         line[nbChar] = '\0';
         int nbRead = read(fd, lineBuffer, sizeB);
@@ -176,20 +179,21 @@ char *InputStream::readln3() {
 char *InputStream::readln4() {
     int save = ftell(file);
     fseek(file, 0L, SEEK_END);
-    int sizeByteFile = ftell(file)*sizeof(char);
+    int sizeByteFile = ftell(file) * sizeof(char);
     rewind(file);
     fseek(file, save, SEEK_SET);
     SYSTEM_INFO info;
     GetSystemInfo(&info);
-    DWORD sizePageBuffer = info.dwAllocationGranularity*ceil((double)SIZE_BUFFER*sizeof(char)/(double)info.dwAllocationGranularity);
+    DWORD sizePageBuffer = info.dwAllocationGranularity *
+                           ceil((double) SIZE_BUFFER * sizeof(char) / (double) info.dwAllocationGranularity);
     DWORD realFileMapStart = save * sizeof(char);
     /*if(ftell(file)*sizeof(char) < sizePageBuffer) {
         RealFileMapStart = 0;   //starting point within the file
     }*/
 
 
-    DWORD fileMapStart       = (realFileMapStart/sizePageBuffer)*sizePageBuffer;  //Where to start the file map view
-    DWORD offsetFileMapSize  = realFileMapStart;
+    DWORD fileMapStart = (realFileMapStart / sizePageBuffer) * sizePageBuffer;  //Where to start the file map view
+    DWORD offsetFileMapSize = realFileMapStart;
     //DWORD offsetMapViewSize = (RealFileMapStart%sizePageBuffer);
     int iViewDelta = realFileMapStart - fileMapStart;
 
@@ -200,15 +204,15 @@ char *InputStream::readln4() {
     int end = sizePageBuffer;
     int toMapWrite = sizePageBuffer;
     char *firstOcc;
-    int nbExtension = ceil((double)sizeByteFile/(double)sizePageBuffer) - (fileMapStart/sizePageBuffer);
-    int lastPage = sizeByteFile - ((nbExtension + (fileMapStart/sizePageBuffer)-1)*sizePageBuffer);
+    int nbExtension = ceil((double) sizeByteFile / (double) sizePageBuffer) - (fileMapStart / sizePageBuffer);
+    int lastPage = sizeByteFile - ((nbExtension + (fileMapStart / sizePageBuffer) - 1) * sizePageBuffer);
     int mapSize = offsetFileMapSize + end;
-    if((sizeByteFile - realFileMapStart) < sizePageBuffer) {   // fileMapStart == (sizeByteFile/sizePageBuffer)
+    if ((sizeByteFile - realFileMapStart) < sizePageBuffer) {   // fileMapStart == (sizeByteFile/sizePageBuffer)
         mapSize = fileMapStart + lastPage;  //sizeByteFile
         cout << "mapSize petit" << endl;
     }
 
-    char *intermediary = (char*) malloc(toMapWrite + 1);
+    char *intermediary = (char *) malloc(toMapWrite + 1);
     hMapFile = CreateFileMapping(
             hFile,    // use paging file
             NULL,                       // default security
@@ -225,10 +229,10 @@ char *InputStream::readln4() {
     cout << toMapWrite << endl;
     cout << sizeByteFile - fileMapStart + start << endl;
     LPCTSTR readBuffer = (LPTSTR) MapViewOfFile(hMapFile,   // handle to map object
-                                        FILE_MAP_READ,      // read/write permission
-                                        0,
-                                        fileMapStart + start,     // start
-                                        toMapWrite);   // null
+                                                FILE_MAP_READ,      // read/write permission
+                                                0,
+                                                fileMapStart + start,     // start
+                                                toMapWrite);   // null
 
     if (readBuffer == NULL) {
         int err = errno;
@@ -248,25 +252,26 @@ char *InputStream::readln4() {
     UnmapViewOfFile(readBuffer);
     CloseHandle(hMapFile);
     start += sizePageBuffer;
-    mapSize  += sizePageBuffer;
-    if((sizeByteFile - realFileMapStart) < sizePageBuffer) {   // fileMapStart == (sizeByteFile/sizePageBuffer)
+    mapSize += sizePageBuffer;
+    if ((sizeByteFile - realFileMapStart) < sizePageBuffer) {   // fileMapStart == (sizeByteFile/sizePageBuffer)
         toMapWrite = lastPage;  //sizeByteFile
         cout << "OKKKKKKKKf" << endl;
     }
     //i <= nbExtension && i != 1
-    while(strstr((char*)lineBuffer, "\n") == NULL && (i-1) != nbExtension) {   // && counter == (i-1)*toMapWrite-iViewDelta
-        if ((sizeByteFile - realFileMapStart) <= 2*sizePageBuffer) {
+    while (strstr((char *) lineBuffer, "\n") == NULL &&
+           (i - 1) != nbExtension) {   // && counter == (i-1)*toMapWrite-iViewDelta
+        if ((sizeByteFile - realFileMapStart) <= 2 * sizePageBuffer) {
             toMapWrite = lastPage;
             mapSize = fileMapStart + start + lastPage;  //sizeByteFile
         }
         cout << "WHILE OK" << endl;
-        cout << mapSize   << endl;
+        cout << mapSize << endl;
         cout << sizeByteFile << endl;  //1312551
         cout << toMapWrite + fileMapStart + start << endl;
         cout << toMapWrite << endl;
         cout << nbExtension << endl;
         cout << i << endl;
-        lineBuffer = (char*) realloc(lineBuffer, i*sizePageBuffer + 1);
+        lineBuffer = (char *) realloc(lineBuffer, i * sizePageBuffer + 1);
 
         hMapFile = CreateFileMapping(
                 hFile,    // use paging file
@@ -284,10 +289,10 @@ char *InputStream::readln4() {
         }
 
         readBuffer = (LPTSTR) MapViewOfFile(hMapFile,   // handle to map object
-                                             FILE_MAP_READ, // read/write permission
-                                             0,
-                                             fileMapStart + start,
-                                             toMapWrite); //null
+                                            FILE_MAP_READ, // read/write permission
+                                            0,
+                                            fileMapStart + start,
+                                            toMapWrite); //null
 
         if (readBuffer == NULL) {
             int err = errno;
@@ -308,12 +313,12 @@ char *InputStream::readln4() {
     }
 
     int position2 = strlen(lineBuffer);
-    if ((firstOcc = strstr((char*)lineBuffer, "\n"))  != 0) {
+    if ((firstOcc = strstr((char *) lineBuffer, "\n")) != 0) {
         position2 = firstOcc - lineBuffer;
     }
     //cout << "Position" << endl;
     //cout << position2 << endl;
-    char *resultLine = (char *) malloc(position2+ 1);   //i*toMapWrite + 1
+    char *resultLine = (char *) malloc(position2 + 1);   //i*toMapWrite + 1
     memcpy(resultLine, lineBuffer, position2);
     resultLine[position2] = '\0';
     fseek(file, position2 + 1, SEEK_CUR);  // position2 - strlen(lineBuffer) + 1

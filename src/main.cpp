@@ -31,8 +31,10 @@ int main() {
     InputStream inputStream("../data/movie_companies.csv");
     inputStream.open();
     int i = 0;
-    while(i<32552) {  //32552
-        inputStream.readln4();
+    while (i < 32552) {  //32552
+        char *result = inputStream.readln3();
+        cout << strlen(result) << endl;
+        free(result);
         i++;
     }
 //    inputStream.close();
