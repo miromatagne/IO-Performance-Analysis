@@ -266,7 +266,6 @@ char *InputStream::readln4() {
         else{
             char *intermediary = (char*) malloc(toMapWrite+1);
             lineBuffer = (char*) realloc(lineBuffer, i*sizePageBuffer + 1);
-            cout << toMapWrite << endl;
             strncpy(intermediary, (char*) readBuffer, toMapWrite);
             intermediary[toMapWrite] = '\0';
             strcat(lineBuffer, intermediary);

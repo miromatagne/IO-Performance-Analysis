@@ -33,12 +33,7 @@ int main() {
 
     int i = 0;
     while(i<32552) {  //32552
-        if (i > 30000){
-            cout << inputStream.readln4() << endl;
-        }
-        else {
-            inputStream.readln4();
-            }
+        cout << inputStream.readln4() << endl;
         i++;
     }
 //    inputStream.close();
