@@ -19,7 +19,8 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:do-while" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
@@ -37,7 +38,6 @@
     <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="read 4 ok mais moche">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStream.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +73,7 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ObjectiveC" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RecentsManager">
@@ -257,7 +258,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="do-while" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -284,6 +297,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="read 4 ok mais moche" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="393" y="165" key="#Notifications" timestamp="1605382416124">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="393" y="165" key="#Notifications/0.0.1280.680@0.0.1280.680" timestamp="1605382416124" />
     <state x="78" y="0" width="1089" height="809" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604357143965">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -308,25 +325,25 @@
     <state x="1164" y="699" key="FileChooserDialogImpl/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096378392" />
     <state x="582" y="192" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604161451206" />
     <state x="698" y="233" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605209114671" />
-    <state width="617" height="124" key="GridCell.Tab.0.bottom" timestamp="1605364811039">
+    <state width="617" height="124" key="GridCell.Tab.0.bottom" timestamp="1605383160826">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="617" height="124" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605364811039" />
+    <state width="617" height="124" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605383160826" />
     <state width="1493" height="167" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605213620204" />
-    <state width="617" height="124" key="GridCell.Tab.0.center" timestamp="1605364811039">
+    <state width="617" height="124" key="GridCell.Tab.0.center" timestamp="1605383160826">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="617" height="124" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605364811039" />
+    <state width="617" height="124" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605383160826" />
     <state width="1493" height="167" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605213620204" />
-    <state width="617" height="124" key="GridCell.Tab.0.left" timestamp="1605364811039">
+    <state width="617" height="124" key="GridCell.Tab.0.left" timestamp="1605383160826">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="617" height="124" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605364811039" />
+    <state width="617" height="124" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605383160826" />
     <state width="1493" height="167" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605213620204" />
-    <state width="617" height="124" key="GridCell.Tab.0.right" timestamp="1605364811039">
+    <state width="617" height="124" key="GridCell.Tab.0.right" timestamp="1605383160826">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="617" height="124" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605364811039" />
+    <state width="617" height="124" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605383160826" />
     <state width="1493" height="167" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605213620204" />
     <state width="617" height="203" key="GridCell.Tab.1.bottom" timestamp="1605362789373">
       <screen x="0" y="0" width="1280" height="680" />
@@ -372,6 +389,10 @@
     <state x="872" y="453" key="Vcs.Push.Dialog.v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096481395" />
     <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605350440097" />
     <state x="523" y="178" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605124049648" />
+    <state x="94" y="94" width="1093" height="493" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605383185161">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="94" y="94" width="1093" height="493" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1605383185161" />
     <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605358677601">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
