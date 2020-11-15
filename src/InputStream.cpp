@@ -236,7 +236,7 @@ char *InputStream::readln4() {
                                             FILE_MAP_READ, // read/write permission
                                             0,
                                             fileMapStart + start,
-                                            toMapWrite); //null
+                                            toMapWrite);
 
         if (readBuffer == NULL) {
             fprintf(stderr, "Error of the MapViewOfFile function: %s\n");
