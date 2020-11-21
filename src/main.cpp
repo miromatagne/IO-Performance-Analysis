@@ -33,17 +33,17 @@ int main() {
 
     Experiment1 experiment1;
     Chrono *chrono = new Chrono();
-    double *times = (double *) malloc(100 * sizeof(double));
-    for (int i = 0; i < 10; i++) {
+    double *times = (double *) malloc(110 * sizeof(double));
+    for (int i = 10; i < 121; i++) {
         chrono->startChrono();
-        experiment1.length1("../data/aka_name.csv");
-        times[i] = chrono->getChrono();
+        experiment1.length3("../data/aka_name.csv", i);
+        times[i - 10] = chrono->getChrono();
     }
     double sum = 0;
-    for (int i = 0; i < 10; i++) {
-        sum += times[i];
+    for (int i = 0; i < 110; i++) {
+        cout << times[i] << endl;
     }
-    cout << sum / 10 << endl;
+    //cout << sum / 100 << endl;
     return 0;
 }
 
