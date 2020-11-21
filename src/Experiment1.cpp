@@ -12,15 +12,15 @@ double *Experiment1::getDurations(char *fileName, int B) {
     chrono->startChrono();
     cout << "Length1: " << this->length1(fileName) << endl;
     times[0] = chrono->getChrono();
-    cout << "Time: " << times[0] << endl;
+//    cout << "Time: " << times[0] << endl;
     chrono->startChrono();
     cout << "Length2: " << this->length2(fileName) << endl;
     times[1] = chrono->getChrono();
-    cout << "Time: " << times[1] << endl;
+//    cout << "Time: " << times[1] << endl;
     chrono->startChrono();
     cout << "Length3: " << this->length3(fileName, B) << endl;
     times[2] = chrono->getChrono();
-    cout << "Time: " << times[2] << endl;
+//    cout << "Time: " << times[2] << endl;
     return times;
 }
 
@@ -36,6 +36,7 @@ int Experiment1::length12(char *fileName) {
         if (line != nullptr) {
             sum += strlen(line);
         }
+        free(line);
     }
     inputStream.close();
     return sum;
@@ -53,6 +54,7 @@ int Experiment1::length34(char *fileName, int B) {
         if (line != nullptr) {
             sum += strlen(line);
         }
+        free(line);
     }
     inputStream.close();
     return sum;
