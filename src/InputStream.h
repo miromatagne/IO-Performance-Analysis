@@ -24,9 +24,9 @@ public:
 
     char *readln2();
 
-    char *readln3();
+    char *readln3(int B);
 
-    char *readln4();
+    char *readln4(int B);
 
     void close();
 

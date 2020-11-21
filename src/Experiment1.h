@@ -9,20 +9,24 @@ class Experiment1 {
 private:
     char *fileName;
 
-    char *(*function)(InputStream inputStream);
+    char *(*function12)(InputStream inputStream);
+
+    char *(*function34)(InputStream inputStream, int B);
 
 public:
     explicit Experiment1();
 
-    void getDurations(char *fileName);
+    double *getDurations(char *fileName, int B);
 
-    int length(char *fileName);
+    int length12(char *fileName);
+
+    int length34(char *fileName, int B);
 
     int length1(char *fileName);
 
     int length2(char *fileName);
 
-    int length3(char *fileName);
+    int length3(char *fileName, int B);
 };
 
 
