@@ -27,37 +27,23 @@ using namespace std;
 //}
 
 int main() {
-    //InputStream inputStream("../data/comp_cast_type.csv");
-//    InputStream inputStream("../data/movie_companies.csv");
-//    inputStream.open();
-//
-//    int i = 0;
-//    while(i<32552) {  //32552
-//        cout << inputStream.readln4() << endl;
-//        i++;
-//    }
-//    inputStream.close();
-//    OutputStream outputStream("file_test");
-//    outputStream.create();
-//    outputStream.writeln4("LA CONSTITUTION\n");
-//    outputStream.close();
+//    Experiment1 experiment1;
+//    double *times = experiment1.getDurations("../data/aka_name.csv", 70);
+//    cout << times[0] << " " << times[1] << " " << times[2] << endl;
 
     Experiment1 experiment1;
-    double *times = experiment1.getDurations("../data/aka_name.csv", 70);
-    cout << times[0] << " " << times[1] << " " << times[2] << endl;
-
-//    Chrono *chrono = new Chrono();
-//    chrono->startChrono();
-//    cout << experiment1.length1("../data/aka_name.csv") << endl;
-//    cout << chrono->getChrono() << endl;
-//
-//    chrono->startChrono();
-//    cout << experiment1.length2("../data/aka_name.csv") << endl;
-//    cout << chrono->getChrono() << endl;
-//
-//    chrono->startChrono();
-//    cout << experiment1.length3("../data/aka_name.csv") << endl;
-//    cout << chrono->getChrono() << endl;
+    Chrono *chrono = new Chrono();
+    double *times = (double *) malloc(100 * sizeof(double));
+    for (int i = 0; i < 10; i++) {
+        chrono->startChrono();
+        experiment1.length1("../data/aka_name.csv");
+        times[i] = chrono->getChrono();
+    }
+    double sum = 0;
+    for (int i = 0; i < 10; i++) {
+        sum += times[i];
+    }
+    cout << sum / 10 << endl;
     return 0;
 }
 

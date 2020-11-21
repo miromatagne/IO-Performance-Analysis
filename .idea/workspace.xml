@@ -83,6 +83,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -112,7 +117,7 @@
       <workItem from="1605366883784" duration="946000" />
       <workItem from="1605439696433" duration="2013000" />
       <workItem from="1605453566280" duration="392000" />
-      <workItem from="1605957748011" duration="2840000" />
+      <workItem from="1605957748011" duration="4038000" />
     </task>
     <task id="LOCAL-00001" summary="classes">
       <created>1604102118724</created>
@@ -240,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605959949146</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="experiment1 corrections">
+      <created>1605961768292</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1605961768292</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +285,8 @@
     <MESSAGE value="readln2 length is correct now" />
     <MESSAGE value="changes" />
     <MESSAGE value="added B to experiment 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="added B to experiment 1" />
+    <MESSAGE value="experiment1 corrections" />
+    <option name="LAST_COMMIT_MESSAGE" value="experiment1 corrections" />
   </component>
   <component name="WindowStateProjectService">
     <state x="65" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604161437012">
@@ -284,35 +297,35 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="392" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1604161519404" />
-    <state x="175" y="0" key="CommitChangelistDialog2" timestamp="1605959947743">
+    <state x="175" y="0" key="CommitChangelistDialog2" timestamp="1605961767128">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="175" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1605959947743" />
+    <state x="175" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1605961767128" />
     <state x="582" y="192" key="FileChooserDialogImpl" timestamp="1604161451206">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="1164" y="699" key="FileChooserDialogImpl/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096378392" />
     <state x="582" y="192" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604161451206" />
-    <state width="1237" height="161" key="GridCell.Tab.0.bottom" timestamp="1605961489144">
+    <state width="1237" height="161" key="GridCell.Tab.0.bottom" timestamp="1605962675967">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1257" height="399" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604689483482" />
-    <state width="1237" height="161" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605961489144" />
-    <state width="1237" height="161" key="GridCell.Tab.0.center" timestamp="1605961489144">
+    <state width="1237" height="161" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605962675967" />
+    <state width="1237" height="161" key="GridCell.Tab.0.center" timestamp="1605962675952">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1257" height="399" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604689483482" />
-    <state width="1237" height="161" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605961489144" />
-    <state width="1237" height="161" key="GridCell.Tab.0.left" timestamp="1605961489144">
+    <state width="1237" height="161" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605962675952" />
+    <state width="1237" height="161" key="GridCell.Tab.0.left" timestamp="1605962675952">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1257" height="399" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604689483482" />
-    <state width="1237" height="161" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605961489144" />
-    <state width="1237" height="161" key="GridCell.Tab.0.right" timestamp="1605961489144">
+    <state width="1237" height="161" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605962675952" />
+    <state width="1237" height="161" key="GridCell.Tab.0.right" timestamp="1605962675952">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1257" height="399" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604689483482" />
-    <state width="1237" height="161" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605961489144" />
+    <state width="1237" height="161" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605962675952" />
     <state width="1257" height="491" key="GridCell.Tab.1.bottom" timestamp="1604690448238">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -345,12 +358,12 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="137" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1604136966370" />
-    <state x="436" y="147" key="Vcs.Push.Dialog.v2" timestamp="1605959951540">
+    <state x="436" y="147" key="Vcs.Push.Dialog.v2" timestamp="1605961779018">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="872" y="303" key="Vcs.Push.Dialog.v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604690342652" />
     <state x="872" y="453" key="Vcs.Push.Dialog.v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096481395" />
-    <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605959951540" />
+    <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605961779018" />
     <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605957845184">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
