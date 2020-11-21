@@ -43,7 +43,7 @@ int main() {
     for (int i = 0; i < 110; i++) {
         cout << times[i] << endl;
     }
-
+    free(times);
     //cout << sum / 100 << endl;
     return 0;
 }

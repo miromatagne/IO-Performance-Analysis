@@ -136,15 +136,10 @@ void OutputStream::writeln4(string text) {
     //adaption du SIZE_BUFFER en nombre de bytes tout en étant un multiple de la size d'une page de notre OS.
     SYSTEM_INFO info;
     GetSystemInfo(&info);
-    //printf("  Page size: %u\n", info.dwPageSize);
     DWORD sizePageBuffer = info.dwAllocationGranularity *
                            ceil((double) SIZE_BUFFER * sizeof(char) / (double) info.dwAllocationGranularity);
     int nbExtension = ceil((double) sizeByteSource / (double) sizePageBuffer);
-    //cout<< multipleOfPageSize << endl;
-    //
 
-
-    //
     HANDLE hMapFile;
     char *buffer = (char *) malloc(sizePageBuffer);
     DWORD start = 0;
@@ -152,8 +147,6 @@ void OutputStream::writeln4(string text) {
     int end = sizePageBuffer;
     int toMapWrite = sizePageBuffer;
     int lastPage = sizeByteSource - ((nbExtension - 1) * sizePageBuffer);
-    //printf(" info.dwAllocationGranularity %d \n", info.dwAllocationGranularity);
-    //printf("nbExtension %d \n", nbExtension);
     if (sizeByteSource < sizePageBuffer) {
         toMapWrite = sizeByteSource;
         end = sizeByteSource;
@@ -200,7 +193,6 @@ void OutputStream::writeln4(string text) {
         printf("end %d \n", end);
 
         CopyMemory((PVOID) (writeBuffer), _T(buffer), (toMapWrite));
-        //memcpy(writeBuffer,buffer,toMapWrite);
         UnmapViewOfFile(writeBuffer);
         CloseHandle(hMapFile);
         start += sizePageBuffer;
