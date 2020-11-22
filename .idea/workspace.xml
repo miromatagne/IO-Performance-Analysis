@@ -16,13 +16,7 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:do-while" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
@@ -35,12 +29,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="Experiment 4, bete fonction avec argu multiple">
+    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Measurement.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Measurement.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Experiment4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experiment4.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Experiment4.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experiment4.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStream.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStream.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +52,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/OutputStream.h" root0="SKIP_INSPECTION" />
@@ -89,9 +80,9 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="info_h417_group_15" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="info_h417_group_15" RUN_TARGET_NAME="info_h417_group_15" EXPLICIT_BUILD_TARGET_NAME="all">
@@ -134,8 +125,8 @@
       <workItem from="1605439696433" duration="2013000" />
       <workItem from="1605453566280" duration="392000" />
       <workItem from="1605957748011" duration="4767000" />
-      <workItem from="1605972017464" duration="1539000" />
-      <workItem from="1605993347695" duration="1095000" />
+      <workItem from="1605972017464" duration="1607000" />
+      <workItem from="1606079860950" duration="3669000" />
     </task>
     <task id="LOCAL-00001" summary="classes">
       <created>1604102118724</created>
@@ -291,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605972935234</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="changes">
+      <created>1605973723022</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1605973723022</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,19 +300,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="do-while" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -350,35 +336,35 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="392" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1604161519404" />
-    <state x="175" y="0" key="CommitChangelistDialog2" timestamp="1605972933286">
+    <state x="175" y="0" key="CommitChangelistDialog2" timestamp="1605973721052">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="175" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1605972933286" />
+    <state x="175" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1605973721052" />
     <state x="582" y="192" key="FileChooserDialogImpl" timestamp="1604161451206">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="1164" y="699" key="FileChooserDialogImpl/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096378392" />
     <state x="582" y="192" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604161451206" />
-    <state width="2517" height="123" key="GridCell.Tab.0.bottom" timestamp="1606064293577">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1237" height="145" key="GridCell.Tab.0.bottom" timestamp="1606083577554">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="2517" height="123" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606064293577" />
-    <state width="1237" height="123" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606052811401" />
-    <state width="2517" height="123" key="GridCell.Tab.0.center" timestamp="1606064293576">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1257" height="399" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604689483482" />
+    <state width="1237" height="145" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606083577554" />
+    <state width="1237" height="145" key="GridCell.Tab.0.center" timestamp="1606083577554">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="2517" height="123" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606064293576" />
-    <state width="1237" height="123" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606052811401" />
-    <state width="2517" height="123" key="GridCell.Tab.0.left" timestamp="1606064293576">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1257" height="399" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604689483482" />
+    <state width="1237" height="145" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606083577554" />
+    <state width="1237" height="145" key="GridCell.Tab.0.left" timestamp="1606083577554">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="2517" height="123" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606064293576" />
-    <state width="1237" height="123" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606052811401" />
-    <state width="2517" height="123" key="GridCell.Tab.0.right" timestamp="1606064293577">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1257" height="399" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604689483482" />
+    <state width="1237" height="145" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606083577554" />
+    <state width="1237" height="145" key="GridCell.Tab.0.right" timestamp="1606083577554">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="2517" height="123" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606064293577" />
-    <state width="1237" height="123" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606052811401" />
+    <state width="1257" height="399" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604689483482" />
+    <state width="1237" height="145" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606083577554" />
     <state width="1257" height="491" key="GridCell.Tab.1.bottom" timestamp="1604690448238">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -399,34 +385,29 @@
     </state>
     <state width="1257" height="491" key="GridCell.Tab.1.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604685734467" />
     <state width="1257" height="491" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1604690448238" />
-    <state x="123" y="52" key="MergeDialog" timestamp="1605446103429">
+    <state x="123" y="52" key="MergeDialog" timestamp="1606079968025">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="123" y="52" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1605446103429" />
+    <state x="123" y="52" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1606079968025" />
     <state x="281" y="103" key="MultipleFileMergeDialog" timestamp="1604350898220">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="281" y="103" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1604350898220" />
-    <state x="1118" y="420" key="RollbackChangesDialog" timestamp="1606060945218">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1118" y="420" key="RollbackChangesDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606060945218" />
     <state x="137" y="0" key="SettingsEditor" timestamp="1604136966370">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="137" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1604136966370" />
-    <state x="436" y="147" key="Vcs.Push.Dialog.v2" timestamp="1605972938194">
+    <state x="436" y="147" key="Vcs.Push.Dialog.v2" timestamp="1605973725137">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="872" y="303" key="Vcs.Push.Dialog.v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604690342652" />
     <state x="872" y="453" key="Vcs.Push.Dialog.v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096481395" />
-    <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605972938194" />
-    <state x="1098" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605989752502">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605973725137" />
+    <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606079933882">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="1098" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1605989752502" />
     <state x="1097" y="634" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604093387163" />
-    <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1605957845184" />
+    <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606079933882" />
     <state x="0" y="0" width="582" height="680" key="find.popup" timestamp="1604444178762">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
