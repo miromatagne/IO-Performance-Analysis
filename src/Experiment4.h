@@ -3,19 +3,20 @@
 
 
 #include "InputStream.h"
+#include "OutputStream.h"
 #include "Chrono.h"
 
-class Experiment4 {
+class Experiment4
+{
 private:
     char *fileName;
 
-    char *(*function12)(InputStream inputStream);
 
-    char *(*function34)(InputStream inputStream, int B);
 
 public:
     explicit Experiment4();
-    void rrmerge (char *fileName,...);
+    void rrmerge11 (char* fileName,...);
+
 };
 
 

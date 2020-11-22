@@ -192,7 +192,9 @@ char *InputStream::readln4(int B) {
     DWORD sizePageBuffer = info.dwAllocationGranularity *
                            ceil((double) SIZE_BUFFER * sizeof(char) / (double) info.dwAllocationGranularity);
     DWORD realFileMapStart = save * sizeof(char);
-
+    if (sizeByteFile<realFileMapStart) {
+        return nullptr;
+    }
     DWORD fileMapStart = (realFileMapStart / sizePageBuffer) * sizePageBuffer;  //Where to start the file map view
     DWORD iViewDelta = realFileMapStart - fileMapStart;
 

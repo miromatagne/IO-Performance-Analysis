@@ -129,27 +129,111 @@ void OutputStream::writeln3(string text) const {
  * @param  text : string to be written in the file
  */
 // com juste pr pouvoir commit
+
+/*
 void OutputStream::writeln4(string text) {
+    SYSTEM_INFO info;
+    GetSystemInfo(&info);
     text += "\n";
     const char *c = text.c_str();
     int sizeByteSource = strlen(c) * sizeof(c[0]);
     //adaption du SIZE_BUFFER en nombre de bytes tout en étant un multiple de la size d'une page de notre OS.
-    SYSTEM_INFO info;
-    GetSystemInfo(&info);
-    DWORD sizePageBuffer = info.dwAllocationGranularity *
-                           ceil((double) SIZE_BUFFER * sizeof(char) / (double) info.dwAllocationGranularity);
-    int nbExtension = ceil((double) sizeByteSource / (double) sizePageBuffer);
+    int save=ftell(file);
+    DWORD sizePageBuffer = info.dwPageSize *
+                           ceil((double) SIZE_BUFFER * sizeof(char) / (double) info.dwPageSize);
+    DWORD realFileMapStart = save * sizeof(char);
+    DWORD fileMapStart = realFileMapStart / (info.dwAllocationGranularity *ceil((double) SIZE_BUFFER * sizeof(char) / (double) info.dwAllocationGranularity)) * info.dwAllocationGranularity;
+
+
+    int nbExtension = ceil((double) sizeByteSource / (double) (info.dwAllocationGranularity *ceil((double) SIZE_BUFFER * sizeof(char) / (double) info.dwAllocationGranularity))); // si on a  un string text plus grand que allocation granularity
 
     HANDLE hMapFile;
     char *buffer = (char *) malloc(sizePageBuffer);
-    DWORD start = 0;
+    DWORD start = realFileMapStart/sizePageBuffer;
     int i = 1;
     int end = sizePageBuffer;
     int toMapWrite = sizePageBuffer;
     int lastPage = sizeByteSource - ((nbExtension - 1) * sizePageBuffer);
     if (sizeByteSource < sizePageBuffer) {
-        toMapWrite = sizeByteSource;
-        end = sizeByteSource;
+        toMapWrite = sizeByteSource+realFileMapStart;
+        end = sizeByteSource+realFileMapStart;
+    }
+
+    while (i <= nbExtension) {
+
+        if (i == nbExtension && nbExtension != 1) {
+            toMapWrite = lastPage;
+            end = start + lastPage;
+        }
+        hMapFile = CreateFileMapping(
+                hFile,    // use paging file
+                NULL,                    // default security
+                PAGE_READWRITE,
+                0,
+                end,
+                _T("INFO-H417"));                 // name of mapping object
+
+        if (hMapFile == NULL) {
+            int err = errno;
+            fprintf(stderr, "Value of errno: %d\n", errno);
+            perror("Error printed by perror");
+            fprintf(stderr, "Error of CreateFileMapping function: %s\n", strerror(err));
+        }
+        LPCTSTR writeBuffer;
+        strncpy(buffer, c + start, toMapWrite);
+        writeBuffer = (LPTSTR) MapViewOfFile(hMapFile,   // handle to map object
+                                             FILE_MAP_ALL_ACCESS, // read/write permission
+                                             0,
+                                             start,
+                                             toMapWrite); //null
+
+        if (writeBuffer == NULL) {
+            int err = errno;
+            fprintf(stderr, "Value of errno: %d\n", errno);
+            perror("Error printed by perror");
+            fprintf(stderr, "Error of the MapViewOfFile function: %s\n", strerror(err));
+            CloseHandle(hMapFile);
+        }
+        printf("start %d \n", start);
+        printf("toMapWrite %d \n", toMapWrite);
+        printf("end %d \n", end);
+        cout << *((char *)buffer+realFileMapStart) << endl;
+        CopyMemory((PVOID) (writeBuffer+realFileMapStart), _T( buffer), (toMapWrite-realFileMapStart));
+        UnmapViewOfFile(writeBuffer);
+        UnmapViewOfFile(writeBuffer);
+        CloseHandle(hMapFile);
+        start += sizePageBuffer;
+        end = start + sizePageBuffer;
+        i++;
+        fseek(file, toMapWrite, SEEK_CUR);
+    }
+    free(buffer);
+    // position2 - strlen(lineBuffer) + 1
+}
+ */
+void OutputStream::writeln4(string text) {
+    text += "\n";
+    const char *c = text.c_str();
+    int sizeByteSource = strlen(c) * sizeof(c[0]);
+    //adaption du SIZE_BUFFER en nombre de bytes tout en étant un multiple de la size d'une page de notre OS.
+    int start_file=ftell(file);
+    cout << "Start_file : "<< start_file << endl;
+    SYSTEM_INFO info;
+    GetSystemInfo(&info);
+    DWORD sizePageBuffer = info.dwAllocationGranularity *
+                           ceil((double) SIZE_BUFFER * sizeof(char) / (double) info.dwAllocationGranularity);
+    int nbExtension = ceil((double) sizeByteSource / (double) sizePageBuffer); // si on a  un string text plus grand que allocation granularity
+
+    HANDLE hMapFile;
+    char *buffer = (char *) malloc(sizePageBuffer);
+    DWORD start = start_file/sizePageBuffer;
+    int i = 1;
+    int end = sizePageBuffer;
+    int toMapWrite = sizePageBuffer;
+    int lastPage = sizeByteSource - ((nbExtension - 1) * sizePageBuffer);
+    if (sizeByteSource < sizePageBuffer) {
+        toMapWrite = sizeByteSource+start_file;
+        end = sizeByteSource+start_file;
     }
 
 
@@ -191,17 +275,19 @@ void OutputStream::writeln4(string text) {
         printf("start %d \n", start);
         printf("toMapWrite %d \n", toMapWrite);
         printf("end %d \n", end);
-
-        CopyMemory((PVOID) (writeBuffer), _T(buffer), (toMapWrite));
+        cout << *((char *)buffer+start_file) << endl;
+        CopyMemory((PVOID) (writeBuffer+start_file), _T( buffer), (toMapWrite-start_file));
+        UnmapViewOfFile(writeBuffer);
         UnmapViewOfFile(writeBuffer);
         CloseHandle(hMapFile);
         start += sizePageBuffer;
         end = start + sizePageBuffer;
         i++;
+        fseek(file, toMapWrite, SEEK_CUR);
     }
     free(buffer);
+    // position2 - strlen(lineBuffer) + 1
 }
-
 /**
  * Closes the file.
  */

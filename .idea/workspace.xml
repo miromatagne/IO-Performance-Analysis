@@ -35,10 +35,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Experiment4.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Experiment4.h" afterDir="false" />
+    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="Experiment 4, bete fonction avec argu multiple">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Experiment4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experiment4.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Experiment4.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experiment4.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStream.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OutputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStream.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
@@ -88,11 +89,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -101,6 +97,11 @@
     <configuration name="info_h417_group_15" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="info_h417_group_15" RUN_TARGET_NAME="info_h417_group_15" EXPLICIT_BUILD_TARGET_NAME="all">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -301,7 +302,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="do-while" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -346,26 +359,26 @@
     </state>
     <state x="1164" y="699" key="FileChooserDialogImpl/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096378392" />
     <state x="582" y="192" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604161451206" />
-    <state width="2518" height="312" key="GridCell.Tab.0.bottom" timestamp="1605993327659">
+    <state width="2517" height="123" key="GridCell.Tab.0.bottom" timestamp="1606064293577">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2518" height="312" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1605993327659" />
-    <state width="1237" height="161" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605963483308" />
-    <state width="2518" height="312" key="GridCell.Tab.0.center" timestamp="1605993327658">
+    <state width="2517" height="123" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606064293577" />
+    <state width="1237" height="123" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606052811401" />
+    <state width="2517" height="123" key="GridCell.Tab.0.center" timestamp="1606064293576">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2518" height="312" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1605993327658" />
-    <state width="1237" height="161" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605963483308" />
-    <state width="2518" height="312" key="GridCell.Tab.0.left" timestamp="1605993327658">
+    <state width="2517" height="123" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606064293576" />
+    <state width="1237" height="123" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606052811401" />
+    <state width="2517" height="123" key="GridCell.Tab.0.left" timestamp="1606064293576">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2518" height="312" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1605993327658" />
-    <state width="1237" height="161" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605963483308" />
-    <state width="2518" height="312" key="GridCell.Tab.0.right" timestamp="1605993327658">
+    <state width="2517" height="123" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606064293576" />
+    <state width="1237" height="123" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606052811401" />
+    <state width="2517" height="123" key="GridCell.Tab.0.right" timestamp="1606064293577">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2518" height="312" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1605993327658" />
-    <state width="1237" height="161" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605963483308" />
+    <state width="2517" height="123" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606064293577" />
+    <state width="1237" height="123" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606052811401" />
     <state width="1257" height="491" key="GridCell.Tab.1.bottom" timestamp="1604690448238">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -394,6 +407,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="281" y="103" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1604350898220" />
+    <state x="1118" y="420" key="RollbackChangesDialog" timestamp="1606060945218">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1118" y="420" key="RollbackChangesDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606060945218" />
     <state x="137" y="0" key="SettingsEditor" timestamp="1604136966370">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

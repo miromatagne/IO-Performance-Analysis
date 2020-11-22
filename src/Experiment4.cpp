@@ -7,17 +7,56 @@ Experiment4::Experiment4() {
 }
 
 
-void Experiment4::rrmerge (char *fileName, ...)
+void Experiment4::rrmerge11 (char *fileName, ...)
+{
+    OutputStream outputStream("experiment4-11.txt");
+    outputStream.create();
+    va_list vl;
+    va_start(vl,fileName);
+    char* arg = fileName;
+    int i = 0;
+    do{
+
+        InputStream inputStream(arg);
+        inputStream.open();
+
+        char *line;
+        line = inputStream.readln4(5);
+        outputStream.writeln1(line);
+        while (line != nullptr) {
+            line = inputStream.readln4(5);
+            if (line == nullptr) {
+                break;
+            }
+            outputStream.writeln1(line);
+            free(line);
+        }
+        inputStream.close();
+        i++;
+        arg = va_arg(vl, char*);
+        cout << i << endl;
+
+
+    } while(arg != NULL );
+    outputStream.close();
+    va_end(vl);
+}
+
+/*
+void Experiment4::rrmerge11 (char *fileName, ...)
 {
     va_list vl;
     va_start(vl,fileName);
     char* arg = fileName;
-    do{
+    while(arg != NULL){
         arg = va_arg(vl, char*);
-    } while(arg != NULL);
+        cout << "a" << endl;
+    }
 
     va_end(vl);
 }
+ */
+
 /*
 void FindMax (char *n, ...)
 {
