@@ -2,7 +2,7 @@
 #include "OutputStream.h"
 #include <iostream>
 #include "Experiment1.h"
-#include "Experiment4.h"
+#include "Experiment3.h"
 #include <windows.h>
 
 using namespace std;
@@ -47,15 +47,16 @@ int main() {
     free(times);
     //cout << sum / 100 << endl;
 */
-    /*
+/*
     OutputStream outputStream("file_test");
     outputStream.create();
-    outputStream.writeln3("Bonjoureee grg porpe");
-    outputStream.writeln3("Bonjoureee gjppppppppppppppppppppp");
+    outputStream.writeln4("Bonjoureee grg porpe");
+    outputStream.writeln4("Bonjoureee gjppppppppppppppppppppp");
+    outputStream.writeln4("eijgarejgireajglirejgalrjglkejg");
     outputStream.close();
-     */
 
-    Experiment4 experiment4;
+*/
+    Experiment3 experiment4;
     experiment4.rrmerge11("../data/aka_title.csv","../data/aka_name.csv",NULL);
 
     /*
