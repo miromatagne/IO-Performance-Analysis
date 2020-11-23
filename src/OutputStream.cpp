@@ -210,7 +210,7 @@ void OutputStream::writeln4(string text) {
     free(buffer);
     // position2 - strlen(lineBuffer) + 1
 }
- */
+ */ //
 void OutputStream::writeln4(string text) {
     text += "\n";
     const char *c = text.c_str();
