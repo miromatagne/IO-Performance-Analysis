@@ -210,7 +210,8 @@ void OutputStream::writeln4(string text) {
     free(buffer);
     // position2 - strlen(lineBuffer) + 1
 }
- */ //
+ */
+
 void OutputStream::writeln4(string text) {
     text += "\n";
     const char *c = text.c_str();
@@ -223,7 +224,10 @@ void OutputStream::writeln4(string text) {
     DWORD sizePageBuffer = info.dwAllocationGranularity *
                            ceil((double) SIZE_BUFFER * sizeof(char) / (double) info.dwAllocationGranularity);
     int nbExtension = ceil((double) sizeByteSource / (double) sizePageBuffer); // si on a  un string text plus grand que allocation granularity
-
+    bool bigText = FALSE ;
+    if (nbExtension !=1){
+        bigText = TRUE ;
+    }
     HANDLE hMapFile;
     char *buffer = (char *) malloc(sizePageBuffer);
     DWORD start = (start_file/sizePageBuffer)*sizePageBuffer;
@@ -231,26 +235,35 @@ void OutputStream::writeln4(string text) {
     int end = sizePageBuffer+start_file;
     int toMapWrite = sizePageBuffer;
     int lastPage = sizeByteSource - ((nbExtension - 1) * sizePageBuffer);
-
+    //cout << sizeByteSource << endl;
 
 
     // cas où on est entre 2 pages
+
     if (start_file+sizeByteSource>sizePageBuffer+start){
         nbExtension+=1;
         lastPage = (start_file+sizeByteSource-(sizePageBuffer+start));
-        cout << "ok" << lastPage << endl;
+        //cout << "ok" << lastPage << endl;
     }
     else if (sizeByteSource < sizePageBuffer) {
         toMapWrite = sizeByteSource+start_file-start;
         end = sizeByteSource+start_file;
     }
 
+
     while (i <= nbExtension) {
+        //cout << "i :" << i << endl;
         if (i == nbExtension && nbExtension != 1) {
             toMapWrite = lastPage;
             end = start + lastPage;
+            //cout << "okkkkkk" << start << endl;
             strncpy(buffer, c+(toMapWrite+start)-start_file, toMapWrite);
-
+        }
+        else{
+            strncpy(buffer, c, toMapWrite);
+        }
+        if(bigText){
+            strncpy(buffer, c + start, toMapWrite);
         }
         //cout << "start " << start << endl;
         //cout << sizePageBuffer << endl;
@@ -309,6 +322,7 @@ void OutputStream::writeln4(string text) {
     free(buffer);
     // position2 - strlen(lineBuffer) + 1
 }
+
 /**
  * Closes the file.
  */

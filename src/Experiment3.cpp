@@ -9,7 +9,7 @@ Experiment3::Experiment3() {
 
 void Experiment3::rrmerge11 (char *fileName, ...)
 {
-    OutputStream outputStream("experiment4-11.txt");
+    OutputStream outputStream("experiment3-11.txt");
     outputStream.create();
     va_list vl;
     va_start(vl,fileName);
