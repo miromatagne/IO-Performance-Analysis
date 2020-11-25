@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Experiment1.h"
 #include "Experiment3.h"
+#include "Measurement.h"
 #include <windows.h>
 
 using namespace std;
@@ -31,6 +32,18 @@ int main() {
 //    Experiment1 experiment1;
 //    double *times = experiment1.getDurations("../data/aka_name.csv", 70);
 //    cout << times[0] << " " << times[1] << " " << times[2] << endl;
+
+    Measurement *m = new Measurement();
+    m->testFiles();
+
+//    Experiment1 *e = new Experiment1();
+//    e->length2("../data/person_info.csv");
+//
+//    InputStream *inputStream = new InputStream("../data/person_info.csv");
+//    inputStream->open();
+//    for (int i = 0; i < 1; i++) {
+//        inputStream->readln2();
+//    }
 /*
     Experiment1 experiment1;
     Chrono *chrono = new Chrono();
@@ -56,8 +69,8 @@ int main() {
     outputStream.close();
 */
 
-    Experiment3 experiment4;
-    experiment4.rrmerge11("../data/aka_title.csv","../data/aka_name.csv",NULL);
+//    Experiment3 experiment4;
+//    experiment4.rrmerge11("../data/aka_title.csv", "../data/aka_name.csv", NULL);
 
     /*
     InputStream inputStream ("../data/aka_title.csv");
