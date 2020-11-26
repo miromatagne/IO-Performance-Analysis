@@ -1,6 +1,8 @@
 #ifndef INFO_H417_GROUP_15_INPUTSTREAM3_H
 #define INFO_H417_GROUP_15_INPUTSTREAM3_H
 
+#include <string>
+
 class InputStream3 {
 private:
     char *fileName;
@@ -20,7 +22,7 @@ public:
 
     void seek(int pos);
 
-    char *readln();
+    std::string readln();
 };
 
 
