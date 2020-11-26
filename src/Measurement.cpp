@@ -17,11 +17,11 @@ Measurement::Measurement() {
 Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B) {
     Chrono *chrono = new Chrono();
     Experiment1 *experiment = new Experiment1();
-    double *times = (double *) malloc(nbRep * sizeof(double));
+    double *times = new double[nbRep];
     int length = 0;
     for (int i = 0; i < nbRep; i++) {
         chrono->startChrono();
-        length = experiment->length2(fileName);
+        length = experiment->length1(fileName);
         times[i] = chrono->getChrono();
     }
     double sum = 0;
