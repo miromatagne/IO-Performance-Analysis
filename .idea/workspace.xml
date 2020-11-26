@@ -31,6 +31,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Experiment1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experiment1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream1.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream1.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream2.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream2.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream2.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream3.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream3.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream3.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
@@ -128,7 +133,7 @@
       <workItem from="1605972017464" duration="1607000" />
       <workItem from="1606079860950" duration="4367000" />
       <workItem from="1606297303433" duration="9947000" />
-      <workItem from="1606347847632" duration="5257000" />
+      <workItem from="1606347847632" duration="11027000" />
     </task>
     <task id="LOCAL-00001" summary="classes">
       <created>1604102118724</created>
@@ -312,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606351505360</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="InputStream3 nearly done (works but need to look at exceptions)">
+      <created>1606353775425</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1606353775425</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +363,8 @@
     <MESSAGE value="Measurement class" />
     <MESSAGE value="measurements for length1 and lenght2" />
     <MESSAGE value="InputStreams 1 and 2 refactored" />
-    <option name="LAST_COMMIT_MESSAGE" value="InputStreams 1 and 2 refactored" />
+    <MESSAGE value="InputStream3 nearly done (works but need to look at exceptions)" />
+    <option name="LAST_COMMIT_MESSAGE" value="InputStream3 nearly done (works but need to look at exceptions)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="65" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604161437012">
@@ -362,35 +375,35 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="392" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1604161519404" />
-    <state x="175" y="0" key="CommitChangelistDialog2" timestamp="1606351502995">
+    <state x="175" y="0" key="CommitChangelistDialog2" timestamp="1606353773822">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="175" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606351502995" />
+    <state x="175" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606353773822" />
     <state x="582" y="192" key="FileChooserDialogImpl" timestamp="1604161451206">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="1164" y="699" key="FileChooserDialogImpl/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096378392" />
     <state x="582" y="192" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604161451206" />
-    <state width="1237" height="109" key="GridCell.Tab.0.bottom" timestamp="1606353695853">
+    <state width="1237" height="129" key="GridCell.Tab.0.bottom" timestamp="1606388554444">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1257" height="399" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604689483482" />
-    <state width="1237" height="109" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606353695853" />
-    <state width="1237" height="109" key="GridCell.Tab.0.center" timestamp="1606353695853">
+    <state width="1237" height="129" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606388554444" />
+    <state width="1237" height="129" key="GridCell.Tab.0.center" timestamp="1606388554443">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1257" height="399" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604689483482" />
-    <state width="1237" height="109" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606353695853" />
-    <state width="1237" height="109" key="GridCell.Tab.0.left" timestamp="1606353695853">
+    <state width="1237" height="129" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606388554443" />
+    <state width="1237" height="129" key="GridCell.Tab.0.left" timestamp="1606388554443">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1257" height="399" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604689483482" />
-    <state width="1237" height="109" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606353695853" />
-    <state width="1237" height="109" key="GridCell.Tab.0.right" timestamp="1606353695853">
+    <state width="1237" height="129" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606388554443" />
+    <state width="1237" height="129" key="GridCell.Tab.0.right" timestamp="1606388554444">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1257" height="399" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604689483482" />
-    <state width="1237" height="109" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606353695853" />
+    <state width="1237" height="129" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606388554444" />
     <state width="1257" height="491" key="GridCell.Tab.1.bottom" timestamp="1604690448238">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -423,12 +436,12 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="137" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1604136966370" />
-    <state x="436" y="147" key="Vcs.Push.Dialog.v2" timestamp="1606351512645">
+    <state x="436" y="147" key="Vcs.Push.Dialog.v2" timestamp="1606353779489">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="872" y="303" key="Vcs.Push.Dialog.v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604690342652" />
     <state x="872" y="453" key="Vcs.Push.Dialog.v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096481395" />
-    <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606351512645" />
+    <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606353779489" />
     <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606298078725">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

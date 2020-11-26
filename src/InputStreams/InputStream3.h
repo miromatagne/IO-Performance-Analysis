@@ -10,6 +10,7 @@ private:
     int B;
     char *buffer = nullptr;
     int index;
+    int bufferLength;
 
     int readToBuffer();
 

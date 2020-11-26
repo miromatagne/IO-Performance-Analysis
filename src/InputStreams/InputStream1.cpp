@@ -40,30 +40,20 @@ void InputStream1::seek(int pos) {
  * Read the next line from the file of the InputStream by reading one character at a time
  * using the read system calls until the end-of-line symbol is reached.
  */
-char *InputStream1::readln() {
-    int count = 1;
-    int maxLineLength = 128;
-    char *lineBuffer = (char *) malloc(maxLineLength * sizeof(char));
+string InputStream1::readln() {
+    string lineBuffer = "";
     char c;
-
-    if (read(fileno(file), &c, sizeof(c)) == 0) {
-        return nullptr;
+    if (read(fileno(file), &c, 1) == 0) {
+        return "";
     }
-    lineBuffer[0] = c;
+    lineBuffer.push_back(c);
     while (c != '\n') {
-        if (count == maxLineLength) {
-            maxLineLength += 128;
-            lineBuffer = (char *) realloc(lineBuffer, maxLineLength);
-        }
         if (read(fileno(file), &c, sizeof(c)) == 0) {
-            count++;
             break;
         }
         if (c != '\n') {
-            lineBuffer[count] = c;
-            count++;
+            lineBuffer.push_back(c);
         }
     }
-    lineBuffer[count] = '\0';
     return lineBuffer;
 }

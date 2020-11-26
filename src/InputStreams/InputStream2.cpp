@@ -40,7 +40,7 @@ void InputStream2::seek(int pos) {
  * Read the next line from the file of the InputStream
  * using fgets function from the C stdio library.
  */
-char *InputStream2::readln() {
+string InputStream2::readln() {
     int n = 256;
     char *result = (char *) malloc(n * sizeof(char));
     char *response = fgets(result, n, file);
@@ -51,17 +51,13 @@ char *InputStream2::readln() {
         i++;
     }
     if (response == nullptr) {
-        return nullptr;
+        return "";
     }
     strtok(result, "\n");
     const char c = result[strlen(result) - 1];
-    if (result != NULL) {
-        const char c = result[strlen(result) - 1];
-        if ((int) c == 13) {
-            strtok(result, "\r");
-        }
-        return result;
-    } else {
-        return nullptr;
+    if ((int) c == 13) {
+        strtok(result, "\r");
     }
+    string str(result);
+    return str;
 }

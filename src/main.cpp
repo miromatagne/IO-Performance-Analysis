@@ -36,15 +36,17 @@ int main() {
 //    double *times = experiment1.getDurations("../data/aka_name.csv", 70);
 //    cout << times[0] << " " << times[1] << " " << times[2] << endl;
 
-    InputStream3 *i1 = new InputStream3("../data/comp_cast_type.csv", 10);
-    i1->open();
-    cout << i1->readln() << endl;
-    cout << i1->readln() << endl;
-    cout << i1->readln() << endl;
-    i1->close();
+//    InputStream2 *i1 = new InputStream2("../data/comp_cast_type.csv");
+//    i1->open();
+//    cout << i1->readln() << endl;
+//    cout << i1->readln() << endl;
+//    cout << i1->readln() << endl;
+//    cout << i1->readln() << endl;
+//    i1->close();
 
-//    Experiment1 *e = new Experiment1();
-//    e->length2("../data/person_info.csv");
+
+    Experiment1 *e = new Experiment1();
+    cout << e->length3("../data/comp_cast_type.csv", 10) << endl;
 //
 //    InputStream *inputStream = new InputStream("../data/person_info.csv");
 //    inputStream->open();

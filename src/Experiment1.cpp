@@ -1,9 +1,67 @@
 #include <iostream>
 #include <cstring>
+#include <src/InputStreams/InputStream1.h>
+#include <src/InputStreams/InputStream2.h>
+#include <src/InputStreams/InputStream3.h>
 #include "Experiment1.h"
 
 
 Experiment1::Experiment1() {
+}
+
+int Experiment1::length1(char *fileName) {
+    int sum = 0;
+    InputStream1 inputStream1(fileName);
+    inputStream1.open();
+    string line;
+    line = inputStream1.readln();
+    sum += line.length();
+    while (line != "") {
+        line = inputStream1.readln();
+        if (line != "") {
+            sum += line.length();
+        }
+    }
+    inputStream1.close();
+    return sum;
+}
+
+int Experiment1::length2(char *fileName) {
+    int sum = 0;
+    InputStream2 inputStream2(fileName);
+    inputStream2.open();
+    string line;
+    line = inputStream2.readln();
+    sum += line.length();
+    while (line != "") {
+        line = inputStream2.readln();
+        if (line != "") {
+            sum += line.length();
+        }
+    }
+    inputStream2.close();
+    return sum;
+}
+
+char *readln3(InputStream inputStream, int B) {
+    return inputStream.readln3(B);
+}
+
+int Experiment1::length3(char *fileName, int B) {
+    int sum = 0;
+    InputStream3 inputStream3(fileName, B);
+    inputStream3.open();
+    string line;
+    line = inputStream3.readln();
+    sum += line.length();
+    while (line != "") {
+        line = inputStream3.readln();
+        if (line != "") {
+            sum += line.length();
+        }
+    }
+    inputStream3.close();
+    return sum;
 }
 
 double *Experiment1::getDurations(char *fileName, int B) {
@@ -22,67 +80,4 @@ double *Experiment1::getDurations(char *fileName, int B) {
     times[2] = chrono->getChrono();
 //    cout << "Time: " << times[2] << endl;
     return times;
-}
-
-int Experiment1::length12(char *fileName) {
-    int sum = 0;
-    InputStream inputStream(fileName);
-    inputStream.open();
-    char *line;
-    line = function12(inputStream);
-    sum += strlen(line);
-    while (line != nullptr) {
-        line = function12(inputStream);
-        if (line != nullptr) {
-            sum += strlen(line);
-        }
-        free(line);
-    }
-    inputStream.close();
-    return sum;
-}
-
-int Experiment1::length34(char *fileName, int B) {
-    int sum = 0;
-    InputStream inputStream(fileName);
-    inputStream.open();
-    char *line;
-    line = function34(inputStream, B);
-    sum += strlen(line);
-    while (line != nullptr) {
-        line = function34(inputStream, B);
-        if (line != nullptr) {
-            sum += strlen(line);
-        }
-        free(line);
-    }
-    inputStream.close();
-    return sum;
-}
-
-char *readln1(InputStream inputStream) {
-    return inputStream.readln1();
-}
-
-int Experiment1::length1(char *fileName) {
-    function12 = readln1;
-    return length12(fileName);
-}
-
-char *readln2(InputStream inputStream) {
-    return inputStream.readln2();
-}
-
-int Experiment1::length2(char *fileName) {
-    function12 = readln2;
-    return length12(fileName);
-}
-
-char *readln3(InputStream inputStream, int B) {
-    return inputStream.readln3(B);
-}
-
-int Experiment1::length3(char *fileName, int B) {
-    function34 = readln3;
-    return length34(fileName, B);
 }

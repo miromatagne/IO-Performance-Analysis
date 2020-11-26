@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include <io.h>
 #include <string>
+#include <iostream>
 #include "InputStream3.h"
 
 using namespace std;
@@ -53,8 +54,8 @@ void InputStream3::seek(int pos) {
 string InputStream3::readln() {
     if (buffer == nullptr) {
         buffer = new char[B];
-        int nbChar = readToBuffer();
-        if (nbChar == 0) {
+        bufferLength = readToBuffer();
+        if (bufferLength == 0) {
             return nullptr;
         }
     }
@@ -62,52 +63,37 @@ string InputStream3::readln() {
     string currentLine = "";
     bool run = true;
     while (run) {
-        for (int i = index; i < B; i++) {
+        for (int i = index; i < bufferLength; i++) {
             if (buffer[i] == '\n') {
                 index = i + 1;
                 run = false;
-                fseek(file, -(B - i - 2), SEEK_CUR);
                 break;
             }
+//            cout << "currentLine: " << currentLine << endl;
+//            cout << "buffer: " << buffer << endl;
+//            cout << "i: " << i << endl;
+//            cout << "buffer[i]: " << buffer[i] << endl;
+//            cout << bufferLength << endl;
             currentLine.push_back(buffer[i]);
+//            if ((i == bufferLength - 1) && (bufferLength != B)) {
+//                run = false;
+//                break;
+//            }
         }
-        int nbChar = readToBuffer();
-        if (nbChar == 0) {
-            return nullptr;
+        if (run) {
+            bufferLength = readToBuffer();
+            if (bufferLength == 0) {
+                return currentLine;
+            }
         }
     }
-//    line = (char *) realloc(line, i * B + 1);
-//    line[nbChar] = '\0';
-//    int nbRead = read(fileno(file), lineBuffer, B);
-//    nbChar += nbRead;
-//    lineBuffer[nbRead] = '\0';
-//    strcat(line, lineBuffer);
-//    i++;
-//    char *firstOcc;
-//    char *line = (char *) malloc(B * sizeof(char) + 1);
-//    lineBuffer[nbChar] = '\0';
-//    strcpy(line, lineBuffer);
-//    int i = 2;
-//    char *firstOcc = strstr(line, "\n");
-//    int position = strlen(line);
-//    if (firstOcc != 0) {
-//        position = firstOcc - line;
-//    }
-//    char *resultLine = (char *) malloc(nbChar + 1);
-//    memcpy(resultLine, line, position);
-//    if (firstOcc == NULL) {
-//        resultLine[position] = '\0';
-//    } else {
-//        resultLine[position - 1] = '\0';
-//    }
-//    fseek(file, position - strlen(line) + 1, SEEK_CUR);
-//    free(line);
-//    free(lineBuffer);
     return currentLine;
 }
 
 int InputStream3::readToBuffer() {
     int nbChar = read(fileno(file), buffer, B);
     index = 0;
+//    cout << "nbChar :" << nbChar << endl;
+//    cout << "buffer :" << buffer << endl;
     return nbChar;
 }
