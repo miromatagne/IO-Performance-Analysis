@@ -5,6 +5,8 @@
 #include "Experiment3.h"
 #include "Measurement.h"
 #include <windows.h>
+#include <src/InputStreams/InputStream1.h>
+#include <src/InputStreams/InputStream2.h>
 
 using namespace std;
 
@@ -33,8 +35,10 @@ int main() {
 //    double *times = experiment1.getDurations("../data/aka_name.csv", 70);
 //    cout << times[0] << " " << times[1] << " " << times[2] << endl;
 
-    Measurement *m = new Measurement();
-    m->testFiles();
+    InputStream2 *i1 = new InputStream2("../data/comp_cast_type.csv");
+    i1->open();
+    cout << i1->readln() << endl;
+    i1->close();
 
 //    Experiment1 *e = new Experiment1();
 //    e->length2("../data/person_info.csv");
