@@ -46,7 +46,7 @@ string InputStream2::readln() {
     char *response = fgets(result, n, file);
     int i = 1;
     while (strlen(result) >= (n - 1) * i) {
-        result = (char *) realloc(result, n);
+        result = (char *) realloc(result, n * (i + 1));
         response = fgets(result, (i + 1) * n, file);
         i++;
     }
