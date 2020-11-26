@@ -1,8 +1,8 @@
 #include "InputStream.h"
 #include "OutputStream.h"
 #include <iostream>
-#include "Experiment1.h"
-#include "Experiment3.h"
+#include "src/Experiments/Experiment1.h"
+#include "src/Experiments/Experiment3.h"
 #include "Measurement.h"
 #include <windows.h>
 #include <src/InputStreams/InputStream1.h>

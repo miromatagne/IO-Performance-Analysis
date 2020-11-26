@@ -6,7 +6,7 @@
 #include <vector>
 #include "Measurement.h"
 #include "Chrono.h"
-#include "Experiment1.h"
+#include "src/Experiments/Experiment1.h"
 #include <iostream>
 
 using namespace std;
