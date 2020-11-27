@@ -1,13 +1,13 @@
 #include "InputStream.h"
 #include "OutputStream.h"
 #include <iostream>
-#include "src/Experiments/Experiment1.h"
-#include "src/Experiments/Experiment3.h"
+#include "Experiments/Experiment1.h"
+#include "Experiments/Experiment3.h"
 #include "Measurement.h"
 #include <windows.h>
-#include <src/InputStreams/InputStream1.h>
-#include <src/InputStreams/InputStream2.h>
-#include <src/InputStreams/InputStream3.h>
+#include <InputStreams/InputStream1.h>
+#include <InputStreams/InputStream2.h>
+#include <InputStreams/InputStream3.h>
 
 using namespace std;
 
@@ -36,8 +36,8 @@ int main() {
 //    double *times = experiment1.getDurations("../data/aka_name.csv", 70);
 //    cout << times[0] << " " << times[1] << " " << times[2] << endl;
 
-    Measurement *m = new Measurement();
-    m->testFiles(0);
+    //Measurement *m = new Measurement();
+    //m->testFiles(0);
 //    InputStream2 *i1 = new InputStream2("../data/person_info.csv");
 //    i1->open();
 //    cout << i1->readln() << endl;
@@ -79,8 +79,8 @@ int main() {
     outputStream.close();
 */
 
-//    Experiment3 experiment4;
-//    experiment4.rrmerge11("../data/aka_title.csv", "../data/aka_name.csv", NULL);
+    Experiment3 experiment4;
+    experiment4.rrmerge11("../data/aka_title.csv", "../data/aka_name.csv", NULL);
 
     /*
     InputStream inputStream ("../data/aka_title.csv");

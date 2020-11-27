@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cstring>
-#include <src/InputStreams/InputStream1.h>
-#include <src/InputStreams/InputStream2.h>
-#include <src/InputStreams/InputStream3.h>
+#include <InputStreams/InputStream1.h>
+#include <InputStreams/InputStream2.h>
+#include <InputStreams/InputStream3.h>
 #include "Experiment1.h"
 
 
