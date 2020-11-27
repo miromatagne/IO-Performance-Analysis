@@ -13,7 +13,7 @@ using namespace std;
 
 Measurement::Measurement() {
 }
-/*
+
 Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B) {
     Chrono *chrono = new Chrono();
     Experiment1 *experiment = new Experiment1();
@@ -70,4 +70,3 @@ vector<Measurement::data> Measurement::testFiles(int B) {
         cout << vec.at(i).fileName << " " << vec.at(i).time << " " << vec.at(i).length << endl;
     return vec;
 }
- */
