@@ -60,7 +60,7 @@ vector<Measurement::data> Measurement::testFiles(int B) {
         strcat(path, ".csv");
         data x;
         data y;
-        x = getAverageTime(path, 10);
+        x = getAverageTime(path, 1);
         y.length = x.length;
         y.time = x.time;
         y.fileName = fileNames[i];

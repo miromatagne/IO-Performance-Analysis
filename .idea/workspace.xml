@@ -16,7 +16,13 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:do-while" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
@@ -29,10 +35,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="">
+    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="write 4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Measurement.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Measurement.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Measurement.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Measurement.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,18 +76,22 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
-    <property name="settings.editor.selected.configurable" value="settings.saveactions" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Miro-Manuel\Desktop\info-h417-group-15\src\Experiments" />
-      <recent name="C:\Users\minhx\CLionProjects\info-h417-group-15\data" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\minhx\CLionProjects\info-h417-group-15\src" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\minhx\CLionProjects\info-h417-group-15\data" />
+    </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="info_h417_group_15" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="info_h417_group_15" RUN_TARGET_NAME="info_h417_group_15" EXPLICIT_BUILD_TARGET_NAME="all">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -121,12 +132,16 @@
       <workItem from="1605439696433" duration="2013000" />
       <workItem from="1605453566280" duration="392000" />
       <workItem from="1605957748011" duration="4767000" />
-      <workItem from="1605972017464" duration="1607000" />
-      <workItem from="1606079860950" duration="4367000" />
-      <workItem from="1606297303433" duration="9947000" />
-      <workItem from="1606347847632" duration="11348000" />
-      <workItem from="1606404412876" duration="1098000" />
-      <workItem from="1606483291777" duration="1975000" />
+      <workItem from="1605972017464" duration="1539000" />
+      <workItem from="1605993347695" duration="1095000" />
+      <workItem from="1606079359392" duration="1114000" />
+      <workItem from="1606124068946" duration="1196000" />
+      <workItem from="1606155210289" duration="8718000" />
+      <workItem from="1606210798939" duration="5360000" />
+      <workItem from="1606420919761" duration="14476000" />
+      <workItem from="1606472016752" duration="4235000" />
+      <workItem from="1606486472439" duration="3173000" />
+      <workItem from="1606511395980" duration="840000" />
     </task>
     <task id="LOCAL-00001" summary="classes">
       <created>1604102118724</created>
@@ -282,88 +297,82 @@
       <option name="project" value="LOCAL" />
       <updated>1605972935234</updated>
     </task>
-    <task id="LOCAL-00023" summary="changes">
-      <created>1605973723022</created>
+    <task id="LOCAL-00023" summary="Experiment 4, premier test avec read4 et write 1.">
+      <created>1606064448877</created>
       <option name="number" value="00023" />
       <option name="presentableId" value="LOCAL-00023" />
       <option name="project" value="LOCAL" />
-      <updated>1605973723022</updated>
+      <updated>1606064448877</updated>
     </task>
-    <task id="LOCAL-00024" summary="Measurement class">
-      <created>1606083686501</created>
+    <task id="LOCAL-00024" summary="Réparation du read4">
+      <created>1606167720542</created>
       <option name="number" value="00024" />
       <option name="presentableId" value="LOCAL-00024" />
       <option name="project" value="LOCAL" />
-      <updated>1606083686501</updated>
+      <updated>1606167720542</updated>
     </task>
-    <task id="LOCAL-00025" summary="measurements for length1 and lenght2">
-      <created>1606313785874</created>
+    <task id="LOCAL-00025" summary="Réparation du write 4">
+      <created>1606167743422</created>
       <option name="number" value="00025" />
       <option name="presentableId" value="LOCAL-00025" />
       <option name="project" value="LOCAL" />
-      <updated>1606313785874</updated>
+      <updated>1606167743422</updated>
     </task>
-    <task id="LOCAL-00026" summary="InputStreams 1 and 2 refactored">
-      <created>1606351505360</created>
+    <task id="LOCAL-00026" summary="reglage write 4">
+      <created>1606216196923</created>
       <option name="number" value="00026" />
       <option name="presentableId" value="LOCAL-00026" />
       <option name="project" value="LOCAL" />
-      <updated>1606351505360</updated>
+      <updated>1606216196924</updated>
     </task>
-    <task id="LOCAL-00027" summary="InputStream3 nearly done (works but need to look at exceptions)">
-      <created>1606353775425</created>
+    <task id="LOCAL-00027" summary="refactor (write 4 bug encore)">
+      <created>1606436403092</created>
       <option name="number" value="00027" />
       <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1606353775425</updated>
+      <updated>1606436403092</updated>
     </task>
-    <task id="LOCAL-00028" summary="Experiment 1 works for IS 1,2,3">
-      <created>1606388644246</created>
+    <task id="LOCAL-00028" summary="write 4">
+      <created>1606476233533</created>
       <option name="number" value="00028" />
       <option name="presentableId" value="LOCAL-00028" />
       <option name="project" value="LOCAL" />
-      <updated>1606388644246</updated>
+      <updated>1606476233533</updated>
     </task>
-    <task id="LOCAL-00029" summary="bug fixed for fgets (never too long now)">
-      <created>1606388799619</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1606388799619</updated>
-    </task>
-    <task id="LOCAL-00030" summary="refacto">
-      <created>1606388869382</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1606388869382</updated>
-    </task>
-    <task id="LOCAL-00031" summary="testing">
-      <created>1606406043536</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1606406043536</updated>
-    </task>
-    <task id="LOCAL-00032" summary="fx">
-      <created>1606486731013</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1606486731013</updated>
-    </task>
-    <option name="localTasksCounter" value="33" />
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="do-while" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -371,6 +380,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="database" />
     <MESSAGE value="classes" />
     <MESSAGE value="open input stream" />
     <MESSAGE value="OutPutStream class" />
@@ -387,16 +397,13 @@
     <MESSAGE value="compute avg time" />
     <MESSAGE value="avg time of length3" />
     <MESSAGE value="changes" />
-    <MESSAGE value="Measurement class" />
-    <MESSAGE value="measurements for length1 and lenght2" />
-    <MESSAGE value="InputStreams 1 and 2 refactored" />
-    <MESSAGE value="InputStream3 nearly done (works but need to look at exceptions)" />
-    <MESSAGE value="Experiment 1 works for IS 1,2,3" />
-    <MESSAGE value="bug fixed for fgets (never too long now)" />
-    <MESSAGE value="refacto" />
-    <MESSAGE value="testing" />
-    <MESSAGE value="fx" />
-    <option name="LAST_COMMIT_MESSAGE" value="fx" />
+    <MESSAGE value="Experiment 4, premier test avec read4 et write 1." />
+    <MESSAGE value="Réparation du read4" />
+    <MESSAGE value="Réparation du write 4" />
+    <MESSAGE value="reglage write 4" />
+    <MESSAGE value="refactor (write 4 bug encore)" />
+    <MESSAGE value="write 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="write 4" />
   </component>
   <component name="WindowStateProjectService">
     <state x="65" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604161437012">
@@ -407,35 +414,40 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="392" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1604161519404" />
-    <state x="175" y="0" key="CommitChangelistDialog2" timestamp="1606486727058">
+    <state x="175" y="0" key="CommitChangelistDialog2" timestamp="1605972933286">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="175" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606486727058" />
-    <state x="582" y="192" key="FileChooserDialogImpl" timestamp="1604161451206">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="175" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1605972933286" />
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1606216150440">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606216150440" />
+    <state x="1164" y="395" key="FileChooserDialogImpl" timestamp="1606161600949">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1164" y="395" key="FileChooserDialogImpl/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606161600949" />
     <state x="1164" y="699" key="FileChooserDialogImpl/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096378392" />
     <state x="582" y="192" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604161451206" />
-    <state width="1237" height="129" key="GridCell.Tab.0.bottom" timestamp="1606486834220">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="2517" height="253" key="GridCell.Tab.0.bottom" timestamp="1606512231199">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1257" height="399" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604689483482" />
-    <state width="1237" height="129" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606486834220" />
-    <state width="1237" height="129" key="GridCell.Tab.0.center" timestamp="1606486834219">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="2517" height="253" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606512231199" />
+    <state width="1237" height="98" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606476287902" />
+    <state width="2517" height="253" key="GridCell.Tab.0.center" timestamp="1606512231199">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1257" height="399" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604689483482" />
-    <state width="1237" height="129" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606486834219" />
-    <state width="1237" height="129" key="GridCell.Tab.0.left" timestamp="1606486834219">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="2517" height="253" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606512231199" />
+    <state width="1237" height="98" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606476287900" />
+    <state width="2517" height="253" key="GridCell.Tab.0.left" timestamp="1606512231199">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1257" height="399" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604689483482" />
-    <state width="1237" height="129" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606486834219" />
-    <state width="1237" height="129" key="GridCell.Tab.0.right" timestamp="1606486834220">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="2517" height="253" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606512231199" />
+    <state width="1237" height="98" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606476287899" />
+    <state width="2517" height="253" key="GridCell.Tab.0.right" timestamp="1606512231199">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1257" height="399" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604689483482" />
-    <state width="1237" height="129" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606486834220" />
+    <state width="2517" height="253" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606512231199" />
+    <state width="1237" height="98" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606476287900" />
     <state width="1257" height="491" key="GridCell.Tab.1.bottom" timestamp="1604690448238">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -456,29 +468,41 @@
     </state>
     <state width="1257" height="491" key="GridCell.Tab.1.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604685734467" />
     <state width="1257" height="491" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1604690448238" />
-    <state x="123" y="52" key="MergeDialog" timestamp="1606298121945">
+    <state x="246" y="107" key="MergeDialog" timestamp="1606486965624">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="246" y="107" key="MergeDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606486965624" />
+    <state x="123" y="52" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1605446103429" />
+    <state x="562" y="212" key="MultipleFileMergeDialog" timestamp="1606167778801">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="562" y="212" key="MultipleFileMergeDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606167778801" />
+    <state x="281" y="103" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1604350898220" />
+    <state x="1118" y="420" key="RollbackChangesDialog" timestamp="1606214639903">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1118" y="420" key="RollbackChangesDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606214639903" />
+    <state x="274" y="0" key="SettingsEditor" timestamp="1606511411791">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="274" y="0" key="SettingsEditor/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606511411791" />
+    <state x="137" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1606472231595" />
+    <state x="436" y="147" key="Vcs.Push.Dialog.v2" timestamp="1606476273077">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="123" y="52" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1606298121945" />
-    <state x="281" y="103" key="MultipleFileMergeDialog" timestamp="1606486762886">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="281" y="103" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1606486762886" />
-    <state x="137" y="0" key="SettingsEditor" timestamp="1604136966370">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="137" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1604136966370" />
-    <state x="436" y="147" key="Vcs.Push.Dialog.v2" timestamp="1606486737740">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="872" y="303" key="Vcs.Push.Dialog.v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604690342652" />
+    <state x="872" y="303" key="Vcs.Push.Dialog.v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606436407822" />
     <state x="872" y="453" key="Vcs.Push.Dialog.v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096481395" />
-    <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606486737740" />
-    <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606404485633">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606476273077" />
+    <state x="1098" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606511471800">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="1098" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606511471800" />
     <state x="1097" y="634" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604093387163" />
-    <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606404485633" />
+    <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1605957845184" />
+    <state x="1274" y="0" width="1292" height="1406" key="dock-window-1" timestamp="1606423679788">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1274" y="0" width="1292" height="1406" key="dock-window-1/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606423679788" />
     <state x="0" y="0" width="582" height="680" key="find.popup" timestamp="1604444178762">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -491,9 +515,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1605293508476" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1606299636927">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1604961082938">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1606299636927" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1604961082938" />
   </component>
 </project>

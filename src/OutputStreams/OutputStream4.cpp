@@ -121,51 +121,27 @@ void OutputStream4::writeln(string text) {
     const char *c = text.c_str();
     int sizeByteSource = strlen(c) * sizeof(c[0]);
     //adaption du SIZE_BUFFER en nombre de bytes tout en étant un multiple de la size d'une page de notre OS.
-    //cout << "Start_file : "<< start_file << endl;
     start = (start_file/sizePageBuffer)*sizePageBuffer;
-    nbExtension = ceil((double) sizeByteSource / (double) sizePageBuffer); // si on a  un string text plus grand que allocation granularity
-    bool bigText = FALSE ;
-    if (nbExtension !=1){
-        bigText = TRUE ;
-    }
-
+    nbExtension = 1;
     char *buffer = (char *) malloc(sizePageBuffer);
     int i = 1;
-    int newEnd = sizePageBuffer+start;
     toMapWrite = sizePageBuffer;
     int lastPage = sizeByteSource - ((nbExtension - 1) * sizePageBuffer);
-    //cout << sizeByteSource << endl;
 
-
-    // cas où on est entre 2 pages
-    //cout << nbExtension << endl;
     if (start_file+sizeByteSource>sizePageBuffer+start){
         nbExtension+=1;
         lastPage = (start_file+sizeByteSource-(sizePageBuffer+start));
-        //cout << "ok" << lastPage << endl;
     }
     else if (sizeByteSource < sizePageBuffer) {
         toMapWrite = sizeByteSource+start_file-start;
-        newEnd = sizePageBuffer+start;
     }
-
-
     while (i <= nbExtension) {
-        //cout << i << endl;
-        if (i == nbExtension && nbExtension != 1) {
+        if (i == 2) {
             start += sizePageBuffer;
             unmap();
             map(sizePageBuffer);
-            a+=1;
-            cout << "a" << a << endl;
-            //toMapWrite = lastPage;
-            newEnd = start + lastPage;
-            //cout << "okkkkkk" << start << endl;
-            //cout << "lastPage" << lastPage << endl;
-            //cout << "before" << (toMapWrite+start)+sizeByteSource << endl;
             strncpy(buffer, c+sizeByteSource-lastPage, lastPage);
             CopyMemory((PVOID) (writeBuffer+start_file-start), _T( buffer), ((lastPage+start)-start_file));
-            //cout << "truc" << start<< endl;
             start_file=lastPage+start;
 
         }
@@ -173,35 +149,18 @@ void OutputStream4::writeln(string text) {
             strncpy(buffer, c, toMapWrite);
             CopyMemory((PVOID) (writeBuffer+start_file-start), _T( buffer), ((toMapWrite+start)-start_file));
             start_file = (toMapWrite+start);
+            if(start_file==start+sizePageBuffer && nbExtension==1){
+                start += sizePageBuffer;
+                unmap();
+                map(sizePageBuffer);
+            }
 
         }
-        if(bigText){
-            strncpy(buffer, c + start, toMapWrite);
-        }
-
-        //cout << "pg" << start_file << endl;
-        //cout << "toMap" << toMapWrite << endl;
-        //cout << "end" << toMapWrite << endl;
-        //CopyMemory((PVOID) (writeBuffer+start_file-start), _T( buffer), ((toMapWrite+start)-start_file));
-
-        //cout << "bruh" << endl;
-        //strcpy((char*) (writeBuffer+start_file),buffer);
-
-        //fseek(file, (toMapWrite+start)-start_file, SEEK_CUR);
-
-
-
-
-        newEnd = start + sizePageBuffer;
         i++;
-        /*
-        if(start_file>=start+sizePageBuffer){
-
-        }
-        */
     }
     free(buffer);
-    // position2 - strlen(lineBuffer) + 1
+
+
 }
 
 /**

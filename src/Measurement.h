@@ -19,7 +19,7 @@ public:
 
     double *getAverageTimesB(char *fileName, int nbRep, int minB, int maxB);
 
-    std::vector<data> Measurement::testFiles(int B = 0);
+    std::vector<data> testFiles(int B = 0);
 };
 
 
