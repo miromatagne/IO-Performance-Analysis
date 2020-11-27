@@ -8,7 +8,7 @@
 #include <algorithm>
 #include <iostream>
 
-#define SIZE_BUFFER 10
+#define SIZE_BUFFER 100000
 /**
  * Constructor storing the chosen file's name in the fileName
  * field of the OutputStream class
@@ -77,15 +77,13 @@ void OutputStream4::map(int toMap) {
     cout << "start" << start << endl;
     cout << "to Map" << toMapWrite << endl;
      */
-    if(toMapWrite+start>end){
-        cout << "aie" << endl;
-    }
+
     hMapFile = CreateFileMapping(
             hFile,    // use paging file
             NULL,                    // default security
             PAGE_READWRITE,
             0,
-            end,
+            start+toMap,
             _T("INFO-H417"));                 // name of mapping object
 
     if (hMapFile == NULL) {
@@ -153,38 +151,38 @@ void OutputStream4::writeln(string text) {
 
 
     while (i <= nbExtension) {
+        //cout << i << endl;
         if (i == nbExtension && nbExtension != 1) {
-            //cout << "last page" << endl;
-            toMapWrite = lastPage;
+            start += sizePageBuffer;
+            unmap();
+            map(sizePageBuffer);
+            a+=1;
+            cout << "a" << a << endl;
+            //toMapWrite = lastPage;
             newEnd = start + lastPage;
             //cout << "okkkkkk" << start << endl;
-            strncpy(buffer, c+(toMapWrite+start)-start_file, toMapWrite);
+            //cout << "lastPage" << lastPage << endl;
+            //cout << "before" << (toMapWrite+start)+sizeByteSource << endl;
+            strncpy(buffer, c+sizeByteSource-lastPage, lastPage);
+            CopyMemory((PVOID) (writeBuffer+start_file-start), _T( buffer), ((lastPage+start)-start_file));
+            //cout << "truc" << start<< endl;
+            start_file=lastPage+start;
+
         }
         else{
             strncpy(buffer, c, toMapWrite);
+            CopyMemory((PVOID) (writeBuffer+start_file-start), _T( buffer), ((toMapWrite+start)-start_file));
+            start_file = (toMapWrite+start);
+
         }
         if(bigText){
             strncpy(buffer, c + start, toMapWrite);
         }
 
-
-        if(start_file>end){
-            if(a==3){
-                exit(4);
-            }
-            cout << "map" << start_file << endl;
-            end = start*2;
-            unmap();
-            map(sizePageBuffer);
-            a+=1;
-        }
-
-
-
         //cout << "pg" << start_file << endl;
         //cout << "toMap" << toMapWrite << endl;
         //cout << "end" << toMapWrite << endl;
-        CopyMemory((PVOID) (writeBuffer+start_file-start), _T( buffer), ((toMapWrite+start)-start_file));
+        //CopyMemory((PVOID) (writeBuffer+start_file-start), _T( buffer), ((toMapWrite+start)-start_file));
 
         //cout << "bruh" << endl;
         //strcpy((char*) (writeBuffer+start_file),buffer);
@@ -192,11 +190,15 @@ void OutputStream4::writeln(string text) {
         //fseek(file, (toMapWrite+start)-start_file, SEEK_CUR);
 
 
-        start_file+= (toMapWrite+start)-start_file;
-        start += sizePageBuffer;
+
+
         newEnd = start + sizePageBuffer;
         i++;
+        /*
+        if(start_file>=start+sizePageBuffer){
 
+        }
+        */
     }
     free(buffer);
     // position2 - strlen(lineBuffer) + 1
