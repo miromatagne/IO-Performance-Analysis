@@ -13,6 +13,16 @@ private:
     HANDLE hFile;
     int fd;
     int B;
+    void map(int toMap);
+    void unmap();
+    HANDLE hMapFile;
+    LPCTSTR readBuffer;
+    int start_file;
+    DWORD start;
+    DWORD sizePageBuffer;
+    int save;
+    int sizeByteFile;
+    char *buffer = nullptr;
 
 public:
     explicit InputStream4(char *fName, int B);
