@@ -8,20 +8,23 @@ using namespace std;
 
 class InputStream4 {
 private:
+    int sizeFile();
+    void map(int toMap);
+    void unmap();
+
     char *fileName;
     FILE *file;
     HANDLE hFile;
     int fd;
     int B;
-    void map(int toMap);
-    void unmap();
     HANDLE hMapFile;
     LPCTSTR readBuffer;
     int start_file;
     DWORD start;
     DWORD sizePageBuffer;
     int save;
-    int sizeByteFile;
+    int nbMap;
+    //int sizeByteFile;
     char *buffer = nullptr;
 
 public:

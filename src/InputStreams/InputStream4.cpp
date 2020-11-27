@@ -1,3 +1,6 @@
+//
+// Created by Linho100 on 27/11/2020.
+//
 #include "InputStream4.h"
 
 #include <iostream>
@@ -19,6 +22,7 @@ extern int errno;
  * @param fName : string corresponding to the filename the user chose
  */
 InputStream4::InputStream4(char *fName, int bufSize) {
+    cout << "start" << endl;
     fileName = fName;
     B = bufSize;
     SYSTEM_INFO info;
@@ -28,18 +32,21 @@ InputStream4::InputStream4(char *fName, int bufSize) {
     sizePageBuffer = info.dwAllocationGranularity *
                      ceil((double) SIZE_BUFFER * sizeof(char) / (double) info.dwAllocationGranularity);
     save = 0;
-    fseek(file, 0L, SEEK_END);
-    sizeByteFile = ftell(file) * sizeof(char);
+    nbMap = 0;
+}
+
+int InputStream4::sizeFile() {
+    fseek(file, 0, SEEK_END);
+    int sizeByteFile = ftell(file) * sizeof(char);
     rewind(file);
     fseek(file, save, SEEK_SET);
+    return sizeByteFile;
 }
 
 /**
  * Opens the file and stores it in the file field of the InputStream class.
  */
 void InputStream4::open() {
-
-    //file = fopen(fileName, "r");
     hFile = CreateFile(_T(fileName), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING,
                        FILE_ATTRIBUTE_NORMAL, NULL);
     if (hFile == INVALID_HANDLE_VALUE) {
@@ -64,13 +71,22 @@ void InputStream4::open() {
         perror("Error printed by perror");
         fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
     }
-    map(sizePageBuffer);
+
+    int sizeByteFile = sizeFile();
+    if (sizeByteFile < sizePageBuffer) {
+        map(sizeByteFile);
+    }
+    else {
+        map(sizePageBuffer);
+    }
+    nbMap = 1;
 }
 
 /**
  * Closes the file.
  */
 void InputStream4::close() {
+    unmap();
     fclose(file);
 }
 
@@ -87,11 +103,9 @@ void InputStream4::seek(int pos) {
  */
 void InputStream4::map(int toMap) {
     /*
-    cout << "my end" << end << endl;
     cout << "start" << start << endl;
     cout << "to Map" << toMapWrite << endl;
      */
-
     hMapFile = CreateFileMapping(
             hFile,    // use paging file
             NULL,                    // default security
@@ -136,19 +150,72 @@ void InputStream4::unmap() {
  * into internal memory through memory mapping.
  */
 string InputStream4::readln() {
-    int index = 0;
     save = ftell(file);
     start_file = save*sizeof(char);
+    start = (start_file/sizePageBuffer)*sizePageBuffer;
     buffer = new char[B];
-    strncpy(buffer, (char*) readBuffer, B);
-    string currentLine = "";
+    int lastBofPage = sizePageBuffer - start_file;
 
-    for (int i = index; i < sizeof(buffer), i++) {
-        if (buffer[i] == '\n') {
 
-        }
 
+    if ((start_file + B) > nbMap*sizePageBuffer){
+        strncpy(buffer, (char *) readBuffer + start_file, lastBofPage);
     }
 
+    else {
+        strncpy(buffer, (char *) readBuffer + start_file, B);
+    }
+
+    string currentLine = "";
+    bool run = true;
+    int counterBuf = 1;
+    cout << "Buffer : " << buffer << endl;
+
+    do {
+        cout << "ok" << strlen(buffer) << endl;
+        for (int i = 0; i < strlen(buffer); i++) {
+            if (buffer[i] == '\n') {
+                run = false;
+                cout << "FALSE" << endl;
+                break;
+            }
+            currentLine.push_back(buffer[i]);
+                //cout << currentLine << endl;
+        }
+
+        if (run) {
+            if ((start_file + counterBuf*B) > nbMap*sizePageBuffer) {
+                if (counterBuf == 1) {
+                    unmap();
+                    map();  // How to determine the parameter in map() function ?
+                }
+                else {
+                    lastBofPage = sizePageBuffer - (start_file + (counterBuf - 1) * B);
+                    strncpy(buffer, (char *) readBuffer + start_file + (counterBuf - 1) * B, lastBofPage);
+                    for (int i = 0; i < strlen(buffer); i++) {
+                        if (buffer[i] == '\n') {
+                            run = false;
+                            cout << "FALSE" << endl;
+                            break;
+                        }
+                        currentLine.push_back(buffer[i]);
+                        //cout << currentLine << endl;
+                    }
+                    unmap();
+                }
+
+            }
+            else {
+                strncpy(buffer, (char *) readBuffer + start_file + counterBuf * B, B);
+            }
+            if(strlen(buffer) == 0) {
+                return currentLine;
+            }
+            counterBuf++;
+        }
+    } while(run);
+
+    free(buffer);
+    fseek(file, currentLine.length() + 1,SEEK_CUR);
     return currentLine;
 }
