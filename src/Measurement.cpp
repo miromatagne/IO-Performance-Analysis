@@ -6,14 +6,14 @@
 #include <vector>
 #include "Measurement.h"
 #include "Chrono.h"
-#include "src/Experiments/Experiment1.h"
+#include "Experiments/Experiment1.h"
 #include <iostream>
 
 using namespace std;
 
 Measurement::Measurement() {
 }
-
+/*
 Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B) {
     Chrono *chrono = new Chrono();
     Experiment1 *experiment = new Experiment1();
@@ -70,3 +70,4 @@ vector<Measurement::data> Measurement::testFiles(int B) {
         cout << vec.at(i).fileName << " " << vec.at(i).time << " " << vec.at(i).length << endl;
     return vec;
 }
+ */

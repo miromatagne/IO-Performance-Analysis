@@ -45,6 +45,7 @@ string InputStream2::readln() {
     char *result = (char *) malloc(n * sizeof(char));
     char *response = fgets(result, n, file);
     int i = 1;
+    /*
     while (strlen(result) >= (n - 1) * i) {
         result = (char *) realloc(result, n * (i + 1));
         response = fgets(result, (i + 1) * n, file);
@@ -58,6 +59,7 @@ string InputStream2::readln() {
     if ((int) c == 13) {
         strtok(result, "\r");
     }
+     */
     string str(result);
     return str;
 }

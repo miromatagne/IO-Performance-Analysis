@@ -2,14 +2,16 @@
 #include <cstring>
 #include "Experiment3.h"
 #include <cstdarg>
-
+#include <OutputStreams/OutputStream1.h>
+#include <OutputStreams/OutputStream2.h>
+#include <OutputStreams/OutputStream3.h>
+#include <OutputStreams/OutputStream4.h>
 Experiment3::Experiment3() {
 }
 
-
 void Experiment3::rrmerge11 (char *fileName, ...)
 {
-    OutputStream outputStream("experiment3-11.txt");
+    OutputStream4 outputStream("experiment3-11.txt");
     outputStream.create();
     va_list vl;
     va_start(vl,fileName);
@@ -22,13 +24,13 @@ void Experiment3::rrmerge11 (char *fileName, ...)
 
         char *line;
         line = inputStream.readln4(5);
-        outputStream.writeln4(line);
+        outputStream.writeln(line);
         while (line != nullptr) {
             line = inputStream.readln4(5);
             if (line == nullptr) {
                 break;
             }
-            outputStream.writeln4(line);
+            outputStream.writeln(line);
             free(line);
         }
         inputStream.close();
