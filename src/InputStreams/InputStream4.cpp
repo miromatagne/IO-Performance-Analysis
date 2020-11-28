@@ -22,7 +22,6 @@ extern int errno;
  * @param fName : string corresponding to the filename the user chose
  */
 InputStream4::InputStream4(char *fName, int bufSize) {
-    cout << "start" << endl;
     fileName = fName;
     B = bufSize;
     SYSTEM_INFO info;
@@ -72,14 +71,14 @@ void InputStream4::open() {
         fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
     }
 
-    int sizeByteFile = sizeFile();
+    sizeByteFile = sizeFile();
     if (sizeByteFile < sizePageBuffer) {
         map(sizeByteFile);
     }
     else {
         map(sizePageBuffer);
     }
-    nbMap = 1;
+    position = start_file;
 }
 
 /**
@@ -135,6 +134,7 @@ void InputStream4::map(int toMap) {
         //CloseHandle(hMapFile);
         exit(4);
     }
+    nbMap += 1;
 }
 
 /**
@@ -150,32 +150,39 @@ void InputStream4::unmap() {
  * into internal memory through memory mapping.
  */
 string InputStream4::readln() {
+    cout << "startfile : " << start_file << endl;
     save = ftell(file);
     start_file = save*sizeof(char);
     start = (start_file/sizePageBuffer)*sizePageBuffer;
-    buffer = new char[B];
-    int lastBofPage = sizePageBuffer - start_file;
 
+    buffer = new char[B];  //pas obligé ici
+    int nbExtension = ceil((double)sizeByteFile / (double)sizePageBuffer);  //pas obligé ici
+    int lastBofPage = sizePageBuffer - start_file;
+    int lastPage = sizeByteFile - ((nbExtension - 1) * sizePageBuffer);  //pas obligé ici
 
 
     if ((start_file + B) > nbMap*sizePageBuffer){
-        strncpy(buffer, (char *) readBuffer + start_file, lastBofPage);
+        strncpy(buffer, (char *) readBuffer + (start_file-start), B);  // mettre lastBofPage si B bug
     }
 
     else {
-        strncpy(buffer, (char *) readBuffer + start_file, B);
+        strncpy(buffer, (char *) readBuffer + (start_file-start), B);
+        cout << "ici" << endl;
     }
 
     string currentLine = "";
     bool run = true;
     int counterBuf = 1;
-    cout << "Buffer : " << buffer << endl;
-
+    int counterReMap = 0;
+    int reMap = 1;
+    //cout << "ReadBuffer : " << readBuffer << endl;
+    //cout << "size of readBuffer : " << strlen(readBuffer) << endl;
     do {
-        cout << "ok" << strlen(buffer) << endl;
+        //cout << "ok" << strlen(buffer) << endl;
         for (int i = 0; i < strlen(buffer); i++) {
             if (buffer[i] == '\n') {
                 run = false;
+                //position = ;
                 cout << "FALSE" << endl;
                 break;
             }
@@ -184,30 +191,50 @@ string InputStream4::readln() {
         }
 
         if (run) {
-            if ((start_file + counterBuf*B) > nbMap*sizePageBuffer) {
+            if ((start_file + counterBuf * B) >= nbMap*sizePageBuffer) {
+                //cout << "RUN : " << start_file + counterBuf * B<< endl;
+                //cout << "RUN2 : " << nbMap*sizePageBuffer  << endl;
+                cout << run<<endl;
+                start += sizePageBuffer;
+                unmap();
                 if (counterBuf == 1) {
-                    unmap();
-                    map();  // How to determine the parameter in map() function ?
+                    if (sizeByteFile < (start + sizePageBuffer)) {
+                        map(lastPage);
+                    }
+                    else {
+                        map(sizePageBuffer);
+                    }
                 }
                 else {
-                    lastBofPage = sizePageBuffer - (start_file + (counterBuf - 1) * B);
-                    strncpy(buffer, (char *) readBuffer + start_file + (counterBuf - 1) * B, lastBofPage);
-                    for (int i = 0; i < strlen(buffer); i++) {
-                        if (buffer[i] == '\n') {
-                            run = false;
-                            cout << "FALSE" << endl;
-                            break;
-                        }
-                        currentLine.push_back(buffer[i]);
-                        //cout << currentLine << endl;
+                    //lastBofPage = sizePageBuffer - (start_file + (counterBuf - 1) * B);
+                    if (sizeByteFile < (start + sizePageBuffer)){
+                        map(lastPage);
                     }
-                    unmap();
+                    else {
+                        map(sizePageBuffer);
+                    }
                 }
+                reMap = 0;
+                counterReMap = counterBuf;
+                strncpy(buffer, (char *) readBuffer, B);
+            }
 
-            }
             else {
-                strncpy(buffer, (char *) readBuffer + start_file + counterBuf * B, B);
+
+                cout << "Buffer : " << buffer << endl;
+                cout << "counterBuf : "<< counterBuf  << endl;
+                cout << "counterRE : "<< counterReMap  << endl;
+                cout << "reMap : " << (reMap*(start_file-start)) + (counterBuf-counterReMap) * B << endl;
+                cout << "nbMap : " << nbMap << endl;
+                if((string)buffer == "63e3"){
+                    cout << "size of readBuffer : " << strlen(readBuffer) << endl;
+                    cout << "reMap2 : " << (char *) readBuffer + (reMap*(start_file-start)) + (counterBuf-counterReMap) * B << endl;
+                    cout << "ok" << endl;
+                }
+                strncpy(buffer, (char *) readBuffer + (reMap*(start_file-start)) + (counterBuf-counterReMap) * B, B);
+                cout << "here"  << endl;
             }
+
             if(strlen(buffer) == 0) {
                 return currentLine;
             }

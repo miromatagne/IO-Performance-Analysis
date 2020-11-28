@@ -39,10 +39,16 @@ int main() {
 
     //Measurement *m = new Measurement();
     //m->testFiles(0);
-    InputStream4 *i4 = new InputStream4("../test", 4);
+
+    InputStream4 *i4 = new InputStream4("../data/aka_name.csv", 4);
     i4->open();
-    cout << i4->readln() << endl;
-    cout << i4->readln() << endl;
+    int i = 0;
+    while(i < 16267){
+        cout << i4->readln() << endl;
+        i++;
+    }
+    //cout << i4->readln() << endl;
+    //cout << i4->readln() << endl;
 //    cout << i1->readln() << endl;
 //    cout << i1->readln() << endl;
 //    cout << i1->readln() << endl;

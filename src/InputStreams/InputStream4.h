@@ -24,7 +24,8 @@ private:
     DWORD sizePageBuffer;
     int save;
     int nbMap;
-    //int sizeByteFile;
+    int sizeByteFile;
+    int position;
     char *buffer = nullptr;
 
 public:
