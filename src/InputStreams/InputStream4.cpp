@@ -9,6 +9,7 @@
 #include <fcntl.h>
 #include <string>
 #include <cmath>
+#include <io.h>
 
 using namespace std;
 
@@ -74,8 +75,7 @@ void InputStream4::open() {
     sizeByteFile = sizeFile();
     if (sizeByteFile < sizePageBuffer) {
         map(sizeByteFile);
-    }
-    else {
+    } else {
         map(sizePageBuffer);
     }
     position = start_file;
@@ -110,7 +110,7 @@ void InputStream4::map(int toMap) {
             NULL,                    // default security
             PAGE_READONLY,
             0,
-            start+toMap,
+            start + toMap,
             _T("INFO-H417"));                 // name of mapping object
 
     if (hMapFile == NULL) {
@@ -121,10 +121,10 @@ void InputStream4::map(int toMap) {
     }
 
     readBuffer = (LPTSTR) MapViewOfFile(hMapFile,   // handle to map object
-                                         FILE_MAP_READ, // read/write permission
-                                         0,
-                                         start,
-                                         toMap); //null
+                                        FILE_MAP_READ, // read/write permission
+                                        0,
+                                        start,
+                                        toMap); //null
 
     if (readBuffer == NULL) {
         int err = errno;
@@ -152,21 +152,19 @@ void InputStream4::unmap() {
 string InputStream4::readln() {
     cout << "startfile : " << start_file << endl;
     save = ftell(file);
-    start_file = save*sizeof(char);
-    start = (start_file/sizePageBuffer)*sizePageBuffer;
+    start_file = save * sizeof(char);
+    start = (start_file / sizePageBuffer) * sizePageBuffer;
 
     buffer = new char[B];  //pas obligé ici
-    int nbExtension = ceil((double)sizeByteFile / (double)sizePageBuffer);  //pas obligé ici
+    int nbExtension = ceil((double) sizeByteFile / (double) sizePageBuffer);  //pas obligé ici
     int lastBofPage = sizePageBuffer - start_file;
     int lastPage = sizeByteFile - ((nbExtension - 1) * sizePageBuffer);  //pas obligé ici
 
 
-    if ((start_file + B) > nbMap*sizePageBuffer){
-        strncpy(buffer, (char *) readBuffer + (start_file-start), B);  // mettre lastBofPage si B bug
-    }
-
-    else {
-        strncpy(buffer, (char *) readBuffer + (start_file-start), B);
+    if ((start_file + B) > nbMap * sizePageBuffer) {
+        strncpy(buffer, (char *) readBuffer + (start_file - start), B);  // mettre lastBofPage si B bug
+    } else {
+        strncpy(buffer, (char *) readBuffer + (start_file - start), B);
         cout << "ici" << endl;
     }
 
@@ -187,62 +185,60 @@ string InputStream4::readln() {
                 break;
             }
             currentLine.push_back(buffer[i]);
-                //cout << currentLine << endl;
+            //cout << currentLine << endl;
         }
 
         if (run) {
-            if ((start_file + counterBuf * B) >= nbMap*sizePageBuffer) {
+            if ((start_file + counterBuf * B) >= nbMap * sizePageBuffer) {
                 //cout << "RUN : " << start_file + counterBuf * B<< endl;
                 //cout << "RUN2 : " << nbMap*sizePageBuffer  << endl;
-                cout << run<<endl;
+                cout << run << endl;
                 start += sizePageBuffer;
                 unmap();
                 if (counterBuf == 1) {
                     if (sizeByteFile < (start + sizePageBuffer)) {
                         map(lastPage);
-                    }
-                    else {
+                    } else {
                         map(sizePageBuffer);
                     }
-                }
-                else {
+                } else {
                     //lastBofPage = sizePageBuffer - (start_file + (counterBuf - 1) * B);
-                    if (sizeByteFile < (start + sizePageBuffer)){
+                    if (sizeByteFile < (start + sizePageBuffer)) {
                         map(lastPage);
-                    }
-                    else {
+                    } else {
                         map(sizePageBuffer);
                     }
                 }
                 reMap = 0;
                 counterReMap = counterBuf;
                 strncpy(buffer, (char *) readBuffer, B);
-            }
-
-            else {
+            } else {
 
                 cout << "Buffer : " << buffer << endl;
-                cout << "counterBuf : "<< counterBuf  << endl;
-                cout << "counterRE : "<< counterReMap  << endl;
-                cout << "reMap : " << (reMap*(start_file-start)) + (counterBuf-counterReMap) * B << endl;
+                cout << "counterBuf : " << counterBuf << endl;
+                cout << "counterRE : " << counterReMap << endl;
+                cout << "reMap : " << (reMap * (start_file - start)) + (counterBuf - counterReMap) * B << endl;
                 cout << "nbMap : " << nbMap << endl;
-                if((string)buffer == "63e3"){
+                if ((string) buffer == "63e3") {
                     cout << "size of readBuffer : " << strlen(readBuffer) << endl;
-                    cout << "reMap2 : " << (char *) readBuffer + (reMap*(start_file-start)) + (counterBuf-counterReMap) * B << endl;
+                    cout << "reMap2 : "
+                         << (char *) readBuffer + (reMap * (start_file - start)) + (counterBuf - counterReMap) * B
+                         << endl;
                     cout << "ok" << endl;
                 }
-                strncpy(buffer, (char *) readBuffer + (reMap*(start_file-start)) + (counterBuf-counterReMap) * B, B);
-                cout << "here"  << endl;
+                strncpy(buffer, (char *) readBuffer + (reMap * (start_file - start)) + (counterBuf - counterReMap) * B,
+                        B);
+                cout << "here" << endl;
             }
 
-            if(strlen(buffer) == 0) {
+            if (strlen(buffer) == 0) {
                 return currentLine;
             }
             counterBuf++;
         }
-    } while(run);
+    } while (run);
 
     free(buffer);
-    fseek(file, currentLine.length() + 1,SEEK_CUR);
+    fseek(file, currentLine.length() + 1, SEEK_CUR);
     return currentLine;
 }

@@ -4,6 +4,7 @@
 #include "Experiments/Experiment1.h"
 #include "Experiments/Experiment3.h"
 #include "Measurement.h"
+#include "MultiwayMerge.h"
 #include <windows.h>
 #include <InputStreams/InputStream1.h>
 #include <InputStreams/InputStream2.h>
@@ -40,13 +41,22 @@ int main() {
     //Measurement *m = new Measurement();
     //m->testFiles(0);
 
-    InputStream4 *i4 = new InputStream4("../data/aka_name.csv", 4);
-    i4->open();
-    int i = 0;
-    while(i < 16267){
-        cout << i4->readln() << endl;
-        i++;
-    }
+//    InputStream4 *i4 = new InputStream4("../data/aka_name.csv", 4);
+//    i4->open();
+//    int i = 0;
+//    while(i < 16267){
+//        cout << i4->readln() << endl;
+//        i++;
+//    }
+//    InputStream1 *i1 = new InputStream1("../data/aka_name.csv");
+//    i1->open();
+//    for (int i = 0; i < 16300; i++) {
+//        string line = i1->readln();
+//        cout << line << endl;
+//    }
+
+    MultiwayMerge *m = new MultiwayMerge();
+    m->extsort("../data/aka_name.csv", 2, 500, 12);
     //cout << i4->readln() << endl;
     //cout << i4->readln() << endl;
 //    cout << i1->readln() << endl;
