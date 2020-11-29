@@ -2,20 +2,17 @@
 #define INFO_H417_GROUP_15_EXPERIMENT3_H
 
 
-#include "InputStream.h"
-#include "OutputStream.h"
 #include "Chrono.h"
 
-class Experiment3
-{
+class Experiment3 {
 private:
     char *fileName;
 
 
-
 public:
     explicit Experiment3();
-    void rrmerge11 (char* fileName,...);
+
+    void rrmerge11(char *fileName, ...);
 
 };
 
