@@ -7,9 +7,6 @@ class Experiment1 {
 private:
     char *fileName;
 
-    char *(*function12)(InputStream inputStream);
-
-    char *(*function34)(InputStream inputStream, int B);
 
 public:
     explicit Experiment1();

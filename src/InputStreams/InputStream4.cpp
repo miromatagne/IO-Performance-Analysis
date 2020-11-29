@@ -102,7 +102,7 @@ void InputStream4::map(DWORD toMap) {
             PAGE_READONLY,
             0,
             end,
-            _T("INFO-H417-read"));                 // name of mapping object
+            _T(fileName));                 // name of mapping object
 
     if (rhMapFile == NULL) {
         int err = errno;

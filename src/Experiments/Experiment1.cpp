@@ -42,11 +42,11 @@ int Experiment1::length2(char *fileName) {
     inputStream2.close();
     return sum;
 }
-
+/*
 char *readln3(InputStream inputStream, int B) {
     return inputStream.readln3(B);
 }
-
+*/
 int Experiment1::length3(char *fileName, int B) {
     int sum = 0;
     InputStream3 inputStream3(fileName, B);

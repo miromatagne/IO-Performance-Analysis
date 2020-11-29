@@ -79,7 +79,7 @@ void OutputStream4::map(int toMap) {
             PAGE_READWRITE,
             0,
             start+toMap,
-            _T("INFO-H417-write"));                 // name of mapping object
+            _T(fileName));                 // name of mapping object
 
     if (hMapFile == NULL) {
         int err = errno;
