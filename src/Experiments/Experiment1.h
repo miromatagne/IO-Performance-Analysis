@@ -1,8 +1,6 @@
 #ifndef INFO_H417_GROUP_15_EXPERIMENT1_H
 #define INFO_H417_GROUP_15_EXPERIMENT1_H
 
-
-#include "InputStream.h"
 #include "Chrono.h"
 
 class Experiment1 {

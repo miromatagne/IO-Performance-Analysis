@@ -4,7 +4,6 @@
 
 #include <vector>
 #include "MultiwayMerge.h"
-#include "InputStream.h"
 #include <sstream>
 #include <iostream>
 #include <algorithm>
