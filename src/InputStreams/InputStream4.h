@@ -12,9 +12,9 @@ private:
     void unmap();
     char *fileName;
     FILE *file;
-    HANDLE hFile;
+    HANDLE rhFile;
     int fd;
-    HANDLE hMapFile;
+    HANDLE rhMapFile;
     LPCTSTR readBuffer;
     int start_file;
     DWORD start;

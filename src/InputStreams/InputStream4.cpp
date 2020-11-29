@@ -36,17 +36,17 @@ InputStream4::InputStream4(char *fName, int bufSize) {
  * Opens the file and stores it in the file field of the InputStream class.
  */
 void InputStream4::open() {
-    hFile = CreateFile(_T(fileName), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING,
+    rhFile = CreateFile(_T(fileName), GENERIC_READ, 0, NULL, OPEN_EXISTING,
                        FILE_ATTRIBUTE_NORMAL, NULL);
-    if (hFile == INVALID_HANDLE_VALUE) {
+    if (rhFile == INVALID_HANDLE_VALUE) {
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
         fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
     }
-    fd = _open_osfhandle((intptr_t) hFile, _O_RDONLY);
+    fd = _open_osfhandle((intptr_t) rhFile, _O_RDONLY);
     if (fd == -1) {
-        ::CloseHandle(hFile);
+        ::CloseHandle(rhFile);
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
@@ -54,7 +54,7 @@ void InputStream4::open() {
     }
     file = _fdopen(fd, "r");
     if (!file) {
-        ::CloseHandle(hFile);
+        ::CloseHandle(rhFile);
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
@@ -88,41 +88,42 @@ void InputStream4::seek(int pos) {
 void InputStream4::map(DWORD toMap) {
     DWORD end = 0;
     if(start+toMap>sizeByteFile){
-        cout << "trcu" << endl;
+        //cout << "trcu" << endl;
         end=0;
         toMap=NULL;
     }
     else{
-        cout << "trcu" << endl;
+        //cout << "trcu" << endl;
         end= start+toMap;
     }
-    hMapFile = CreateFileMapping(
-            hFile,    // use paging file
+    rhMapFile = CreateFileMapping(
+            rhFile,    // use paging file
             NULL,                    // default security
             PAGE_READONLY,
             0,
             end,
-            _T("INFO-H417"));                 // name of mapping object
+            _T("INFO-H417-read"));                 // name of mapping object
 
-    if (hMapFile == NULL) {
+    if (rhMapFile == NULL) {
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
         fprintf(stderr, "Error of CreateFileMapping function: %s\n", strerror(err));
     }
 
-    readBuffer = (LPTSTR) MapViewOfFile(hMapFile,   // handle to map object
+    readBuffer = (LPTSTR) MapViewOfFile(rhMapFile,   // handle to map object
                                          FILE_MAP_READ, // read/write permission
                                          0,
                                          start,
                                          toMap); //null
 
     if (readBuffer == NULL) {
+        cout << "ok" << endl;
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
         fprintf(stderr, "Error of the MapViewOfFile function: %s\n", strerror(err));
-        CloseHandle(hMapFile);
+        CloseHandle(rhMapFile);
     }
 }
 
@@ -131,7 +132,7 @@ void InputStream4::map(DWORD toMap) {
  */
 void InputStream4::unmap() {
     UnmapViewOfFile(readBuffer);
-    CloseHandle(hMapFile);
+    CloseHandle(rhMapFile);
 }
 
 
@@ -163,5 +164,6 @@ string InputStream4::readln() {
             }
         }
     }
+
     return currentLine;
 }

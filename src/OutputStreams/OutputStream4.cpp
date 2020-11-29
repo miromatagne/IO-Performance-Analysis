@@ -31,7 +31,7 @@ OutputStream4::OutputStream4(const char *fName) {
  * Creates a file and stores it in the file field of the OutputStream class.
  */
 void OutputStream4::create() {
-    hFile = CreateFile(_T(fileName), GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ, NULL, CREATE_ALWAYS,
+    hFile = CreateFile(_T(fileName), GENERIC_READ | GENERIC_WRITE, FILE_SHARE_WRITE, NULL, CREATE_ALWAYS,
                        FILE_ATTRIBUTE_NORMAL, NULL);
     if (hFile == INVALID_HANDLE_VALUE) {
         int err = errno;
@@ -79,7 +79,7 @@ void OutputStream4::map(int toMap) {
             PAGE_READWRITE,
             0,
             start+toMap,
-            _T("INFO-H417"));                 // name of mapping object
+            _T("INFO-H417-write"));                 // name of mapping object
 
     if (hMapFile == NULL) {
         int err = errno;
@@ -155,6 +155,8 @@ void OutputStream4::writeln(string text) {
 
 
 }
+
+
 
 /**
  * Closes the file.

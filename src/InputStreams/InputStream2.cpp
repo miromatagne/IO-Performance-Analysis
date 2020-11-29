@@ -41,6 +41,7 @@ void InputStream2::seek(int pos) {
  * using fgets function from the C stdio library.
  */
 string InputStream2::readln() {
+    /*
     int n = 256;
     char *result = (char *) malloc(n * sizeof(char));
     char *response = fgets(result, n, file);
@@ -60,4 +61,5 @@ string InputStream2::readln() {
     }
     string str(result);
     return str;
+     */
 }

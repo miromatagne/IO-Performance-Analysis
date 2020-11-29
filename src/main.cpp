@@ -9,6 +9,10 @@
 #include <InputStreams/InputStream2.h>
 #include <InputStreams/InputStream3.h>
 #include <InputStreams/InputStream4.h>
+#include <OutputStreams/OutputStream1.h>
+#include <OutputStreams/OutputStream2.h>
+#include <OutputStreams/OutputStream3.h>
+#include <OutputStreams/OutputStream4.h>
 
 using namespace std;
 
@@ -39,6 +43,7 @@ int main() {
 
     //Measurement *m = new Measurement();
     //m->testFiles(0);
+    /*
     InputStream4 inputStream4("../data/movie_companies.csv", 4);
     inputStream4.open();
 
@@ -49,6 +54,7 @@ int main() {
         cout << line << endl;
     }
     inputStream4.close();
+     */
     //cout << i4->readln() << endl;
     //cout << i4->readln() << endl;
 //    cout << i1->readln() << endl;
@@ -80,17 +86,24 @@ int main() {
     free(times);
     //cout << sum / 100 << endl;
 */
+
 /*
-    OutputStream outputStream("file_test");
+    OutputStream4 outputStream("file_test");
     outputStream.create();
-    outputStream.writeln4("Bonjoureee grg porpe");
-    outputStream.writeln4("Bonjoureee gjppppppppppppppppppppp");
-   // outputStream.writeln4("eijgarejgireajglirejgalrjglkejg");
+    InputStream4 inputStream("../data/aka_title.csv",5);
+    inputStream.open();
+
+    cout << inputStream.readln() << endl;
+
+    cout << inputStream.readln() << endl;
+    outputStream.writeln("okijgoijeg");
     outputStream.close();
+    inputStream.close();
 */
 
-//    Experiment3 experiment4;
-//    experiment4.rrmerge11("../data/aka_title.csv", "../data/aka_name.csv", NULL);
+
+    Experiment3 experiment4;
+    experiment4.rrmerge11("../data/aka_title.csv", "../data/aka_name.csv", NULL);
 
     /*
     InputStream inputStream ("../data/aka_title.csv");

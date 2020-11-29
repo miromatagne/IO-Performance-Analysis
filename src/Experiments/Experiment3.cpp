@@ -6,32 +6,31 @@
 #include <OutputStreams/OutputStream2.h>
 #include <OutputStreams/OutputStream3.h>
 #include <OutputStreams/OutputStream4.h>
+#include <InputStreams/InputStream4.h>
+#include <InputStreams/InputStream3.h>
+#include <InputStreams/InputStream2.h>
+#include <InputStreams/InputStream1.h>
 Experiment3::Experiment3() {
 }
 
 void Experiment3::rrmerge11 (char *fileName, ...)
 {
-    OutputStream4 outputStream("experiment3-11.txt");
+    OutputStream4 outputStream("file_test");
     outputStream.create();
     va_list vl;
     va_start(vl,fileName);
     char* arg = fileName;
     int i = 0;
     do{
-
-        InputStream inputStream(arg);
+        InputStream4 inputStream(arg,5);
         inputStream.open();
 
-        char *line;
-        line = inputStream.readln4(5);
+        string line;
+        line = inputStream.readln();
         outputStream.writeln(line);
-        while (line != nullptr) {
-            line = inputStream.readln4(5);
-            if (line == nullptr) {
-                break;
-            }
+        while (line != "") {
+            line = inputStream.readln();
             outputStream.writeln(line);
-            free(line);
         }
         inputStream.close();
         i++;
