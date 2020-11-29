@@ -72,11 +72,6 @@ void OutputStream4::unmap() {
  * Map a region into memory
  */
 void OutputStream4::map(int toMap) {
-    /*
-    cout << "my end" << end << endl;
-    cout << "start" << start << endl;
-    cout << "to Map" << toMapWrite << endl;
-     */
 
     hMapFile = CreateFileMapping(
             hFile,    // use paging file
@@ -104,9 +99,7 @@ void OutputStream4::map(int toMap) {
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
         fprintf(stderr, "Error of the MapViewOfFile function: %s\n", strerror(err));
-        //CloseHandle(hMapFile);
-        exit(4);
-
+        CloseHandle(hMapFile); 
     }
 
 }

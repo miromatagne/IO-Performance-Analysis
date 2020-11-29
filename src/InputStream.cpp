@@ -176,7 +176,9 @@ char *InputStream::readln3(int B) {
     free(lineBuffer);
     return resultLine;
 }
+void map(){
 
+}
 /**
  * Read the next line from the file of the InputStream class by mapping the characters
  * into internal memory through memory mapping.
