@@ -17,7 +17,7 @@ OutputStream1::OutputStream1(const char *fName) {
  * Creates a file and stores it in the file field of the OutputStream class.
  */
 void OutputStream1::create() {
-    file = fopen(fileName,"w");
+    file = fopen(fileName, "w");
 }
 
 
@@ -26,17 +26,18 @@ void OutputStream1::create() {
  * this stream with the newline character using the write system calls.
  * @param  text : string to be written in the file
  */
-void OutputStream1::writeln(string text)const{
+void OutputStream1::writeln(string text) const {
     char c = text[0];
     int i = 0;
     while (c != '\0') {
         i++;
-        write(fileno(file),&c,sizeof(c));
+        write(fileno(file), &c, sizeof(c));
         c = text[i];
     }
-    c='\n';
-    write(fileno(file),&c,sizeof(c));
+    c = '\n';
+    write(fileno(file), &c, sizeof(c));
 }
+
 /**
  * Closes the file.
  */
