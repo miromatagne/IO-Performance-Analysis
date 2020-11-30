@@ -6,15 +6,7 @@
  * field of the OutputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-OutputStream2::OutputStream2(const char *fName) {
-    fileName = fName;
-}
-
-/**
- * Creates a file and stores it in the file field of the OutputStream class.
- */
-void OutputStream2::create() {
-    file = fopen(fileName,"w");
+OutputStream2::OutputStream2(char *fName) : OutputStream(fName){
 }
 
 
@@ -25,20 +17,14 @@ void OutputStream2::create() {
  * @param  text : string to be written in the file
  */
 void OutputStream2::writeln(string text) const{
-    const char* c = (text+"\n").c_str();
-    if (fputs(c, file) < 0)
+
+    if (fputs((text+"\n").c_str(), file) < 0)
     {
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
         fprintf(stderr, "Error while writing in file: %s\n", strerror( err ));
     }
-}
-/**
- * Closes the file.
- */
-void OutputStream2::close() {
-    fclose(file);
 }
 
 

@@ -3,20 +3,16 @@
 
 #include <ostream>
 #include <fstream>
-
+#include "OutputStream.h"
 using namespace std;
 //
-class OutputStream2 {
-private:
-    const char *fileName;
-    FILE* file;
+class OutputStream2  : public OutputStream{
 
 public:
-public:
-    explicit OutputStream2(const char* fName);
-    void create();
+    OutputStream2(char* fName);
+
     void writeln(string text)const;
-    void close();
+
 };
 
 

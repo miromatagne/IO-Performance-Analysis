@@ -9,15 +9,7 @@
  * field of the OutputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-OutputStream1::OutputStream1(const char *fName) {
-    fileName = fName;
-}
-
-/**
- * Creates a file and stores it in the file field of the OutputStream class.
- */
-void OutputStream1::create() {
-    file = fopen(fileName, "w");
+OutputStream1::OutputStream1(char *fName): OutputStream(fName)  {
 }
 
 
@@ -37,11 +29,3 @@ void OutputStream1::writeln(string text) const {
     c = '\n';
     write(fileno(file), &c, sizeof(c));
 }
-
-/**
- * Closes the file.
- */
-void OutputStream1::close() {
-    fclose(file);
-}
-

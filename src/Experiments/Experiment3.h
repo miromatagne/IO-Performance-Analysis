@@ -11,6 +11,7 @@
 #include "Chrono.h"
 #include <vector>
 #include <type_traits>
+#include <typeinfo>
 class Experiment3 {
 public:
     Experiment3() {
@@ -25,15 +26,8 @@ public:
         char* arg = fileName;
         int i = 0;
         do{
-            if(std::is_same<InputClass, InputStream3>::value){
-                InputClass inputStream(arg,5);
-                readerList.push_back(inputStream);
-            }
-            else{
-                InputClass inputStream(arg,5);
-                readerList.push_back(inputStream);
-            }
-
+            InputClass inputStream(arg);
+            readerList.push_back(inputStream);
             readerList[i].open();
             arg = va_arg(vl, char*);
             i++;

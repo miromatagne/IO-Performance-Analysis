@@ -12,6 +12,7 @@
 #include <OutputStreams/OutputStream2.h>
 #include <OutputStreams/OutputStream3.h>
 #include <OutputStreams/OutputStream4.h>
+#include <OutputStreams/OutputStream.h>
 
 using namespace std;
 
@@ -102,7 +103,7 @@ int main() {
 
 
     Experiment3 experiment4;
-    experiment4.rrmerge11<InputStream3,OutputStream4>("../data/aka_title.csv", "../data/aka_name.csv", NULL);
+    experiment4.rrmerge11<InputStream2,OutputStream2>("../data/aka_title.csv", "../data/aka_name.csv", NULL);
 
     /*
     InputStream inputStream ("../data/aka_title.csv");

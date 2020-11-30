@@ -4,19 +4,14 @@
 #include <ostream>
 #include <fstream>
 #include <windows.h>
+#include "OutputStream.h"
 using namespace std;
 //
-class OutputStream3 {
-private:
-    const char *fileName;
-    FILE* file;
+class OutputStream3 : public OutputStream{
+public:
+   OutputStream3(char* fName);
 
-public:
-public:
-    explicit OutputStream3(const char* fName);
-    void create();
     void writeln(string text)const;
-    void close();
 };
 
 
