@@ -1,6 +1,8 @@
 #include <io.h>
 #include <iostream>
+#include <cstring>
 #include "InputStream2.h"
+
 
 using namespace std;
 
@@ -9,31 +11,7 @@ using namespace std;
  * field of the InputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-InputStream2::InputStream2(char *fName) {
-    fileName = fName;
-}
-
-/**
- * Opens the file and stores it in the file field of the InputStream class.
- */
-void InputStream2::open() {
-    file = fopen(fileName, "r");
-}
-
-/**
- * Closes the file.
- */
-
-void InputStream2::close() {
-    fclose(file);
-}
-
-/**
- * Moves the cursor of the file to a certain position specified by the user.
- * @param pos : desired position of the cursor
- */
-void InputStream2::seek(int pos) {
-    fseek(file, pos, SEEK_SET);
+InputStream2::InputStream2(char *fName) : InputStream(fName) {
 }
 
 /**
@@ -41,7 +19,7 @@ void InputStream2::seek(int pos) {
  * using fgets function from the C stdio library.
  */
 string InputStream2::readln() {
-    /*
+
     int n = 256;
     char *result = (char *) malloc(n * sizeof(char));
     char *response = fgets(result, n, file);
@@ -61,5 +39,5 @@ string InputStream2::readln() {
     }
     string str(result);
     return str;
-     */
+
 }

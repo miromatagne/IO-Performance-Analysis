@@ -3,6 +3,7 @@
 #include "Experiments/Experiment3.h"
 #include "Measurement.h"
 #include <windows.h>
+#include <InputStreams/InputStream.h>
 #include <InputStreams/InputStream1.h>
 #include <InputStreams/InputStream2.h>
 #include <InputStreams/InputStream3.h>
@@ -101,7 +102,7 @@ int main() {
 
 
     Experiment3 experiment4;
-    experiment4.rrmerge11("../data/aka_title.csv", "../data/aka_name.csv", NULL);
+    experiment4.rrmerge11<InputStream3,OutputStream4>("../data/aka_title.csv", "../data/aka_name.csv", NULL);
 
     /*
     InputStream inputStream ("../data/aka_title.csv");

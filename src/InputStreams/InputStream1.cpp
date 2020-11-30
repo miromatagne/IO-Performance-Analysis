@@ -9,32 +9,9 @@ using namespace std;
  * field of the InputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-InputStream1::InputStream1(char *fName) {
-    fileName = fName;
+InputStream1::InputStream1(char *fName) : InputStream(fName) {
 }
 
-/**
- * Opens the file and stores it in the file field of the InputStream class.
- */
-void InputStream1::open() {
-    file = fopen(fileName, "r");
-}
-
-/**
- * Closes the file.
- */
-
-void InputStream1::close() {
-    fclose(file);
-}
-
-/**
- * Moves the cursor of the file to a certain position specified by the user.
- * @param pos : desired position of the cursor
- */
-void InputStream1::seek(int pos) {
-    fseek(file, pos, SEEK_SET);
-}
 
 /**
  * Read the next line from the file of the InputStream by reading one character at a time

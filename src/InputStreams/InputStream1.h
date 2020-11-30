@@ -2,22 +2,15 @@
 #define INFO_H417_GROUP_15_INPUTSTREAM1_H
 
 #include <string>
+#include "InputStream.h"
 
 using namespace std;
 
-class InputStream1 {
-private:
-    char *fileName;
-    FILE *file;
+class InputStream1 : public InputStream{
 
 public:
-    explicit InputStream1(char *fName);
+    InputStream1(char *fName);
 
-    void open();
-
-    void close();
-
-    void seek(int pos);
 
     string readln();
 };

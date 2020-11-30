@@ -17,34 +17,11 @@ using namespace std;
  * field of the InputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-InputStream3::InputStream3(char *fName, int bufSize) {
-    fileName = fName;
+InputStream3::InputStream3(char *fName, int bufSize) : InputStream(fName) {
     B = bufSize;
     index = 0;
 }
 
-/**
- * Opens the file and stores it in the file field of the InputStream class.
- */
-void InputStream3::open() {
-    file = fopen(fileName, "r");
-}
-
-/**
- * Closes the file.
- */
-
-void InputStream3::close() {
-    fclose(file);
-}
-
-/**
- * Moves the cursor of the file to a certain position specified by the user.
- * @param pos : desired position of the cursor
- */
-void InputStream3::seek(int pos) {
-    fseek(file, pos, SEEK_SET);
-}
 
 /**
  * Read the next line from the file of the InputStream
