@@ -18,13 +18,13 @@ protected:
     FILE *file;
 
 public:
-    explicit OutputStream(char *fName);
+    OutputStream(char *fName);
 
     void create();
 
     void close();
 
-    virtual void writeln(string text) const = 0;
+   // virtual void writeln(string text) const = 0;
 
 };
 

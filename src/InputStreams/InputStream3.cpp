@@ -29,6 +29,7 @@ InputStream3::InputStream3(char *fName, int bufSize) : InputStream(fName) {
  * system calls until the end-of-line symbol is reached.
  */
 string InputStream3::readln() {
+
     if (buffer == nullptr) {
         buffer = new char[B];
         bufferLength = readToBuffer();

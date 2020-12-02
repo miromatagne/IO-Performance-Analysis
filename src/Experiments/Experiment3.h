@@ -26,7 +26,7 @@ public:
         char* arg = fileName;
         int i = 0;
         do{
-            InputClass inputStream(arg);
+            InputClass inputStream(arg,5);
             readerList.push_back(inputStream);
             readerList[i].open();
             arg = va_arg(vl, char*);

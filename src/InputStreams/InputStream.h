@@ -13,7 +13,7 @@ protected:
     FILE *file;
 
 public:
-    explicit InputStream(char *fName);
+    InputStream(char *fName);
 
     void open();
 
@@ -21,7 +21,7 @@ public:
 
     void seek(int pos);
 
-    virtual string readln() = 0;
+    //virtual string readln() = 0;
 };
 
 

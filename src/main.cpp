@@ -13,6 +13,16 @@
 #include <OutputStreams/OutputStream3.h>
 #include <OutputStreams/OutputStream4.h>
 #include <OutputStreams/OutputStream.h>
+#include <OutputStreams/OutputStream4.h>
+#include <InputStreams/InputStream4.h>
+#include <OutputStreams/OutputStream3.h>
+#include <InputStreams/InputStream3.h>
+#include <OutputStreams/OutputStream2.h>
+#include <InputStreams/InputStream2.h>
+#include "Chrono.h"
+#include <vector>
+#include <type_traits>
+#include <typeinfo>
 
 using namespace std;
 
@@ -88,7 +98,7 @@ int main() {
 */
 
 /*
-    OutputStream4 outputStream("file_test");
+    OutputStream2 outputStream("file_test");
     outputStream.create();
     InputStream4 inputStream("../data/aka_title.csv",5);
     inputStream.open();
@@ -100,10 +110,20 @@ int main() {
     outputStream.close();
     inputStream.close();
 */
+/*
+    InputStream1 inputStream2("../data/aka_title.csv");
+    inputStream2.open();
+    string line = "let's start !";
+    while(line!=""){
+        line = inputStream2.readln();
+        cout << line << endl;
 
+    }
 
-    Experiment3 experiment4;
-    experiment4.rrmerge11<InputStream2,OutputStream2>("../data/aka_title.csv", "../data/aka_name.csv", NULL);
+*/
+
+    //Experiment3 experiment4;
+    //experiment4.rrmerge11<InputStream3,OutputStream2>("../data/aka_title.csv", "../data/aka_name.csv", NULL);
 
     /*
     InputStream inputStream ("../data/aka_title.csv");
