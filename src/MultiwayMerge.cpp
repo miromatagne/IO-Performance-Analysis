@@ -8,8 +8,8 @@
 #include <sstream>
 #include <iostream>
 #include <algorithm>
-#include <src/InputStreams/InputStream1.h>
-#include <src/OutputStreams/OutputStream1.h>
+#include <InputStreams/InputStream1.h>
+#include <OutputStreams/OutputStream1.h>
 
 using namespace std;
 

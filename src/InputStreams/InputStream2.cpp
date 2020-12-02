@@ -1,8 +1,8 @@
 #include <io.h>
 #include <iostream>
 #include "InputStream2.h"
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 
 using namespace std;
 
@@ -19,24 +19,28 @@ InputStream2::InputStream2(char *fName) : InputStream(fName) {
  * using fgets function from the C stdio library.
  */
 string InputStream2::readln() {
-    int n = 256;
+    int n = 100;
     char *result = (char *) malloc(n * sizeof(char));
     char *response = fgets(result, n, file);
     int i = 1;
-    while (strlen(result) >= (n - 1) * i) {
-        result = (char *) realloc(result, n * (i + 1));
-        response = fgets(result, (i + 1) * n, file);
-        i++;
-    }
     if (response == nullptr) {
         return "";
     }
-    strtok(result, "\n");
-    const char c = result[strlen(result) - 1];
-    if ((int) c == 13) {
-        strtok(result, "\r");
+    string lineString(result);
+    while (lineString.length() >= (n - 1) * i) {
+        response = fgets(result, n, file);
+        string temp(result);
+        lineString += temp;
+        i++;
+        if (response == nullptr) {
+            return "";
+        }
     }
-    string str(result);
-    return str;
+    string res = lineString;
+    char c = lineString[lineString.size() - 1];
+    if ((int) c == 10) {
+        res = lineString.substr(0, lineString.size() - 1);
+    }
+    return res;
 
 }
