@@ -3,6 +3,7 @@
 //
 
 #include <vector>
+#include <queue>
 #include "MultiwayMerge.h"
 #include <sstream>
 #include <iostream>
@@ -16,29 +17,22 @@ MultiwayMerge::MultiwayMerge() {
 
 }
 
-
 FILE *MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
     InputStream1 *inputStream = new InputStream1(fileName);
     inputStream->open();
     bool run = true;
     int fileNb = 0;
-    vector<OutputStream1 *> files;
+    vector<InputStream1 *> files;
     while (run) {
         vector<vector<string>> lines;
         int totalLength = 0;
         while (totalLength < M) {
-            vector<string> line;
             string stringLine = inputStream->readln();
             if (stringLine.empty()) {
                 run = false;
                 break;
             }
-            stringstream ss(stringLine);
-            while (ss.good()) {
-                string substr;
-                getline(ss, substr, ',');
-                line.push_back(substr);
-            }
+            vector<string> line = stringToVector(stringLine);
             lines.push_back(line);
             totalLength += stringLine.length();
         }
@@ -53,23 +47,83 @@ FILE *MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
             OutputStream1 *o = new OutputStream1(fName);
             o->create();
             for (int lineNb = 0; lineNb < lines.size(); lineNb++) {
-                string line;
-                for (int wordNb = 0; wordNb < lines[lineNb].size(); wordNb++) {
-                    if (wordNb == lines[lineNb].size() - 1) {
-                        line += lines[lineNb][wordNb];
-                    } else {
-                        line += lines[lineNb][wordNb] + ",";
-                    }
-                }
+                string line = vectorToString(lines[lineNb]);
                 o->writeln(line);
             }
-            files.push_back(o);
+            o->close();
+            InputStream1 *i = new InputStream1(fName);
+            files.push_back(i);
         }
         fileNb++;
-    }
-//    files[0]->writeln("Hello");
-    for (OutputStream1 *f : files) {
-        f->close();
+
+        files[0]->open();
+//        cout << files[0]->readln() << endl;
+
+//        while (files.size() > 1) {
+//            int nbFilesToMerge = d;
+//            if (files.size() < d) {
+//                nbFilesToMerge = files.size();
+//            }
+//            auto comp = [k](QueueObject a, QueueObject b) {
+//                return a.line[k] < b.line[k];
+//            };
+//            priority_queue<QueueObject, vector<QueueObject>, decltype(comp)> linesQueue(comp);
+//            for (int i = 0; i < nbFilesToMerge; i++) {
+//                files[i]->open();
+//                string stringLine = files[i]->readln();
+//                cout << "OK" << endl;
+//                vector<string> line = stringToVector(stringLine);
+//                QueueObject q = {files[i], line};
+//                linesQueue.push(q);
+//            }
+//            string newFileName = "../bin/file" + to_string(fileNb) + ".txt";
+//            char *fName;
+//            fName = &newFileName[0];
+//            OutputStream1 *o = new OutputStream1(fName);
+//            o->create();
+//            while (linesQueue.size() != 0) {
+//                vector<string> vectorLine = linesQueue.top().line;
+//                string stringLine = vectorToString(vectorLine);
+//                o->writeln(stringLine);
+//                string nextLine = linesQueue.top().inputStream->readln();
+//                InputStream1 *tempInputStream = linesQueue.top().inputStream;
+//                linesQueue.pop();
+//                if (nextLine != "") {
+//                    QueueObject newObject = {tempInputStream, stringToVector(nextLine)};
+//                    linesQueue.push(newObject);
+//                }
+//            }
+//            for (int i = 0; i < nbFilesToMerge; i++) {
+//                files.erase(files.begin());
+//            }
+//            o->close();
+//            InputStream1 *i = new InputStream1(fName);
+//            files.push_back(i);
+//            fileNb++;
+//        }
     }
     return nullptr;
+}
+
+vector<string> MultiwayMerge::stringToVector(string stringLine) {
+    vector<string> line;
+    stringstream ss(stringLine);
+    while (ss.good()) {
+        string substr;
+        getline(ss, substr, ',');
+        line.push_back(substr);
+    }
+    return line;
+}
+
+string MultiwayMerge::vectorToString(vector<string> vectorLine) {
+    string stringLine;
+    for (int wordNb = 0; wordNb < vectorLine.size(); wordNb++) {
+        if (wordNb == vectorLine.size() - 1) {
+            stringLine += vectorLine[wordNb];
+        } else {
+            stringLine += vectorLine[wordNb] + ",";
+        }
+    }
+    return stringLine;
 }

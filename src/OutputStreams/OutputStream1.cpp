@@ -2,7 +2,7 @@
 #include "OutputStream1.h"
 #include <string>
 #include <io.h>
-
+#include <iostream>
 
 /**
  * Constructor storing the chosen file's name in the fileName
@@ -22,6 +22,7 @@ void OutputStream1::writeln(string text) const {
     char c = text[0];
     int i = 0;
     while (c != '\0') {
+        cout << text << endl;
         i++;
         write(fileno(file), &c, sizeof(c));
         c = text[i];

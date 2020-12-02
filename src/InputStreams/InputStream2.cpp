@@ -1,8 +1,8 @@
 #include <io.h>
 #include <iostream>
-#include <cstring>
 #include "InputStream2.h"
-
+#include <stdio.h>
+#include <string.h>
 
 using namespace std;
 
@@ -19,7 +19,6 @@ InputStream2::InputStream2(char *fName) : InputStream(fName) {
  * using fgets function from the C stdio library.
  */
 string InputStream2::readln() {
-
     int n = 256;
     char *result = (char *) malloc(n * sizeof(char));
     char *response = fgets(result, n, file);

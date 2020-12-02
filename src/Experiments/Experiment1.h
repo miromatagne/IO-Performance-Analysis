@@ -13,10 +13,6 @@ public:
 
     double *getDurations(char *fileName, int B);
 
-    int length12(char *fileName);
-
-    int length34(char *fileName, int B);
-
     int length1(char *fileName);
 
     int length2(char *fileName);
