@@ -12,7 +12,7 @@ private:
     int readToBuffer();
 
 public:
-    explicit InputStream3(char *fName, int bufSize);
+    InputStream3(char *fName, int bufSize);
 
     std::string readln();
 };
