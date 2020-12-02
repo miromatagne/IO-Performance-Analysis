@@ -23,6 +23,7 @@
 #include <vector>
 #include <type_traits>
 #include <typeinfo>
+#include <Experiments/Experiment2.h>
 
 using namespace std;
 
@@ -111,13 +112,18 @@ int main() {
     inputStream.close();
 */
 
-    InputStream2 inputStream2("../data/aka_title.csv");
+ /*   InputStream2 inputStream2("../data/aka_title.csv");
     inputStream2.open();
     string line = "let's start !";
     while (line != "") {
         line = inputStream2.readln();
         cout << "line : " << line << endl;
     }
+*/
+    Experiment2 experiment2;
+    int sum = experiment2.randjump1("../data/comp_cast_type.csv", 100);
+    cout << sum << endl;
+
 
     return 0;
 }
