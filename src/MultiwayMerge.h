@@ -4,8 +4,8 @@
 
 #include <cstdio>
 #include <string>
-#include <src/InputStreams/InputStream.h>
-#include <src/InputStreams/InputStream1.h>
+#include <InputStreams/InputStream.h>
+#include <InputStreams/InputStream1.h>
 
 using namespace std;
 

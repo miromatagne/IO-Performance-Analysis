@@ -19,7 +19,7 @@ InputStream2::InputStream2(char *fName) : InputStream(fName) {
  * using fgets function from the C stdio library.
  */
 string InputStream2::readln() {
-    int n = 256;
+    int n = 100;
     char *result = (char *) malloc(n * sizeof(char));
     char *response = fgets(result, n, file);
     int i = 1;

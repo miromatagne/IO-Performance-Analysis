@@ -8,12 +8,18 @@
 
 class Experiment2 {
 private:
-
+    char *fileName;
 
 public:
     explicit Experiment2();
 
+    int randjump1(char *fileName, int iteration);
 
+    int randjump2(char *fileName, int iteration);
+
+    int randjump3(char *fileName, int iteration, int B);
+
+    int randjump4(char *fileName, int iteration, int B);
 };
 
 

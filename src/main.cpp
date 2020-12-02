@@ -23,6 +23,7 @@
 #include <vector>
 #include <type_traits>
 #include <typeinfo>
+#include <Experiments/Experiment2.h>
 
 using namespace std;
 
@@ -80,22 +81,24 @@ int main() {
 //    for (int i = 0; i < 1; i++) {
 //        inputStream->readln2();
 //    }
-/*
-    Experiment1 experiment1;
-    Chrono *chrono = new Chrono();
-    double *times = (double *) malloc(110 * sizeof(double));
-    for (int i = 10; i < 121; i++) {
+
+    //Experiment1 experiment1;
+    //cout << experiment1.length1("../data/comp_cast_type.csv") << endl;
+
+    //Chrono *chrono = new Chrono();
+    //double *times = (double *) malloc(110 * sizeof(double));
+    /*for (int i = 10; i < 121; i++) {
         chrono->startChrono();
         experiment1.length3("../data/aka_name.csv", i);
         times[i - 10] = chrono->getChrono();
-    }
-    double sum = 0;
-    for (int i = 0; i < 110; i++) {
+    }*/
+    //double sum = 0;
+    /*for (int i = 0; i < 110; i++) {
         cout << times[i] << endl;
     }
-    free(times);
-    //cout << sum / 100 << endl;
-*/
+    free(times);*/
+    //cout << sum  << endl;
+
 
 /*
     OutputStream2 outputStream("file_test");
@@ -111,7 +114,7 @@ int main() {
     inputStream.close();
 */
 /*
-    InputStream1 inputStream2("../data/aka_title.csv");
+    InputStream2 inputStream2("../data/aka_title.csv");
     inputStream2.open();
     string line = "let's start !";
     while(line!=""){
@@ -119,8 +122,10 @@ int main() {
         cout << line << endl;
 
     }
-
 */
+    Experiment2 experiment2;
+    int in = experiment2.randjump1("../data/comp_cast_type.csv", 2);
+    cout << in;
 
     //Experiment3 experiment4;
     //experiment4.rrmerge11<InputStream3,OutputStream2>("../data/aka_title.csv", "../data/aka_name.csv", NULL);
