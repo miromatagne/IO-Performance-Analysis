@@ -44,7 +44,7 @@ int main() {
     //Measurement *m = new Measurement();
     //m->testFiles(0);
     /*
-    InputStream4 inputStream4("../data/movie_companies.csv", 4);
+    InputStream4 inputStream4("../data/cast_info.csv", 4);
     inputStream4.open();
 
     string line;
@@ -57,9 +57,6 @@ int main() {
      */
     //cout << i4->readln() << endl;
     //cout << i4->readln() << endl;
-//    cout << i1->readln() << endl;
-//    cout << i1->readln() << endl;
-//    cout << i1->readln() << endl;
     //i4->close();
 
 //    Experiment1 *e = new Experiment1();
@@ -101,21 +98,17 @@ int main() {
     inputStream.close();
 */
 
-
-    Experiment3 experiment4;
-    experiment4.rrmerge11<InputStream2,OutputStream2>("../data/aka_title.csv", "../data/aka_name.csv", NULL);
-
-    /*
-    InputStream inputStream ("../data/aka_title.csv");
-    inputStream.open();
-    int i =0;
-    while (i<11915) {
-        inputStream.readln4(5);
-
-        i++;
+    InputStream2 inputStream2("../Data/aka_title.csv");
+    inputStream2.open();
+    string line = "let's start !";
+    while(line!= "") {
+        line = inputStream2.readln();
+        cout << line << endl;
     }
-    inputStream.close();
-     */
+
+    //Experiment3 experiment4;
+    //experiment4.rrmerge11<InputStream2,OutputStream2>("../data/aka_title.csv", "../data/aka_name.csv", NULL);
+
     return 0;
 }
 
