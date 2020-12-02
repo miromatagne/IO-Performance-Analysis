@@ -2,6 +2,7 @@
 #include "Experiments/Experiment1.h"
 #include "Experiments/Experiment3.h"
 #include "Measurement.h"
+#include "MultiwayMerge.h"
 #include <windows.h>
 #include <InputStreams/InputStream.h>
 #include <InputStreams/InputStream1.h>
@@ -41,8 +42,10 @@ int main() {
 //    double *times = experiment1.getDurations("../data/aka_name.csv", 70);
 //    cout << times[0] << " " << times[1] << " " << times[2] << endl;
 
-    //Measurement *m = new Measurement();
-    //m->testFiles(0);
+//    Measurement *m = new Measurement();
+//    m->testFiles(0);
+    MultiwayMerge *m = new MultiwayMerge();
+    m->extsort("../data/comp_cast_type.csv", 1, 10, 2);
     /*
     InputStream4 inputStream4("../data/movie_companies.csv", 4);
     inputStream4.open();
@@ -100,13 +103,19 @@ int main() {
     outputStream.close();
     inputStream.close();
 */
+//    InputStream2 inputStream2("../data/aka_title.csv");
+//    inputStream2.open();
+//    string line = "KOK";
+//    while (line != "") {
+//        line = inputStream2.readln();
+//        cout << line << endl;
+//    }
 
-
-    Experiment3 experiment4;
-    experiment4.rrmerge11<InputStream2,OutputStream2>("../data/aka_title.csv", "../data/aka_name.csv", NULL);
+//    Experiment3 experiment4;
+//    experiment4.rrmerge11<InputStream2, OutputStream2>("../data/aka_title.csv", "../data/aka_name.csv", NULL);
 
     /*
-    InputStream inputStream ("../data/aka_title.csv");
+    InputStream2 inputStream2 ("../data/aka_title.csv");
     inputStream.open();
     int i =0;
     while (i<11915) {

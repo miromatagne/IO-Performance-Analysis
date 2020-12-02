@@ -9,6 +9,7 @@
 #include <fcntl.h>
 #include <string>
 #include <cmath>
+#include <io.h>
 
 using namespace std;
 
@@ -37,7 +38,7 @@ InputStream4::InputStream4(char *fName, int bufSize) {
  */
 void InputStream4::open() {
     rhFile = CreateFile(_T(fileName), GENERIC_READ, 0, NULL, OPEN_EXISTING,
-                       FILE_ATTRIBUTE_NORMAL, NULL);
+                        FILE_ATTRIBUTE_NORMAL, NULL);
     if (rhFile == INVALID_HANDLE_VALUE) {
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
@@ -87,14 +88,13 @@ void InputStream4::seek(int pos) {
  */
 void InputStream4::map(DWORD toMap) {
     DWORD end = 0;
-    if(start+toMap>sizeByteFile){
+    if (start + toMap > sizeByteFile) {
         //cout << "trcu" << endl;
-        end=0;
-        toMap=NULL;
-    }
-    else{
+        end = 0;
+        toMap = NULL;
+    } else {
         //cout << "trcu" << endl;
-        end= start+toMap;
+        end = start + toMap;
     }
     rhMapFile = CreateFileMapping(
             rhFile,    // use paging file
@@ -112,10 +112,10 @@ void InputStream4::map(DWORD toMap) {
     }
 
     readBuffer = (LPTSTR) MapViewOfFile(rhMapFile,   // handle to map object
-                                         FILE_MAP_READ, // read/write permission
-                                         0,
-                                         start,
-                                         toMap); //null
+                                        FILE_MAP_READ, // read/write permission
+                                        0,
+                                        start,
+                                        toMap); //null
 
     if (readBuffer == NULL) {
         cout << "ok" << endl;
@@ -144,18 +144,18 @@ string InputStream4::readln() {
     string currentLine = "";
     bool run = true;
     while (run) {
-        for (int i = (start_file-start); i < sizePageBuffer; i++) {
-            if (readBuffer[i] == '\n' | start_file>sizeByteFile) {
+        for (int i = (start_file - start); i < sizePageBuffer; i++) {
+            if (readBuffer[i] == '\n' | start_file > sizeByteFile) {
                 start_file += 1;
                 run = false;
                 break;
             }
             currentLine.push_back(readBuffer[i]);
-            start_file+=1;
+            start_file += 1;
 
         }
         if (run) {
-            start+=sizePageBuffer;
+            start += sizePageBuffer;
             unmap();
             map(sizePageBuffer);
             if (readBuffer[0] == NULL) {

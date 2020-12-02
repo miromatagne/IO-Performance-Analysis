@@ -21,7 +21,7 @@ Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B) 
     int length = 0;
     for (int i = 0; i < nbRep; i++) {
         chrono->startChrono();
-        length = experiment->length1(fileName);
+        length = experiment->length2(fileName);
         times[i] = chrono->getChrono();
     }
     double sum = 0;
@@ -60,7 +60,7 @@ vector<Measurement::data> Measurement::testFiles(int B) {
         strcat(path, ".csv");
         data x;
         data y;
-        x = getAverageTime(path, 1);
+        x = getAverageTime(path, 10, B);
         y.length = x.length;
         y.time = x.time;
         y.fileName = fileNames[i];

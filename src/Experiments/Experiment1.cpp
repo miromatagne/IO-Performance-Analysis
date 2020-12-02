@@ -12,8 +12,7 @@ Experiment1::Experiment1() {
 int Experiment1::length1(char *fileName) {
 
     int sum = 0;
-    /*
-    InputStream1 inputStream1(nullptr, fileName);
+    InputStream1 inputStream1(fileName);
     inputStream1.open();
     string line;
     line = inputStream1.readln();
@@ -25,7 +24,6 @@ int Experiment1::length1(char *fileName) {
         }
     }
     inputStream1.close();
-     */
     return sum;
 
 }
@@ -46,15 +44,10 @@ int Experiment1::length2(char *fileName) {
     inputStream2.close();
     return sum;
 }
-/*
-char *readln3(InputStream inputStream, int B) {
-    return inputStream.readln3(B);
-}
-*/
+
 int Experiment1::length3(char *fileName, int B) {
 
     int sum = 0;
-    /*
     InputStream3 inputStream3(fileName, B);
     inputStream3.open();
     string line;
@@ -67,7 +60,6 @@ int Experiment1::length3(char *fileName, int B) {
         }
     }
     inputStream3.close();
-     */
     return sum;
 }
 
