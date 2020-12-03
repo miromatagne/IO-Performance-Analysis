@@ -24,6 +24,7 @@
 #include <vector>
 #include <type_traits>
 #include <typeinfo>
+#include <Experiments/Experiment2.h>
 
 using namespace std;
 
@@ -48,8 +49,6 @@ using namespace std;
 //}
 
 int main() {
-//    Experiment3 experiment3;
-//    experiment3.rrmerge11<InputStream1, OutputStream1>("../data/comp_cast_type.csv", "../data/aka_name.csv", NULL);
 //    Experiment1 experiment1;
 //    double *times = experiment1.getDurations("../data/aka_name.csv", 70);
 //    cout << times[0] << " " << times[1] << " " << times[2] << endl;
@@ -116,13 +115,18 @@ int main() {
     inputStream.close();
 */
 
-//    InputStream2 inputStream2("../data/aka_title.csv");
-//    inputStream2.open();
-//    string line = "let's start !";
-//    while (line != "") {
-//        line = inputStream2.readln();
-//        cout << "line : " << line << endl;
-//    }
+ /*   InputStream2 inputStream2("../data/aka_title.csv");
+    inputStream2.open();
+    string line = "let's start !";
+    while (line != "") {
+        line = inputStream2.readln();
+        cout << "line : " << line << endl;
+    }
+*/
+    Experiment2 experiment2;
+    int sum = experiment2.randjump1("../data/comp_cast_type.csv", 100);
+    cout << sum << endl;
+
 
     return 0;
 }
