@@ -6,12 +6,14 @@
 
 using namespace std;
 
-class InputStream1 : public InputStream{
+class InputStream1 : public InputStream {
 
 public:
-    InputStream1(char *fName);
+    explicit InputStream1(char *fName);
 
     string readln();
+
+    string getNumber();
 };
 
 

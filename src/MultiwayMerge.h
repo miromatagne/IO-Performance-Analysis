@@ -16,7 +16,7 @@ private:
         vector<string> line;
     };
 
-    vector<string> stringToVector(string stringLine);
+    static vector<string> stringToVector(string stringLine);
 
     string vectorToString(vector<string> vectorLine);
 

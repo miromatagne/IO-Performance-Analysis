@@ -52,9 +52,10 @@ vector<Measurement::data> Measurement::testFiles(int B) {
     char *fileNames[] = {"aka_name", "aka_title", "cast_info", "char_name", "comp_cast_type", "company_name",
                          "company_type", "complete_cast", "info_type", "keyword", "kind_type", "link_type",
                          "movie_companies", "movie_info", "movie_info_idx", "movie_keyword", "movie_link", "name",
-                         "role_type", "title"};
+                         "person_info", "role_type", "title"};
     for (int i = 0; i < sizeof(fileNames) / sizeof(fileNames[0]); i++) {
         char path[100];
+        cout << fileNames[i] << endl;
         strcpy(path, "../data/");
         strcat(path, fileNames[i]);
         strcat(path, ".csv");
