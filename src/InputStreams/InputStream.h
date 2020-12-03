@@ -21,7 +21,7 @@ public:
 
     void seek(int pos);
 
-    int sizeFile();
+    FILE * getFile();
 
     //virtual string readln() = 0;
 };

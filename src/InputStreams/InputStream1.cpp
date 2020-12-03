@@ -23,7 +23,9 @@ string InputStream1::readln() {
     if (read(fileno(file), &c, 1) == 0) {
         return "";
     }
-    lineBuffer.push_back(c);
+    if (c != '\n') {
+        lineBuffer.push_back(c);
+    }
     while (c != '\n') {
         if (read(fileno(file), &c, sizeof(c)) == 0) {
             break;

@@ -52,8 +52,9 @@ int main() {
 //    double *times = experiment1.getDurations("../data/aka_name.csv", 70);
 //    cout << times[0] << " " << times[1] << " " << times[2] << endl;
 
-    //Measurement *m = new Measurement();
-    //m->testFiles(0);
+//    Measurement *m = new Measurement();
+//    m->testFiles(0);
+
     /*
     InputStream4 inputStream4("../data/movie_companies.csv", 4);
     inputStream4.open();
@@ -67,10 +68,6 @@ int main() {
     inputStream4.close();
      */
     //cout << i4->readln() << endl;
-    //cout << i4->readln() << endl;
-//    cout << i1->readln() << endl;
-//    cout << i1->readln() << endl;
-//    cout << i1->readln() << endl;
     //i4->close();
 
 //    Experiment1 *e = new Experiment1();
@@ -112,18 +109,23 @@ int main() {
     inputStream.close();
 */
 
- /*   InputStream2 inputStream2("../data/aka_title.csv");
-    inputStream2.open();
+    InputStream3 inputStream3("../data/comp_cast_type.csv", 5);
+    inputStream3.open();
     string line = "let's start !";
-    while (line != "") {
-        line = inputStream2.readln();
+    inputStream3.seek(45);
+    cout << "line : " << inputStream3.readln() << endl;
+   /* while (line != "") {
+        line = inputStream3.readln();
         cout << "line : " << line << endl;
-    }
-*/
-    Experiment2 experiment2;
-    int sum = experiment2.randjump1("../data/comp_cast_type.csv", 100);
-    cout << sum << endl;
+    }*/
 
+    Experiment2 experiment2;
+    int sum = experiment2.randjump1("../data/aka_name.csv", 10);
+    cout << sum << endl;
+    int sum2 = experiment2.randjump2("../data/aka_name.csv", 10);
+    cout << sum2 << endl;
+    int sum3 = experiment2.randjump3("../data/aka_name.csv", 10, 2);
+    cout << sum3 << endl;
 
     return 0;
 }
