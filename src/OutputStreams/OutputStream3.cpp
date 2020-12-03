@@ -8,7 +8,7 @@
  * field of the OutputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-OutputStream3::OutputStream3(char *fName): OutputStream(fName) {
+OutputStream3::OutputStream3(char *fName, int B): OutputStream(fName,B) {
 }
 
 /**

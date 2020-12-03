@@ -11,9 +11,10 @@ class InputStream {
 protected:
     char *fileName;
     FILE *file;
+    int BufferSize;
 
 public:
-    InputStream(char *fName);
+    InputStream(char *fName, int B);
 
     void open();
 

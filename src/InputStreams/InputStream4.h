@@ -3,14 +3,13 @@
 
 #include <istream>
 #include <windows.h>
-
+#include "InputStream.h"
 using namespace std;
 
-class InputStream4 {
+class InputStream4 : public InputStream{
 private:
     void map(DWORD toMap);
     void unmap();
-    char *fileName;
     FILE *file;
     HANDLE rhFile;
     int fd;
@@ -28,8 +27,6 @@ public:
     void open();
 
     void close();
-
-    void seek(int pos);
 
     std::string readln();
 

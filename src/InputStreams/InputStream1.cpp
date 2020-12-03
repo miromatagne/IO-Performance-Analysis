@@ -9,7 +9,7 @@ using namespace std;
  * field of the InputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-InputStream1::InputStream1(char *fName) : InputStream(fName) {
+InputStream1::InputStream1(char *fName,int B) : InputStream(fName,B) {
 }
 
 

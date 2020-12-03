@@ -20,11 +20,9 @@
 #include <OutputStreams/OutputStream2.h>
 #include <InputStreams/InputStream2.h>
 #include "Chrono.h"
-#include "MultiwayMerge.h"
 #include <vector>
 #include <type_traits>
 #include <typeinfo>
-#include <Experiments/Experiment2.h>
 
 using namespace std;
 
@@ -116,13 +114,27 @@ int main() {
 */
 
  /*   InputStream2 inputStream2("../data/aka_title.csv");
+
+    InputStream2 inputStream2("../data/aka_title.csv");
     inputStream2.open();
     string line = "let's start !";
     while (line != "") {
         line = inputStream2.readln();
         cout << "line : " << line << endl;
     }
+
+
+
+
+
+    /*
+    InputStream inputStream ("../data/aka_title.csv");
+    inputStream.open();
+    int i =0;
+    while (i<11915) {
+        inputStream.readln4(5);
 */
+ /*
     Experiment2 experiment2;
     int sum = experiment2.randjump1("../data/aka_name.csv", 10);
     cout << sum << endl;
@@ -131,6 +143,12 @@ int main() {
     int sum3 = experiment2.randjump3("../data/aka_name.csv", 10, 2);
     cout << sum3 << endl;
 
+        i++;
+    }
+    inputStream.close();
+     */
+    Experiment3 experiment4;
+    experiment4.rrmerge11<InputStream4,OutputStream4>(20,"../data/aka_title.csv", "../data/aka_name.csv", NULL);
     return 0;
 }
 

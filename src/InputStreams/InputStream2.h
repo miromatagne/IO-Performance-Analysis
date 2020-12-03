@@ -8,7 +8,7 @@ using namespace std;
 
 class InputStream2 : public InputStream {
 public:
-    InputStream2(char *fName);
+    InputStream2(char *fName,int B);
 
     string readln();
 };

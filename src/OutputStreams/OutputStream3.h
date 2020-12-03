@@ -9,7 +9,7 @@ using namespace std;
 //
 class OutputStream3 : public OutputStream{
 public:
-   OutputStream3(char* fName);
+   OutputStream3(char* fName,int B);
 
     void writeln(string text)const;
 };

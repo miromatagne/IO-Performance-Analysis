@@ -5,14 +5,13 @@
 #include "InputStream.h"
 class InputStream3 : public InputStream{
 private:
-    int B;
     char *buffer = nullptr;
     int index;
     int bufferLength;
     int readToBuffer();
 
 public:
-    InputStream3(char *fName, int bufSize);
+    InputStream3(char *fName, int B);
 
     std::string readln();
 };

@@ -12,7 +12,7 @@ using namespace std;
 class OutputStream1 : public OutputStream{
 
 public:
-    OutputStream1(char *fName);
+    OutputStream1(char *fName,int B);
 
     void writeln(string text) const;
 

@@ -16,7 +16,13 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:do-while" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
@@ -29,12 +35,30 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="experiment2 almost done">
+    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="rien">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Experiments/Experiment2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experiments/Experiment2.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Experiments/Experiment1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experiments/Experiment1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Experiments/Experiment3.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experiments/Experiment3.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream1.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream1.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream2.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream2.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream2.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream3.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream3.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream3.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream4.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream4.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream4.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream1.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream1.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream2.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream2.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream2.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream3.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream3.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream3.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +78,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1jcRJvxpahLkeyjt0NFKXxkguoq" />
   <component name="ProjectLevelVcsManager">
@@ -69,6 +92,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -80,7 +104,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="info_h417_group_15" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="info_h417_group_15" RUN_TARGET_NAME="info_h417_group_15" EXPLICIT_BUILD_TARGET_NAME="all">
+    <configuration name="info_h417_group_15" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="info_h417_group_15" TARGET_NAME="info_h417_group_15" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="info_h417_group_15" RUN_TARGET_NAME="info_h417_group_15">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -132,11 +156,15 @@
       <workItem from="1606511395980" duration="1003000" />
       <workItem from="1606592339757" duration="2356000" />
       <workItem from="1606597807441" duration="677000" />
-      <workItem from="1606642466090" duration="4431000" />
-      <workItem from="1606916493191" duration="49000" />
-      <workItem from="1606916557000" duration="122000" />
-      <workItem from="1606916681348" duration="3013000" />
-      <workItem from="1606989675653" duration="7998000" />
+      <workItem from="1606642466090" duration="7605000" />
+      <workItem from="1606656222101" duration="6212000" />
+      <workItem from="1606679720963" duration="4734000" />
+      <workItem from="1606734204975" duration="5066000" />
+      <workItem from="1606756557382" duration="12575000" />
+      <workItem from="1606914289950" duration="2212000" />
+      <workItem from="1606924588544" duration="2508000" />
+      <workItem from="1606947363094" duration="1535000" />
+      <workItem from="1607027698951" duration="2077000" />
     </task>
     <task id="LOCAL-00001" summary="classes">
       <created>1604102118724</created>
@@ -341,21 +369,49 @@
       <option name="project" value="LOCAL" />
       <updated>1606512339770</updated>
     </task>
-    <task id="LOCAL-00030" summary="experiment2 coding">
-      <created>1606940200481</created>
+    <task id="LOCAL-00030" summary="read 4 finish">
+      <created>1606647067751</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1606940200481</updated>
+      <updated>1606647067751</updated>
     </task>
-    <task id="LOCAL-00031" summary="experiment2 almost done">
-      <created>1606944590059</created>
+    <task id="LOCAL-00031" summary="write et read 4, share map problem solve">
+      <created>1606661375550</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1606944590059</updated>
+      <updated>1606661375550</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Round Robin experiment 3">
+      <created>1606682967711</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1606682967711</updated>
+    </task>
+    <task id="LOCAL-00033" summary="refactor V1">
+      <created>1606760885313</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1606760885313</updated>
+    </task>
+    <task id="LOCAL-00034" summary="refactor V2">
+      <created>1606770568147</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1606770568147</updated>
+    </task>
+    <task id="LOCAL-00035" summary="rien">
+      <created>1606924903413</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1606924903413</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,10 +452,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="classes" />
-    <MESSAGE value="open input stream" />
-    <MESSAGE value="OutPutStream class" />
-    <MESSAGE value="InputStream change in include" />
     <MESSAGE value="write function problem" />
     <MESSAGE value="outputstream, write 1,2,3,4 + multiple changements du au write4" />
     <MESSAGE value="write 3 and 4, buffer B" />
@@ -419,23 +471,25 @@
     <MESSAGE value="refactor (write 4 bug encore)" />
     <MESSAGE value="write 4" />
     <MESSAGE value="write 4, legere modif + leger netoyage" />
-    <MESSAGE value="experiment2 coding" />
-    <MESSAGE value="experiment2 almost done" />
-    <option name="LAST_COMMIT_MESSAGE" value="experiment2 almost done" />
+    <MESSAGE value="read 4 finish" />
+    <MESSAGE value="write et read 4, share map problem solve" />
+    <MESSAGE value="Round Robin experiment 3" />
+    <MESSAGE value="refactor V1" />
+    <MESSAGE value="refactor V2" />
+    <MESSAGE value="rien" />
+    <option name="LAST_COMMIT_MESSAGE" value="rien" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="65" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604161437012">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="413" y="264" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606737310902">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="413" y="264" key="#com.intellij.execution.impl.EditConfigurationsDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606737310902" />
     <state x="65" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1604161437012" />
-    <state x="392" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604161519404">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="784" y="294" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606915432704">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="784" y="294" key="#com.intellij.fileTypes.FileTypeChooser/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606915432704" />
     <state x="392" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1604161519404" />
-    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606916515213">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1606916515213" />
     <state x="175" y="0" key="CommitChangelistDialog2" timestamp="1605972933286">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -444,37 +498,32 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606216150440" />
-    <state x="698" y="232" key="FileChooserDialogImpl" timestamp="1606916669609">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="1164" y="395" key="FileChooserDialogImpl" timestamp="1606648010890">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1164" y="395" key="FileChooserDialogImpl/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606161600949" />
+    <state x="1164" y="395" key="FileChooserDialogImpl/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606648010890" />
     <state x="1164" y="699" key="FileChooserDialogImpl/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096378392" />
     <state x="582" y="192" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604161451206" />
-    <state x="698" y="232" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606916669609" />
-    <state width="1493" height="158" key="GridCell.Tab.0.bottom" timestamp="1607003685793">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2517" height="587" key="GridCell.Tab.0.bottom" timestamp="1607029771065">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="251" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606646883349" />
-    <state width="1237" height="97" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606596520646" />
-    <state width="1493" height="158" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607003685793" />
-    <state width="1493" height="158" key="GridCell.Tab.0.center" timestamp="1607003685793">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2517" height="587" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607029771065" />
+    <state width="1237" height="247" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606937611769" />
+    <state width="2517" height="587" key="GridCell.Tab.0.center" timestamp="1607029771065">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="251" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606646883349" />
-    <state width="1237" height="97" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606596520646" />
-    <state width="1493" height="158" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607003685793" />
-    <state width="1493" height="158" key="GridCell.Tab.0.left" timestamp="1607003685793">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2517" height="587" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607029771065" />
+    <state width="1237" height="247" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606937611768" />
+    <state width="2517" height="587" key="GridCell.Tab.0.left" timestamp="1607029771065">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="251" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606646883349" />
-    <state width="1237" height="97" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606596520646" />
-    <state width="1493" height="158" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607003685793" />
-    <state width="1493" height="158" key="GridCell.Tab.0.right" timestamp="1607003685793">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2517" height="587" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607029771065" />
+    <state width="1237" height="247" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606937611768" />
+    <state width="2517" height="587" key="GridCell.Tab.0.right" timestamp="1607029771065">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="251" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606646883349" />
-    <state width="1237" height="97" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606596520646" />
-    <state width="1493" height="158" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607003685793" />
+    <state width="2517" height="587" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607029771065" />
+    <state width="1237" height="247" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606937611768" />
     <state width="1257" height="491" key="GridCell.Tab.1.bottom" timestamp="1604690448238">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -495,49 +544,37 @@
     </state>
     <state width="1257" height="491" key="GridCell.Tab.1.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604685734467" />
     <state width="1257" height="491" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1604690448238" />
-    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1606916676617">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="246" y="107" key="MergeDialog" timestamp="1607027785083">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel/0.0.1536.824@0.0.1536.824" timestamp="1606916676617" />
-    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel" timestamp="1606916676617">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel/0.0.1536.824@0.0.1536.824" timestamp="1606916676617" />
-    <state x="148" y="63" key="MergeDialog" timestamp="1606916605219">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="246" y="107" key="MergeDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606486965624" />
+    <state x="246" y="107" key="MergeDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607027785083" />
     <state x="123" y="52" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1606592394921" />
-    <state x="148" y="63" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1606916605219" />
-    <state x="337" y="125" key="MultipleFileMergeDialog" timestamp="1606940246694">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="562" y="212" key="MultipleFileMergeDialog" timestamp="1606661392407">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="562" y="212" key="MultipleFileMergeDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606167778801" />
+    <state x="562" y="212" key="MultipleFileMergeDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606661392407" />
     <state x="281" y="103" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1604350898220" />
-    <state x="337" y="125" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1606940246694" />
     <state x="1118" y="420" key="RollbackChangesDialog" timestamp="1606214639903">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1118" y="420" key="RollbackChangesDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606214639903" />
-    <state x="274" y="0" key="SettingsEditor" timestamp="1606644310140">
+    <state x="274" y="0" key="SettingsEditor" timestamp="1607027945562">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="274" y="0" key="SettingsEditor/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606644310140" />
-    <state x="137" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1606592362907" />
-    <state x="523" y="178" key="Vcs.Push.Dialog.v2" timestamp="1606944605188">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="274" y="0" key="SettingsEditor/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607027945562" />
+    <state x="137" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1606947663300" />
+    <state x="872" y="303" key="Vcs.Push.Dialog.v2" timestamp="1606924907506">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="303" key="Vcs.Push.Dialog.v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606512344581" />
+    <state x="872" y="303" key="Vcs.Push.Dialog.v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606924907506" />
     <state x="872" y="453" key="Vcs.Push.Dialog.v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096481395" />
     <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606476273077" />
-    <state x="523" y="178" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606944605188" />
-    <state x="659" y="362" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606940225076">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="1098" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607027735662">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1098" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606511471800" />
+    <state x="1098" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607027735662" />
     <state x="1097" y="634" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604093387163" />
     <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606592367624" />
-    <state x="659" y="362" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1606940225076" />
     <state x="1274" y="0" width="1292" height="1406" key="dock-window-1" timestamp="1606423679788">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -550,9 +587,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="423" y="54" key="git4idea.branch.GitSmartOperationDialog/0.0.1280.680@0.0.1280.680" timestamp="1605439773234" />
-    <state x="297" y="151" key="run.anything.popup" timestamp="1605293508476">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="594" y="311" key="run.anything.popup" timestamp="1606758602360">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="594" y="311" key="run.anything.popup/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606758602360" />
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1605293508476" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1604961082938">
       <screen x="0" y="0" width="1280" height="680" />

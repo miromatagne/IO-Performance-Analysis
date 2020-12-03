@@ -9,7 +9,7 @@ using namespace std;
 class InputStream1 : public InputStream {
 
 public:
-    explicit InputStream1(char *fName);
+    explicit InputStream1(char *fName, int B);
 
     string readln();
 

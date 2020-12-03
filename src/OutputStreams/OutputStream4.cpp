@@ -14,7 +14,7 @@
  * field of the OutputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-OutputStream4::OutputStream4(const char *fName) {
+OutputStream4::OutputStream4(char *fName, int B): OutputStream(fName,B) {
     fileName = fName;
     SYSTEM_INFO info;
     GetSystemInfo(&info);
@@ -24,7 +24,6 @@ OutputStream4::OutputStream4(const char *fName) {
                      ceil((double) SIZE_BUFFER * sizeof(char) / (double) info.dwAllocationGranularity);
     toMapWrite = sizePageBuffer;
     end = sizePageBuffer;
-    a=0;
 }
 
 /**

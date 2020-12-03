@@ -16,9 +16,10 @@ class OutputStream {
 protected:
     const char *fileName;
     FILE *file;
+    int BufferSize;
 
 public:
-    OutputStream(char *fName);
+    OutputStream(char *fName,int B);
 
     void create();
 

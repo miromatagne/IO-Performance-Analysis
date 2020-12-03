@@ -17,8 +17,7 @@ using namespace std;
  * field of the InputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-InputStream3::InputStream3(char *fName, int bufSize) : InputStream(fName) {
-    B = bufSize;
+InputStream3::InputStream3(char *fName, int B) : InputStream(fName,B) {
     index = 0;
 }
 
@@ -31,7 +30,7 @@ InputStream3::InputStream3(char *fName, int bufSize) : InputStream(fName) {
 string InputStream3::readln() {
 
     if (buffer == nullptr) {
-        buffer = new char[B];
+        buffer = new char[BufferSize];
         bufferLength = readToBuffer();
         if (bufferLength == 0) {
             return nullptr;
@@ -69,7 +68,7 @@ string InputStream3::readln() {
 }
 
 int InputStream3::readToBuffer() {
-    int nbChar = read(fileno(file), buffer, B);
+    int nbChar = read(fileno(file), buffer, BufferSize);
     index = 0;
 //    cout << "nbChar :" << nbChar << endl;
 //    cout << "buffer :" << buffer << endl;

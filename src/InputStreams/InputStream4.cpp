@@ -15,21 +15,19 @@ using namespace std;
 
 extern int errno;
 
-#define SIZE_BUFFER 1000
 
 /**
  * Constructor storing the chosen file's name in the fileName
  * field of the InputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-InputStream4::InputStream4(char *fName, int bufSize) {
-    fileName = fName;
+InputStream4::InputStream4(char *fName, int B) : InputStream(fName,B){
     SYSTEM_INFO info;
     GetSystemInfo(&info);
     start_file = 0;
     start = 0;
     sizePageBuffer = info.dwAllocationGranularity *
-                     ceil((double) SIZE_BUFFER * sizeof(char) / (double) info.dwAllocationGranularity);
+                     ceil((double) BufferSize * sizeof(char) / (double) info.dwAllocationGranularity);
 }
 
 
@@ -75,13 +73,6 @@ void InputStream4::close() {
     fclose(file);
 }
 
-/**
- * Moves the cursor of the file to a certain position specified by the user.
- * @param pos : desired position of the cursor
- */
-void InputStream4::seek(int pos) {
-    fseek(file, pos, SEEK_SET);
-}
 
 /**
  * Map a region into memory

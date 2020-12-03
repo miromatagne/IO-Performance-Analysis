@@ -13,8 +13,9 @@
  * field of the OutputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-OutputStream::OutputStream(char *fName) {
+OutputStream::OutputStream(char *fName,int B) {
     fileName = fName;
+    BufferSize = B;
 }
 
 /**

@@ -4,11 +4,11 @@
 #include <ostream>
 #include <fstream>
 #include <windows.h>
+#include "OutputStream.h"
 using namespace std;
 //
-class OutputStream4 {
+class OutputStream4 : public OutputStream{
 private:
-    const char *fileName;
     FILE* file;
     HANDLE hFile;
     int fd;
@@ -23,11 +23,10 @@ private:
     int nbExtension;
     int start_file;
     int end;
-    int a;
 
 
 public:
-    explicit OutputStream4(const char* fName);
+    OutputStream4(char* fName,int B);
     void create();
     void writeln(string text);
     void close();

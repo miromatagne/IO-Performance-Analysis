@@ -19,16 +19,16 @@ public:
     }
 
     template<class InputClass, class OutputClass>
-    void rrmerge11(char *fileName, ...) {
+    void rrmerge11(int B, char *fileName, ...) {
         vector<InputClass> readerList;
-        OutputClass outputStream("experiment3.txt");
+        OutputClass outputStream("experiment3.txt",B);
         outputStream.create();
         va_list vl;
                 va_start(vl, fileName);
         char *arg = fileName;
         int i = 0;
         do {
-            InputClass inputStream(arg);
+            InputClass inputStream(arg,B);
             readerList.push_back(inputStream);
             readerList[i].open();
             arg = va_arg(vl, char*);

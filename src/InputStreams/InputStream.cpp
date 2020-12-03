@@ -13,8 +13,9 @@ using namespace std;
  * field of the InputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-InputStream::InputStream(char *fName) {
+InputStream::InputStream(char *fName, int B) {
     fileName = fName;
+    BufferSize=B;
 }
 
 /**
