@@ -4,8 +4,8 @@
 
 #include <cstdio>
 #include <string>
-#include <src/InputStreams/InputStream.h>
-#include <src/InputStreams/InputStream1.h>
+#include <InputStreams/InputStream.h>
+#include <InputStreams/InputStream1.h>
 
 using namespace std;
 
@@ -16,7 +16,7 @@ private:
         vector<string> line;
     };
 
-    vector<string> stringToVector(string stringLine);
+    static vector<string> stringToVector(string stringLine);
 
     string vectorToString(vector<string> vectorLine);
 

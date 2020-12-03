@@ -20,6 +20,7 @@
 #include <OutputStreams/OutputStream2.h>
 #include <InputStreams/InputStream2.h>
 #include "Chrono.h"
+#include "MultiwayMerge.h"
 #include <vector>
 #include <type_traits>
 #include <typeinfo>
@@ -47,12 +48,16 @@ using namespace std;
 //}
 
 int main() {
+//    Experiment3 experiment3;
+//    experiment3.rrmerge11<InputStream1, OutputStream1>("../data/comp_cast_type.csv", "../data/aka_name.csv", NULL);
 //    Experiment1 experiment1;
 //    double *times = experiment1.getDurations("../data/aka_name.csv", 70);
 //    cout << times[0] << " " << times[1] << " " << times[2] << endl;
 
-    //Measurement *m = new Measurement();
-    //m->testFiles(0);
+//    Measurement *m = new Measurement();
+//    m->testFiles(0);
+    MultiwayMerge *m = new MultiwayMerge();
+    m->extsort("../data/aka_name.csv", 1, 40000, 10);
     /*
     InputStream4 inputStream4("../data/movie_companies.csv", 4);
     inputStream4.open();
@@ -111,13 +116,13 @@ int main() {
     inputStream.close();
 */
 
-    InputStream2 inputStream2("../data/aka_title.csv");
-    inputStream2.open();
-    string line = "let's start !";
-    while (line != "") {
-        line = inputStream2.readln();
-        cout << "line : " << line << endl;
-    }
+//    InputStream2 inputStream2("../data/aka_title.csv");
+//    inputStream2.open();
+//    string line = "let's start !";
+//    while (line != "") {
+//        line = inputStream2.readln();
+//        cout << "line : " << line << endl;
+//    }
 
     return 0;
 }

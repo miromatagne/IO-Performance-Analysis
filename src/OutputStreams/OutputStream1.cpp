@@ -9,7 +9,7 @@
  * field of the OutputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-OutputStream1::OutputStream1(char *fName): OutputStream(fName)  {
+OutputStream1::OutputStream1(char *fName) : OutputStream(fName) {
 }
 
 
@@ -22,7 +22,6 @@ void OutputStream1::writeln(string text) const {
     char c = text[0];
     int i = 0;
     while (c != '\0') {
-        cout << text << endl;
         i++;
         write(fileno(file), &c, sizeof(c));
         c = text[i];

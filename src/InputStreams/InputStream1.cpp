@@ -34,3 +34,8 @@ string InputStream1::readln() {
     }
     return lineBuffer;
 }
+
+string InputStream1::getNumber() {
+    string str(fileName);
+    return str;
+}

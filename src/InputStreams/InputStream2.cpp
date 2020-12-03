@@ -27,7 +27,8 @@ string InputStream2::readln() {
         return "";
     }
     string lineString(result);
-    while (lineString.length() >= (n - 1) * i) {
+    while (lineString.length() >= n * i - 1) {
+        cout << "line: " << lineString << endl;
         response = fgets(result, n, file);
         string temp(result);
         lineString += temp;
@@ -41,6 +42,7 @@ string InputStream2::readln() {
     if ((int) c == 10) {
         res = lineString.substr(0, lineString.size() - 1);
     }
+    free(result);
     return res;
 
 }
