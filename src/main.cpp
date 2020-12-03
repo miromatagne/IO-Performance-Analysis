@@ -20,6 +20,7 @@
 #include <OutputStreams/OutputStream2.h>
 #include <InputStreams/InputStream2.h>
 #include "Chrono.h"
+#include "MultiwayMerge.h"
 #include <vector>
 #include <type_traits>
 #include <typeinfo>
@@ -54,8 +55,8 @@ int main() {
 
 //    Measurement *m = new Measurement();
 //    m->testFiles(0);
-    MultiwayMerge *m = new MultiwayMerge();
-    m->extsort("../data/aka_name.csv", 1, 40000, 10);
+    //MultiwayMerge *m = new MultiwayMerge();
+    //m->extsort("../data/aka_name.csv", 1, 40000, 10);
     /*
     InputStream4 inputStream4("../data/movie_companies.csv", 4);
     inputStream4.open();
