@@ -11,7 +11,7 @@ using namespace std;
  * field of the InputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-InputStream2::InputStream2(char *fName,int B) : InputStream(fName,B) {
+InputStream2::InputStream2(char *fName, int B) : InputStream(fName, B) {
 // Store the chunks of text into a line buffer
     len = sizeof(chunk);
     line = (char *) malloc(len);
@@ -63,7 +63,7 @@ string InputStream2::readln() {
 string InputStream2::readln() {
 
 // "Empty" the string
-    line[0]='\0';
+    line[0] = '\0';
 
     while (fgets(chunk, sizeof(chunk), file) != NULL) {
         size_t len_used = strlen(line);
@@ -72,9 +72,8 @@ string InputStream2::readln() {
         if (len - len_used < chunk_used) {
             len *= 2; // 2 times more space (cheaper to do it that way).
             if ((line = (char *) realloc(line, len)) == NULL) {
-
                 perror("Unable to reallocate memory for the line buffer.");
-                freeLine();
+                free(line);
                 exit(1);
             }
         }
@@ -84,16 +83,19 @@ string InputStream2::readln() {
 
         if (line[len_used - 1] == '\n') {
             // "Empty" the line buffer
-            line[len_used-1]='\0';
+            line[len_used - 1] = '\0';
             return line;
         }
     }
 
     return line;
 }
-void InputStream2::freeLine(){
-    free(line);
-    free(chunk);
 
+/**
+ * Closes the file.
+ */
+void InputStream2::close() {
+    free(line);
+    fclose(file);
 }
 

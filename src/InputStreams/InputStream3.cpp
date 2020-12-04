@@ -46,16 +46,7 @@ string InputStream3::readln() {
                 run = false;
                 break;
             }
-//            cout << "currentLine: " << currentLine << endl;
-//            cout << "buffer: " << buffer << endl;
-//            cout << "i: " << i << endl;
-//            cout << "buffer[i]: " << buffer[i] << endl;
-//            cout << bufferLength << endl;
             currentLine.push_back(buffer[i]);
-//            if ((i == bufferLength - 1) && (bufferLength != B)) {
-//                run = false;
-//                break;
-//            }
         }
         if (run) {
             bufferLength = readToBuffer();

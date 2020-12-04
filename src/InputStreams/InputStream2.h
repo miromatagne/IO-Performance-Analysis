@@ -12,8 +12,10 @@ private:
     size_t len;
     char chunk[10];
 public:
-    InputStream2(char *fName,int B);
-    void freeLine();
+    InputStream2(char *fName, int B);
+
+    void close();
+
     string readln();
 };
 

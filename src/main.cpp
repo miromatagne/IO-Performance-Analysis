@@ -113,16 +113,14 @@ int main() {
     inputStream.close();
 */
 
-    InputStream2 inputStream2("../data/aka_title.csv",NULL);
+    InputStream2 inputStream2("../data/aka_title.csv", NULL);
     inputStream2.open();
     string line = "let's start !";
 
     while (line != "") {
         line = inputStream2.readln();
-        cout  << line << endl;
+        cout << line << endl;
     }
-
-    inputStream2.freeLine();
     inputStream2.close();
 
 
@@ -136,24 +134,24 @@ int main() {
     while (i<11915) {
         inputStream.readln4(5);
 */
- /*
-    Experiment2 experiment2;
-    int sum = experiment2.randjump1("../data/aka_name.csv", 10);
-    cout << sum << endl;
-    int sum2 = experiment2.randjump2("../data/aka_name.csv", 10);
-    cout << sum2 << endl;
-    int sum3 = experiment2.randjump3("../data/aka_name.csv", 10, 2);
-    cout << sum3 << endl;
+    /*
+       Experiment2 experiment2;
+       int sum = experiment2.randjump1("../data/aka_name.csv", 10);
+       cout << sum << endl;
+       int sum2 = experiment2.randjump2("../data/aka_name.csv", 10);
+       cout << sum2 << endl;
+       int sum3 = experiment2.randjump3("../data/aka_name.csv", 10, 2);
+       cout << sum3 << endl;
 
-        i++;
-    }
-    inputStream.close();
-     */
+           i++;
+       }
+       inputStream.close();
+        */
 
- /*
-    Experiment3 experiment4;
-    experiment4.rrmerge11<InputStream4,OutputStream4>(20,"../data/aka_title.csv", "../data/aka_name.csv", NULL);
-    */
+    /*
+       Experiment3 experiment4;
+       experiment4.rrmerge11<InputStream4,OutputStream4>(20,"../data/aka_title.csv", "../data/aka_name.csv", NULL);
+       */
     return 0;
 }
 
