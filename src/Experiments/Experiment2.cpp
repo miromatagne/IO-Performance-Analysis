@@ -20,7 +20,7 @@ Experiment2::Experiment2() {
 
 int Experiment2::randjump1(char *fileName, int iteration) {
     int sum = 0;
-    InputStream1 inputStream1(fileName);
+    InputStream1 inputStream1(fileName, 0);
     inputStream1.open();
     FILE *file = inputStream1.getFile();
     fseek(file, 0, SEEK_END);
@@ -50,7 +50,7 @@ int Experiment2::randjump1(char *fileName, int iteration) {
 
 int Experiment2::randjump2(char *fileName, int iteration) {
     int sum = 0;
-    InputStream2 inputStream2(fileName);
+    InputStream2 inputStream2(fileName, 0);
     inputStream2.open();
     FILE *file = inputStream2.getFile();
     fseek(file, 0, SEEK_END);

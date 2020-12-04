@@ -12,7 +12,7 @@ Experiment1::Experiment1() {
 int Experiment1::length1(char *fileName) {
 
     int sum = 0;
-    InputStream1 inputStream1(fileName,NULL);
+    InputStream1 inputStream1(fileName, 0);
     inputStream1.open();
     string line;
     line = inputStream1.readln();
@@ -30,7 +30,7 @@ int Experiment1::length1(char *fileName) {
 
 int Experiment1::length2(char *fileName) {
     int sum = 0;
-    InputStream2 inputStream2(fileName,NULL);
+    InputStream2 inputStream2(fileName,0);
     inputStream2.open();
     string line;
     line = inputStream2.readln();

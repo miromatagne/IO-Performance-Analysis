@@ -23,8 +23,6 @@ public:
     void seek(int pos);
 
     FILE * getFile();
-
-    //virtual string readln() = 0;
 };
 
 

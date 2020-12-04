@@ -14,7 +14,7 @@ MultiwayMerge::MultiwayMerge() {
 }
 
 FILE *MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
-    InputStream1 *inputStream = new InputStream1(fileName);
+    InputStream1 *inputStream = new InputStream1(fileName, 0);
     inputStream->open();
     bool run = true;
     int fileNb = 0;
@@ -43,14 +43,14 @@ FILE *MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
                 name[i] = newFileName[i];
             }
             name[newFileName.length()] = '\0';
-            OutputStream1 *o = new OutputStream1(name);
+            OutputStream1 *o = new OutputStream1(name, 0);
             o->create();
             for (int lineNb = 0; lineNb < lines.size(); lineNb++) {
                 string line = vectorToString(lines[lineNb]);
                 o->writeln(line);
             }
             o->close();
-            InputStream1 *i = new InputStream1(name);
+            InputStream1 *i = new InputStream1(name, 0);
             files.push_back(i);
             fileNb++;
         }
@@ -81,7 +81,7 @@ FILE *MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
             name[i] = newFileName[i];
         }
         name[newFileName.length()] = '\0';
-        OutputStream1 *o = new OutputStream1(name);
+        OutputStream1 *o = new OutputStream1(name, 0);
         o->create();
         while (linesQueue.size() != 0) {
             vector<string> vectorLine = linesQueue.top().line;
@@ -100,7 +100,7 @@ FILE *MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
             files.erase(files.begin());
         }
         o->close();
-        InputStream1 *i = new InputStream1(name);
+        InputStream1 *i = new InputStream1(name, 0);
         files.push_back(i);
         fileNb++;
 

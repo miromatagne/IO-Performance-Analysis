@@ -47,11 +47,3 @@ void InputStream::seek(int pos) {
 FILE * InputStream::getFile() {
     return file;
 }
-
-/*int InputStream::sizeFile() {
-    fseek(file, 0, SEEK_END);
-    int sizeByteFile = ftell(file) * sizeof(char);
-    rewind(file);
-    fseek(file, 0, SEEK_SET);
-    return sizeByteFile;
-}*/
