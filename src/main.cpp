@@ -113,15 +113,17 @@ int main() {
     inputStream.close();
 */
 
- /*   InputStream2 inputStream2("../data/aka_title.csv");
-
-    InputStream2 inputStream2("../data/aka_title.csv");
+    InputStream2 inputStream2("../data/aka_title.csv",NULL);
     inputStream2.open();
     string line = "let's start !";
+
     while (line != "") {
         line = inputStream2.readln();
-        cout << "line : " << line << endl;
+        cout  << line << endl;
     }
+
+    inputStream2.freeLine();
+    inputStream2.close();
 
 
 
@@ -147,8 +149,10 @@ int main() {
     }
     inputStream.close();
      */
+ /*
     Experiment3 experiment4;
     experiment4.rrmerge11<InputStream4,OutputStream4>(20,"../data/aka_title.csv", "../data/aka_name.csv", NULL);
+    */
     return 0;
 }
 

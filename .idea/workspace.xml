@@ -35,30 +35,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="rien">
+    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="mini refacto">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Experiments/Experiment1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experiments/Experiment1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Experiments/Experiment3.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experiments/Experiment3.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream1.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream1.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/comp_cast_type.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/comp_cast_type.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream2.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream2.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream2.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream3.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream3.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream4.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream4.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream4.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream1.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream1.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream2.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream2.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream2.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream3.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream3.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,11 +88,6 @@
     <configuration name="info_h417_group_15" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="info_h417_group_15" TARGET_NAME="info_h417_group_15" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="info_h417_group_15" RUN_TARGET_NAME="info_h417_group_15">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -164,7 +140,11 @@
       <workItem from="1606914289950" duration="2212000" />
       <workItem from="1606924588544" duration="2508000" />
       <workItem from="1606947363094" duration="1535000" />
-      <workItem from="1607027698951" duration="2077000" />
+      <workItem from="1607027698951" duration="2780000" />
+      <workItem from="1607033423131" duration="773000" />
+      <workItem from="1607072757519" duration="5851000" />
+      <workItem from="1607078810942" duration="854000" />
+      <workItem from="1607079872120" duration="706000" />
     </task>
     <task id="LOCAL-00001" summary="classes">
       <created>1604102118724</created>
@@ -411,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606924903413</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="mini refacto">
+      <created>1607029844822</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1607029844822</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +439,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="write function problem" />
     <MESSAGE value="outputstream, write 1,2,3,4 + multiple changements du au write4" />
     <MESSAGE value="write 3 and 4, buffer B" />
     <MESSAGE value="InputStream and Experiment1 changes" />
@@ -477,7 +463,8 @@
     <MESSAGE value="refactor V1" />
     <MESSAGE value="refactor V2" />
     <MESSAGE value="rien" />
-    <option name="LAST_COMMIT_MESSAGE" value="rien" />
+    <MESSAGE value="mini refacto" />
+    <option name="LAST_COMMIT_MESSAGE" value="mini refacto" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="264" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606737310902">
@@ -504,45 +491,45 @@
     <state x="1164" y="395" key="FileChooserDialogImpl/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606648010890" />
     <state x="1164" y="699" key="FileChooserDialogImpl/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096378392" />
     <state x="582" y="192" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604161451206" />
-    <state width="2517" height="587" key="GridCell.Tab.0.bottom" timestamp="1607029771065">
+    <state width="2517" height="587" key="GridCell.Tab.0.bottom" timestamp="1607080567590">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="587" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607029771065" />
+    <state width="2517" height="587" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607080567590" />
     <state width="1237" height="247" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606937611769" />
-    <state width="2517" height="587" key="GridCell.Tab.0.center" timestamp="1607029771065">
+    <state width="2517" height="587" key="GridCell.Tab.0.center" timestamp="1607080567590">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="587" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607029771065" />
+    <state width="2517" height="587" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607080567590" />
     <state width="1237" height="247" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606937611768" />
-    <state width="2517" height="587" key="GridCell.Tab.0.left" timestamp="1607029771065">
+    <state width="2517" height="587" key="GridCell.Tab.0.left" timestamp="1607080567590">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="587" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607029771065" />
+    <state width="2517" height="587" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607080567590" />
     <state width="1237" height="247" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606937611768" />
-    <state width="2517" height="587" key="GridCell.Tab.0.right" timestamp="1607029771065">
+    <state width="2517" height="587" key="GridCell.Tab.0.right" timestamp="1607080567590">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="587" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607029771065" />
+    <state width="2517" height="587" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607080567590" />
     <state width="1237" height="247" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606937611768" />
-    <state width="1257" height="491" key="GridCell.Tab.1.bottom" timestamp="1604690448238">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="2517" height="488" key="GridCell.Tab.1.bottom" timestamp="1607079675997">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1257" height="491" key="GridCell.Tab.1.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604685734467" />
+    <state width="2517" height="488" key="GridCell.Tab.1.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607079675997" />
     <state width="1257" height="491" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604690448238" />
-    <state width="1257" height="491" key="GridCell.Tab.1.center" timestamp="1604690448237">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="2517" height="488" key="GridCell.Tab.1.center" timestamp="1607079675997">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1257" height="491" key="GridCell.Tab.1.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604685734467" />
+    <state width="2517" height="488" key="GridCell.Tab.1.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607079675997" />
     <state width="1257" height="491" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1604690448237" />
-    <state width="1257" height="491" key="GridCell.Tab.1.left" timestamp="1604690448237">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="2517" height="488" key="GridCell.Tab.1.left" timestamp="1607079675997">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1257" height="491" key="GridCell.Tab.1.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604685734467" />
+    <state width="2517" height="488" key="GridCell.Tab.1.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607079675997" />
     <state width="1257" height="491" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1604690448237" />
-    <state width="1257" height="491" key="GridCell.Tab.1.right" timestamp="1604690448238">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="2517" height="488" key="GridCell.Tab.1.right" timestamp="1607079675997">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1257" height="491" key="GridCell.Tab.1.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1604685734467" />
+    <state width="2517" height="488" key="GridCell.Tab.1.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607079675997" />
     <state width="1257" height="491" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1604690448238" />
     <state x="246" y="107" key="MergeDialog" timestamp="1607027785083">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -558,21 +545,21 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1118" y="420" key="RollbackChangesDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606214639903" />
-    <state x="274" y="0" key="SettingsEditor" timestamp="1607027945562">
+    <state x="274" y="0" key="SettingsEditor" timestamp="1607073025926">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="274" y="0" key="SettingsEditor/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607027945562" />
-    <state x="137" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1606947663300" />
-    <state x="872" y="303" key="Vcs.Push.Dialog.v2" timestamp="1606924907506">
+    <state x="274" y="0" key="SettingsEditor/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607073025926" />
+    <state x="137" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1607033447284" />
+    <state x="872" y="303" key="Vcs.Push.Dialog.v2" timestamp="1607029847356">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="303" key="Vcs.Push.Dialog.v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606924907506" />
+    <state x="872" y="303" key="Vcs.Push.Dialog.v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607029847356" />
     <state x="872" y="453" key="Vcs.Push.Dialog.v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096481395" />
     <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606476273077" />
-    <state x="1098" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607027735662">
+    <state x="1098" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607079052803">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1098" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607027735662" />
+    <state x="1098" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607079052803" />
     <state x="1097" y="634" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604093387163" />
     <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606592367624" />
     <state x="1274" y="0" width="1292" height="1406" key="dock-window-1" timestamp="1606423679788">
@@ -592,9 +579,10 @@
     </state>
     <state x="594" y="311" key="run.anything.popup/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606758602360" />
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1605293508476" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1604961082938">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="606" y="2" width="1344" height="1396" key="search.everywhere.popup" timestamp="1607078690760">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="606" y="2" width="1344" height="1396" key="search.everywhere.popup/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607078690760" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1604961082938" />
   </component>
 </project>
