@@ -127,9 +127,9 @@ int main() {
 //    int l = e.length<InputStream1>("../data/aka_name.csv", 100);
 //    cout << l << endl;
 
-    InputStream2 i("../data/aka_name.csv", 100);
+    InputStream4 i("../data/comp_cast_type.csv", 100);
     i.open();
-    cout << i.readln().length() << endl;
+    cout << i.readln() << endl;
 
 
     /*
@@ -153,10 +153,15 @@ int main() {
        inputStream.close();
         */
 
-    /*
-       Experiment3 experiment4;
-       experiment4.rrmerge11<InputStream4,OutputStream4>(20,"../data/aka_title.csv", "../data/aka_name.csv", NULL);
-       */
+
+       //Experiment3 experiment4;
+       //experiment4.rrmerge11<InputStream4,OutputStream4>(30,"../data/comp_cast_type.csv", "../data/aka_name.csv", NULL);
+       /*
+       InputStream4 i("../data/comp_cast_type.csv",30);
+       i.open();
+       cout << i.readln() << endl;
+       i.close();
+        */
     return 0;
 }
 

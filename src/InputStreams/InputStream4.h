@@ -10,7 +10,6 @@ class InputStream4 : public InputStream{
 private:
     void map(DWORD toMap);
     void unmap();
-    FILE *file;
     HANDLE rhFile;
     int fd;
     HANDLE rhMapFile;

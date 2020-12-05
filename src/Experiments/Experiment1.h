@@ -2,7 +2,6 @@
 #define INFO_H417_GROUP_15_EXPERIMENT1_H
 
 #include "Chrono.h"
-
 class Experiment1 {
 private:
 
@@ -22,7 +21,7 @@ public:
         int sum = 0;
         InputClass input(fileName, B);
         input.open();
-        string line;
+        std::string line;
         line = input.readln();
         sum += line.length();
         while (line != "") {
