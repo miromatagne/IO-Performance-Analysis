@@ -5,8 +5,6 @@
 
 class Experiment1 {
 private:
-    char *fileName;
-
 
 public:
     explicit Experiment1();
@@ -18,6 +16,24 @@ public:
     int length2(char *fileName);
 
     int length3(char *fileName, int B);
+
+    template<class InputClass>
+    int length(char *fileName, int B = 0) {
+        int sum = 0;
+        InputClass input(fileName, B);
+        input.open();
+        string line;
+        line = input.readln();
+        sum += line.length();
+        while (line != "") {
+            line = input.readln();
+            if (line != "") {
+                sum += line.length();
+            }
+        }
+        input.close();
+        return sum;
+    }
 };
 
 

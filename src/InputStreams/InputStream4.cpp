@@ -21,7 +21,7 @@ extern int errno;
  * field of the InputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-InputStream4::InputStream4(char *fName, int B) : InputStream(fName,B){
+InputStream4::InputStream4(char *fName, int B) : InputStream(fName, B) {
     SYSTEM_INFO info;
     GetSystemInfo(&info);
     start_file = 0;
@@ -142,6 +142,7 @@ string InputStream4::readln() {
                 break;
             }
             currentLine.push_back(readBuffer[i]);
+            cout << currentLine.length() << endl;
             start_file += 1;
 
         }

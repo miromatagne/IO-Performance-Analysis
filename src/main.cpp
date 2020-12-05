@@ -113,18 +113,23 @@ int main() {
     inputStream.close();
 */
 
-    InputStream2 inputStream2("../data/aka_title.csv", NULL);
-    inputStream2.open();
-    string line = "let's start !";
+//    InputStream2 inputStream2("../data/aka_title.csv", NULL);
+//    inputStream2.open();
+//    string line = "let's start !";
+//
+//    while (line != "") {
+//        line = inputStream2.readln();
+//        cout << line << endl;
+//    }
+//    inputStream2.close();
 
-    while (line != "") {
-        line = inputStream2.readln();
-        cout << line << endl;
-    }
-    inputStream2.close();
+//    Experiment1 e;
+//    int l = e.length<InputStream1>("../data/aka_name.csv", 100);
+//    cout << l << endl;
 
-
-
+    InputStream2 i("../data/aka_name.csv", 100);
+    i.open();
+    cout << i.readln().length() << endl;
 
 
     /*
