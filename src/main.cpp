@@ -127,9 +127,23 @@ int main() {
 //    int l = e.length<InputStream1>("../data/aka_name.csv", 100);
 //    cout << l << endl;
 
-    InputStream2 i("../data/aka_name.csv", 100);
-    i.open();
-    cout << i.readln().length() << endl;
+    Measurement m;
+    m.testFiles();
+
+    //InputStream4 i("../data/comp_cast_type", 100);
+//    OutputStream3 os("../data/company_name3.csv", 2000);
+//    InputStream3 is("../data/company_name.csv", 2000);
+//    is.open();
+//    os.create();
+//    for (int i = 0; i < 156664; i++) {
+//        string line = is.readln();
+//        os.writeln(line);
+//    }
+//    os.close();
+//    is.close();
+//    InputStream2 i("../data/aka_name.csv", 100);
+//    i.open();
+//    cout << i.readln().length() << endl;
 
 
     /*

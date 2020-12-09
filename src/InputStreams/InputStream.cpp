@@ -15,7 +15,7 @@ using namespace std;
  */
 InputStream::InputStream(char *fName, int B) {
     fileName = fName;
-    BufferSize=B;
+    BufferSize = B;
 }
 
 /**
@@ -44,6 +44,6 @@ void InputStream::seek(int pos) {
 /**
  * Returns the file
  */
-FILE * InputStream::getFile() {
+FILE *InputStream::getFile() {
     return file;
 }

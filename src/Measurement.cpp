@@ -8,6 +8,8 @@
 #include "Chrono.h"
 #include "Experiments/Experiment1.h"
 #include <iostream>
+#include <InputStreams/InputStream1.h>
+#include <InputStreams/InputStream2.h>
 
 using namespace std;
 
@@ -21,7 +23,7 @@ Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B) 
     int length = 0;
     for (int i = 0; i < nbRep; i++) {
         chrono->startChrono();
-        length = experiment->length2(fileName);
+        length = experiment->length<InputStream2>(fileName, 0);
         times[i] = chrono->getChrono();
     }
     double sum = 0;
@@ -50,9 +52,9 @@ double *Measurement::getAverageTimesB(char *fileName, int nbRep, int minB, int m
 vector<Measurement::data> Measurement::testFiles(int B) {
     vector<data> vec;
     char *fileNames[] = {"aka_name", "aka_title", "cast_info", "char_name", "comp_cast_type", "company_name",
-                         "company_type", "complete_cast", "info_type", "keyword", "kind_type", "link_type",
-                         "movie_companies", "movie_info", "movie_info_idx", "movie_keyword", "movie_link", "name",
-                         "person_info", "role_type", "title"};
+                         "company_name2", "company_name3", "company_type", "complete_cast", "info_type", "keyword",
+                         "kind_type", "link_type", "movie_companies", "movie_info", "movie_info_idx", "movie_keyword",
+                         "movie_link", "name", "person_info", "role_type", "title"};
     for (int i = 0; i < sizeof(fileNames) / sizeof(fileNames[0]); i++) {
         char path[100];
         cout << fileNames[i] << endl;

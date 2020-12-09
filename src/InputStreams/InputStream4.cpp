@@ -28,6 +28,7 @@ InputStream4::InputStream4(char *fName, int B) : InputStream(fName, B) {
     start = 0;
     sizePageBuffer = info.dwAllocationGranularity *
                      ceil((double) BufferSize * sizeof(char) / (double) info.dwAllocationGranularity);
+    cout << info.dwAllocationGranularity << endl;
 }
 
 

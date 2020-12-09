@@ -7,20 +7,12 @@ class Experiment1 {
 private:
 
 public:
-    explicit Experiment1();
-
-    double *getDurations(char *fileName, int B);
-
-    int length1(char *fileName);
-
-    int length2(char *fileName);
-
-    int length3(char *fileName, int B);
+    explicit Experiment1() {};
 
     template<class InputClass>
     int length(char *fileName, int B = 0) {
         int sum = 0;
-        InputClass input(fileName, B);
+        InputClass input(fileName, 0);
         input.open();
         string line;
         line = input.readln();
