@@ -60,10 +60,18 @@ void InputStream4::open() {
         perror("Error printed by perror");
         fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
     }
-    map(sizePageBuffer);
+
+
     fseek(file, 0L, SEEK_END);
     sizeByteFile = ftell(file) * sizeof(char);
     rewind(file);
+    if(sizeByteFile<sizePageBuffer){
+        map(sizeByteFile);
+    }
+    else{
+        map(sizePageBuffer);
+    }
+
 }
 
 /**
@@ -143,7 +151,7 @@ string InputStream4::readln() {
                 break;
             }
             currentLine.push_back(readBuffer[i]);
-            cout << currentLine.length() << endl;
+            //cout << currentLine.length() << endl;
             start_file += 1;
 
         }
