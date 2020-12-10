@@ -17,7 +17,7 @@ public:
 
     data getAverageTime(char *fileName, int nbRep, int B = 0);
 
-    double *getAverageTimesB(char *fileName, int nbRep, int minB, int maxB);
+    double *getAverageTimesB(char *fileName, int nbRep, int minB, int maxB, int step);
 
     std::vector<data> testFiles(int B = 0);
 };

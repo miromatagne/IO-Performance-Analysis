@@ -91,6 +91,10 @@ string InputStream2::readln() {
     return line;
 }
 
+void InputStream2::test() {
+    while (fgets(chunk, sizeof(chunk), file) != NULL);
+}
+
 /**
  * Closes the file.
  */

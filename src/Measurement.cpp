@@ -10,6 +10,7 @@
 #include <iostream>
 #include <InputStreams/InputStream1.h>
 #include <InputStreams/InputStream2.h>
+#include <InputStreams/InputStream3.h>
 
 using namespace std;
 
@@ -23,7 +24,7 @@ Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B) 
     int length = 0;
     for (int i = 0; i < nbRep; i++) {
         chrono->startChrono();
-        length = experiment->length<InputStream2>(fileName, 0);
+        length = experiment->length<InputStream3>(fileName, B);
         times[i] = chrono->getChrono();
     }
     double sum = 0;
@@ -41,16 +42,17 @@ Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B) 
     return x;
 }
 
-double *Measurement::getAverageTimesB(char *fileName, int nbRep, int minB, int maxB) {
+double *Measurement::getAverageTimesB(char *fileName, int nbRep, int minB, int maxB, int step) {
     double *averageTimes = (double *) malloc((maxB - minB) * sizeof(double));
-    for (int i = minB; i < maxB + 1; i++) {
+    for (int i = minB; i < maxB + 1; i += step) {
         averageTimes[i - minB] = getAverageTime(fileName, nbRep, i).time;
+        cout << i << " " << averageTimes[i - minB] << endl;
     }
     return averageTimes;
 }
 
-vector<Measurement::data> Measurement::testFiles(int B) {
-    vector<data> vec;
+vector <Measurement::data> Measurement::testFiles(int B) {
+    vector <data> vec;
     char *fileNames[] = {"aka_name", "aka_title", "cast_info", "char_name", "comp_cast_type", "company_name",
                          "company_name2", "company_name3", "company_type", "complete_cast", "info_type", "keyword",
                          "kind_type", "link_type", "movie_companies", "movie_info", "movie_info_idx", "movie_keyword",

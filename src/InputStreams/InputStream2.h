@@ -17,6 +17,8 @@ public:
     void close();
 
     string readln();
+
+    void test();
 };
 
 
