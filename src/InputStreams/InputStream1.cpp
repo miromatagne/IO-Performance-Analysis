@@ -30,9 +30,7 @@ string InputStream1::readln() {
         if (read(fileno(file), &c, sizeof(c)) == 0) {
             break;
         }
-        if (c != '\n') {
-            lineBuffer.push_back(c);
-        }
+        lineBuffer.push_back(c);
     }
     return lineBuffer;
 }

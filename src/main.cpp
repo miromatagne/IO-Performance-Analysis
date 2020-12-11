@@ -130,15 +130,18 @@ int main() {
 //    Measurement m;
 //    m.getAverageTimesB("../data/aka_name.csv", 10, 100, 10000, 100);
 
-    for (int i = 0; i < 10; i++) {
-        Chrono *chrono = new Chrono();
-        InputStream2 i2("../data/cast_info.csv", 0);
+
+        InputStream3 i2("../data/aka_name.csv", 80000);
         i2.open();
-        chrono->startChrono();
-        i2.test();
-        cout << chrono->getChrono() << endl;
-        free(chrono);
-    }
+        string line="start";
+        int compteur =0;
+        while(line!=""){
+            line = i2.readln();
+            compteur+=line.length();
+            cout << line << endl;
+        }
+        cout << compteur << endl;
+        i2.close();
 
 
     //InputStream4 i("../data/comp_cast_type", 100);

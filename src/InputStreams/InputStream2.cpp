@@ -83,7 +83,7 @@ string InputStream2::readln() {
 
         if (line[len_used - 1] == '\n') {
             // "Empty" the line buffer
-            line[len_used - 1] = '\0';
+
             return line;
         }
     }

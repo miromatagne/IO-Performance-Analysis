@@ -28,7 +28,6 @@ InputStream4::InputStream4(char *fName, int B) : InputStream(fName, B) {
     start = 0;
     sizePageBuffer = info.dwAllocationGranularity *
                      ceil((double) BufferSize * sizeof(char) / (double) info.dwAllocationGranularity);
-    cout << info.dwAllocationGranularity << endl;
 }
 
 
@@ -89,11 +88,9 @@ void InputStream4::close() {
 void InputStream4::map(DWORD toMap) {
     DWORD end = 0;
     if (start + toMap > sizeByteFile) {
-        //cout << "trcu" << endl;
         end = 0;
         toMap = NULL;
     } else {
-        //cout << "trcu" << endl;
         end = start + toMap;
     }
     rhMapFile = CreateFileMapping(
@@ -118,7 +115,6 @@ void InputStream4::map(DWORD toMap) {
                                         toMap); //null
 
     if (readBuffer == NULL) {
-        cout << "ok" << endl;
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
@@ -145,13 +141,18 @@ string InputStream4::readln() {
     bool run = true;
     while (run) {
         for (int i = (start_file - start); i < sizePageBuffer; i++) {
-            if (readBuffer[i] == '\n' | start_file > sizeByteFile) {
+            if (readBuffer[i] == '\n') {
+                currentLine[currentLine.length()-1]=readBuffer[i];
+                start_file += 1;
+                run = false;
+                break;
+            }
+            else if (start_file >= sizeByteFile){
                 start_file += 1;
                 run = false;
                 break;
             }
             currentLine.push_back(readBuffer[i]);
-            //cout << currentLine.length() << endl;
             start_file += 1;
 
         }
@@ -160,11 +161,9 @@ string InputStream4::readln() {
             unmap();
             map(sizePageBuffer);
             if (readBuffer[0] == NULL) {
-
                 return currentLine;
             }
         }
     }
-
     return currentLine;
 }

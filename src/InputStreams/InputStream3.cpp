@@ -42,6 +42,7 @@ string InputStream3::readln() {
     while (run) {
         for (int i = index; i < bufferLength; i++) {
             if (buffer[i] == '\n') {
+                currentLine.push_back(buffer[i]);
                 index = i + 1;
                 run = false;
                 break;

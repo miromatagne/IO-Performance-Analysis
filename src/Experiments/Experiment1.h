@@ -19,9 +19,7 @@ public:
         sum += line.length();
         while (line != "") {
             line = input.readln();
-            if (line != "") {
-                sum += line.length();
-            }
+            sum += line.length();
         }
         input.close();
         return sum;
