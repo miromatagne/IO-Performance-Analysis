@@ -11,6 +11,7 @@
 #include <InputStreams/InputStream1.h>
 #include <InputStreams/InputStream2.h>
 #include <InputStreams/InputStream3.h>
+#include <InputStreams/InputStream4.h>
 
 using namespace std;
 
@@ -24,7 +25,7 @@ Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B) 
     int length = 0;
     for (int i = 0; i < nbRep; i++) {
         chrono->startChrono();
-        length = experiment->length<InputStream3>(fileName, B);
+        length = experiment->length<InputStream2>(fileName, B);
         times[i] = chrono->getChrono();
     }
     double sum = 0;
@@ -51,8 +52,8 @@ double *Measurement::getAverageTimesB(char *fileName, int nbRep, int minB, int m
     return averageTimes;
 }
 
-vector <Measurement::data> Measurement::testFiles(int B) {
-    vector <data> vec;
+vector<Measurement::data> Measurement::testFiles(int B) {
+    vector<data> vec;
     char *fileNames[] = {"aka_name", "aka_title", "cast_info", "char_name", "comp_cast_type", "company_name",
                          "company_name2", "company_name3", "company_type", "complete_cast", "info_type", "keyword",
                          "kind_type", "link_type", "movie_companies", "movie_info", "movie_info_idx", "movie_keyword",
@@ -65,7 +66,7 @@ vector <Measurement::data> Measurement::testFiles(int B) {
         strcat(path, ".csv");
         data x;
         data y;
-        x = getAverageTime(path, 10, B);
+        x = getAverageTime(path, 100, B);
         y.length = x.length;
         y.time = x.time;
         y.fileName = fileNames[i];

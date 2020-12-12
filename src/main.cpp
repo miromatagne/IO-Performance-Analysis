@@ -127,21 +127,19 @@ int main() {
 //    int l = e.length<InputStream1>("../data/aka_name.csv", 100);
 //    cout << l << endl;
 
-//    Measurement m;
-//    m.getAverageTimesB("../data/aka_name.csv", 10, 100, 10000, 100);
+    Measurement m;
+    m.testFiles();
 
-
-        InputStream3 i2("../data/aka_name.csv", 80000);
-        i2.open();
-        string line="start";
-        int compteur =0;
-        while(line!=""){
-            line = i2.readln();
-            compteur+=line.length();
-            cout << line << endl;
-        }
-        cout << compteur << endl;
-        i2.close();
+//    for (int i = 0; i < 1000; i++) {
+//        Chrono *chrono = new Chrono();
+//        InputStream2 i2("../data/cast_info.csv", 0);
+//        i2.open();
+//        chrono->startChrono();
+//        i2.test();
+//        cout << chrono->getChrono() << endl;
+//        free(chrono);
+//        i2.close();
+//    }
 
 
     //InputStream4 i("../data/comp_cast_type", 100);

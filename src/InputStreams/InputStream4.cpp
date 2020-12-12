@@ -64,10 +64,9 @@ void InputStream4::open() {
     fseek(file, 0L, SEEK_END);
     sizeByteFile = ftell(file) * sizeof(char);
     rewind(file);
-    if(sizeByteFile<sizePageBuffer){
+    if (sizeByteFile < sizePageBuffer) {
         map(sizeByteFile);
-    }
-    else{
+    } else {
         map(sizePageBuffer);
     }
 
