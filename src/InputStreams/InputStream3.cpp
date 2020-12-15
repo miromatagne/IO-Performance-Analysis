@@ -17,7 +17,7 @@ using namespace std;
  * field of the InputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-InputStream3::InputStream3(char *fName, int B) : InputStream(fName,B) {
+InputStream3::InputStream3(char *fName, int B) : InputStream(fName, B) {
     index = 0;
 }
 
@@ -69,4 +69,13 @@ int InputStream3::readToBuffer() {
 //    cout << "nbChar :" << nbChar << endl;
 //    cout << "buffer :" << buffer << endl;
     return nbChar;
+}
+
+/**
+ * Moves the cursor of the file to a certain position specified by the user.
+ * @param pos : desired position of the cursor
+ */
+void InputStream3::seek(int pos) {
+    fseek(file, pos, SEEK_SET);
+    buffer = nullptr;
 }

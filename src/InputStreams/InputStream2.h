@@ -10,7 +10,7 @@ class InputStream2 : public InputStream {
 private:
     char *line;
     size_t len;
-    char chunk[65536];
+    char chunk[500];
 public:
     InputStream2(char *fName, int B);
 
