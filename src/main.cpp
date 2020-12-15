@@ -23,6 +23,7 @@
 #include <vector>
 #include <type_traits>
 #include <typeinfo>
+#include <Experiments/Experiment2.h>
 
 using namespace std;
 
@@ -127,8 +128,8 @@ int main() {
 //    int l = e.length<InputStream1>("../data/aka_name.csv", 100);
 //    cout << l << endl;
 
-    Measurement m;
-    m.testFiles();
+//    Measurement m;
+//    m.testFiles();
 
 //    for (int i = 0; i < 1000; i++) {
 //        Chrono *chrono = new Chrono();
@@ -165,19 +166,19 @@ int main() {
     while (i<11915) {
         inputStream.readln4(5);
 */
-    /*
-       Experiment2 experiment2;
-       int sum = experiment2.randjump1("../data/aka_name.csv", 10);
-       cout << sum << endl;
-       int sum2 = experiment2.randjump2("../data/aka_name.csv", 10);
-       cout << sum2 << endl;
-       int sum3 = experiment2.randjump3("../data/aka_name.csv", 10, 2);
-       cout << sum3 << endl;
 
-           i++;
-       }
-       inputStream.close();
-        */
+    Experiment2 experiment2;
+    int sum = experiment2.randjump1("../data/comp_cast_type.csv", 5);
+    cout << "sum: " << sum << endl;
+    int sum2 = experiment2.randjump2("../data/comp_cast_type.csv", 5);
+    cout << "sum: " << sum2 << endl;
+    int sum3 = experiment2.randjump3("../data/comp_cast_type.csv", 5, 2);
+    cout << "sum: " << sum3 << endl;
+
+    InputStream3 inputStream ("../data/comp_cast_type.csv", 2);
+    inputStream.open();
+    inputStream.seek(13);
+    cout << inputStream.readln() << endl;
 
     /*
        Experiment3 experiment4;

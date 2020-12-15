@@ -41,16 +41,20 @@ string InputStream3::readln() {
     bool run = true;
     while (run) {
         for (int i = index; i < bufferLength; i++) {
+            //cout << "index : " << index << endl;
+            //cout << "length : "<< bufferLength << endl;
             if (buffer[i] == '\n') {
                 currentLine.push_back(buffer[i]);
                 index = i + 1;
                 run = false;
+                //cout << "ok" << endl;
                 break;
             }
             currentLine.push_back(buffer[i]);
         }
         if (run) {
             bufferLength = readToBuffer();
+            //cout << "buffer : " << buffer << endl;
             if (bufferLength == 0) {
                 return currentLine;
             }
