@@ -31,6 +31,8 @@ public:
 
     void close();
 
+    void seek(int pos);
+
     std::string readln();
 
 };

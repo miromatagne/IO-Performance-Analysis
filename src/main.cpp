@@ -172,7 +172,7 @@ int main() {
 //    cout << "sum: " << sum << endl;
 //    int sum2 = experiment2.randjump2("../data/comp_cast_type.csv", 5);
 //    cout << "sum: " << sum2 << endl;
-    int sum3 = experiment2.randjump3("../data/comp_cast_type.csv", 5, 2);
+    int sum3 = experiment2.randjump4("../data/comp_cast_type.csv", 5, 2);
     cout << "sum: " << sum3 << endl;
 
 //    InputStream3 inputStream("../data/comp_cast_type.csv", 2);
@@ -180,10 +180,10 @@ int main() {
 //    inputStream.seek(13);
 //    cout << inputStream.readln() << endl;
 
-    /*
-       Experiment3 experiment4;
-       experiment4.rrmerge11<InputStream4,OutputStream4>(20,"../data/aka_title.csv", "../data/aka_name.csv", NULL);
-       */
+
+//       Experiment3 experiment4;
+//       experiment4.rrmerge11<InputStream4,OutputStream4>(20,"../data/aka_title.csv", "../data/aka_name.csv", NULL);
+
     return 0;
 }
 

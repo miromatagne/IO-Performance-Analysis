@@ -169,3 +169,12 @@ string InputStream4::readln() {
     }
     return currentLine;
 }
+
+/**
+ * Moves the cursor of the file to a certain position specified by the user.
+ * @param pos : desired position of the cursor
+ */
+void InputStream4::seek(int pos) {
+    fseek(file, pos, SEEK_SET);
+    start_file = pos;
+}
