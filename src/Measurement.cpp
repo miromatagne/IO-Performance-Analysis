@@ -51,9 +51,9 @@ double *Measurement::getAverageTimesB(char *fileName, int nbRep, int minB, int m
 
 vector<Measurement::data> Measurement::testFiles(int B) {
     vector<data> vec;
-    char *fileNames[] = {"aka_name", "aka_title", "char_name", "comp_cast_type", "company_name",
+    char *fileNames[] = {"aka_name", "aka_title", "cast_info", "char_name", "comp_cast_type", "company_name",
                          "company_type", "complete_cast", "info_type", "keyword",
-                         "kind_type", "link_type", "movie_companies", "movie_info_idx", "movie_keyword",
+                         "kind_type", "link_type", "movie_companies", "movie_info", "movie_info_idx", "movie_keyword",
                          "movie_link", "name", "person_info", "role_type", "title"};
     for (int i = 0; i < sizeof(fileNames) / sizeof(fileNames[0]); i++) {
         char path[100];
