@@ -103,7 +103,7 @@ int Experiment2::randjump3(char *fileName, int iteration, int B) {
     inputStream3.close();
     return sum;
 }
-
+//
 int Experiment2::randjump4(char *fileName, int iteration, int B) {
     int sum = 0;
     InputStream4 inputStream4(fileName, B);
