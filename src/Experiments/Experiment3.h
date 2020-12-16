@@ -24,7 +24,7 @@ public:
         OutputClass outputStream("experiment3.txt", B);
         outputStream.create();
         va_list vl;
-                va_start(vl, fileName);
+        va_start(vl, fileName);
         char *arg = fileName;
         int i = 0;
         do {
@@ -34,7 +34,7 @@ public:
             arg = va_arg(vl, char*);
             i++;
         } while (arg != NULL);
-                va_end(vl);
+        va_end(vl);
         int size = i;
         i = 0;
         string line = "let's start !";

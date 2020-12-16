@@ -98,7 +98,7 @@ void OutputStream4::map(int toMap) {
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
         fprintf(stderr, "Error of the MapViewOfFile function: %s\n", strerror(err));
-        CloseHandle(hMapFile); 
+        CloseHandle(hMapFile);
     }
 
 }

@@ -144,12 +144,10 @@ string InputStream4::readln() {
     bool run = true;
     while (run) {
         for (int i = (start_file - start); i < sizePageBuffer; i++) {
-            if (readBuffer[i] == '\n') {
-                currentLine[currentLine.length() - 1] = readBuffer[i];
-                start_file += 1;
-                run = false;
-                break;
-            } else if (start_file >= sizeByteFile) {
+            if (readBuffer[i] == '\n' || start_file >= sizeByteFile) {
+                if (start_file < sizeByteFile){
+                    currentLine.push_back(readBuffer[i]);
+                }
                 start_file += 1;
                 run = false;
                 break;
@@ -177,4 +175,11 @@ string InputStream4::readln() {
 void InputStream4::seek(int pos) {
     fseek(file, pos, SEEK_SET);
     start_file = pos;
+    if(pos>start+sizePageBuffer || pos<start){
+        cout << "ok" << endl;
+        start=start_file/sizePageBuffer;
+        unmap();
+        map(sizePageBuffer);
+    }
+
 }

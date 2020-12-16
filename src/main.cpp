@@ -125,8 +125,8 @@ int main() {
 //    inputStream2.close();
 
 //    Experiment1 e;
-//    int l = e.length<InputStream1>("../data/aka_name.csv", 100);
-//    cout << l << endl;
+//   int l = e.length<InputStream2>("../data/aka_name.csv", 100);
+//   cout << l << endl;
 
 //    Measurement m;
 //    m.testFiles();
@@ -169,13 +169,13 @@ int main() {
 
     Experiment2 experiment2;
 
-    int sum = experiment2.randjump1("../data/aka_name.csv", 24);
+    int sum = experiment2.randjump1("../data/aka_name.csv", 8000);
     cout << "sum: " << sum << endl;
-    int sum2 = experiment2.randjump2("../data/aka_name.csv", 24);
+    int sum2 = experiment2.randjump2("../data/aka_name.csv", 8000);
     cout << "sum: " << sum2 << endl;
-    int sum3 = experiment2.randjump3("../data/aka_name.csv", 24,2);
+    int sum3 = experiment2.randjump3("../data/aka_name.csv", 8000,2);
     cout << "sum: " << sum3 << endl;
-    int sum4 = experiment2.randjump4("../data/aka_name.csv", 24, 2);
+    int sum4 = experiment2.randjump4("../data/aka_name.csv", 8000, 2);
     cout << "sum: " << sum4 << endl;
     if(sum==sum2 && sum3==sum4 && sum2==sum3){
         cout << "ok" << endl;
@@ -189,8 +189,8 @@ int main() {
 //    inputStream4.open();
 //    inputStream4.close();
 
- //     Experiment3 experiment4;
-   //   experiment4.rrmerge11<InputStream4,OutputStream4>(20,"../data/aka_title.csv", "../data/comp_cast_type.csv", NULL);
+//    Experiment3 experiment4;
+//    experiment4.rrmerge11<InputStream4,OutputStream4>(20,"../data/company_name.csv","../data/aka_title.csv", NULL);
 
     return 0;
 }
