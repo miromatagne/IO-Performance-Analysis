@@ -20,7 +20,7 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:do-while" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
@@ -35,13 +35,30 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="read4">
+    <list default="true" id="79767ba3-830c-4bb4-8b6d-b5201f8ad164" name="Default Changelist" comment="experiment2 randjump4">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Experiments/Experiment1.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experiments/Experiment1.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Test.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/aka_name.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/aka_name.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/aka_title.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/aka_title.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cast_info.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/cast_info.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/char_name.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/char_name.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/movie_companies.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/movie_companies.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/movie_info.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/movie_info.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/movie_info_idx.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/movie_info_idx.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/movie_keyword.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/movie_keyword.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/name.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/name.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/person_info.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/person_info.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/title.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/title.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Experiments/Experiment2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experiments/Experiment2.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream2.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream2.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream2.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream3.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream3.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream3.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream4.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream4.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream4.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Measurement.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Measurement.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,21 +89,30 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
+  <component name="Push.Settings">
+    <option name="SHOW_DETAILS_PANEL" value="false" />
+  </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\minhx\CLionProjects\info-h417-group-15\src" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\minhx\CLionProjects\info-h417-group-15\data" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\minhx\CLionProjects\info-h417-group-15\src" />
+    </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="info_h417_group_15" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="info_h417_group_15" TARGET_NAME="info_h417_group_15" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="info_h417_group_15" RUN_TARGET_NAME="info_h417_group_15">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -156,7 +182,8 @@
       <workItem from="1607180381279" duration="1366000" />
       <workItem from="1607635339031" duration="1453000" />
       <workItem from="1607700015254" duration="416000" />
-      <workItem from="1607723060247" duration="3217000" />
+      <workItem from="1607723060247" duration="3313000" />
+      <workItem from="1607776205613" duration="184000" />
     </task>
     <task id="LOCAL-00001" summary="classes">
       <created>1604102118724</created>
@@ -424,7 +451,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607181663681</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="length ok">
+      <created>1607726308950</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1607726308950</updated>
+    </task>
+    <task id="LOCAL-00040" summary="experiment2 randjump4">
+      <created>1608119987468</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1608119987468</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,7 +492,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="do-while" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -465,8 +506,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="InputStream and Experiment1 changes" />
-    <MESSAGE value="Chrono class and Inputstram modifications" />
     <MESSAGE value="readln3 works for all B values" />
     <MESSAGE value="readln2 length is correct now" />
     <MESSAGE value="added B to experiment 1" />
@@ -490,7 +529,9 @@
     <MESSAGE value="mini refacto" />
     <MESSAGE value="read2" />
     <MESSAGE value="read4" />
-    <option name="LAST_COMMIT_MESSAGE" value="read4" />
+    <MESSAGE value="length ok" />
+    <MESSAGE value="experiment2 randjump4" />
+    <option name="LAST_COMMIT_MESSAGE" value="experiment2 randjump4" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="264" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606737310902">
@@ -507,55 +548,55 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="175" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1605972933286" />
-    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1606216150440">
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1608124281855">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606216150440" />
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608124281855" />
     <state x="1164" y="395" key="FileChooserDialogImpl" timestamp="1606648010890">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1164" y="395" key="FileChooserDialogImpl/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606648010890" />
     <state x="1164" y="699" key="FileChooserDialogImpl/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096378392" />
     <state x="582" y="192" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604161451206" />
-    <state width="2518" height="585" key="GridCell.Tab.0.bottom" timestamp="1607726268100">
+    <state width="1258" height="546" key="GridCell.Tab.0.bottom" timestamp="1608124373471">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2518" height="585" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607726268100" />
+    <state width="1258" height="546" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608124373471" />
     <state width="1237" height="246" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1607642477499" />
-    <state width="2518" height="585" key="GridCell.Tab.0.center" timestamp="1607726268100">
+    <state width="1258" height="546" key="GridCell.Tab.0.center" timestamp="1608124373471">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2518" height="585" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607726268100" />
+    <state width="1258" height="546" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608124373471" />
     <state width="1237" height="246" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1607642477499" />
-    <state width="2518" height="585" key="GridCell.Tab.0.left" timestamp="1607726268099">
+    <state width="1258" height="546" key="GridCell.Tab.0.left" timestamp="1608124373471">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2518" height="585" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607726268099" />
+    <state width="1258" height="546" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608124373471" />
     <state width="1237" height="246" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1607642477499" />
-    <state width="2518" height="585" key="GridCell.Tab.0.right" timestamp="1607726268100">
+    <state width="1258" height="546" key="GridCell.Tab.0.right" timestamp="1608124373471">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2518" height="585" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607726268100" />
+    <state width="1258" height="546" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608124373471" />
     <state width="1237" height="246" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1607642477499" />
-    <state width="2517" height="488" key="GridCell.Tab.1.bottom" timestamp="1607079675997">
+    <state width="1258" height="492" key="GridCell.Tab.1.bottom" timestamp="1608124177535">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="488" key="GridCell.Tab.1.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607079675997" />
+    <state width="1258" height="492" key="GridCell.Tab.1.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608124177535" />
     <state width="1257" height="491" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604690448238" />
-    <state width="2517" height="488" key="GridCell.Tab.1.center" timestamp="1607079675997">
+    <state width="1258" height="492" key="GridCell.Tab.1.center" timestamp="1608124177535">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="488" key="GridCell.Tab.1.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607079675997" />
+    <state width="1258" height="492" key="GridCell.Tab.1.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608124177535" />
     <state width="1257" height="491" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1604690448237" />
-    <state width="2517" height="488" key="GridCell.Tab.1.left" timestamp="1607079675997">
+    <state width="1258" height="492" key="GridCell.Tab.1.left" timestamp="1608124177535">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="488" key="GridCell.Tab.1.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607079675997" />
+    <state width="1258" height="492" key="GridCell.Tab.1.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608124177535" />
     <state width="1257" height="491" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1604690448237" />
-    <state width="2517" height="488" key="GridCell.Tab.1.right" timestamp="1607079675997">
+    <state width="1258" height="492" key="GridCell.Tab.1.right" timestamp="1608124177535">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="488" key="GridCell.Tab.1.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607079675997" />
+    <state width="1258" height="492" key="GridCell.Tab.1.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608124177535" />
     <state width="1257" height="491" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1604690448238" />
     <state x="95" y="0" key="MergeDialog" timestamp="1607635431315">
       <screen x="0" y="0" width="1280" height="680" />
@@ -576,16 +617,20 @@
     </state>
     <state x="274" y="0" key="SettingsEditor/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607073025926" />
     <state x="137" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1607033447284" />
-    <state x="872" y="303" key="Vcs.Push.Dialog.v2" timestamp="1607181667636">
+    <state x="872" y="303" key="Vcs.Push.Dialog.v2" timestamp="1608124363256">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="303" key="Vcs.Push.Dialog.v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607181667636" />
+    <state x="872" y="303" key="Vcs.Push.Dialog.v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608124363256" />
     <state x="872" y="453" key="Vcs.Push.Dialog.v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096481395" />
     <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606476273077" />
-    <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607635360346">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="971" y="434" key="VcsDiffUtil.ChangesDialog" timestamp="1608124212273">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1098" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607179660597" />
+    <state x="971" y="434" key="VcsDiffUtil.ChangesDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608124212273" />
+    <state x="1098" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608119724956">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1098" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608119724956" />
     <state x="1097" y="634" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604093387163" />
     <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1607635360346" />
     <state x="1274" y="0" width="1292" height="1406" key="dock-window-1" timestamp="1606423679788">

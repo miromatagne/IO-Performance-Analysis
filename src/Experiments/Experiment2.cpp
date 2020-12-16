@@ -26,16 +26,15 @@ int Experiment2::randjump1(char *fileName, int iteration) {
     fseek(file, 0, SEEK_END);
     int fileSize = ftell(file) * sizeof(char);
     rewind(file);
-    fseek(file, 0, SEEK_SET);
     cout << "size : " << fileSize << endl;
     //std::random_device os_seed;
     //std::mt19937 generator(os_seed());
     //std::uniform_int_distribution<> distribute( 0, fileSize);
 
-    srand(time(NULL));
+    srand(4);  //4
     int position;
     for (int j = 0; j < iteration; j++) {
-        //int position = distribute( generator);
+        //int position = distribute(generator);
         position = (rand() % fileSize);
         inputStream1.seek(position);
         string line;
@@ -43,6 +42,7 @@ int Experiment2::randjump1(char *fileName, int iteration) {
         sum += line.length();
         cout << "pos : " << position << endl;
         cout << "line : " << line << endl;
+        //cout << "sizeline : " << line.length() << endl;
     };
     inputStream1.close();
     return sum;
@@ -56,9 +56,8 @@ int Experiment2::randjump2(char *fileName, int iteration) {
     fseek(file, 0, SEEK_END);
     int fileSize = ftell(file) * sizeof(char);
     rewind(file);
-    fseek(file, 0, SEEK_SET);
 
-    srand(time(NULL));
+    srand(4);
     int position;
     for (int j = 0; j < iteration; j++) {
         position = (rand() % fileSize);
@@ -81,9 +80,8 @@ int Experiment2::randjump3(char *fileName, int iteration, int B) {
     fseek(file, 0, SEEK_END);
     int fileSize = ftell(file) * sizeof(char);
     rewind(file);
-    fseek(file, 0, SEEK_SET);
 
-    srand(time(NULL));
+    srand(4);
     int position;
     for (int j = 0; j < iteration; j++) {
         position = (rand() % fileSize);
@@ -98,7 +96,7 @@ int Experiment2::randjump3(char *fileName, int iteration, int B) {
     return sum;
 }
 
-/*int Experiment2::randjump4(char *fileName, int iteration, int B) {
+int Experiment2::randjump4(char *fileName, int iteration, int B) {
     int sum = 0;
     InputStream4 inputStream4(fileName, B);
     inputStream4.open();
@@ -106,9 +104,8 @@ int Experiment2::randjump3(char *fileName, int iteration, int B) {
     fseek(file, 0, SEEK_END);
     int fileSize = ftell(file) * sizeof(char);
     rewind(file);
-    fseek(file, 0, SEEK_SET);
 
-    srand(time(NULL));
+    srand(4);
     int position;
     for (int j = 0; j < iteration; j++) {
         position = (rand() % fileSize);
@@ -119,4 +116,4 @@ int Experiment2::randjump3(char *fileName, int iteration, int B) {
     };
     inputStream4.close();
     return sum;
-}*/
+}

@@ -22,6 +22,8 @@ extern int errno;
  * @param fName : string corresponding to the filename the user chose
  */
 InputStream4::InputStream4(char *fName, int B) : InputStream(fName, B) {
+    test = 0;
+//    cout << B << endl;
     SYSTEM_INFO info;
     GetSystemInfo(&info);
     start_file = 0;
@@ -64,10 +66,9 @@ void InputStream4::open() {
     fseek(file, 0L, SEEK_END);
     sizeByteFile = ftell(file) * sizeof(char);
     rewind(file);
-    if(sizeByteFile<sizePageBuffer){
+    if (sizeByteFile < sizePageBuffer) {
         map(sizeByteFile);
-    }
-    else{
+    } else {
         map(sizePageBuffer);
     }
 
@@ -86,6 +87,8 @@ void InputStream4::close() {
  * Map a region into memory
  */
 void InputStream4::map(DWORD toMap) {
+//    cout << test << endl;
+//    test++;
     DWORD end = 0;
     if (start + toMap > sizeByteFile) {
         end = 0;
@@ -142,12 +145,11 @@ string InputStream4::readln() {
     while (run) {
         for (int i = (start_file - start); i < sizePageBuffer; i++) {
             if (readBuffer[i] == '\n') {
-                currentLine[currentLine.length()-1]=readBuffer[i];
+                currentLine[currentLine.length() - 1] = readBuffer[i];
                 start_file += 1;
                 run = false;
                 break;
-            }
-            else if (start_file >= sizeByteFile){
+            } else if (start_file >= sizeByteFile) {
                 start_file += 1;
                 run = false;
                 break;
@@ -166,4 +168,13 @@ string InputStream4::readln() {
         }
     }
     return currentLine;
+}
+
+/**
+ * Moves the cursor of the file to a certain position specified by the user.
+ * @param pos : desired position of the cursor
+ */
+void InputStream4::seek(int pos) {
+    fseek(file, pos, SEEK_SET);
+    start_file = pos;
 }

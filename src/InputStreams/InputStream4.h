@@ -4,12 +4,15 @@
 #include <istream>
 #include <windows.h>
 #include "InputStream.h"
+
 using namespace std;
 
-class InputStream4 : public InputStream{
+class InputStream4 : public InputStream {
 private:
     void map(DWORD toMap);
+
     void unmap();
+
     HANDLE rhFile;
     int fd;
     HANDLE rhMapFile;
@@ -18,6 +21,7 @@ private:
     DWORD start;
     DWORD sizePageBuffer;
     DWORD sizeByteFile;
+    int test;
 
 
 public:
@@ -26,6 +30,8 @@ public:
     void open();
 
     void close();
+
+    void seek(int pos);
 
     std::string readln();
 
