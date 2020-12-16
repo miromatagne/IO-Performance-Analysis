@@ -149,8 +149,8 @@ string InputStream4::readln() {
                     currentLine.push_back(readBuffer[i]);
                 }
                 if (start_file < sizeByteFile){
-                    currentLine[currentLine.length()-1] = readBuffer[i];
-                    //currentLine.push_back(readBuffer[i]);
+                    //currentLine[currentLine.length()-1] = readBuffer[i];
+                    currentLine.push_back(readBuffer[i]);
                 }
 
                 start_file += 1;

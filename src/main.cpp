@@ -169,13 +169,13 @@ int main() {
 
     Experiment2 experiment2;
 
-    int sum = experiment2.randjump1("../data/comp_cast_type.csv", 5); //8000
+    int sum = experiment2.randjump1("../data/aka_title.csv", 5); //8000
     cout << "sum: " << sum << endl;
-    int sum2 = experiment2.randjump2("../data/comp_cast_type.csv", 5);
+    int sum2 = experiment2.randjump2("../data/aka_title.csv", 5);
     cout << "sum: " << sum2 << endl;
-    int sum3 = experiment2.randjump3("../data/comp_cast_type.csv", 5,2);
+    int sum3 = experiment2.randjump3("../data/aka_title.csv", 5,2);
     cout << "sum: " << sum3 << endl;
-    int sum4 = experiment2.randjump4("../data/comp_cast_type.csv", 5, 2);
+    int sum4 = experiment2.randjump4("../data/aka_title.csv", 5, 2);
     cout << "sum: " << sum4 << endl;
     if(sum==sum2 && sum3==sum4 && sum2==sum3){
         cout << "ok2" << endl;
