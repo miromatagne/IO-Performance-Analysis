@@ -145,9 +145,7 @@ string InputStream4::readln() {
     while (run) {
         for (int i = (start_file - start); i < sizePageBuffer; i++) {
             if (readBuffer[i] == '\n' || start_file >= sizeByteFile) {
-                if (currentLine.length() == 0) {
-                    currentLine.push_back(readBuffer[i]);
-                }
+
                 if (start_file < sizeByteFile){
                     //currentLine[currentLine.length()-1] = readBuffer[i];
                     currentLine.push_back(readBuffer[i]);
@@ -181,8 +179,8 @@ void InputStream4::seek(int pos) {
     fseek(file, pos, SEEK_SET);
     start_file = pos;
     if(pos > start+sizePageBuffer || pos < start){
-        cout << "startfile : " << start_file << endl;
-        cout << "ok" << endl;
+        //cout << "startfile : " << start_file << endl;
+        //cout << "ok" << endl;
         start=(start_file/sizePageBuffer)*sizePageBuffer;
         //cout << "start : " << start << endl;
         unmap();

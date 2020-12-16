@@ -26,7 +26,7 @@ int Experiment2::randjump1(char *fileName, int iteration) {
     fseek(file, 0, SEEK_END);
     int fileSize = ftell(file) * sizeof(char);
     rewind(file);
-    cout << "size : " << fileSize << endl;
+    //cout << "size : " << fileSize << endl;
     std::random_device os_seed;
     std::mt19937 generator(os_seed());
     std::uniform_int_distribution<> distribute( 0, fileSize);
@@ -42,7 +42,7 @@ int Experiment2::randjump1(char *fileName, int iteration) {
         sum += line.length();
 
         //cout << "pos : " << position << endl;
-        cout << "line : " << line[line.length()] << endl;
+       // cout << "line : " << line[line.length()] << endl;
     }
     inputStream1.close();
     return sum;
@@ -128,7 +128,7 @@ int Experiment2::randjump4(char *fileName, int iteration, int B) {
         sum += line.length();
 
         //cout << "pos : " << position << endl;
-        cout << "line : " << line[line.length()] << endl;
+        //cout << "line : " << line[line.length()] << endl;
     }
     inputStream4.close();
     return sum;
