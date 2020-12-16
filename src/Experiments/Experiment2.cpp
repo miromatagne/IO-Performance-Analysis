@@ -41,8 +41,8 @@ int Experiment2::randjump1(char *fileName, int iteration) {
         line = inputStream1.readln();
         sum += line.length();
 
-        cout << "pos : " << position << endl;
-        cout << "line : " << line << endl;
+        //cout << "pos : " << position << endl;
+        cout << "line : " << line[line.length()] << endl;
     }
     inputStream1.close();
     return sum;
@@ -70,7 +70,7 @@ int Experiment2::randjump2(char *fileName, int iteration) {
         string line;
         line = inputStream2.readln();
         sum += line.length();
-        cout << "pos : " << position << endl;
+        //cout << "pos : " << position << endl;
     }
     inputStream2.close();
     return sum;
@@ -128,7 +128,7 @@ int Experiment2::randjump4(char *fileName, int iteration, int B) {
         sum += line.length();
 
         //cout << "pos : " << position << endl;
-        //cout << "line : " << line << endl;
+        cout << "line : " << line[line.length()] << endl;
     }
     inputStream4.close();
     return sum;
