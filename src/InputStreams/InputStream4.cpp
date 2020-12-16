@@ -134,7 +134,7 @@ void InputStream4::unmap() {
     CloseHandle(rhMapFile);
 }
 
-
+//
 /**
  * Read the next line from the file of the InputStream class by mapping the characters
  * into internal memory through memory mapping.
