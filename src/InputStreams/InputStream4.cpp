@@ -176,10 +176,15 @@ void InputStream4::seek(int pos) {
     fseek(file, pos, SEEK_SET);
     start_file = pos;
     if(pos>start+sizePageBuffer || pos<start){
-        cout << "ok" << endl;
+
         start=start_file/sizePageBuffer;
         unmap();
-        map(sizePageBuffer);
+        if (sizeByteFile < sizePageBuffer) {
+            map(sizeByteFile);
+        } else {
+            cout << "ok" << endl;
+            map(sizePageBuffer);
+        }
     }
 
 }

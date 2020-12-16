@@ -27,22 +27,23 @@ int Experiment2::randjump1(char *fileName, int iteration) {
     int fileSize = ftell(file) * sizeof(char);
     rewind(file);
     cout << "size : " << fileSize << endl;
-    //std::random_device os_seed;
-    //std::mt19937 generator(os_seed());
-    //std::uniform_int_distribution<> distribute( 0, fileSize);
+    std::random_device os_seed;
+    std::mt19937 generator(os_seed());
+    std::uniform_int_distribution<> distribute( 0, fileSize);
 
-    srand(4);  //4
+    //srand(4);  // time(NULL)
     int position;
     for (int j = 0; j < iteration; j++) {
-        //int position = distribute(generator);
-        position = (rand() % fileSize);
+        position = distribute(generator);
+        //position = (rand() % fileSize);
         inputStream1.seek(position);
         string line;
         line = inputStream1.readln();
         sum += line.length();
 
-        //cout << "sizeline : " << line.length() << endl;
-    };
+        cout << "pos : " << position << endl;
+        cout << "line : " << line << endl;
+    }
     inputStream1.close();
     return sum;
 }
@@ -56,16 +57,21 @@ int Experiment2::randjump2(char *fileName, int iteration) {
     int fileSize = ftell(file) * sizeof(char);
     rewind(file);
 
-    srand(4);
+    std::random_device os_seed;
+    std::mt19937 generator(os_seed());
+    std::uniform_int_distribution<> distribute( 0, fileSize);
+
+    //srand(4);
     int position;
     for (int j = 0; j < iteration; j++) {
-        position = (rand() % fileSize);
+        position = distribute(generator);
+        //position = (rand() % fileSize);
         inputStream2.seek(position);
         string line;
         line = inputStream2.readln();
         sum += line.length();
-
-    };
+        cout << "pos : " << position << endl;
+    }
     inputStream2.close();
     return sum;
 }
@@ -79,16 +85,21 @@ int Experiment2::randjump3(char *fileName, int iteration, int B) {
     int fileSize = ftell(file) * sizeof(char);
     rewind(file);
 
-    srand(4);
+    std::random_device os_seed;
+    std::mt19937 generator(os_seed());
+    std::uniform_int_distribution<> distribute( 0, fileSize);
+
+    //srand(4);
     int position;
     for (int j = 0; j < iteration; j++) {
-        position = (rand() % fileSize);
+        position = distribute(generator);
+        //position = (rand() % fileSize);
         inputStream3.seek(position);
         string line;
         line = inputStream3.readln();
         sum += line.length();
 
-    };
+    }
     inputStream3.close();
     return sum;
 }
@@ -102,16 +113,23 @@ int Experiment2::randjump4(char *fileName, int iteration, int B) {
     int fileSize = ftell(file) * sizeof(char);
     rewind(file);
 
-    srand(4);
+    std::random_device os_seed;
+    std::mt19937 generator(os_seed());
+    std::uniform_int_distribution<> distribute( 0, fileSize);
+
+    //srand(4);
     int position;
     for (int j = 0; j < iteration; j++) {
-        position = (rand() % fileSize);
+        position = distribute(generator);
+        //position = (rand() % fileSize);
         inputStream4.seek(position);
         string line;
         line = inputStream4.readln();
         sum += line.length();
 
-    };
+        //cout << "pos : " << position << endl;
+        //cout << "line : " << line << endl;
+    }
     inputStream4.close();
     return sum;
 }
