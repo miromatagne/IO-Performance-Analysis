@@ -2,7 +2,6 @@
 // Created by Linho100 on 27/11/2020.
 //
 #include "InputStream4.h"
-
 #include <iostream>
 #include <windows.h>
 #include <tchar.h>
@@ -10,11 +9,8 @@
 #include <string>
 #include <cmath>
 #include <io.h>
-
 using namespace std;
-
 extern int errno;
-
 
 /**
  * Constructor storing the chosen file's name in the fileName
@@ -31,7 +27,6 @@ InputStream4::InputStream4(char *fName, int B) : InputStream(fName, B) {
     sizePageBuffer = info.dwAllocationGranularity *
                      ceil((double) BufferSize * sizeof(char) / (double) info.dwAllocationGranularity);
 }
-
 
 /**
  * Opens the file and stores it in the file field of the InputStream class.
@@ -62,7 +57,6 @@ void InputStream4::open() {
         fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
     }
 
-
     fseek(file, 0L, SEEK_END);
     sizeByteFile = ftell(file) * sizeof(char);
     rewind(file);
@@ -71,9 +65,7 @@ void InputStream4::open() {
     } else {
         map(sizePageBuffer);
     }
-
 }
-
 /**
  * Closes the file.
  */
@@ -81,7 +73,6 @@ void InputStream4::close() {
     unmap();
     fclose(file);
 }
-
 
 /**
  * Map a region into memory
@@ -103,20 +94,17 @@ void InputStream4::map(DWORD toMap) {
             0,
             end,
             _T(fileName));                 // name of mapping object
-
     if (rhMapFile == NULL) {
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
         perror("Error printed by perror");
         fprintf(stderr, "Error of CreateFileMapping function: %s\n", strerror(err));
     }
-
     readBuffer = (LPTSTR) MapViewOfFile(rhMapFile,   // handle to map object
                                         FILE_MAP_READ, // read/write permission
                                         0,
                                         start,
                                         toMap); //null
-
     if (readBuffer == NULL) {
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);
@@ -125,7 +113,6 @@ void InputStream4::map(DWORD toMap) {
         CloseHandle(rhMapFile);
     }
 }
-
 /**
  * Unmap a region from memory
  */
@@ -133,7 +120,6 @@ void InputStream4::unmap() {
     UnmapViewOfFile(readBuffer);
     CloseHandle(rhMapFile);
 }
-
 //
 /**
  * Read the next line from the file of the InputStream class by mapping the characters
@@ -144,20 +130,16 @@ string InputStream4::readln() {
     bool run = true;
     while (run) {
         for (int i = (start_file - start); i < sizePageBuffer; i++) {
-            if (readBuffer[i] == '\n' || start_file >= sizeByteFile) {
-
+            if ((readBuffer[i] == '\n' || readBuffer[i] == '\r') || start_file >= sizeByteFile) {
                 if (start_file < sizeByteFile){
-                    //currentLine[currentLine.length()-1] = readBuffer[i];
                     currentLine.push_back(readBuffer[i]);
+                    start_file += 1;
                 }
-
-                start_file += 1;
                 run = false;
                 break;
             }
             currentLine.push_back(readBuffer[i]);
             start_file += 1;
-
         }
         if (run) {
             start += sizePageBuffer;
@@ -170,7 +152,6 @@ string InputStream4::readln() {
     }
     return currentLine;
 }
-
 /**
  * Moves the cursor of the file to a certain position specified by the user.
  * @param pos : desired position of the cursor
@@ -186,5 +167,4 @@ void InputStream4::seek(int pos) {
         unmap();
         map(sizePageBuffer);
     }
-
 }

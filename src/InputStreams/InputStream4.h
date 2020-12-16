@@ -16,7 +16,7 @@ private:
     HANDLE rhFile;
     int fd;
     HANDLE rhMapFile;
-    LPCTSTR readBuffer;
+    LPCTSTR readBuffer = nullptr;
     int start_file;
     DWORD start;
     DWORD sizePageBuffer;
