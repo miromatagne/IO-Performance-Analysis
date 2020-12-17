@@ -137,10 +137,10 @@ string InputStream4::readln() {
             if ((readBuffer[i] == '\n') || start_file >= sizeByteFile) {
                 if (start_file < sizeByteFile) {
                     if (currentLine.length() == 0) {
-                        cout << "OK" << endl;
                         currentLine = '\n';
                     } else {
                         currentLine[currentLine.length() - 1] = readBuffer[i];
+                        //currentLine.push_back(readBuffer[i]);
                     }
                     start_file += 1;
                 }
