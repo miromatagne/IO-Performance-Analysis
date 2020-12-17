@@ -33,7 +33,7 @@ string InputStream3::readln() {
         buffer = new char[BufferSize];
         bufferLength = readToBuffer();
         if (bufferLength == 0) {
-            return nullptr;
+            return "";
         }
     }
     char *firstOcc;

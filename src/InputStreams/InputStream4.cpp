@@ -9,7 +9,9 @@
 #include <string>
 #include <cmath>
 #include <io.h>
+
 using namespace std;
+
 extern int errno;
 
 /**
@@ -66,6 +68,7 @@ void InputStream4::open() {
         map(sizePageBuffer);
     }
 }
+
 /**
  * Closes the file.
  */
@@ -113,6 +116,7 @@ void InputStream4::map(DWORD toMap) {
         CloseHandle(rhMapFile);
     }
 }
+
 /**
  * Unmap a region from memory
  */
@@ -130,9 +134,14 @@ string InputStream4::readln() {
     bool run = true;
     while (run) {
         for (int i = (start_file - start); i < sizePageBuffer; i++) {
-            if ((readBuffer[i] == '\n' || readBuffer[i] == '\r') || start_file >= sizeByteFile) {
-                if (start_file < sizeByteFile){
-                    currentLine.push_back(readBuffer[i]);
+            if ((readBuffer[i] == '\n') || start_file >= sizeByteFile) {
+                if (start_file < sizeByteFile) {
+                    if (currentLine.length() == 0) {
+                        cout << "OK" << endl;
+                        currentLine = '\n';
+                    } else {
+                        currentLine[currentLine.length() - 1] = readBuffer[i];
+                    }
                     start_file += 1;
                 }
                 run = false;
@@ -152,6 +161,7 @@ string InputStream4::readln() {
     }
     return currentLine;
 }
+
 /**
  * Moves the cursor of the file to a certain position specified by the user.
  * @param pos : desired position of the cursor
@@ -159,10 +169,10 @@ string InputStream4::readln() {
 void InputStream4::seek(int pos) {
     fseek(file, pos, SEEK_SET);
     start_file = pos;
-    if(pos > start+sizePageBuffer || pos < start){
+    if (pos > start + sizePageBuffer || pos < start) {
         //cout << "startfile : " << start_file << endl;
         //cout << "ok" << endl;
-        start=(start_file/sizePageBuffer)*sizePageBuffer;
+        start = (start_file / sizePageBuffer) * sizePageBuffer;
         //cout << "start : " << start << endl;
         unmap();
         map(sizePageBuffer);

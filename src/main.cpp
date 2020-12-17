@@ -142,6 +142,10 @@ int main() {
 //        i2.close();
 //    }
 
+    Experiment1 experiment1;
+    cout << experiment1.length<InputStream4>("../data/aka_title.csv", 100) << endl;
+
+
 
     //InputStream4 i("../data/comp_cast_type", 100);
 //    OutputStream3 os("../data/company_name3.csv", 2000);
@@ -167,16 +171,16 @@ int main() {
         inputStream.readln4(5);
 */
 
-    Experiment2 experiment2;
+//    Experiment2 experiment2;
 
-    int sum = experiment2.randjump1("../data/aka_title.csv", 80000); //8000
-    cout << "sum: " << sum << endl;
-    int sum2 = experiment2.randjump2("../data/aka_title.csv", 80000);
-    cout << "sum: " << sum2 << endl;
-    int sum3 = experiment2.randjump3("../data/aka_title.csv", 80000,2);
-    cout << "sum: " << sum3 << endl;
-    int sum4 = experiment2.randjump4("../data/aka_title.csv", 80000, 2);
-    cout << "sum: " << sum4 << endl;
+//    int sum = experiment2.randjump1("../data/comp_cast_type.csv", 8000); //8000
+//    cout << "sum: " << sum << endl;
+//    int sum2 = experiment2.randjump2("../data/comp_cast_type.csv", 8000);
+//    cout << "sum: " << sum2 << endl;
+//    int sum3 = experiment2.randjump3("../data/comp_cast_type.csv", 100, 2);
+//    cout << "sum: " << sum3 << endl;
+//    int sum4 = experiment2.randjump4("../data/comp_cast_type.csv", 100, 2);
+//    cout << "sum: " << sum4 << endl;
 //    if(sum==sum2 && sum3==sum4 && sum2==sum3){
 //        cout << "ok2" << endl;
 //    }
