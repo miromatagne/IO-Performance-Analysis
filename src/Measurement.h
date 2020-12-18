@@ -15,11 +15,16 @@ private:
 public:
     Measurement();
 
-    data getAverageTime(char *fileName, int nbRep, int B = 0);
+    data getAverageTime(char *fileName, int nbRep, int B = 0, int iteration = 0);
 
     double *getAverageTimesB(char *fileName, int nbRep, int minB, int maxB, int step);
 
+    double *getAverageTimesJ(char *fileName, int nbRep, int minJ, int maxJ, int step);
+
     std::vector<data> testFiles(int B = 0);
+
+    std::vector<data> testIterations(char *fileName, int nbRep, int minJ, int maxJ, int step);
+
 };
 
 

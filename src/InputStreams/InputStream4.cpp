@@ -59,7 +59,7 @@ void InputStream4::open() {
         fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
     }
 
-    fseek(file, 0L, SEEK_END);
+    fseek(file, 0, SEEK_END);
     sizeByteFile = ftell(file) * sizeof(char);
     rewind(file);
     if (sizeByteFile < sizePageBuffer) {
@@ -67,6 +67,7 @@ void InputStream4::open() {
     } else {
         map(sizePageBuffer);
     }
+    //cout << "sizeByteFile : " << sizeByteFile << endl;
 }
 
 /**
@@ -139,8 +140,8 @@ string InputStream4::readln() {
                     if (currentLine.length() == 0) {
                         currentLine = '\n';
                     } else {
-                        currentLine[currentLine.length() - 1] = readBuffer[i];
-                        //currentLine.push_back(readBuffer[i]);
+                        currentLine[currentLine.length() - 1] = readBuffer[i]; // pour exp2
+                        //currentLine.push_back(readBuffer[i]); // pour exp1
                     }
                     start_file += 1;
                 }

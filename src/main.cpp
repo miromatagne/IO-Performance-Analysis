@@ -52,28 +52,15 @@ int main() {
 //    double *times = experiment1.getDurations("../data/aka_name.csv", 70);
 //    cout << times[0] << " " << times[1] << " " << times[2] << endl;
 
-//    Measurement *m = new Measurement();
-//    m->testFiles(0);
+    Measurement *m = new Measurement();
+    m->testIterations("../data/aka_name.csv", 10, 10, 10000, 1);
+// Et celui la pour les 4 fichiers
+//m->testFiles(0);
+
+
     //MultiwayMerge *m = new MultiwayMerge();
     //m->extsort("../data/aka_name.csv", 1, 40000, 10);
-    /*
-    InputStream4 inputStream4("../data/movie_companies.csv", 4);
-    inputStream4.open();
 
-    string line;
-    line = inputStream4.readln();
-    while (line != "") {
-        line = inputStream4.readln();
-        cout << line << endl;
-    }
-    inputStream4.close();
-     */
-    //cout << i4->readln() << endl;
-    //cout << i4->readln() << endl;
-//    cout << i1->readln() << endl;
-//    cout << i1->readln() << endl;
-//    cout << i1->readln() << endl;
-    //i4->close();
 
 //    Experiment1 *e = new Experiment1();
 //    cout << e->length3("../data/comp_cast_type.csv", 10) << endl;
@@ -114,16 +101,6 @@ int main() {
     inputStream.close();
 */
 
-//    InputStream2 inputStream2("../data/aka_title.csv", NULL);
-//    inputStream2.open();
-//    string line = "let's start !";
-//
-//    while (line != "") {
-//        line = inputStream2.readln();
-//        cout << line << endl;
-//    }
-//    inputStream2.close();
-
 //    Experiment1 e;
 //   int l = e.length<InputStream2>("../data/aka_name.csv", 100);
 //   cout << l << endl;
@@ -142,8 +119,8 @@ int main() {
 //        i2.close();
 //    }
 
-    Experiment1 experiment1;
-    cout << experiment1.length<InputStream4>("../data/aka_title.csv", 100) << endl;
+//    Experiment1 experiment1;
+//    cout << experiment1.length<InputStream4>("../data/aka_title.csv", 100) << endl;
 
 
 
@@ -171,27 +148,31 @@ int main() {
         inputStream.readln4(5);
 */
 
-//    Experiment2 experiment2;
-//
-//    int sum = experiment2.randjump1("../data/comp_cast_type.csv", 10); //8000
-//    cout << "sum: " << sum << endl;
-//    int sum2 = experiment2.randjump2("../data/comp_cast_type.csv", 10);
-//    cout << "sum: " << sum2 << endl;
-//    int sum3 = experiment2.randjump3("../data/comp_cast_type.csv", 10, 2);
-//    cout << "sum: " << sum3 << endl;
-//    int sum4 = experiment2.randjump4("../data/comp_cast_type.csv", 10, 2);
-//    cout << "sum: " << sum4 << endl;
-//    if(sum==sum2 && sum3==sum4 && sum2==sum3){
-//        cout << "ok2" << endl;
-//    }
+   /* Experiment2 experiment2;
+    cout << experiment2.randjump<InputStream1>("../data/aka_name.csv", 50000, 2) << endl;
+    cout << experiment2.randjump<InputStream2>("../data/aka_name.csv", 50000, 2) << endl;
+    cout << experiment2.randjump<InputStream3>("../data/aka_name.csv", 50000, 2) << endl;
+    cout << experiment2.randjump<InputStream4>("../data/aka_name.csv", 50000, 2) << endl;
+*/
+
+
+/*    int sum = experiment2.randjump1("../data/aka_name.csv", 10000); //8000
+    cout << "sum: " << sum << endl;
+    int sum2 = experiment2.randjump2("../data/aka_name.csv", 10000);
+    cout << "sum: " << sum2 << endl;
+    int sum3 = experiment2.randjump3("../data/aka_name.csv", 10000, 2);
+    cout << "sum: " << sum3 << endl;
+    int sum4 = experiment2.randjump4("../data/aka_name.csv", 10000, 2);
+    cout << "sum: " << sum4 << endl;
+    if(sum==sum2 && sum3==sum4 && sum2==sum3){
+        cout << "ok2" << endl;
+    }
+    */
+
 //    InputStream3 inputStream("../data/comp_cast_type.csv", 2);
 //    inputStream.open();
 //    inputStream.seek(13);
 //    cout << inputStream.readln() << endl;
-
-//    InputStream4 inputStream4("../data/company_name.csv", 2);
-//    inputStream4.open();
-//    inputStream4.close();
 
 //    Experiment3 experiment4;
 //    experiment4.rrmerge11<InputStream4,OutputStream4>(20,"../data/company_name.csv","../data/aka_title.csv", NULL);

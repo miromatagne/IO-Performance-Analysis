@@ -13,9 +13,9 @@
 
 using namespace std;
 
-Experiment2::Experiment2() {
+/*Experiment2::Experiment2() {
 }
-
+/*
 int Experiment2::randjump1(char *fileName, int iteration) {
     int sum = 0;
     InputStream1 inputStream1(fileName, 0);
@@ -24,7 +24,7 @@ int Experiment2::randjump1(char *fileName, int iteration) {
     fseek(file, 0, SEEK_END);
     int fileSize = ftell(file) * sizeof(char);
     rewind(file);
-    //cout << "size : " << fileSize << endl;
+    cout << "size : " << fileSize << endl;
 //    std::random_device os_seed;
     int seed = 10;
     std::mt19937 generator(seed);
@@ -38,7 +38,7 @@ int Experiment2::randjump1(char *fileName, int iteration) {
         string line;
         line = inputStream1.readln();
         sum += line.length();
-        //cout << "pos : " << position << endl;
+        cout << "pos : " << position << endl;
         // cout << "line : " << line[line.length()] << endl;
     }
     inputStream1.close();
@@ -91,7 +91,7 @@ int Experiment2::randjump3(char *fileName, int iteration, int B) {
         string line;
         line = inputStream3.readln();
         sum += line.length();
-        cout << "line : " << line << " " << line.length() << " " << position << endl;
+        //cout << "line : " << line << " " << line.length() << " " << position << endl;
     }
     inputStream3.close();
     return sum;
@@ -118,9 +118,7 @@ int Experiment2::randjump4(char *fileName, int iteration, int B) {
         string line;
         line = inputStream4.readln();
         sum += line.length();
-        //cout << "pos : " << position << endl;
-        cout << "line : " << line << " " << line.length() << " " << position << endl;
     }
     inputStream4.close();
     return sum;
-}
+}*/
