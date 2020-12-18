@@ -18,7 +18,7 @@ OutputStream2::OutputStream2(char *fName,int B) : OutputStream(fName,B){
  */
 void OutputStream2::writeln(string text) const{
 
-    if (fputs((text+"\n").c_str(), file) < 0)
+    if (fputs((text).c_str(), file) < 0)
     {
         int err = errno;
         fprintf(stderr, "Value of errno: %d\n", errno);

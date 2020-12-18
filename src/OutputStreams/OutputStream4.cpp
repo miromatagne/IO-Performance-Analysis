@@ -8,7 +8,7 @@
 #include <algorithm>
 #include <iostream>
 
-#define SIZE_BUFFER 100000
+
 /**
  * Constructor storing the chosen file's name in the fileName
  * field of the OutputStream class
@@ -19,11 +19,8 @@ OutputStream4::OutputStream4(char *fName, int B): OutputStream(fName,B) {
     SYSTEM_INFO info;
     GetSystemInfo(&info);
     start_file = 0;
-    start = 0;
     sizePageBuffer = info.dwAllocationGranularity *
-                     ceil((double) SIZE_BUFFER * sizeof(char) / (double) info.dwAllocationGranularity);
-    toMapWrite = sizePageBuffer;
-    end = sizePageBuffer;
+                     ceil((double) BufferSize * sizeof(char) / (double) info.dwAllocationGranularity);
 }
 
 /**
@@ -71,7 +68,7 @@ void OutputStream4::unmap() {
  * Map a region into memory
  */
 void OutputStream4::map(int toMap) {
-
+    DWORD start = (start_file/sizePageBuffer)*sizePageBuffer;
     hMapFile = CreateFileMapping(
             hFile,    // use paging file
             NULL,                    // default security
@@ -109,50 +106,40 @@ void OutputStream4::map(int toMap) {
  * @param  text : string to be written in the file
  */
 void OutputStream4::writeln(string text) {
-    text += "\n";
     const char *c = text.c_str();
     int sizeByteSource = strlen(c) * sizeof(c[0]);
     //adaption du SIZE_BUFFER en nombre de bytes tout en étant un multiple de la size d'une page de notre OS.
-    start = (start_file/sizePageBuffer)*sizePageBuffer;
-    nbExtension = 1;
-    char *buffer = (char *) malloc(sizePageBuffer);
-    int i = 1;
-    toMapWrite = sizePageBuffer;
+    DWORD start = (start_file/sizePageBuffer)*sizePageBuffer;
+    int nbExtension = ceil(((double) sizeByteSource+(double)start_file) / ((double) sizePageBuffer+(double)start));
+    int toMapWrite = sizePageBuffer;
     int lastPage = sizeByteSource - ((nbExtension - 1) * sizePageBuffer);
 
     if (start_file+sizeByteSource>sizePageBuffer+start){
-        nbExtension+=1;
-        lastPage = (start_file+sizeByteSource-(sizePageBuffer+start));
+        lastPage = (start_file+sizeByteSource-((sizePageBuffer*(nbExtension-1))+start));
+
     }
-    else if (sizeByteSource < sizePageBuffer) {
+    else {
         toMapWrite = sizeByteSource+start_file-start;
     }
-    while (i <= nbExtension) {
-        if (i == 2) {
-            start += sizePageBuffer;
-            unmap();
-            map(sizePageBuffer);
-            strncpy(buffer, c+sizeByteSource-lastPage, lastPage);
-            CopyMemory((PVOID) (writeBuffer+start_file-start), _T( buffer), ((lastPage+start)-start_file));
-            start_file=lastPage+start;
-
-        }
-        else{
-            strncpy(buffer, c, toMapWrite);
-            CopyMemory((PVOID) (writeBuffer+start_file-start), _T( buffer), ((toMapWrite+start)-start_file));
+    int i =1;
+    int offset=0;
+    while ( i <= nbExtension) {
+        if (i != nbExtension || nbExtension==1) {
+            CopyMemory((PVOID) (writeBuffer+start_file-start), _T( c+offset), ((toMapWrite+start)-start_file));
             start_file = (toMapWrite+start);
-            if(start_file==start+sizePageBuffer && nbExtension==1){
+            if(start_file==start+sizePageBuffer){
                 start += sizePageBuffer;
                 unmap();
                 map(sizePageBuffer);
             }
-
+        }
+        else{
+            CopyMemory((PVOID) (writeBuffer+start_file-start), _T( c+sizeByteSource-lastPage), ((lastPage+start)-start_file));
+            start_file=lastPage+start;
         }
         i++;
+        offset+=toMapWrite;
     }
-    free(buffer);
-
-
 }
 
 

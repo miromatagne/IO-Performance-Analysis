@@ -10,14 +10,12 @@ using namespace std;
 class InputStream4 : public InputStream {
 private:
     void map(DWORD toMap);
-
     void unmap();
-
     HANDLE rhFile;
     int fd;
     HANDLE rhMapFile;
-    LPCTSTR readBuffer = nullptr;
-    int start_file;
+    LPCTSTR readBuffer= nullptr;
+    DWORD start_file;
     DWORD start;
     DWORD sizePageBuffer;
     DWORD sizeByteFile;

@@ -18,11 +18,7 @@ private:
     HANDLE hMapFile;
     LPCTSTR writeBuffer;
     DWORD sizePageBuffer;
-    DWORD start;
-    int toMapWrite;
-    int nbExtension;
-    int start_file;
-    int end;
+    DWORD start_file;
 
 
 public:

@@ -26,6 +26,4 @@ void OutputStream1::writeln(string text) const {
         write(fileno(file), &c, sizeof(c));
         c = text[i];
     }
-    c = '\n';
-    write(fileno(file), &c, sizeof(c));
 }
