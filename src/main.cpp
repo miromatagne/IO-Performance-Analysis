@@ -52,10 +52,34 @@ int main() {
 //    double *times = experiment1.getDurations("../data/aka_name.csv", 70);
 //    cout << times[0] << " " << times[1] << " " << times[2] << endl;
 
-    Measurement *m = new Measurement();
-    m->testIterations("../data/aka_name.csv", 10, 10, 10000, 1);
+    //randjump1
+    Measurement *m1 = new Measurement();
+    m1->testIterations("../data/aka_name.csv", 10, 10, 10000, 100);
 // Et celui la pour les 4 fichiers
-//m->testFiles(0);
+//    m1->testFiles(0);
+
+    //randjump2
+//    Measurement *m2 = new Measurement();
+//    m2->testIterations("../data/aka_name.csv", 10, 10, 10000, 100);
+// Et celui la pour les 4 fichiers
+//    m2->testFiles(0);
+
+    //randjump3
+//    Measurement *m3 = new Measurement();
+//    m3->testIterations("../data/aka_name.csv", 10, 10, 10000, 100);
+// Et celui la pour les 4 fichiers
+//m3->testFiles(100);
+// Varier B
+//    m3->getAverageTimesB("../data/aka_name.csv", 10, 0, 200, 50);
+
+   //randjump4 attention changer B à 65536 dans testIterations a la ligne 98
+//    Measurement *m4 = new Measurement();
+//    m4->testIterations("../data/aka_name.csv", 10, 10, 10000, 100);
+// Et celui la pour les 4 fichiers
+//    m4->testFiles(65536);
+// Varier B
+//    m4->getAverageTimesB("../data/aka_name.csv", 10, 65536, 50*65536, 65536);
+
 
 
     //MultiwayMerge *m = new MultiwayMerge();

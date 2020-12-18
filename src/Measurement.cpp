@@ -27,6 +27,9 @@ Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B, 
         chrono->startChrono();
         //length = experiment->length<InputStream1>(fileName, B);
         length = experiment->randjump<InputStream1>(fileName, iteration, B);
+        //length = experiment->randjump<InputStream2>(fileName, iteration, B);
+        //length = experiment->randjump<InputStream3>(fileName, iteration, B);
+        //length = experiment->randjump<InputStream4>(fileName, iteration, B);
         times[i] = chrono->getChrono();
     }
     double sum = 0;
@@ -47,7 +50,7 @@ Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B, 
 double *Measurement::getAverageTimesB(char *fileName, int nbRep, int minB, int maxB, int step) {
     double *averageTimes = (double *) malloc((maxB - minB) * sizeof(double));
     for (int i = minB; i < maxB + 1; i += step) {
-        averageTimes[i - minB] = getAverageTime(fileName, nbRep, i).time;
+        averageTimes[i - minB] = getAverageTime(fileName, nbRep, i, 10000).time;
         cout << i << " " << averageTimes[i - minB] << endl;
     }
     return averageTimes;
@@ -92,7 +95,7 @@ vector<Measurement::data> Measurement::testIterations(char *fileName, int nbRep,
         //cout << fileName << endl;
         data x;
         data y;
-        x = getAverageTime(fileName, nbRep, 0, i);
+        x = getAverageTime(fileName, nbRep, 100, i); // B= 65536 for randjump4
         y.length = x.length;
         y.time = x.time;
         y.fileName = fileName;
