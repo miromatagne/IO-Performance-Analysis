@@ -6,13 +6,15 @@
 #include <string>
 #include <InputStreams/InputStream.h>
 #include <InputStreams/InputStream1.h>
+#include <InputStreams/InputStream2.h>
+#include <InputStreams/InputStream3.h>
 
 using namespace std;
 
 class MultiwayMerge {
 private:
     struct QueueObject {
-        InputStream1 *inputStream;
+        InputStream3 *inputStream;
         vector<string> line;
     };
 

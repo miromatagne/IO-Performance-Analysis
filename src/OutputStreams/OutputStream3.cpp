@@ -7,7 +7,7 @@
  * field of the OutputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-OutputStream3::OutputStream3(char *fName, int B): OutputStream(fName,B) {
+OutputStream3::OutputStream3(char *fName, int B) : OutputStream(fName, B) {
 }
 
 /**
@@ -17,7 +17,7 @@ OutputStream3::OutputStream3(char *fName, int B): OutputStream(fName,B) {
  */
 void OutputStream3::writeln(string text) const {
     const char *c = text.c_str();
-    char buffer[BufferSize];
+    char *buffer = new char[BufferSize];
     int size = strlen(c);
     int start = 0;
     if (size <= BufferSize) {

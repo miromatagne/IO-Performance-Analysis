@@ -19,7 +19,10 @@ InputStream2::InputStream2(char *fName, int B) : InputStream(fName, B) {
         perror("Unable to allocate memory for the line buffer.");
         exit(1);
     }
+}
 
+char *InputStream2::getFileName() {
+    return fileName;
 }
 
 /**

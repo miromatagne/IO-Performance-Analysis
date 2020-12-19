@@ -37,12 +37,11 @@
   <component name="ChangeListManager">
     <list default="true" id="79767ba3-830c-4bb4-8b6d-b5201f8ad164" name="Default Changelist" comment="reglage read 4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream4.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream4.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream2.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream2.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream2.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream2.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MultiwayMerge.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiwayMerge.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MultiwayMerge.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/MultiwayMerge.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,14 +91,14 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="info_h417_group_15" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="info_h417_group_15" TARGET_NAME="info_h417_group_15" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="info_h417_group_15" RUN_TARGET_NAME="info_h417_group_15">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="info_h417_group_15" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="info_h417_group_15" TARGET_NAME="info_h417_group_15" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="info_h417_group_15" RUN_TARGET_NAME="info_h417_group_15">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -577,26 +576,26 @@
     <state x="1164" y="395" key="FileChooserDialogImpl/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606648010890" />
     <state x="1164" y="699" key="FileChooserDialogImpl/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096378392" />
     <state x="582" y="192" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604161451206" />
-    <state width="2517" height="247" key="GridCell.Tab.0.bottom" timestamp="1608333570889">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1237" height="187" key="GridCell.Tab.0.bottom" timestamp="1608412764786">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="2517" height="247" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608333570889" />
-    <state width="1237" height="95" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608165932188" />
-    <state width="2517" height="247" key="GridCell.Tab.0.center" timestamp="1608333570889">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1237" height="187" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608412764786" />
+    <state width="1237" height="187" key="GridCell.Tab.0.center" timestamp="1608412764786">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="2517" height="247" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608333570889" />
-    <state width="1237" height="95" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1608165932187" />
-    <state width="2517" height="247" key="GridCell.Tab.0.left" timestamp="1608333570889">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1237" height="187" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1608412764786" />
+    <state width="1237" height="187" key="GridCell.Tab.0.left" timestamp="1608412764786">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="2517" height="247" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608333570889" />
-    <state width="1237" height="95" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1608165932187" />
-    <state width="2517" height="247" key="GridCell.Tab.0.right" timestamp="1608333570889">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1237" height="187" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1608412764786" />
+    <state width="1237" height="187" key="GridCell.Tab.0.right" timestamp="1608412764786">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="2517" height="247" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608333570889" />
-    <state width="1237" height="95" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1608165932188" />
+    <state width="1237" height="187" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1608412764786" />
     <state width="2517" height="488" key="GridCell.Tab.1.bottom" timestamp="1608329557125">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
