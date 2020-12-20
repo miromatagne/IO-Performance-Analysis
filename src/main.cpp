@@ -211,14 +211,26 @@ int main() {
     int step = 10;
     int submeasurement=1;
     for (int i=1; i<=8; i++){
-        cout << "InputStream2,OutputStream1 " ;
-        measurement.getAverageTime3<InputStream2,OutputStream1>(1,i,Bminimum,Bmaximum,step);
+        if(i<5){
+            cout << "InputStream2,OutputStream1 " ;
+            measurement.getAverageTime3<InputStream2,OutputStream1>(1,i,Bminimum,Bmaximum,step);
+            cout << "InputStream4,OutputStream1 " ;
+            measurement.getAverageTime3<InputStream4,OutputStream1>(1,i,Bminimum,Bmaximum,step);
+        }
         cout << "InputStream2,OutputStream2 " ;
-        measurement.getAverageTime3<InputStream2,OutputStream2>(10,i,Bminimum,Bmaximum,step);
-        cout << "InputStream2,OutputStream3 " ;
-        measurement.getAverageTime3<InputStream2,OutputStream3>(3,i,Bminimum,Bmaximum,step);
+        measurement.getAverageTime3<InputStream2,OutputStream2>(5,i,Bminimum,Bmaximum,step);
+        cout << "InputStream4,OutputStream2 " ;
+        measurement.getAverageTime3<InputStream4,OutputStream2>(5,i,Bminimum,Bmaximum,step);
+        if(i<6){
+            cout << "InputStream2,OutputStream3 " ;
+            measurement.getAverageTime3<InputStream2,OutputStream3>(3,i,Bminimum,Bmaximum,step);
+            cout << "InputStream4,OutputStream3 " ;
+            measurement.getAverageTime3<InputStream4,OutputStream3>(3,i,Bminimum,Bmaximum,step);
+        }
         cout << "InputStream2,OutputStream4 ";
-        measurement.getAverageTime3<InputStream2,OutputStream4>(3,i,Bminimum,Bmaximum,step);
+        measurement.getAverageTime3<InputStream2,OutputStream4>(5,i,1000000,1000001,1);
+        cout << "InputStream4,OutputStream4 ";
+        measurement.getAverageTime3<InputStream4,OutputStream4>(5,i,1000000,1000001,1);
     }
 
 //   // measurement.getAverageTime3<InputStream2,OutputStream2>(3,1,20,500,20);
