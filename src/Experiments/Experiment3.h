@@ -12,7 +12,7 @@ public:
     }
 
     template<class InputClass, class OutputClass>
-    void rrmerge(int Bi,int Bo, char *fileName, ...) {
+    void rrmerge(int Bo, char *fileName, ...) {
         vector<InputClass> readerList;
         OutputClass outputStream("experiment3.txt", Bo);
         outputStream.create();
@@ -21,7 +21,7 @@ public:
         char *arg = fileName;
         int i = 0;
         do {
-            InputClass inputStream(arg, Bi);
+            InputClass inputStream(arg, 1);
             readerList.push_back(inputStream);
             readerList[i].open();
             arg = va_arg(vl, char*);
