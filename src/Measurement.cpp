@@ -10,6 +10,7 @@
 #include <iostream>
 #include <InputStreams/InputStream1.h>
 #include <Experiments/Experiment2.h>
+#include <Experiments/Experiment3.h>
 
 
 using namespace std;
@@ -20,13 +21,30 @@ Measurement::Measurement() {
 Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B, int iteration) {
     Chrono *chrono = new Chrono();
     //Experiment1 *experiment = new Experiment1();
-    Experiment2 *experiment = new Experiment2();
+    //Experiment2 *experiment = new Experiment2();
+    Experiment3 experiment3;
     double *times = new double[nbRep];
     int length = 0;
     for (int i = 0; i < nbRep; i++) {
         chrono->startChrono();
+        // refaire exactement la meme chose mais avec inputstream4 et outputstream 2,3,4
+        // choisir le Bi optimal de l'experience 1 et 2
+        // faire varier Bo pour ouputstream 3 et 4
+        // 15 runs si le time pour les bigs files ( 4) et 5) ) sauf pour outputstream1 : 2 ou 3 runs déjà très long
+
+//    //k big, size small
+// 1)    experiment3.rrmerge<InputStream2,OutputStream1>(40, 80000, "../data/link_type.csv","../data/kind_type.csv","../data/info_type.csv", "../data/company_type.csv","../data/comp_cast_type.csv","../data/role_type.csv",NULL);
+//    //k big, size medium
+// 2)  experiment3.rrmerge<InputStream2,OutputStream1>(100, 8000, "../data/complete_cast.csv", "../data/keyword.csv","../data/movie_link.csv","../data/company_name.csv","../data/movie_info_idx.csv","../data/movie_keyword.csv","../data/movie_companies.csv","../data/aka_title.csv","../data/aka_name.csv",NULL);
+        // k very big, size small + medium
+// 3)  experiment3.rrmerge<InputStream2,OutputStream1>(100, 8000, "../data/complete_cast.csv", "../data/keyword.csv","../data/movie_link.csv","../data/company_name.csv","../data/movie_info_idx.csv","../data/link_type.csv","../data/kind_type.csv","../data/info_type.csv", "../data/company_type.csv","../data/comp_cast_type.csv","../data/role_type.csv","../data/movie_keyword.csv", "../data/movie_companies.csv","../data/aka_title.csv","../data/aka_name.csv",NULL);
+        // k medium, size big
+// 4)   experiment3.rrmerge<InputStream2,OutputStream1>(40, 80000, "../data/movie_info.csv", "../data/person_info.csv","../data/name.csv","../data/cast_info.csv","../data/title.csv", NULL);
+        // all in : k maximum, size small + big + medium
+// 5)   experiment3.rrmerge<InputStream2,OutputStream1>(40, 80000, "../data/title.csv","../data/link_type.csv","../data/kind_type.csv","../data/info_type.csv", "../data/company_type.csv","../data/comp_cast_type.csv","../data/role_type.csv", "../data/complete_cast.csv", "../data/keyword.csv","../data/movie_link.csv","../data/company_name.csv","../data/movie_info_idx.csv","../data/movie_keyword.csv","../data/movie_companies.csv","../data/aka_title.csv","../data/aka_name.csv","../data/movie_info.csv", "../data/person_info.csv","../data/name.csv","../data/cast_info.csv",NULL);
+
         //length = experiment->length<InputStream1>(fileName, B);
-        length = experiment->randjump<InputStream1>(fileName, iteration, B);
+        //length = experiment->randjump<InputStream1>(fileName, iteration, B);
         //length = experiment->randjump<InputStream2>(fileName, iteration, B);
         //length = experiment->randjump<InputStream3>(fileName, iteration, B);
         //length = experiment->randjump<InputStream4>(fileName, iteration, B);
@@ -38,7 +56,7 @@ Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B, 
     }
     double average = sum / nbRep;
     free(times);
-    free(experiment);
+   // free(experiment);
     free(chrono);
     data x;
     x.time = average;
@@ -50,7 +68,7 @@ Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B, 
 double *Measurement::getAverageTimesB(char *fileName, int nbRep, int minB, int maxB, int step) {
     double *averageTimes = (double *) malloc((maxB - minB) * sizeof(double));
     for (int i = minB; i < maxB + 1; i += step) {
-        averageTimes[i - minB] = getAverageTime(fileName, nbRep, i, 10000).time;
+        averageTimes[i - minB] = getAverageTime(fileName, nbRep, i, 1).time;
         cout << i << " " << averageTimes[i - minB] << endl;
     }
     return averageTimes;

@@ -2,7 +2,7 @@
 #define INFO_H417_GROUP_15_MULTIWAYMERGE_H
 
 
-#include <cstdio>
+
 #include <string>
 #include <InputStreams/InputStream.h>
 #include <InputStreams/InputStream1.h>

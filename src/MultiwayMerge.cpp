@@ -1,13 +1,13 @@
 #include <vector>
 #include <queue>
 #include "MultiwayMerge.h"
-#include <sstream>
 #include <iostream>
 #include <algorithm>
 #include <InputStreams/InputStream1.h>
 #include <OutputStreams/OutputStream1.h>
 #include <InputStreams/InputStream3.h>
 #include <OutputStreams/OutputStream2.h>
+#include <sstream>
 
 using namespace std;
 
@@ -21,6 +21,7 @@ FILE *MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
     bool run = true;
     int fileNb = 0;
     vector<InputStream3 *> files;
+
     while (run) {
         vector<vector<string>> lines;
         int totalLength = 0;
@@ -31,13 +32,14 @@ FILE *MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
                 run = false;
                 break;
             }
-            vector<string> line = stringToVector(stringLine);
+            vector<string> line= stringToVector(stringLine);
             lines.push_back(line);
             totalLength += stringLine.length();
         }
+
         if (lines.size() != 0) {
             sort(lines.begin(), lines.end(),
-                 [k](const std::vector<string> &a, const std::vector<string> &b) {
+                 [k](const vector<string> &a, const vector<string> &b) {
                      return a[k] < b[k];
                  });
             string newFileName = "../bin/file" + to_string(fileNb) + ".txt";
@@ -57,6 +59,7 @@ FILE *MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
             files.push_back(i);
             fileNb++;
         }
+
     }
     inputStream.close();
 
@@ -107,6 +110,8 @@ FILE *MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
         fileNb++;
 
     }
+
+
     return nullptr;
 }
 

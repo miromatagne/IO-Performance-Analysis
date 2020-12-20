@@ -32,6 +32,6 @@ void OutputStream3::writeln(string text) const {
         strncpy(buffer, c + start, (size - start));
         write(fileno(file), buffer, (size - start));
     }
-
+    free(buffer);
 }
 

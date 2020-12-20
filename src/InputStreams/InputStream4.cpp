@@ -140,8 +140,8 @@ string InputStream4::readln() {
                     if (currentLine.length() == 0) {
                         currentLine = '\n';
                     } else {
-                        currentLine[currentLine.length() - 1] = readBuffer[i]; // pour exp2
-                        //currentLine.push_back(readBuffer[i]); // pour exp1
+                        //currentLine[currentLine.length() - 1] = readBuffer[i]; // pour exp2
+                        currentLine.push_back(readBuffer[i]); // pour exp1
                     }
                     start_file += 1;
                 }

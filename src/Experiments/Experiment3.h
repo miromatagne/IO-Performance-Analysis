@@ -2,38 +2,31 @@
 #define INFO_H417_GROUP_15_EXPERIMENT3_H
 
 
-#include <OutputStreams/OutputStream4.h>
-#include <InputStreams/InputStream4.h>
-#include <OutputStreams/OutputStream3.h>
-#include <InputStreams/InputStream3.h>
-#include <OutputStreams/OutputStream2.h>
-#include <InputStreams/InputStream2.h>
-#include "Chrono.h"
 #include <vector>
 #include <type_traits>
 #include <typeinfo>
-
+using namespace std;
 class Experiment3 {
 public:
     Experiment3() {
     }
 
     template<class InputClass, class OutputClass>
-    void rrmerge11(int B, char *fileName, ...) {
+    void rrmerge(int Bi,int Bo, char *fileName, ...) {
         vector<InputClass> readerList;
-        OutputClass outputStream("experiment3.txt", B);
+        OutputClass outputStream("experiment3.txt", Bo);
         outputStream.create();
         va_list vl;
         va_start(vl, fileName);
         char *arg = fileName;
         int i = 0;
         do {
-            InputClass inputStream(arg, B);
+            InputClass inputStream(arg, Bi);
             readerList.push_back(inputStream);
             readerList[i].open();
             arg = va_arg(vl, char*);
             i++;
-        } while (arg != NULL);
+        } while (arg != nullptr);
         va_end(vl);
         int size = i;
         i = 0;
