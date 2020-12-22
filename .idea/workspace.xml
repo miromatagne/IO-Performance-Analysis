@@ -30,7 +30,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="measure experiment2 pour Mirouelle">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Measurement.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Measurement.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
@@ -154,7 +153,7 @@
       <workItem from="1608152340106" duration="3694000" />
       <workItem from="1608201555499" duration="9722000" />
       <workItem from="1608300668894" duration="17276000" />
-      <workItem from="1608650254451" duration="6512000" />
+      <workItem from="1608650254451" duration="6881000" />
     </task>
     <task id="LOCAL-00001" summary="classes">
       <created>1604102118724</created>
@@ -485,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608323597545</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="measure experiment2 pour Mirouelle">
+      <created>1608656870036</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1608656870036</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,11 +634,12 @@
     <state x="246" y="107" key="MergeDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1607179922268" />
     <state x="92" y="0" width="1188" height="623" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1608156111363" />
     <state x="56" y="28" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1608166770992" />
-    <state x="281" y="103" key="MultipleFileMergeDialog" timestamp="1608153398306">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="337" y="125" key="MultipleFileMergeDialog" timestamp="1608656917466">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="562" y="212" key="MultipleFileMergeDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608124827554" />
     <state x="281" y="103" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1608153398306" />
+    <state x="337" y="125" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1608656917466" />
     <state x="1118" y="420" key="RollbackChangesDialog" timestamp="1608125235706">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -657,13 +664,13 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="971" y="434" key="VcsDiffUtil.ChangesDialog/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608124212273" />
-    <state x="659" y="362" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608166741846">
+    <state x="659" y="362" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608656893621">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="1098" y="616" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608119724956" />
     <state x="1097" y="634" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604093387163" />
     <state x="549" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1608159410945" />
-    <state x="659" y="362" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1608166741846" />
+    <state x="659" y="362" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1608656893621" />
     <state x="1274" y="0" width="1292" height="1406" key="dock-window-1" timestamp="1606423679788">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
