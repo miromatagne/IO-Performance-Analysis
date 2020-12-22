@@ -20,12 +20,10 @@
 #include <OutputStreams/OutputStream2.h>
 #include <InputStreams/InputStream2.h>
 #include "Chrono.h"
-#include "MultiwayMerge.h"
 #include <vector>
 #include <type_traits>
 #include <typeinfo>
 #include <Experiments/Experiment2.h>
-
 
 using namespace std;
 
@@ -53,34 +51,56 @@ int main() {
 //    Experiment1 experiment1;
 //    double *times = experiment1.getDurations("../data/aka_name.csv", 70);
 //    cout << times[0] << " " << times[1] << " " << times[2] << endl;
-    // ICIIIIIII
+
+/////// ICIIIIIII
     //randjump1
-//    Measurement *m1 = new Measurement();
-//    m1->testIterations("../data/aka_name.csv", 10, 10, 10000, 100);
-// Et celui la pour les 4 fichiers
-//    m1->testFiles(0);
+    Measurement *m1 = new Measurement();
+    m1->testIterations("../data/aka_name.csv", 10, 1, 100, 1);
+    //m1->testIterations("../data/aka_name.csv", 10, 100, 1000, 100);
+//    m1->testIterations("../data/aka_name.csv", 10, 1000, 10000, 1000);
+// Et celui la pour les 3 fichiers
+//    m1->testFiles(0);  // faire une fois avec seed = 10 dans la classe Experiment2.h (ligne34)
+//    m1->testFiles(0);  // faire une fois avec seed = 100
+
+
 
     //randjump2
-//    Measurement *m2 = new Measurement();
-//    m2->testIterations("../data/aka_name.csv", 10, 10, 10000, 100);
-// Et celui la pour les 4 fichiers
-//    m2->testFiles(0);
+    //   Measurement *m2 = new Measurement();
+//    m2->testIterations("../data/aka_name.csv", 10, 1, 100, 1);
+    //   m2->testIterations("../data/aka_name.csv", 10, 100, 1000, 100);
+//    m2->testIterations("../data/aka_name.csv", 10, 1000, 10000, 1000);
+// Et celui la pour les 3 fichiers
+//    m2->testFiles(0);// faire une fois avec seed = 10 dans la classe Experiment2.h (ligne34)
+//    m2->testFiles(0);  // faire une fois avec seed = 100
 
     //randjump3
-//    Measurement *m3 = new Measurement();
-//    m3->testIterations("../data/aka_name.csv", 10, 10, 10000, 100);
-// Et celui la pour les 4 fichiers
-//m3->testFiles(100);
-// Varier B
-//    m3->getAverageTimesB("../data/aka_name.csv", 10, 0, 200, 50);
+    //     Measurement *m3 = new Measurement();
+//    m3->testIterations("../data/aka_name.csv", 10, 1, 100, 1);
+//    m3->testIterations("../data/aka_name.csv", 10, 100, 1000, 100);
+//    m3->testIterations("../data/aka_name.csv", 10, 1000, 10000, 1000);
+// Et celui la pour les 3 fichiers
+//    m3->testFiles(100);// faire une fois avec seed = 10 dans la classe Experiment2.h (ligne34)
+//    m3->testFiles(100);  // faire une fois avec seed = 100
 
-   //randjump4 attention changer B à 65536 dans testIterations a la ligne 98
+// Varier B
+    //     m3->getAverageTimesB("../data/aka_name.csv", 10, 1, 10, 1);
+//    m3->getAverageTimesB("../data/aka_name.csv", 10, 10, 1000, 10);
+
+
+   //randjump4 attention changer B à 65536 dans testIterations a la ligne 103
 //    Measurement *m4 = new Measurement();
-//    m4->testIterations("../data/aka_name.csv", 10, 10, 10000, 100);
-// Et celui la pour les 4 fichiers
-//    m4->testFiles(65536);
+//       m4->testIterations("../data/aka_name.csv", 10, 1, 100, 1);
+    //   m4->testIterations("../data/aka_name.csv", 10, 100, 1000, 100);
+//    m4->testIterations("../data/aka_name.csv", 10, 1000, 10000, 1000);
+    // Et celui la pour les 3 fichiers
+//    m4->testFiles(65536);// faire une fois avec seed = 10 dans la classe Experiment2.h (ligne34)
+//    m4->testFiles(65536);  // faire une fois avec seed = 100
 // Varier B
 //    m4->getAverageTimesB("../data/aka_name.csv", 10, 65536, 50*65536, 65536);
+
+////// END
+
+
 
 
 
@@ -113,7 +133,19 @@ int main() {
     //cout << sum / 100 << endl;
 */
 
+/*
+    OutputStream2 outputStream("file_test");
+    outputStream.create();
+    InputStream4 inputStream("../data/aka_title.csv",5);
+    inputStream.open();
 
+    cout << inputStream.readln() << endl;
+
+    cout << inputStream.readln() << endl;
+    outputStream.writeln("okijgoijeg");
+    outputStream.close();
+    inputStream.close();
+*/
 
 //    Experiment1 e;
 //   int l = e.length<InputStream2>("../data/aka_name.csv", 100);
@@ -182,74 +214,15 @@ int main() {
         cout << "ok2" << endl;
     }
     */
-    //MultiwayMerge multiwayMerge;
-    //multiwayMerge.extsort("../data/aka_name.csv",1,10000,50);
+
 //    InputStream3 inputStream("../data/comp_cast_type.csv", 2);
 //    inputStream.open();
 //    inputStream.seek(13);
 //    cout << inputStream.readln() << endl;
 
-//    Experiment3 experiment3;
-//    Chrono chrono;
-//    chrono.startChrono();
-    //k small, size medium
-//    experiment3.rrmerge<InputStream2,OutputStream1>(40, 80000, "../data/movie_link.csv", NULL);
-//    //k big, size small
-//    experiment3.rrmerge<InputStream4,OutputStream4>(40, 80000, "../data/link_type.csv","../data/kind_type.csv","../data/info_type.csv", "../data/company_type.csv","../data/comp_cast_type.csv","../data/role_type.csv",NULL);
-//    //k big, size medium
-//    experiment3.rrmerge<InputStream4,OutputStream4>(100, 8000, "../data/complete_cast.csv", "../data/keyword.csv","../data/movie_link.csv","../data/company_name.csv","../data/movie_info_idx.csv","../data/movie_keyword.csv","../data/movie_companies.csv","../data/aka_title.csv","../data/aka_name.csv",NULL);
-      // k very big, size small + medium
-//    experiment3.rrmerge<InputStream2,OutputStream4>(100, 8000, "../data/complete_cast.csv", "../data/keyword.csv","../data/movie_link.csv","../data/company_name.csv","../data/movie_info_idx.csv","../data/link_type.csv","../data/kind_type.csv","../data/info_type.csv", "../data/company_type.csv","../data/comp_cast_type.csv","../data/role_type.csv","../data/movie_keyword.csv", "../data/movie_companies.csv","../data/aka_title.csv","../data/aka_name.csv",NULL);
-      // k medium, size big
-//    experiment3.rrmerge<InputStream4,OutputStream4>(40, 80000, "../data/movie_info.csv", "../data/person_info.csv","../data/name.csv","../data/cast_info.csv","../data/title.csv", NULL);
-      // all in : k big, size small + big + medium
-//    experiment3.rrmerge<InputStream2,OutputStream1>(40, 80000, "../data/title.csv","../data/link_type.csv","../data/kind_type.csv","../data/info_type.csv", "../data/company_type.csv","../data/comp_cast_type.csv","../data/role_type.csv", "../data/complete_cast.csv", "../data/keyword.csv","../data/movie_link.csv","../data/company_name.csv","../data/movie_info_idx.csv","../data/movie_keyword.csv","../data/movie_companies.csv","../data/aka_title.csv","../data/aka_name.csv","../data/movie_info.csv", "../data/person_info.csv","../data/name.csv","../data/cast_info.csv",NULL);
-//    cout << chrono.getChrono() << endl;
-    Measurement measurement;
-    int Bminimum = 10;
-    int Bmaximum = 150;
-    int step = 10;
-    for (int i=1; i<=8; i++){
-        if(i<3){
-            cout << "InputStream2,OutputStream1 " ;
-            measurement.getAverageTime3<InputStream2,OutputStream1>(1,i,Bminimum,Bmaximum,step);
-            cout << "InputStream4,OutputStream1 " ;
-            measurement.getAverageTime3<InputStream4,OutputStream1>(1,i,Bminimum,Bmaximum,step);
-        }
-        cout << "InputStream2,OutputStream2 " ;
-        measurement.getAverageTime3<InputStream2,OutputStream2>(2,i,Bminimum,Bmaximum,step);
-        cout << "InputStream4,OutputStream2 " ;
-        measurement.getAverageTime3<InputStream4,OutputStream2>(2,i,Bminimum,Bmaximum,step);
-        if(i<6){
-            cout << "InputStream2,OutputStream3 " ;
-            measurement.getAverageTime3<InputStream2,OutputStream3>(1,i,Bminimum,Bmaximum,step);
-            cout << "InputStream4,OutputStream3 " ;
-            measurement.getAverageTime3<InputStream4,OutputStream3>(1,i,Bminimum,Bmaximum,step);
-        }
-        cout << "InputStream2,OutputStream4 ";
-        measurement.getAverageTime3<InputStream2,OutputStream4>(2,i,655360,6553600,6553600-655360);
-        cout << "InputStream4,OutputStream4 ";
-        measurement.getAverageTime3<InputStream4,OutputStream4>(2,i,655360,6553600,6553600-655360);
-    }
+//    Experiment3 experiment4;
+//    experiment4.rrmerge11<InputStream4,OutputStream4>(20,"../data/company_name.csv","../data/aka_title.csv", NULL);
 
-//   // measurement.getAverageTime3<InputStream2,OutputStream2>(3,1,20,500,20);
-//    cout << "InputStream2,OutputStream1 " ;
-//    measurement.getAverageTime3<InputStream2,OutputStream1>(1,1,Bminimum,Bmaximum,step);
-//    cout << "InputStream2,OutputStream2 " ;
-//    measurement.getAverageTime3<InputStream2,OutputStream2>(10,1,Bminimum,Bmaximum,step);
-//    cout << "InputStream2,OutputStream3 " ;
-//    measurement.getAverageTime3<InputStream2,OutputStream3>(3,1,Bminimum,Bmaximum,step);
-//    cout << "InputStream2,OutputStream4 ";
-//    measurement.getAverageTime3<InputStream2,OutputStream4>(3,1,Bminimum,Bmaximum,step);
-//
-//    cout << "InputStream4,OutputStream1 " ;
-//    measurement.getAverageTime3<InputStream4,OutputStream1>(1,1,Bminimum,Bmaximum,step);
-//    cout << "InputStream4,OutputStream2 " ;
-//    measurement.getAverageTime3<InputStream4,OutputStream2>(10,1,Bminimum,Bmaximum,step);
-//    cout << "InputStream4,OutputStream3 " ;
-//    measurement.getAverageTime3<InputStream4,OutputStream3>(3,1,Bminimum,Bmaximum,step);
-//    cout << "InputStream4,OutputStream4 ";
-//    measurement.getAverageTime3<InputStream4,OutputStream4>(3,1,65536,Bmaximum*65536,Bmaximum*65536-65536);
     return 0;
 }
 
