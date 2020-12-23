@@ -51,9 +51,9 @@ Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B, 
 }
 
 double *Measurement::getAverageTimesB(char *fileName, int nbRep, int minB, int maxB, int step) {
-    double *averageTimes = (double *) malloc((maxB - minB) * sizeof(double));
-    double *averageSums = (double *) malloc((maxB - minB) * sizeof(double));
-    for (int i = minB; i < maxB + 1; i += step) {
+    double *averageTimes = (double *) malloc((maxB - minB + step) * sizeof(double));
+    double *averageSums = (double *) malloc((maxB - minB + step) * sizeof(double));
+    for (int i = minB; i < maxB + step; i += step) {
         averageTimes[i - minB] = getAverageTime(fileName, nbRep, i, 10000).time;
         averageSums[i - minB] = getAverageTime(fileName, nbRep, i, 10000).length;
         cout << i << " " << averageTimes[i - minB] << " " << averageSums[i - minB]<< endl;
@@ -68,7 +68,7 @@ vector<Measurement::data> Measurement::testFiles(int B) {
                          "kind_type", "link_type", "movie_companies", "movie_info", "movie_info_idx", "movie_keyword",
                          "movie_link", "name", "person_info", "role_type", "title"};
     */
-    char *fileNames[] = {"aka_name", "comp_cast_type", "keyword", "movie_info_idx"};
+    char *fileNames[] = {"cast_info", "comp_cast_type", "keyword", "movie_info_idx"};
     for (int i = 0; i < sizeof(fileNames) / sizeof(fileNames[0]); i++) {
         char path[100];
         cout << fileNames[i] << endl;
@@ -77,13 +77,11 @@ vector<Measurement::data> Measurement::testFiles(int B) {
         strcat(path, ".csv");
         data x;
         data y;
-        //cout << "ok" << endl;
-        x = getAverageTime(path, 10, B, 10000);
+        x = getAverageTime(path, 10, B, 10);
         y.length = x.length;
         y.time = x.time;
         y.fileName = fileNames[i];
         vec.push_back(y);
-        //cout << "ok" << endl;
     }
     for (int i = 0; i < vec.size(); i++)
         cout << vec.at(i).fileName << " " << vec.at(i).time << " " << vec.at(i).length << endl;

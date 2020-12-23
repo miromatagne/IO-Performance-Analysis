@@ -37,9 +37,6 @@ public:
         int position;
         //cout << "size : " << fileSize << endl;
         for (int j = 0; j < iteration; j++) {
-            if (j == 0) {
-
-            }
             position = distribute(generator);
             input.seek(position);
             string line;
