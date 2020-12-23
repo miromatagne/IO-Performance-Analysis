@@ -8,10 +8,16 @@
 using namespace std;
 //
 class OutputStream3 : public OutputStream{
+private:
+private:
+    char *buffer = nullptr;
+    int index;
 public:
    OutputStream3(char* fName,int B);
 
-    void writeln(string text)const;
+    void writeln(string text);
+
+    void close();
 };
 
 

@@ -14,7 +14,7 @@ public:
     template<class InputClass, class OutputClass>
     void rrmerge(int Bo, char *fileName, ...) {
         vector<InputClass> readerList;
-        OutputClass outputStream("experiment3.txt", Bo);
+        OutputClass outputStream("../data/experiment3.txt", Bo);
         outputStream.create();
         va_list vl;
         va_start(vl, fileName);
