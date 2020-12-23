@@ -53,6 +53,7 @@ Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B, 
 double *Measurement::getAverageTimesB(char *fileName, int nbRep, int minB, int maxB, int step) {
     double *averageTimes = (double *) malloc((maxB - minB) * sizeof(double));
     double *averageSums = (double *) malloc((maxB - minB) * sizeof(double));
+    cout << minB << " " << maxB << endl;
     for (int i = minB; i < maxB + 1; i += step) {
         averageTimes[i - minB] = getAverageTime(fileName, nbRep, i, 10000).time;
         averageSums[i - minB] = getAverageTime(fileName, nbRep, i, 10000).length;
@@ -77,13 +78,11 @@ vector<Measurement::data> Measurement::testFiles(int B) {
         strcat(path, ".csv");
         data x;
         data y;
-        //cout << "ok" << endl;
         x = getAverageTime(path, 10, B, 10000);
         y.length = x.length;
         y.time = x.time;
         y.fileName = fileNames[i];
         vec.push_back(y);
-        //cout << "ok" << endl;
     }
     for (int i = 0; i < vec.size(); i++)
         cout << vec.at(i).fileName << " " << vec.at(i).time << " " << vec.at(i).length << endl;
