@@ -84,7 +84,7 @@ int main() {
     //     m3->getAverageTimesB("../data/aka_name.csv", 10, 100, 1000, 100);
     //long fichier
     // m3->getAverageTimesB("../data/cast_info.csv", 10, 1, 1000, 10);
-    //m3->getAverageTimesB("../data/cast_info.csv", 10, 1000, 5000, 100);
+    //m3->getAverageTimesB("../data/cast_info.csv", 10, 1000, 6000, 100);
 
    //randjump4 attention changer B à 65536 dans testIterations a la ligne 103
     //    Measurement *m4 = new Measurement();
