@@ -69,7 +69,7 @@ vector<Measurement::data> Measurement::testFiles(int B) {
                          "kind_type", "link_type", "movie_companies", "movie_info", "movie_info_idx", "movie_keyword",
                          "movie_link", "name", "person_info", "role_type", "title"};
     */
-    char *fileNames[] = {"aka_name", "comp_cast_type", "keyword", "movie_info_idx"};
+    char *fileNames[] = {"cast_info", "comp_cast_type", "keyword", "movie_info_idx"};
     for (int i = 0; i < sizeof(fileNames) / sizeof(fileNames[0]); i++) {
         char path[100];
         cout << fileNames[i] << endl;
@@ -78,7 +78,7 @@ vector<Measurement::data> Measurement::testFiles(int B) {
         strcat(path, ".csv");
         data x;
         data y;
-        x = getAverageTime(path, 10, B, 10000);
+        x = getAverageTime(path, 10, B, 10);
         y.length = x.length;
         y.time = x.time;
         y.fileName = fileNames[i];
