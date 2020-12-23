@@ -43,7 +43,7 @@ public:
         //Experiment1 *experiment = new Experiment1();
         //Experiment2 *experiment = new Experiment2();
         int B =minJ;
-        double times;
+        double times=0;
         double *timesB = new double[((maxJ-minJ)/step)+1];
         string filenames = "";
         int k =0;

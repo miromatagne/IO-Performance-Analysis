@@ -207,29 +207,36 @@ int main() {
 //    cout << chrono.getChrono() << endl;
     Measurement measurement;
     int Bminimum = 10;
-    int Bmaximum = 150;
+    int Bmaximum = 10;
     int step = 10;
+    int allocationGranularity=65536;
     for (int i=1; i<=8; i++){
-        if(i<3){
-            cout << "InputStream2,OutputStream1 " ;
-            measurement.getAverageTime3<InputStream2,OutputStream1>(1,i,Bminimum,Bmaximum,step);
-            cout << "InputStream4,OutputStream1 " ;
-            measurement.getAverageTime3<InputStream4,OutputStream1>(1,i,Bminimum,Bmaximum,step);
-        }
-        cout << "InputStream2,OutputStream2 " ;
-        measurement.getAverageTime3<InputStream2,OutputStream2>(2,i,Bminimum,Bmaximum,step);
-        cout << "InputStream4,OutputStream2 " ;
-        measurement.getAverageTime3<InputStream4,OutputStream2>(2,i,Bminimum,Bmaximum,step);
+
+//        if(i<3){
+//            cout << "InputStream2,OutputStream1 " ;
+//            measurement.getAverageTime3<InputStream2,OutputStream1>(1,i,Bminimum,Bmaximum,step);
+//            cout << "InputStream4,OutputStream1 " ;
+//            measurement.getAverageTime3<InputStream4,OutputStream1>(1,i,Bminimum,Bmaximum,step);
+//        }
+//        cout << "InputStream2,OutputStream2 " ;
+//        measurement.getAverageTime3<InputStream2,OutputStream2>(5,i,Bminimum,Bmaximum,step);
+//        cout << "InputStream4,OutputStream2 " ;
+//        measurement.getAverageTime3<InputStream4,OutputStream2>(5,i,Bminimum,Bmaximum,step);
         if(i<6){
             cout << "InputStream2,OutputStream3 " ;
             measurement.getAverageTime3<InputStream2,OutputStream3>(1,i,Bminimum,Bmaximum,step);
             cout << "InputStream4,OutputStream3 " ;
             measurement.getAverageTime3<InputStream4,OutputStream3>(1,i,Bminimum,Bmaximum,step);
         }
-        cout << "InputStream2,OutputStream4 ";
-        measurement.getAverageTime3<InputStream2,OutputStream4>(2,i,655360,6553600,6553600-655360);
-        cout << "InputStream4,OutputStream4 ";
-        measurement.getAverageTime3<InputStream4,OutputStream4>(2,i,655360,6553600,6553600-655360);
+
+//        cout << "InputStream2,OutputStream4 ";
+//        measurement.getAverageTime3<InputStream2,OutputStream4>(3,i,allocationGranularity,allocationGranularity,allocationGranularity);
+//        cout << "InputStream2,OutputStream4 ";
+//        measurement.getAverageTime3<InputStream2,OutputStream4>(3,i,allocationGranularity*10,allocationGranularity*150,allocationGranularity*10);
+//        cout << "InputStream4,OutputStream4 ";
+//        measurement.getAverageTime3<InputStream4,OutputStream4>(3,i,allocationGranularity,allocationGranularity,allocationGranularity);
+//        cout << "InputStream4,OutputStream4 ";
+//        measurement.getAverageTime3<InputStream4,OutputStream4>(3,i,allocationGranularity*10,allocationGranularity*150,allocationGranularity*10);
     }
 
 //   // measurement.getAverageTime3<InputStream2,OutputStream2>(3,1,20,500,20);

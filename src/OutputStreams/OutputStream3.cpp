@@ -17,21 +17,17 @@ OutputStream3::OutputStream3(char *fName, int B) : OutputStream(fName, B) {
  */
 void OutputStream3::writeln(string text) const {
     const char *c = text.c_str();
-    char *buffer = new char[BufferSize];
     int size = strlen(c);
     int start = 0;
     if (size <= BufferSize) {
-        strcpy(buffer, c);
-        write(fileno(file), buffer, size);
+        write(fileno(file), c, size);
     } else {
         while ((start + BufferSize) < size) {
-            strncpy(buffer, c + start, BufferSize);
-            write(fileno(file), buffer, BufferSize);
+            write(fileno(file), c+start, BufferSize);
             start += BufferSize;
         }
-        strncpy(buffer, c + start, (size - start));
-        write(fileno(file), buffer, (size - start));
+        write(fileno(file), c+start, (size - start));
     }
-    free(buffer);
+
 }
 
