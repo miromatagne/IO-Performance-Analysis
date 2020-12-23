@@ -2,7 +2,6 @@
 #define INFO_H417_GROUP_15_MULTIWAYMERGE_H
 
 
-
 #include <string>
 #include <InputStreams/InputStream.h>
 #include <InputStreams/InputStream1.h>
@@ -14,7 +13,7 @@ using namespace std;
 class MultiwayMerge {
 private:
     struct QueueObject {
-        InputStream3 *inputStream;
+        InputStream2 *inputStream;
         vector<string> line;
     };
 
@@ -25,7 +24,7 @@ private:
 public:
     MultiwayMerge();
 
-    FILE *extsort(char *fileName, int k, int M, int d);
+    void extsort(char *fileName, int k, int M, int d);
 };
 
 

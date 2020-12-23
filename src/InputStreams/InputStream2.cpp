@@ -14,7 +14,7 @@ using namespace std;
 InputStream2::InputStream2(char *fName, int B) : InputStream(fName, B) {
 // Store the chunks of text into a line buffer
     len = sizeof(chunk);
-    line = (char *) malloc(len);
+    //line = (char *) malloc(len);
     if (line == NULL) {
         perror("Unable to allocate memory for the line buffer.");
         exit(1);
@@ -66,17 +66,20 @@ string InputStream2::readln() {
 string InputStream2::readln() {
 
 // "Empty" the string
+//    line[0] = '\0';
+
+    line = new char[len];
     line[0] = '\0';
 
     while (fgets(chunk, sizeof(chunk), file) != NULL) {
         size_t len_used = strlen(line);
         size_t chunk_used = strlen(chunk);
-
+//        cout << line << endl;
         if (len - len_used < chunk_used) {
             len *= 2; // 2 times more space (cheaper to do it that way).
             if ((line = (char *) realloc(line, len)) == NULL) {
                 perror("Unable to reallocate memory for the line buffer.");
-                free(line);
+//                free(line);
                 exit(1);
             }
         }
@@ -85,24 +88,20 @@ string InputStream2::readln() {
         len_used += chunk_used;
 
         if (line[len_used - 1] == '\n') {
+            //cout << line << endl;
             // "Empty" the line buffer
-
             return line;
         }
     }
-
+    //cout << line << endl;
     return line;
-}
-
-void InputStream2::test() {
-    while (fgets(chunk, sizeof(chunk), file) != NULL);
 }
 
 /**
  * Closes the file.
  */
 void InputStream2::close() {
-    free(line);
+//    cout << fileName << endl;
+    //free(line);
     fclose(file);
 }
-

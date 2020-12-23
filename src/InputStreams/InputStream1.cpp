@@ -9,7 +9,7 @@ using namespace std;
  * field of the InputStream class
  * @param fName : string corresponding to the filename the user chose
  */
-InputStream1::InputStream1(char *fName,int B) : InputStream(fName,B) {
+InputStream1::InputStream1(char *fName, int B) : InputStream(fName, B) {
 }
 
 
@@ -25,8 +25,7 @@ string InputStream1::readln() {
     }
     if (c != '\n') {
         lineBuffer.push_back(c);
-    }
-    else {
+    } else {
         lineBuffer.push_back(c);
         return lineBuffer;
     }
@@ -37,9 +36,4 @@ string InputStream1::readln() {
         lineBuffer.push_back(c);
     }
     return lineBuffer;
-}
-
-string InputStream1::getNumber() {
-    string str(fileName);
-    return str;
 }
