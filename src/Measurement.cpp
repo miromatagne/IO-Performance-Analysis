@@ -51,10 +51,9 @@ Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B, 
 }
 
 double *Measurement::getAverageTimesB(char *fileName, int nbRep, int minB, int maxB, int step) {
-    double *averageTimes = (double *) malloc((maxB - minB) * sizeof(double));
-    double *averageSums = (double *) malloc((maxB - minB) * sizeof(double));
-    cout << minB << " " << maxB << endl;
-    for (int i = minB; i < maxB + 1; i += step) {
+    double *averageTimes = (double *) malloc((maxB - minB + step) * sizeof(double));
+    double *averageSums = (double *) malloc((maxB - minB + step) * sizeof(double));
+    for (int i = minB; i < maxB + step; i += step) {
         averageTimes[i - minB] = getAverageTime(fileName, nbRep, i, 10000).time;
         averageSums[i - minB] = getAverageTime(fileName, nbRep, i, 10000).length;
         cout << i << " " << averageTimes[i - minB] << " " << averageSums[i - minB]<< endl;
