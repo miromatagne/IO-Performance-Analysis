@@ -258,10 +258,12 @@ int main() {
 
         cout << "InputStream4,OutputStream4 ";
         measurement.getAverageTime3<InputStream4,OutputStream4>(1,i,allocationGranularity,allocationGranularity,allocationGranularity);
+        cout << "InputStream4,OutputStream4 ";
         measurement.getAverageTime3<InputStream4,OutputStream4>(1,i,allocationGranularity*200,allocationGranularity*200,allocationGranularity*200);
 
         cout << "InputStream2,OutputStream4 ";
         measurement.getAverageTime3<InputStream2,OutputStream4>(1,i,allocationGranularity,allocationGranularity,allocationGranularity);
+        cout << "InputStream2,OutputStream4 ";
         measurement.getAverageTime3<InputStream2,OutputStream4>(1,i,allocationGranularity*200,allocationGranularity*200,allocationGranularity*200);
 
     }
