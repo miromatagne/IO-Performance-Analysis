@@ -25,7 +25,7 @@ void OutputStream3::writeln(string text){
     int remaining = strlen(c);
     int size = strlen(c);
     if (size+index < BufferSize) {
-        cout << "INDEX " << index << endl;
+//        cout << "INDEX " << index << endl;
         strcpy(buffer+index, c);
         index+=size;
 //        write(fileno(file), buffer, size);

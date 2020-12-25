@@ -11,7 +11,6 @@
 #include <Experiments/Experiment3.h>
 #include "Chrono.h"
 #include <iostream>
-#include <type_traits>
 #include <cmath>
 
 class Measurement {

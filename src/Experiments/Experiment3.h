@@ -3,8 +3,6 @@
 
 
 #include <vector>
-#include <type_traits>
-#include <typeinfo>
 using namespace std;
 class Experiment3 {
 public:
