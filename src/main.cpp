@@ -229,9 +229,9 @@ int main() {
 //    cout << chrono.getChrono() << endl;
 
     Measurement measurement;
-    int Bminimum = 100;
-    int Bmaximum = 10000;
-    int step = 100;
+    int Bminimum = 200;
+    int Bmaximum = 2000;
+    int step = 200;
     int allocationGranularity=65536;
     for (int i=1; i<=8; i++){
 
@@ -242,29 +242,28 @@ int main() {
             measurement.getAverageTime3<InputStream4,OutputStream1>(1,i,Bminimum,Bmaximum,step);
         }
         cout << "InputStream2,OutputStream2 " ;
-        measurement.getAverageTime3<InputStream2,OutputStream2>(3,i,Bminimum,Bmaximum,step);
+        measurement.getAverageTime3<InputStream2,OutputStream2>(1,i,Bminimum,Bmaximum,step);
         cout << "InputStream4,OutputStream2 " ;
-        measurement.getAverageTime3<InputStream4,OutputStream2>(3,i,Bminimum,Bmaximum,step);
-        if(i<6){
-            cout << "InputStream2,OutputStream3 " ;
-            measurement.getAverageTime3<InputStream2,OutputStream3>(1,i,Bminimum,Bmaximum,step);
-           cout << "InputStream4,OutputStream3 " ;
-           measurement.getAverageTime3<InputStream4,OutputStream3>(1,i,Bminimum,Bmaximum,step);
-        }
-        else{
-            cout << "InputStream2,OutputStream3 " ;
-            measurement.getAverageTime3<InputStream2,OutputStream3>(1,i,Bminimum*5,Bmaximum,step);
-            cout << "InputStream4,OutputStream3 " ;
-            measurement.getAverageTime3<InputStream4,OutputStream3>(1,i,Bminimum*5,Bmaximum,step);
-        }
-        cout << "InputStream2,OutputStream4 ";
-        measurement.getAverageTime3<InputStream2,OutputStream4>(3,i,allocationGranularity,allocationGranularity,allocationGranularity);
-        cout << "InputStream2,OutputStream4 ";
-        measurement.getAverageTime3<InputStream2,OutputStream4>(3,i,allocationGranularity*200,allocationGranularity*200,allocationGranularity*200);
+        measurement.getAverageTime3<InputStream4,OutputStream2>(1,i,Bminimum,Bmaximum,step);
+
+        cout << "InputStream2,OutputStream3 " ;
+        measurement.getAverageTime3<InputStream2,OutputStream3>(1,i,20,200,20);
+        cout << "InputStream2,OutputStream3 " ;
+        measurement.getAverageTime3<InputStream2,OutputStream3>(1,i,Bminimum,Bmaximum,step);
+        cout << "InputStream4,OutputStream3 " ;
+        measurement.getAverageTime3<InputStream4,OutputStream3>(1,i,20,200,20);
+        cout << "InputStream4,OutputStream3 " ;
+        measurement.getAverageTime3<InputStream4,OutputStream3>(1,i,Bminimum,Bmaximum,step);
+
+
         cout << "InputStream4,OutputStream4 ";
-        measurement.getAverageTime3<InputStream4,OutputStream4>(3,i,allocationGranularity,allocationGranularity,allocationGranularity);
-        cout << "InputStream4,OutputStream4 ";
-        measurement.getAverageTime3<InputStream4,OutputStream4>(3,i,allocationGranularity*200,allocationGranularity*200,allocationGranularity*200);
+        measurement.getAverageTime3<InputStream4,OutputStream4>(1,i,allocationGranularity,allocationGranularity,allocationGranularity);
+        measurement.getAverageTime3<InputStream4,OutputStream4>(1,i,allocationGranularity*200,allocationGranularity*200,allocationGranularity*200);
+
+        cout << "InputStream2,OutputStream4 ";
+        measurement.getAverageTime3<InputStream2,OutputStream4>(1,i,allocationGranularity,allocationGranularity,allocationGranularity);
+        measurement.getAverageTime3<InputStream2,OutputStream4>(1,i,allocationGranularity*200,allocationGranularity*200,allocationGranularity*200);
+
     }
 
 //   // measurement.getAverageTime3<InputStream2,OutputStream2>(3,1,20,500,20);
