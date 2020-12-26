@@ -16,14 +16,14 @@ MultiwayMerge::MultiwayMerge() {
 }
 
 void MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
-    InputStream2 inputStream(fileName, 100000);
+    InputStream2 inputStream(fileName, 0);
     inputStream.open();
     bool run = true;
     int fileNb = 0;
-    vector < InputStream2 * > files;
+    vector<InputStream2 *> files;
 
     while (run) {
-        vector <vector<string>> lines;
+        vector<vector<string>> lines;
         int totalLength = 0;
         while (totalLength < M) {
             string stringLine = inputStream.readln();
@@ -32,14 +32,14 @@ void MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
                 run = false;
                 break;
             }
-            vector <string> line = stringToVector(stringLine);
+            vector<string> line = stringToVector(stringLine);
             lines.push_back(line);
             totalLength += stringLine.length();
         }
 
         if (lines.size() != 0) {
             sort(lines.begin(), lines.end(),
-                 [k](const vector <string> &a, const vector <string> &b) {
+                 [k](const vector<string> &a, const vector<string> &b) {
                      return a[k] < b[k];
                  });
             string newFileName = "../bin/file" + to_string(fileNb) + ".txt";
@@ -79,7 +79,7 @@ void MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
             //cout << "OPEN OK" << endl;
             string stringLine = files[i]->readln();
             //cout << "READ OK" << endl;
-            vector <string> line = stringToVector(stringLine);
+            vector<string> line = stringToVector(stringLine);
             QueueObject q = {files[i], line};
             linesQueue.push(q);
         }
@@ -92,10 +92,15 @@ void MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
         OutputStream4 o(name, 65536);
         o.create();
         while (linesQueue.size() != 0) {
-            vector <string> vectorLine = linesQueue.top().line;
+            //cout << linesQueue.top().inputStream->getFileName() << endl;
+            //cout << "Line size " << linesQueue.top().line.size() << endl;
+            vector<string> vectorLine = linesQueue.top().line;
             string stringLine = vectorToString(vectorLine);
+            //cout << "stringLine " << stringLine << endl;
             o.writeln(stringLine);
+            //cout << "Written" << endl;
             string nextLine = linesQueue.top().inputStream->readln();
+            //cout << "nextLine " << nextLine << endl;
             InputStream2 *tempInputStream = linesQueue.top().inputStream;
             linesQueue.pop();
             if (nextLine != "") {
@@ -103,6 +108,8 @@ void MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
                 linesQueue.push(newObject);
             } else {
                 tempInputStream->close();
+                delete[] tempInputStream->getFileName();
+                free(tempInputStream);
             }
         }
         for (int i = 0; i < nbFilesToMerge; i++) {
@@ -111,10 +118,12 @@ void MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
 //            cout << "OK" << endl;
         }
         o.close();
-        InputStream2 *i = new InputStream2(name, 100000);
+        InputStream2 *i = new InputStream2(name, 0);
         files.push_back(i);
         fileNb++;
     }
+    free(files[0]);
+
 }
 
 vector<string> MultiwayMerge::stringToVector(string stringLine) {

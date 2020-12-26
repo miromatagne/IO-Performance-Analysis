@@ -31,7 +31,7 @@ public:
         fseek(file, 0, SEEK_END);
         int fileSize = ftell(file) * sizeof(char);
         rewind(file);
-        int seed = 10;
+        int seed = 100;
         std::mt19937 generator(seed);
         std::uniform_int_distribution<> distribute(0, fileSize);
         int position;

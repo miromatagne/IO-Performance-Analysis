@@ -28,7 +28,7 @@ public:
 
     //data getAverageTime3(int nbRep, int B, InputStream inputStream, OutputStream outputStream);
 
-    double *getAverageTimesB(char *fileName, int nbRep, int minB, int maxB, int step);
+    double *getAverageTimesB(char *fileName, int nbRep, long minB, long maxB, int step);
 
     double *getAverageTimesJ(char *fileName, int nbRep, int minJ, int maxJ, int step);
 

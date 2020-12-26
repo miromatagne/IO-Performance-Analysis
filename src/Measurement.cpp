@@ -51,12 +51,13 @@ Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B, 
     return x;
 }
 
-double *Measurement::getAverageTimesB(char *fileName, int nbRep, int minB, int maxB, int step) {
-    double *averageTimes = (double *) malloc((maxB - minB + step) * sizeof(double));
-    double *averageSums = (double *) malloc((maxB - minB + step) * sizeof(double));
-    for (int i = minB; i < maxB + step; i += step) {
-        averageTimes[i - minB] = getAverageTime(fileName, nbRep, i, 10000).time;
-        averageSums[i - minB] = getAverageTime(fileName, nbRep, i, 10000).length;
+double *Measurement::getAverageTimesB(char *fileName, int nbRep, long minB, long maxB, int step) {
+    double *averageTimes = new double[maxB - minB + step];
+    double *averageSums = new double[maxB - minB + step];
+    for (long i = minB; i < maxB + step; i += step) {
+        data x = getAverageTime(fileName, nbRep, i, 10000);
+        averageTimes[i - minB] = x.time;
+        averageSums[i - minB] = x.length;
         cout << i << " " << averageTimes[i - minB] << " " << averageSums[i - minB] << endl;
     }
     return averageTimes;
@@ -99,7 +100,7 @@ vector<Measurement::data> Measurement::testIterations(char *fileName, int nbRep,
         //cout << fileName << endl;
         data x;
         data y;
-        x = getAverageTime(fileName, nbRep, 65536, i); // B=100 for randjump3 B= 65536 for randjump4
+        x = getAverageTime(fileName, nbRep, 5000 * 65536, i); // B=100 for randjump3 B= 65536 for randjump4
         y.length = x.length;
         y.time = x.time;
         y.fileName = fileName;

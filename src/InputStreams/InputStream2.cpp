@@ -14,7 +14,7 @@ using namespace std;
 InputStream2::InputStream2(char *fName, int B) : InputStream(fName, B) {
 // Store the chunks of text into a line buffer
     len = sizeof(chunk);
-    //line = (char *) malloc(len);
+    line = (char *) malloc(len);
     if (line == NULL) {
         perror("Unable to allocate memory for the line buffer.");
         exit(1);
@@ -68,9 +68,7 @@ string InputStream2::readln() {
 // "Empty" the string
 //    line[0] = '\0';
 
-    line = new char[len];
     line[0] = '\0';
-
     while (fgets(chunk, sizeof(chunk), file) != NULL) {
         size_t len_used = strlen(line);
         size_t chunk_used = strlen(chunk);
@@ -93,8 +91,8 @@ string InputStream2::readln() {
             return line;
         }
     }
-    //cout << line << endl;
-    return line;
+    string s(line);
+    return s;
 }
 
 /**
@@ -102,6 +100,6 @@ string InputStream2::readln() {
  */
 void InputStream2::close() {
 //    cout << fileName << endl;
-    //free(line);
+    free(line);
     fclose(file);
 }
