@@ -2,7 +2,6 @@
 // Created by Linho100 on 27/11/2020.
 //
 #include "InputStream4.h"
-#include <iostream>
 #include <windows.h>
 #include <tchar.h>
 #include <fcntl.h>
@@ -12,16 +11,12 @@
 
 using namespace std;
 
-extern int errno;
-
 /**
  * Constructor storing the chosen file's name in the fileName
  * field of the InputStream class
  * @param fName : string corresponding to the filename the user chose
  */
 InputStream4::InputStream4(char *fName, int B) : InputStream(fName, B) {
-    test = 0;
-//    cout << B << endl;
     SYSTEM_INFO info;
     GetSystemInfo(&info);
     start_file = 0;
@@ -37,26 +32,17 @@ void InputStream4::open() {
     rhFile = CreateFile(_T(fileName), GENERIC_READ, 0, NULL, OPEN_EXISTING,
                         FILE_ATTRIBUTE_NORMAL, NULL);
     if (rhFile == INVALID_HANDLE_VALUE) {
-        int err = errno;
-        fprintf(stderr, "Value of errno: %d\n", errno);
-        perror("Error printed by perror");
-        fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
+        printf("INVALID_HANDLE_VALUE");
     }
     fd = _open_osfhandle((intptr_t) rhFile, _O_RDONLY);
     if (fd == -1) {
         ::CloseHandle(rhFile);
-        int err = errno;
-        fprintf(stderr, "Value of errno: %d\n", errno);
-        perror("Error printed by perror");
-        fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
+        printf("error while opening the file");
     }
     file = _fdopen(fd, "r");
     if (!file) {
         ::CloseHandle(rhFile);
-        int err = errno;
-        fprintf(stderr, "Value of errno: %d\n", errno);
-        perror("Error printed by perror");
-        fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
+        printf("error while opening the file");
     }
 
     fseek(file, 0, SEEK_END);
@@ -67,7 +53,6 @@ void InputStream4::open() {
     } else {
         map(sizePageBuffer);
     }
-    //cout << "sizeByteFile : " << sizeByteFile << endl;
 }
 
 /**
@@ -82,8 +67,6 @@ void InputStream4::close() {
  * Map a region into memory
  */
 void InputStream4::map(DWORD toMap) {
-//    cout << test << endl;
-//    test++;
     DWORD end = 0;
     if (start + toMap > sizeByteFile) {
         end = 0;
@@ -99,10 +82,7 @@ void InputStream4::map(DWORD toMap) {
             end,
             _T(fileName));                 // name of mapping object
     if (rhMapFile == NULL) {
-        int err = errno;
-        fprintf(stderr, "Value of errno: %d\n", errno);
-        perror("Error printed by perror");
-        fprintf(stderr, "Error of CreateFileMapping function: %s\n", strerror(err));
+        printf("error with the function CreateFileMapping");
     }
     readBuffer = (LPTSTR) MapViewOfFile(rhMapFile,   // handle to map object
                                         FILE_MAP_READ, // read/write permission
@@ -110,10 +90,7 @@ void InputStream4::map(DWORD toMap) {
                                         start,
                                         toMap); //null
     if (readBuffer == NULL) {
-        int err = errno;
-        fprintf(stderr, "Value of errno: %d\n", errno);
-        perror("Error printed by perror");
-        fprintf(stderr, "Error of the MapViewOfFile function: %s\n", strerror(err));
+        printf("error with the function MapViewOfFile");
         CloseHandle(rhMapFile);
     }
 }
@@ -171,10 +148,7 @@ void InputStream4::seek(int pos) {
     fseek(file, pos, SEEK_SET);
     start_file = pos;
     if (pos > start + sizePageBuffer || pos < start) {
-        //cout << "startfile : " << start_file << endl;
-        //cout << "ok" << endl;
         start = (start_file / sizePageBuffer) * sizePageBuffer;
-        //cout << "start : " << start << endl;
         unmap();
         map(sizePageBuffer);
     }

@@ -233,38 +233,40 @@ int main() {
     int Bmaximum = 2000;
     int step = 200;
     int allocationGranularity=65536;
-    for (int i=1; i<=8; i++){
+    for (int i=8; i<=8; i++){
 
-        if(i<3){
-            cout << "InputStream2,OutputStream1 " ;
-            measurement.getAverageTime3<InputStream2,OutputStream1>(1,i,Bminimum,Bmaximum,step);
-            cout << "InputStream4,OutputStream1 " ;
-            measurement.getAverageTime3<InputStream4,OutputStream1>(1,i,Bminimum,Bmaximum,step);
-        }
-        cout << "InputStream2,OutputStream2 " ;
-        measurement.getAverageTime3<InputStream2,OutputStream2>(1,i,Bminimum,Bmaximum,step);
-        cout << "InputStream4,OutputStream2 " ;
-        measurement.getAverageTime3<InputStream4,OutputStream2>(1,i,Bminimum,Bmaximum,step);
-
+//        if(i<3){
+//            cout << "InputStream2,OutputStream1 " ;
+//            measurement.getAverageTime3<InputStream2,OutputStream1>(1,i,Bminimum,Bmaximum,step);
+//            cout << "InputStream4,OutputStream1 " ;
+//            measurement.getAverageTime3<InputStream4,OutputStream1>(1,i,Bminimum,Bmaximum,step);
+//        }
+//        cout << "InputStream2,OutputStream2 " ;
+//        measurement.getAverageTime3<InputStream2,OutputStream2>(1500,i,Bminimum,Bmaximum,step);
+//        cout << "InputStream4,OutputStream2 " ;
+//        measurement.getAverageTime3<InputStream4,OutputStream2>(1500,i,Bminimum,Bmaximum,step);
+//
         cout << "InputStream2,OutputStream3 " ;
-        measurement.getAverageTime3<InputStream2,OutputStream3>(1,i,20,200,20);
+        measurement.getAverageTime3<InputStream2,OutputStream3>(1,i,200000,200000,20);
         cout << "InputStream2,OutputStream3 " ;
-        measurement.getAverageTime3<InputStream2,OutputStream3>(1,i,Bminimum,Bmaximum,step);
-        cout << "InputStream4,OutputStream3 " ;
-        measurement.getAverageTime3<InputStream4,OutputStream3>(1,i,20,200,20);
-        cout << "InputStream4,OutputStream3 " ;
-        measurement.getAverageTime3<InputStream4,OutputStream3>(1,i,Bminimum,Bmaximum,step);
+        measurement.getAverageTime3<InputStream2,OutputStream3>(1,i,200000,200000,20);
+//        cout << "InputStream2,OutputStream3 " ;
+//        measurement.getAverageTime3<InputStream2,OutputStream3>(1500,i,Bminimum*100,Bmaximum*100,step*100);
+//        cout << "InputStream4,OutputStream3 " ;
+//        measurement.getAverageTime3<InputStream4,OutputStream3>(4,i,20,200,45);
+//        cout << "InputStream4,OutputStream3 " ;
+//        measurement.getAverageTime3<InputStream4,OutputStream3>(1500,i,Bminimum,Bmaximum,step);
 
-
-        cout << "InputStream4,OutputStream4 ";
-        measurement.getAverageTime3<InputStream4,OutputStream4>(1,i,allocationGranularity,allocationGranularity,allocationGranularity);
-        cout << "InputStream4,OutputStream4 ";
-        measurement.getAverageTime3<InputStream4,OutputStream4>(1,i,allocationGranularity*200,allocationGranularity*200,allocationGranularity*200);
-
-        cout << "InputStream2,OutputStream4 ";
-        measurement.getAverageTime3<InputStream2,OutputStream4>(1,i,allocationGranularity,allocationGranularity,allocationGranularity);
-        cout << "InputStream2,OutputStream4 ";
-        measurement.getAverageTime3<InputStream2,OutputStream4>(1,i,allocationGranularity*200,allocationGranularity*200,allocationGranularity*200);
+//
+//        cout << "InputStream4,OutputStream4 ";
+//        measurement.getAverageTime3<InputStream4,OutputStream4>(1,i,allocationGranularity,allocationGranularity,allocationGranularity);
+//        cout << "InputStream4,OutputStream4 ";
+//        measurement.getAverageTime3<InputStream4,OutputStream4>(1500,i,allocationGranularity*200,allocationGranularity*200,allocationGranularity*200);
+//
+//        cout << "InputStream2,OutputStream4 ";
+//        measurement.getAverageTime3<InputStream2,OutputStream4>(1,i,allocationGranularity,allocationGranularity,allocationGranularity);
+//        cout << "InputStream2,OutputStream4 ";
+//        measurement.getAverageTime3<InputStream2,OutputStream4>(1500,i,allocationGranularity*200,allocationGranularity*200,allocationGranularity*200);
 
     }
 

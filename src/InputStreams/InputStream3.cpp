@@ -2,12 +2,8 @@
 // Created by Miro-Manuel on 26/11/2020.
 //
 
-#include <cstdio>
-#include <cstring>
-#include <cstdlib>
 #include <io.h>
 #include <string>
-#include <iostream>
 #include "InputStream3.h"
 
 using namespace std;
@@ -28,7 +24,7 @@ InputStream3::InputStream3(char *fName, int B) : InputStream(fName, B) {
  * system calls until the end-of-line symbol is reached.
  */
 string InputStream3::readln() {
-
+    int bufferLength = 0;
     if (buffer == nullptr) {
         buffer = new char[BufferSize];
         bufferLength = readToBuffer();
@@ -36,7 +32,6 @@ string InputStream3::readln() {
             return "";
         }
     }
-    char *firstOcc;
     string currentLine = "";
     bool run = true;
     while (run) {

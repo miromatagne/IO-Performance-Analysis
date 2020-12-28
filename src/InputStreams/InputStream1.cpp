@@ -1,5 +1,4 @@
 #include <io.h>
-#include <iostream>
 #include "InputStream1.h"
 
 using namespace std;
@@ -37,9 +36,4 @@ string InputStream1::readln() {
         lineBuffer.push_back(c);
     }
     return lineBuffer;
-}
-
-string InputStream1::getNumber() {
-    string str(fileName);
-    return str;
 }

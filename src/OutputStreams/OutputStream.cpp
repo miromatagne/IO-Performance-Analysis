@@ -1,11 +1,6 @@
-//
-// Created by minhx on 30-11-20.
-//
 
 #include "OutputStream.h"
-
 #include <string>
-#include <io.h>
 
 
 /**

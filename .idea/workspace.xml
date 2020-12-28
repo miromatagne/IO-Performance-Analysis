@@ -37,6 +37,24 @@
   <component name="ChangeListManager">
     <list default="true" id="79767ba3-830c-4bb4-8b6d-b5201f8ad164" name="Default Changelist" comment="main to measure time of experiment3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream1.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream1.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream2.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream2.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream2.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream3.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream3.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream3.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream4.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream4.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream4.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream1.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream1.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream1.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream2.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream2.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream2.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream3.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream3.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream3.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,6 +108,11 @@
     <configuration name="info_h417_group_15" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="info_h417_group_15" TARGET_NAME="info_h417_group_15" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="info_h417_group_15" RUN_TARGET_NAME="info_h417_group_15">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -174,21 +197,10 @@
       <workItem from="1608814073880" duration="282000" />
       <workItem from="1608814467683" duration="151000" />
       <workItem from="1608893158408" duration="631000" />
-      <workItem from="1608928040322" duration="3695000" />
-    </task>
-    <task id="LOCAL-00005" summary="write function problem">
-      <created>1604175776197</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1604175776197</updated>
-    </task>
-    <task id="LOCAL-00006" summary="outputstream, write 1,2,3,4 + multiple changements du au write4">
-      <created>1604349722315</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1604349722315</updated>
+      <workItem from="1608928040322" duration="4222000" />
+      <workItem from="1608979101562" duration="48000" />
+      <workItem from="1609089539284" duration="12188000" />
+      <workItem from="1609163542176" duration="2780000" />
     </task>
     <task id="LOCAL-00007" summary="outputstream, write 1,2,3,4 + multiple changements du au write4">
       <created>1604350691610</created>
@@ -519,7 +531,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608893748728</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="main to measure time of experiment3">
+      <created>1608936193880</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1608936193881</updated>
+    </task>
+    <task id="LOCAL-00055" summary="main to measure time of experiment3">
+      <created>1608936348562</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1608936348562</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -612,26 +638,30 @@
     <state x="1164" y="395" key="FileChooserDialogImpl/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1606648010890" />
     <state x="1164" y="699" key="FileChooserDialogImpl/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096378392" />
     <state x="582" y="192" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1604161451206" />
-    <state width="2518" height="382" key="GridCell.Tab.0.bottom" timestamp="1608936083080">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1237" height="324" key="GridCell.Tab.0.bottom" timestamp="1609113468313">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="2518" height="382" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608936083080" />
-    <state width="1237" height="2" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608803174225" />
-    <state width="2518" height="382" key="GridCell.Tab.0.center" timestamp="1608936083080">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1237" height="55" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@-3200.-221.1280.704" timestamp="1609106912577" />
+    <state width="2518" height="175" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1609103945220" />
+    <state width="1237" height="324" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1609113468313" />
+    <state width="1237" height="324" key="GridCell.Tab.0.center" timestamp="1609113468313">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="2518" height="382" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608936083080" />
-    <state width="1237" height="2" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1608803174225" />
-    <state width="2518" height="382" key="GridCell.Tab.0.left" timestamp="1608936083080">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1237" height="55" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@-3200.-221.1280.704" timestamp="1609106912577" />
+    <state width="2518" height="175" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1609103945220" />
+    <state width="1237" height="324" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1609113468313" />
+    <state width="1237" height="324" key="GridCell.Tab.0.left" timestamp="1609113468313">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="2518" height="382" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608936083080" />
-    <state width="1237" height="2" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1608803174225" />
-    <state width="2518" height="382" key="GridCell.Tab.0.right" timestamp="1608936083080">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1237" height="55" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@-3200.-221.1280.704" timestamp="1609106912577" />
+    <state width="2518" height="175" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1609103945220" />
+    <state width="1237" height="324" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1609113468313" />
+    <state width="1237" height="324" key="GridCell.Tab.0.right" timestamp="1609113468313">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="2518" height="382" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608936083080" />
-    <state width="1237" height="2" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1608803174225" />
+    <state width="1237" height="55" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@-3200.-221.1280.704" timestamp="1609106912577" />
+    <state width="2518" height="175" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1609103945220" />
+    <state width="1237" height="324" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1609113468313" />
     <state width="2517" height="488" key="GridCell.Tab.1.bottom" timestamp="1608333896184">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -671,10 +701,10 @@
     </state>
     <state x="274" y="0" key="SettingsEditor/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608764533602" />
     <state x="137" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1608801593899" />
-    <state x="872" y="303" key="Vcs.Push.Dialog.v2" timestamp="1608893757514">
+    <state x="872" y="303" key="Vcs.Push.Dialog.v2" timestamp="1608936351695">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="303" key="Vcs.Push.Dialog.v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608893757514" />
+    <state x="872" y="303" key="Vcs.Push.Dialog.v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608936351695" />
     <state x="872" y="453" key="Vcs.Push.Dialog.v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096481395" />
     <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1608488345870" />
     <state x="971" y="434" key="VcsDiffUtil.ChangesDialog" timestamp="1608124212273">

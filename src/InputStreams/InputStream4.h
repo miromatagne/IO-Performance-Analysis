@@ -1,7 +1,6 @@
 #ifndef INFO_H417_GROUP_15_INPUTSTREAM4_H
 #define INFO_H417_GROUP_15_INPUTSTREAM4_H
 
-#include <istream>
 #include <windows.h>
 #include "InputStream.h"
 
@@ -19,7 +18,6 @@ private:
     DWORD start;
     DWORD sizePageBuffer;
     DWORD sizeByteFile;
-    int test;
 
 
 public:
