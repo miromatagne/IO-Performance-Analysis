@@ -1,4 +1,3 @@
-
 #include "OutputStream1.h"
 #include <io.h>
 

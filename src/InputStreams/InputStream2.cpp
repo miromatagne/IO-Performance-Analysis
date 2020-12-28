@@ -1,4 +1,3 @@
-
 #include "InputStream2.h"
 #include <cstring>
 

@@ -1,7 +1,3 @@
-//
-// Created by Miro-Manuel on 26/11/2020.
-//
-
 #include <io.h>
 #include <string>
 #include "InputStream3.h"

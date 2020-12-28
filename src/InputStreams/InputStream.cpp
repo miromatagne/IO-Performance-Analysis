@@ -1,7 +1,3 @@
-//
-// Created by minhx on 30-11-20.
-//
-
 #include "InputStream.h"
 
 using namespace std;

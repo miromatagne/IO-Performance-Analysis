@@ -1,6 +1,3 @@
-//
-// Created by Linho100 on 27/11/2020.
-//
 #include "InputStream4.h"
 #include <windows.h>
 #include <tchar.h>
