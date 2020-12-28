@@ -12,9 +12,9 @@
 using namespace std;
 
 /**
- * Constructor storing the chosen file's name in the fileName
- * field of the InputStream class
+ * Call the parent's constructor and initialize attributes
  * @param fName : string corresponding to the filename the user chose
+ * @param B : Size of the buffer
  */
 InputStream4::InputStream4(char *fName, int B) : InputStream(fName, B) {
     SYSTEM_INFO info;
@@ -29,8 +29,7 @@ InputStream4::InputStream4(char *fName, int B) : InputStream(fName, B) {
  * Opens the file and stores it in the file field of the InputStream class.
  */
 void InputStream4::open() {
-    rhFile = CreateFile(_T(fileName), GENERIC_READ, 0, NULL, OPEN_EXISTING,
-                        FILE_ATTRIBUTE_NORMAL, NULL);
+    rhFile = CreateFile(_T(fileName), GENERIC_READ, 0, NULL, OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL, NULL);
     if (rhFile == INVALID_HANDLE_VALUE) {
         printf("INVALID_HANDLE_VALUE");
     }
@@ -74,21 +73,11 @@ void InputStream4::map(DWORD toMap) {
     } else {
         end = start + toMap;
     }
-    rhMapFile = CreateFileMapping(
-            rhFile,    // use paging file
-            NULL,                    // default security
-            PAGE_READONLY,
-            0,
-            end,
-            _T(fileName));                 // name of mapping object
+    rhMapFile = CreateFileMapping(rhFile,NULL,PAGE_READONLY,0,end,_T(fileName));
     if (rhMapFile == NULL) {
         printf("error with the function CreateFileMapping");
     }
-    readBuffer = (LPTSTR) MapViewOfFile(rhMapFile,   // handle to map object
-                                        FILE_MAP_READ, // read/write permission
-                                        0,
-                                        start,
-                                        toMap); //null
+    readBuffer = (LPTSTR) MapViewOfFile(rhMapFile,FILE_MAP_READ,0,start,toMap);
     if (readBuffer == NULL) {
         printf("error with the function MapViewOfFile");
         CloseHandle(rhMapFile);
@@ -102,7 +91,7 @@ void InputStream4::unmap() {
     UnmapViewOfFile(readBuffer);
     CloseHandle(rhMapFile);
 }
-//
+
 /**
  * Read the next line from the file of the InputStream class by mapping the characters
  * into internal memory through memory mapping.

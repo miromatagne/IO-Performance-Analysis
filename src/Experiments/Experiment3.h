@@ -9,7 +9,11 @@ class Experiment3 {
 public:
     Experiment3() {
     }
-
+/**
+ * Merge files in a round robin fashion
+ * @param Bo BufferSize for OutputStream class
+ * @param fileName variable number of filenames
+ */
     template<class InputClass, class OutputClass>
     void rrmerge(int Bo, char *fileName, ...) {
         vector<InputClass> readerList;

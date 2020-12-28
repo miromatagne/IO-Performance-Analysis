@@ -6,9 +6,9 @@
 
 
 /**
- * Constructor storing the chosen file's name in the fileName
- * field of the OutputStream class
+ * Call the parent's constructor and initialize attributes
  * @param fName : string corresponding to the filename the user chose
+ * @param B : Size of the buffer
  */
 OutputStream4::OutputStream4(char *fName, int B): OutputStream(fName,B) {
     fileName = fName;
@@ -23,8 +23,7 @@ OutputStream4::OutputStream4(char *fName, int B): OutputStream(fName,B) {
  * Creates a file and stores it in the file field of the OutputStream class.
  */
 void OutputStream4::create() {
-    hFile = CreateFile(_T(fileName), GENERIC_READ | GENERIC_WRITE, FILE_SHARE_WRITE, NULL, CREATE_ALWAYS,
-                       FILE_ATTRIBUTE_NORMAL, NULL);
+    hFile = CreateFile(_T(fileName), GENERIC_READ | GENERIC_WRITE, FILE_SHARE_WRITE, NULL, CREATE_ALWAYS,FILE_ATTRIBUTE_NORMAL, NULL);
     if (hFile == INVALID_HANDLE_VALUE) {
         printf("INVALID_HANDLE_VALUE");
     }
@@ -56,24 +55,11 @@ void OutputStream4::unmap() {
  */
 void OutputStream4::map(DWORD toMap) {
     DWORD start = (start_file/sizePageBuffer)*sizePageBuffer;
-    hMapFile = CreateFileMapping(
-            hFile,    // use paging file
-            NULL,                    // default security
-            PAGE_READWRITE,
-            0,
-            start+toMap,
-            _T(fileName));                 // name of mapping object
-
+    hMapFile = CreateFileMapping(hFile,NULL,PAGE_READWRITE,0,start+toMap,_T(fileName));
     if (hMapFile == NULL) {
         printf("error with the function CreateFileMapping");
     }
-
-    writeBuffer = (LPTSTR) MapViewOfFile(hMapFile,   // handle to map object
-                                         FILE_MAP_ALL_ACCESS, // read/write permission
-                                         0,
-                                         start,
-                                         toMap); //null
-
+    writeBuffer = (LPTSTR) MapViewOfFile(hMapFile,FILE_MAP_ALL_ACCESS,0,start,toMap);
     if (writeBuffer == NULL) {
         printf("error with the function MapViewOfFile");
         CloseHandle(hMapFile);

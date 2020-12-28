@@ -10,6 +10,7 @@ using namespace std;
  * Constructor storing the chosen file's name in the fileName
  * field of the InputStream class
  * @param fName : string corresponding to the filename the user chose
+ * @param B : Size of the buffer
  */
 InputStream::InputStream(char *fName, int B) {
     fileName = fName;

@@ -1,8 +1,8 @@
 #include "OutputStream2.h"
 /**
- * Constructor storing the chosen file's name in the fileName
- * field of the OutputStream class
+ * Call the parent's constructor
  * @param fName : string corresponding to the filename the user chose
+ * @param B : Size of the buffer
  */
 OutputStream2::OutputStream2(char *fName,int B) : OutputStream(fName,B){
 }

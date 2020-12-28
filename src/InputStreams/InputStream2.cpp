@@ -5,9 +5,9 @@
 using namespace std;
 
 /**
- * Constructor storing the chosen file's name in the fileName
- * field of the InputStream class
+ * Call the parent's constructor and initialize attributes
  * @param fName : string corresponding to the filename the user chose
+ * @param B : Size of the buffer
  */
 InputStream2::InputStream2(char *fName, int B) : InputStream(fName, B) {
 // Store the chunks of text into a line buffer

@@ -9,9 +9,9 @@
 using namespace std;
 
 /**
- * Constructor storing the chosen file's name in the fileName
- * field of the InputStream class
+ * Call the parent's constructor and initialize index
  * @param fName : string corresponding to the filename the user chose
+ * @param B : Size of the buffer
  */
 InputStream3::InputStream3(char *fName, int B) : InputStream(fName, B) {
     index = 0;
