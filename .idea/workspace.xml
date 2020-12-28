@@ -37,17 +37,7 @@
   <component name="ChangeListManager">
     <list default="true" id="79767ba3-830c-4bb4-8b6d-b5201f8ad164" name="Default Changelist" comment="premier netoyage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Experiments/Experiment3.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Experiments/Experiment3.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream2.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream4.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream1.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream2.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/OutputStreams/OutputStream4.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,14 +183,7 @@
       <workItem from="1608979101562" duration="48000" />
       <workItem from="1609089539284" duration="12188000" />
       <workItem from="1609163542176" duration="4314000" />
-      <workItem from="1609191854008" duration="1248000" />
-    </task>
-    <task id="LOCAL-00009" summary="outputstream, write 1,2,3,4 + multiple changements du au write4">
-      <created>1604353074470</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1604353074470</updated>
+      <workItem from="1609191854008" duration="1778000" />
     </task>
     <task id="LOCAL-00010" summary="outputstream, write 1,2,3,4 + multiple changements du au write4">
       <created>1604353225717</created>
@@ -538,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609192368902</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="premier netoyage">
+      <created>1609193155970</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1609193155970</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -694,10 +684,10 @@
     </state>
     <state x="274" y="0" key="SettingsEditor/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608764533602" />
     <state x="137" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1608801593899" />
-    <state x="872" y="303" key="Vcs.Push.Dialog.v2" timestamp="1609192372245">
+    <state x="872" y="303" key="Vcs.Push.Dialog.v2" timestamp="1609193159116">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="303" key="Vcs.Push.Dialog.v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1609192372245" />
+    <state x="872" y="303" key="Vcs.Push.Dialog.v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1609193159115" />
     <state x="872" y="453" key="Vcs.Push.Dialog.v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096481395" />
     <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1608488345870" />
     <state x="971" y="434" key="VcsDiffUtil.ChangesDialog" timestamp="1608124212273">
