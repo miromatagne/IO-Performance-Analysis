@@ -1,5 +1,6 @@
 #include "OutputStream3.h"
 #include <io.h>
+#include <cstring>
 
 /**
  * Constructor storing the chosen file's name in the fileName

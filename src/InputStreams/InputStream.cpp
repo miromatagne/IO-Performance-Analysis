@@ -3,8 +3,6 @@
 //
 
 #include "InputStream.h"
-#include <io.h>
-#include <iostream>
 
 using namespace std;
 

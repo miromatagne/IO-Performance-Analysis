@@ -53,7 +53,6 @@ public:
         bool needBuffer = (std::is_same<OutputClass, OutputStream3>::value) || (std::is_same<OutputClass, OutputStream4>::value);
         for (int i = 0; i < nbRep; i++) {
             int j=0;
-           // chrono->startChrono();
             //    k = 2, size small
             if(submeasurement==1) {
                 do {
@@ -160,7 +159,7 @@ public:
                 filenames = " movie_info,person_info,name,cast_info,title,movie_keyword,char_name";
                 k=7;
             }
-            //    k= 20, size small + big + medium;
+            //    k= 21, size small + big + medium;
             else if(submeasurement==8) {
                 do {
                     chrono->startChrono();
@@ -185,7 +184,6 @@ public:
             times += chrono->getChrono();
             B=minJ;
         }
-
         cout << k << filenames << endl;
         if(needBuffer){
             for (int i = 0; i <(maxJ-minJ)/step+1; i++) {
@@ -193,13 +191,11 @@ public:
                 cout << B << " " << timesB[i] << " " << endl;
                 B+=step;
             }
-
         }
         else{
              times= times/nbRep;
              cout << times << endl;
         }
-
         free(timesB);
         // free(experiment);
         free(chrono);

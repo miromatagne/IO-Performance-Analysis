@@ -3,9 +3,6 @@
 #define INFO_H417_GROUP_15_OUTPUTSTREAM_H
 
 #include <ostream>
-#include <fstream>
-#include <windows.h>
-
 using namespace std;
 
 class OutputStream {

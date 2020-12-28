@@ -3,6 +3,7 @@
 
 
 #include <vector>
+
 using namespace std;
 class Experiment3 {
 public:
@@ -19,7 +20,7 @@ public:
         char *arg = fileName;
         int i = 0;
         do {
-            InputClass inputStream(arg, 1);
+            InputClass inputStream(arg, 100);
             readerList.push_back(inputStream);
             readerList[i].open();
             arg = va_arg(vl, char*);
