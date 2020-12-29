@@ -52,8 +52,17 @@ using namespace std;
 int main() {
 
 /////// ICIIIIIII
+    Measurement *m3 = new Measurement();
+    m3->getAverageTimesB2("../data/cast_info.csv", 10, 10000, 50000, 1000);
+// dans Measurement.cpp uncomment ligne 58 et changer B = 65536 ligne 158
+//    Measurement *m4 = new Measurement();
+//       m4->testIterations("../data/cast_info.csv", 10, 1, 100, 1);
+    //        m4->getAverageTimesB2("../data/cast_info.csv", 10, 10000*65536, 20000*65536, 1000*65536);
+//    m4->getAverageTimesB2("../data/cast_info.csv", 10, 32750*65536, 32766*65536, 1*65536);
+////// END
+
     //randjump1
-    Measurement *m1 = new Measurement();
+    //Measurement *m1 = new Measurement();
     // m1->testIterations("../data/cast_info.csv", 10, 1, 10000, 1);
     //m1->testIterations("../data/cast_info.csv", 10, 100, 1000, 100);
 //    m1->testIterations("../data/cast_info.csv", 10, 1000, 10000, 1000);
@@ -62,7 +71,7 @@ int main() {
 //    m1->testFiles2(0);  // faire une fois avec seed = 100
 
     //randjump2
-       Measurement *m2 = new Measurement();
+    //  Measurement *m2 = new Measurement();
     // m2->testIterations("../data/cast_info.csv", 10, 1, 100, 1);
     // m2->testIterations("../data/cast_info.csv", 10, 100, 1000, 100);
 //    m2->testIterations("../data/cast_info.csv", 10, 1000, 10000, 1000);
@@ -71,10 +80,10 @@ int main() {
     //  m2->testFiles2(0);  // faire une fois avec seed = 100
 
     //randjump3
-       Measurement *m3 = new Measurement();
-    m3->testIterations("../data/cast_info.csv", 10, 1, 100, 1);
+    //      Measurement *m3 = new Measurement();
+//    m3->testIterations("../data/cast_info.csv", 10, 1, 100, 1);
 //    m3->testIterations("../data/cast_info.csv", 10, 100, 1000, 100);
-//    m3->testIterations("../data/cast_info.csv", 10, 1000, 10000, 1000);
+//    m3->testIterations("../data/cast_info.csv", 10, 10000, 50000, 1000);
 // Et celui la pour les 3 fichiers
 //    m3->testFiles2(100);// faire une fois avec seed = 10 dans la classe Experiment2.h (ligne34)
 //    m3->testFiles2(100);  // faire une fois avec seed = 100
@@ -83,11 +92,12 @@ int main() {
     //m3->getAverageTimesB2("../data/aka_name.csv", 10,  1, 10, 1);
     //     m3->getAverageTimesB2("../data/aka_name.csv", 10, 100, 1000, 100);
     //long fichier
-    // m3->getAverageTimesB2("../data/cast_info.csv", 10, 10, 1000, 10);
-    //m3->getAverageTimesB2("../data/cast_info.csv", 10, 1000, 6000, 100);
+    //m3->getAverageTimesB2("../data/cast_info.csv", 10, 10, 1000, 10);
+//    m3->getAverageTimesB2("../data/cast_info.csv", 10, 1000, 6000, 100);
+//    m3->getAverageTimesB2("../data/cast_info.csv", 10, 10000, 50000, 1000);
 
    //randjump4 attention changer B à 65536 dans testIterations a la ligne 103
-        Measurement *m4 = new Measurement();
+    //       Measurement *m4 = new Measurement();
 //       m4->testIterations("../data/cast_info.csv", 10, 1, 100, 1);
  //      m4->testIterations("../data/cast_info.csv", 10, 100, 1000, 100);
 //    m4->testIterations("../data/cast_info.csv", 10, 1000, 10000, 1000);
@@ -98,9 +108,9 @@ int main() {
 //    m4->getAverageTimesB2("../data/aka_name.csv", 10, 10*65536, 50*65536, 10*65536);
 //    m4->getAverageTimesB2("../data/aka_name.csv", 10, 1000*65536, 5000*65536, 1000*65536);
     //long fichier
-    //      m4->getAverageTimesB2("../data/cast_info.csv", 10, 10000*65536, 20000*65536, 1000*65536);
+    //        m4->getAverageTimesB2("../data/cast_info.csv", 10, 10000*65536, 20000*65536, 1000*65536);
  //      m4->getAverageTimesB2("../data/cast_info.csv", 10, 32750*65536, 32766*65536, 1*65536);
-////// END
+
 
 
 
@@ -184,12 +194,12 @@ int main() {
         inputStream.readln4(5);
 */
 
-   /* Experiment2 experiment2;
-    cout << experiment2.randjump<InputStream1>("../data/aka_name.csv", 50000, 2) << endl;
-    cout << experiment2.randjump<InputStream2>("../data/aka_name.csv", 50000, 2) << endl;
-    cout << experiment2.randjump<InputStream3>("../data/aka_name.csv", 50000, 2) << endl;
-    cout << experiment2.randjump<InputStream4>("../data/aka_name.csv", 50000, 2) << endl;
-*/
+    //Experiment2 experiment2;
+    //    cout << experiment2.randjump<InputStream1>("../data/aka_name.csv", 50000, 2) << endl;
+    //   cout << experiment2.randjump<InputStream2>("../data/aka_name.csv", 50000, 2) << endl;
+    //cout << experiment2.randjump<InputStream3>("../data/cast_info.csv", 50000, 100) << endl;
+    //   cout << experiment2.randjump<InputStream4>("../data/aka_name.csv", 50000, 2) << endl;
+
 
 
 /*    int sum = experiment2.randjump1("../data/aka_name.csv", 10000); //8000

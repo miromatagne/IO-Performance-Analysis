@@ -62,5 +62,5 @@ int InputStream3::readToBuffer() {
  */
 void InputStream3::seek(int pos) {
     fseek(file, pos, SEEK_SET);
-    buffer = nullptr;
+    //buffer = nullptr;
 }
