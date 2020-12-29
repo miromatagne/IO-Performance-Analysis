@@ -1,10 +1,8 @@
 #include "OutputStream2.h"
-#include <string.h>
-#include <stdio.h>
 /**
- * Constructor storing the chosen file's name in the fileName
- * field of the OutputStream class
+ * Call the parent's constructor
  * @param fName : string corresponding to the filename the user chose
+ * @param B : Size of the buffer
  */
 OutputStream2::OutputStream2(char *fName,int B) : OutputStream(fName,B){
 }
@@ -16,14 +14,11 @@ OutputStream2::OutputStream2(char *fName,int B) : OutputStream(fName,B){
  * C stdio library.
  * @param  text : string to be written in the file
  */
-void OutputStream2::writeln(string text) const{
+void OutputStream2::writeln(string text){
 
     if (fputs((text).c_str(), file) < 0)
     {
-        int err = errno;
-        fprintf(stderr, "Value of errno: %d\n", errno);
-        perror("Error printed by perror");
-        fprintf(stderr, "Error while writing in file: %s\n", strerror( err ));
+        printf("error while writing");
     }
 }
 

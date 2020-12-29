@@ -1,15 +1,14 @@
 #include <io.h>
-#include <iostream>
 #include "InputStream1.h"
 
 using namespace std;
 
 /**
- * Constructor storing the chosen file's name in the fileName
- * field of the InputStream class
+ * Call the parent's constructor
  * @param fName : string corresponding to the filename the user chose
+ * @param B : Size of the buffer
  */
-InputStream1::InputStream1(char *fName, int B) : InputStream(fName, B) {
+InputStream1::InputStream1(char *fName,int B) : InputStream(fName,B) {
 }
 
 
@@ -25,7 +24,8 @@ string InputStream1::readln() {
     }
     if (c != '\n') {
         lineBuffer.push_back(c);
-    } else {
+    }
+    else {
         lineBuffer.push_back(c);
         return lineBuffer;
     }

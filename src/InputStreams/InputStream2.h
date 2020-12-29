@@ -2,7 +2,6 @@
 #define INFO_H417_GROUP_15_INPUTSTREAM2_H
 
 #include "InputStream.h"
-#include <string>
 
 using namespace std;
 
@@ -18,9 +17,6 @@ public:
 
     string readln();
 
-    void test();
-
-    char *getFileName();
 };
 
 

@@ -1,7 +1,6 @@
 #ifndef INFO_H417_GROUP_15_INPUTSTREAM1_H
 #define INFO_H417_GROUP_15_INPUTSTREAM1_H
 
-#include <string>
 #include "InputStream.h"
 
 using namespace std;
@@ -13,7 +12,6 @@ public:
 
     string readln();
 
-    string getNumber();
 };
 
 

@@ -1,13 +1,10 @@
-
 #include "OutputStream1.h"
-#include <string>
 #include <io.h>
-#include <iostream>
 
 /**
- * Constructor storing the chosen file's name in the fileName
- * field of the OutputStream class
+ * Call the parent's constructor
  * @param fName : string corresponding to the filename the user chose
+ * @param B : Size of the buffer
  */
 OutputStream1::OutputStream1(char *fName,int B) : OutputStream(fName,B) {
 }
@@ -18,7 +15,7 @@ OutputStream1::OutputStream1(char *fName,int B) : OutputStream(fName,B) {
  * this stream with the newline character using the write system calls.
  * @param  text : string to be written in the file
  */
-void OutputStream1::writeln(string text) const {
+void OutputStream1::writeln(string text) {
     char c = text[0];
     int i = 0;
     while (c != '\0') {

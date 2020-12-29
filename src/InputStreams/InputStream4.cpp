@@ -1,8 +1,4 @@
-//
-// Created by Linho100 on 27/11/2020.
-//
 #include "InputStream4.h"
-#include <iostream>
 #include <windows.h>
 #include <tchar.h>
 #include <fcntl.h>
@@ -12,16 +8,12 @@
 
 using namespace std;
 
-extern int errno;
-
 /**
- * Constructor storing the chosen file's name in the fileName
- * field of the InputStream class
+ * Call the parent's constructor and initialize attributes
  * @param fName : string corresponding to the filename the user chose
+ * @param B : Size of the buffer
  */
 InputStream4::InputStream4(char *fName, int B) : InputStream(fName, B) {
-    test = 0;
-//    cout << B << endl;
     SYSTEM_INFO info;
     GetSystemInfo(&info);
     start_file = 0;
@@ -34,29 +26,19 @@ InputStream4::InputStream4(char *fName, int B) : InputStream(fName, B) {
  * Opens the file and stores it in the file field of the InputStream class.
  */
 void InputStream4::open() {
-    rhFile = CreateFile(_T(fileName), GENERIC_READ, 0, NULL, OPEN_EXISTING,
-                        FILE_ATTRIBUTE_NORMAL, NULL);
+    rhFile = CreateFile(_T(fileName), GENERIC_READ, 0, NULL, OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL, NULL);
     if (rhFile == INVALID_HANDLE_VALUE) {
-        int err = errno;
-        fprintf(stderr, "Value of errno: %d\n", errno);
-        perror("Error printed by perror");
-        fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
+        printf("INVALID_HANDLE_VALUE");
     }
     fd = _open_osfhandle((intptr_t) rhFile, _O_RDONLY);
     if (fd == -1) {
         ::CloseHandle(rhFile);
-        int err = errno;
-        fprintf(stderr, "Value of errno: %d\n", errno);
-        perror("Error printed by perror");
-        fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
+        printf("error while opening the file");
     }
     file = _fdopen(fd, "r");
     if (!file) {
         ::CloseHandle(rhFile);
-        int err = errno;
-        fprintf(stderr, "Value of errno: %d\n", errno);
-        perror("Error printed by perror");
-        fprintf(stderr, "Error while creating the file: %s\n", strerror(err));
+        printf("error while opening the file");
     }
 
     fseek(file, 0, SEEK_END);
@@ -67,7 +49,6 @@ void InputStream4::open() {
     } else {
         map(sizePageBuffer);
     }
-    //cout << "sizeByteFile : " << sizeByteFile << endl;
 }
 
 /**
@@ -82,8 +63,6 @@ void InputStream4::close() {
  * Map a region into memory
  */
 void InputStream4::map(DWORD toMap) {
-//    cout << test << endl;
-//    test++;
     DWORD end = 0;
     if (start + toMap > sizeByteFile) {
         end = 0;
@@ -91,29 +70,13 @@ void InputStream4::map(DWORD toMap) {
     } else {
         end = start + toMap;
     }
-    rhMapFile = CreateFileMapping(
-            rhFile,    // use paging file
-            NULL,                    // default security
-            PAGE_READONLY,
-            0,
-            end,
-            _T(fileName));                 // name of mapping object
+    rhMapFile = CreateFileMapping(rhFile,NULL,PAGE_READONLY,0,end,_T(fileName));
     if (rhMapFile == NULL) {
-        int err = errno;
-        fprintf(stderr, "Value of errno: %d\n", errno);
-        perror("Error printed by perror");
-        fprintf(stderr, "Error of CreateFileMapping function: %s\n", strerror(err));
+        printf("error with the function CreateFileMapping");
     }
-    readBuffer = (LPTSTR) MapViewOfFile(rhMapFile,   // handle to map object
-                                        FILE_MAP_READ, // read/write permission
-                                        0,
-                                        start,
-                                        toMap); //null
+    readBuffer = (LPTSTR) MapViewOfFile(rhMapFile,FILE_MAP_READ,0,start,toMap);
     if (readBuffer == NULL) {
-        int err = errno;
-        fprintf(stderr, "Value of errno: %d\n", errno);
-        perror("Error printed by perror");
-        fprintf(stderr, "Error of the MapViewOfFile function: %s\n", strerror(err));
+        printf("error with the function MapViewOfFile");
         CloseHandle(rhMapFile);
     }
 }
@@ -125,7 +88,7 @@ void InputStream4::unmap() {
     UnmapViewOfFile(readBuffer);
     CloseHandle(rhMapFile);
 }
-//
+
 /**
  * Read the next line from the file of the InputStream class by mapping the characters
  * into internal memory through memory mapping.
@@ -140,8 +103,8 @@ string InputStream4::readln() {
                     if (currentLine.length() == 0) {
                         currentLine = '\n';
                     } else {
-                        //currentLine[currentLine.length() - 1] = readBuffer[i]; // pour exp2
-                        currentLine.push_back(readBuffer[i]); // pour exp1
+                        currentLine[currentLine.length() - 1] = readBuffer[i]; // pour exp2
+                        //currentLine.push_back(readBuffer[i]); // pour exp1
                     }
                     start_file += 1;
                 }
@@ -171,10 +134,7 @@ void InputStream4::seek(int pos) {
     fseek(file, pos, SEEK_SET);
     start_file = pos;
     if (pos > start + sizePageBuffer || pos < start) {
-        //cout << "startfile : " << start_file << endl;
-        //cout << "ok" << endl;
         start = (start_file / sizePageBuffer) * sizePageBuffer;
-        //cout << "start : " << start << endl;
         unmap();
         map(sizePageBuffer);
     }

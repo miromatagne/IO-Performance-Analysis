@@ -1,6 +1,3 @@
-//
-// Created by trann on 02/12/2020.
-//
 #ifndef INFO_H417_GROUP_15_EXPERIMENT2_H
 #define INFO_H417_GROUP_15_EXPERIMENT2_H
 
@@ -35,14 +32,12 @@ public:
         std::mt19937 generator(seed);
         std::uniform_int_distribution<> distribute(0, fileSize);
         int position;
-        //cout << "size : " << fileSize << endl;
         for (int j = 0; j < iteration; j++) {
             position = distribute(generator);
             input.seek(position);
             string line;
             line = input.readln();
             sum += line.length();
-            //cout << "pos : " << position << endl;
         }
         input.close();
         return sum;

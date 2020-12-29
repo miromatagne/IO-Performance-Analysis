@@ -1,8 +1,6 @@
 #ifndef INFO_H417_GROUP_15_OUTPUTSTREAM4_H
 #define INFO_H417_GROUP_15_OUTPUTSTREAM4_H
 
-#include <ostream>
-#include <fstream>
 #include <windows.h>
 #include "OutputStream.h"
 using namespace std;
@@ -12,8 +10,7 @@ private:
     FILE* file;
     HANDLE hFile;
     int fd;
-    char* addNewLine();
-    void map(int toMap);
+    void map(DWORD toMap);
     void unmap();
     HANDLE hMapFile;
     LPCTSTR writeBuffer;

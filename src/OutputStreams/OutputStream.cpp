@@ -1,17 +1,12 @@
-//
-// Created by minhx on 30-11-20.
-//
-
 #include "OutputStream.h"
-
 #include <string>
-#include <io.h>
 
 
 /**
  * Constructor storing the chosen file's name in the fileName
  * field of the OutputStream class
  * @param fName : string corresponding to the filename the user chose
+ * @param B : Size of the buffer
  */
 OutputStream::OutputStream(char *fName,int B) {
     fileName = fName;
