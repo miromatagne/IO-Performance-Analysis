@@ -8,16 +8,7 @@ class Experiment2 {
 private:
     char *fileName;
 public:
-    explicit Experiment2() {};
-
-    /*   int randjump1(char *fileName, int iteration);
-
-       int randjump2(char *fileName, int iteration);
-
-       int randjump3(char *fileName, int iteration, int B);
-
-       int randjump4(char *fileName, int iteration, int B);
-    */
+    explicit Experiment2(){};
 
     template<class InputClass>
     int randjump(char *fileName, int iteration, int B = 0) {
@@ -28,7 +19,7 @@ public:
         fseek(file, 0, SEEK_END);
         int fileSize = ftell(file) * sizeof(char);
         rewind(file);
-        int seed = 100;
+        int seed = 10;
         std::mt19937 generator(seed);
         std::uniform_int_distribution<> distribute(0, fileSize);
         int position;
