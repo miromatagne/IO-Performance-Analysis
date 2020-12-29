@@ -20,6 +20,9 @@ using namespace std;
 Measurement::Measurement() {
 }
 
+/**
+ * Functions for the first experiment
+ */
 Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B) {
     Chrono *chrono = new Chrono();
     Experiment1 *experiment = new Experiment1();
@@ -45,34 +48,6 @@ Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B) 
     return x;
 }
 
-Measurement::data Measurement::getAverageTimesJ(char *fileName, int nbRep, int B, int iteration) {
-    Chrono *chrono = new Chrono();
-    Experiment2 *experiment = new Experiment2();
-    double *times = new double[nbRep];
-    int length = 0;
-    for (int i = 0; i < nbRep; i++) {
-        chrono->startChrono();
-        //length = experiment->randjump<InputStream1>(fileName, iteration, B);
-        //length = experiment->randjump<InputStream2>(fileName, iteration, B);
-        length = experiment->randjump<InputStream3>(fileName, iteration, B);
-        //length = experiment->randjump<InputStream4>(fileName, iteration, B);
-        times[i] = chrono->getChrono();
-    }
-    double sum = 0;
-    for (int i = 0; i < nbRep; i++) {
-        sum += times[i];
-    }
-    double average = sum / nbRep;
-    free(times);
-    free(experiment);
-    free(chrono);
-    data x;
-    x.time = average;
-    x.fileName = fileName;
-    x.length = length;
-    return x;
-}
-
 double *Measurement::getAverageTimesB(char *fileName, int nbRep, int minB, int maxB, int step) {
     double *averageTimes = (double *) malloc((maxB - minB + step) * sizeof(double));
     for (int i = minB; i < maxB + step; i += step) {
@@ -80,20 +55,6 @@ double *Measurement::getAverageTimesB(char *fileName, int nbRep, int minB, int m
         cout << i << " " << averageTimes[i - minB] << endl;
     }
     free(averageTimes);
-    return averageTimes;
-}
-
-double *Measurement::getAverageTimesB2(char *fileName, int nbRep, int minB, int maxB, int step) {
-    double *averageTimes = (double *) malloc((maxB - minB + step) * sizeof(double));
-    double *averageSums = (double *) malloc((maxB - minB + step) * sizeof(double));
-    for (int i = minB; i < maxB + step; i += step) {
-        data x = getAverageTimesJ(fileName, nbRep, i, 10000);
-        averageTimes[i - minB] = x.time;
-        averageSums[i - minB] = x.length;
-        cout << i << " " << averageTimes[i - minB] << " " << averageSums[i - minB]<< endl;
-    }
-    free(averageTimes);
-    free(averageSums);
     return averageTimes;
 }
 
@@ -123,6 +84,51 @@ vector<Measurement::data> Measurement::testFiles(int B) {
     return vec;
 }
 
+/**
+ * Functions for the second experiment
+ */
+Measurement::data Measurement::getAverageTimesJ(char *fileName, int nbRep, int B, int iteration) {
+    Chrono *chrono = new Chrono();
+    Experiment2 *experiment = new Experiment2();
+    double *times = new double[nbRep];
+    int length = 0;
+    for (int i = 0; i < nbRep; i++) {
+        chrono->startChrono();
+        //length = experiment->randjump<InputStream1>(fileName, iteration, B);
+        //length = experiment->randjump<InputStream2>(fileName, iteration, B);
+        //length = experiment->randjump<InputStream3>(fileName, iteration, B);
+        length = experiment->randjump<InputStream4>(fileName, iteration, B);
+        times[i] = chrono->getChrono();
+    }
+    double sum = 0;
+    for (int i = 0; i < nbRep; i++) {
+        sum += times[i];
+    }
+    double average = sum / nbRep;
+    free(times);
+    free(experiment);
+    free(chrono);
+    data x;
+    x.time = average;
+    x.fileName = fileName;
+    x.length = length;
+    return x;
+}
+
+double *Measurement::getAverageTimesB2(char *fileName, int nbRep, int minB, int maxB, int step) {
+    double *averageTimes = (double *) malloc((maxB - minB + step) * sizeof(double));
+    double *averageSums = (double *) malloc((maxB - minB + step) * sizeof(double));
+    for (int i = minB; i < maxB + step; i += step) {
+        data x = getAverageTimesJ(fileName, nbRep, i, 10000);
+        averageTimes[i - minB] = x.time;
+        averageSums[i - minB] = x.length;
+        cout << i << " " << averageTimes[i - minB] << " " << averageSums[i - minB]<< endl;
+    }
+    free(averageTimes);
+    free(averageSums);
+    return averageTimes;
+}
+
 vector<Measurement::data> Measurement::testFiles2(int B) {
     vector<data> vec;
     char *fileNames[] = {"comp_cast_type", "aka_title" , "aka_name" ,"cast_info",  "keyword", "movie_info_idx"};
@@ -145,9 +151,6 @@ vector<Measurement::data> Measurement::testFiles2(int B) {
     return vec;
 }
 
-/**
- * Iteration J
- */
 vector<Measurement::data> Measurement::testIterations(char *fileName, int nbRep, int minJ, int maxJ, int step) {
     vector<data> vec;
 
@@ -155,7 +158,7 @@ vector<Measurement::data> Measurement::testIterations(char *fileName, int nbRep,
         //cout << fileName << endl;
         data x;
         data y;
-        x = getAverageTimesJ(fileName, nbRep, 100, i); // B=100 for randjump3 B= 65536 for randjump4
+        x = getAverageTimesJ(fileName, nbRep, 65536, i); // B=100 for randjump3 B= 65536 for randjump4
         y.length = x.length;
         y.time = x.time;
         y.fileName = fileName;

@@ -10,15 +10,6 @@ private:
 public:
     explicit Experiment2(){};
 
- /*   int randjump1(char *fileName, int iteration);
-
-    int randjump2(char *fileName, int iteration);
-
-    int randjump3(char *fileName, int iteration, int B);
-
-    int randjump4(char *fileName, int iteration, int B);
- */
-
     template<class InputClass>
     int randjump(char *fileName, int iteration, int B = 0) {
         int sum = 0;

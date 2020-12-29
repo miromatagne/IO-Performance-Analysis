@@ -52,15 +52,10 @@ using namespace std;
 int main() {
 
 /////// ICIIIIIII
-    Measurement *m3 = new Measurement();
-    m3->getAverageTimesB2("../data/cast_info.csv", 10, 10000, 50000, 1000);
 // dans Measurement.cpp uncomment ligne 58 et changer B = 65536 ligne 158
     Measurement *m4 = new Measurement();
-//       m4->testIterations("../data/cast_info.csv", 10, 1, 100, 1);
-    //   m4->getAverageTimesB2("../data/cast_info.csv", 10, 10*65536, 1000*65536, 10*65536);
-//     m4->getAverageTimesB2("../data/cast_info.csv", 10, 32750*65536, 32766*65536, 1*65536);
+     m4->getAverageTimesB2("../data/cast_info.csv", 10, 20000*65536, 32500*65536, 100*65536);
 ////// END
-
 
 
 
