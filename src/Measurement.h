@@ -23,15 +23,19 @@ private:
 public:
     Measurement();
 
-    data getAverageTime(char *fileName, int nbRep, int B = 0, int iteration = 0);
+    data getAverageTime(char *fileName, int nbRep, int B = 0);
 
     //data getAverageTime3(int nbRep, int B, InputStream inputStream, OutputStream outputStream);
 
     double *getAverageTimesB(char *fileName, int nbRep, int minB, int maxB, int step);
 
-    double *getAverageTimesJ(char *fileName, int nbRep, int minJ, int maxJ, int step);
+    double *getAverageTimesB2(char *fileName, int nbRep, int minB, int maxB, int step);
+
+    data getAverageTimesJ(char *fileName, int nbRep, int B = 0, int iteration = 0);
 
     std::vector<data> testFiles(int B = 0);
+
+    std::vector<data> testFiles2(int B = 0);
 
     std::vector<data> testIterations(char *fileName, int nbRep, int minJ, int maxJ, int step);
 
