@@ -29,9 +29,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="Measurement.cpp experiment2">
+    <list default="true" id="8177d505-4c9d-4fb4-8e9e-17b578edb0db" name="Default Changelist" comment="Measurement.cpp experiment2 pour Pirouelle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream3.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputStreams/InputStream4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputStreams/InputStream4.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Measurement.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Measurement.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,6 +86,11 @@
     <configuration name="info_h417_group_15" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="info_h417_group_15" TARGET_NAME="info_h417_group_15" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="info_h417_group_15" RUN_TARGET_NAME="info_h417_group_15">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -163,14 +169,7 @@
       <workItem from="1608981396855" duration="16387000" />
       <workItem from="1609186316987" duration="5735000" />
       <workItem from="1609232908898" duration="2549000" />
-      <workItem from="1609237498808" duration="5623000" />
-    </task>
-    <task id="LOCAL-00006" summary="outputstream, write 1,2,3,4 + multiple changements du au write4">
-      <created>1604349722315</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1604349722315</updated>
+      <workItem from="1609237498808" duration="11505000" />
     </task>
     <task id="LOCAL-00007" summary="outputstream, write 1,2,3,4 + multiple changements du au write4">
       <created>1604350691610</created>
@@ -508,7 +507,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609233012627</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Measurement.cpp experiment2 pour Pirouelle">
+      <created>1609249465040</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1609249465040</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,7 +555,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="compute avg time" />
     <MESSAGE value="avg time of length3" />
     <MESSAGE value="changes" />
     <MESSAGE value="Experiment 4, premier test avec read4 et write 1." />
@@ -574,7 +579,8 @@
     <MESSAGE value="jsp" />
     <MESSAGE value="measure experiment2 pour Mirouelle" />
     <MESSAGE value="Measurement.cpp experiment2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Measurement.cpp experiment2" />
+    <MESSAGE value="Measurement.cpp experiment2 pour Pirouelle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Measurement.cpp experiment2 pour Pirouelle" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="264" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606737310902">
@@ -605,30 +611,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1536.824@0.0.1536.824" timestamp="1608657183489" />
-    <state width="1493" height="165" key="GridCell.Tab.0.bottom" timestamp="1609248798847">
+    <state width="1493" height="248" key="GridCell.Tab.0.bottom" timestamp="1609254870607">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="2517" height="457" key="GridCell.Tab.0.bottom/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608128805172" />
     <state width="1237" height="263" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608164661236" />
-    <state width="1493" height="165" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609248798847" />
-    <state width="1493" height="165" key="GridCell.Tab.0.center" timestamp="1609248798847">
+    <state width="1493" height="248" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1609254870607" />
+    <state width="1493" height="248" key="GridCell.Tab.0.center" timestamp="1609254870607">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="2517" height="457" key="GridCell.Tab.0.center/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608128805172" />
     <state width="1237" height="263" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1608164661236" />
-    <state width="1493" height="165" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1609248798847" />
-    <state width="1493" height="165" key="GridCell.Tab.0.left" timestamp="1609248798846">
+    <state width="1493" height="248" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1609254870607" />
+    <state width="1493" height="248" key="GridCell.Tab.0.left" timestamp="1609254870607">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="2517" height="457" key="GridCell.Tab.0.left/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608128805172" />
     <state width="1237" height="263" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1608164661236" />
-    <state width="1493" height="165" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1609248798846" />
-    <state width="1493" height="165" key="GridCell.Tab.0.right" timestamp="1609248798847">
+    <state width="1493" height="248" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1609254870607" />
+    <state width="1493" height="248" key="GridCell.Tab.0.right" timestamp="1609254870607">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="2517" height="457" key="GridCell.Tab.0.right/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608128805172" />
     <state width="1237" height="263" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1608164661236" />
-    <state width="1493" height="165" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1609248798847" />
+    <state width="1493" height="248" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1609254870607" />
     <state width="1258" height="492" key="GridCell.Tab.1.bottom" timestamp="1608124647473">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -674,13 +680,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1608656627774" />
-    <state x="523" y="178" key="Vcs.Push.Dialog.v2" timestamp="1608740466739">
+    <state x="523" y="178" key="Vcs.Push.Dialog.v2" timestamp="1609249490404">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="872" y="303" key="Vcs.Push.Dialog.v2/-3200.-221.1280.704/0.0.2560.1400@0.0.2560.1400" timestamp="1608128673693" />
     <state x="872" y="453" key="Vcs.Push.Dialog.v2/-3200.-221.1280.720/0.0.2560.1440@0.0.2560.1440" timestamp="1604096481395" />
     <state x="436" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1608156294333" />
-    <state x="523" y="178" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608740466739" />
+    <state x="523" y="178" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609249490404" />
     <state x="971" y="434" key="VcsDiffUtil.ChangesDialog" timestamp="1608124212273">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
