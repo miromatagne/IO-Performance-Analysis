@@ -9,6 +9,14 @@ private:
 public:
     explicit Experiment1() {};
 
+    /**
+     * Computes the length of a given file by using a specific InputStream
+     * implementation. The file is read line by line.
+     * @tparam InputClass : InputStream used to read the file
+     * @param fileName : name of the file to be read
+     * @param B
+     * @return length of the considered file
+     */
     template<class InputClass>
     int length(char *fileName, int B = 0) {
         int sum = 0;

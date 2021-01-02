@@ -5,22 +5,24 @@
 #include <vector>
 
 using namespace std;
+
 class Experiment3 {
 public:
     Experiment3() {
     }
+
 /**
  * Merge files in a round robin fashion
- * @param Bo BufferSize for OutputStream class
- * @param fileName variable number of filenames
+ * @param Bo : BufferSize for OutputStream class
+ * @param fileName : variable number of filenames
  */
     template<class InputClass, class OutputClass>
     void rrmerge(int Bo, char *fileName, ...) {
         vector<InputClass> readerList;
-        OutputClass outputStream("../data/experiment3.txt", Bo);
+        OutputClass outputStream("../bin/experiment3.txt", Bo);
         outputStream.create();
         va_list vl;
-        va_start(vl, fileName);
+                va_start(vl, fileName);
         char *arg = fileName;
         int i = 0;
         do {
@@ -30,7 +32,7 @@ public:
             arg = va_arg(vl, char*);
             i++;
         } while (arg != nullptr);
-        va_end(vl);
+                va_end(vl);
         int size = i;
         i = 0;
         string line = "let's start !";

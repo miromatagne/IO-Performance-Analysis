@@ -15,6 +15,8 @@ public:
 
     void close();
 
+    char *getFileName();
+
     string readln();
 
 };

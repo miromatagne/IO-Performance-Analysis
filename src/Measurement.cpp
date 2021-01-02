@@ -1,7 +1,3 @@
-//
-// Created by Miro-Manuel on 22/11/2020.
-//
-
 #include <string>
 #include <vector>
 #include "Measurement.h"
@@ -21,7 +17,12 @@ Measurement::Measurement() {
 }
 
 /**
- * Functions for the first experiment
+ * Test function for the first experiment
+ * @param fileName file on which we compute the length
+ * @param nbRep number of times we repeat the process
+ * @param B
+ * @return object containing the file name, the length and
+ * the average time of execution
  */
 Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B) {
     Chrono *chrono = new Chrono();
@@ -48,6 +49,16 @@ Measurement::data Measurement::getAverageTime(char *fileName, int nbRep, int B) 
     return x;
 }
 
+/**
+ * Computes the average tine of execution of the first experiment
+ * for different B values
+ * @param fileName
+ * @param nbRep
+ * @param minB
+ * @param maxB
+ * @param step
+ * @return array of average lengths corresponding to each B value
+ */
 double *Measurement::getAverageTimesB(char *fileName, int nbRep, int minB, int maxB, int step) {
     double *averageTimes = (double *) malloc((maxB - minB + step) * sizeof(double));
     for (int i = minB; i < maxB + step; i += step) {
@@ -58,9 +69,15 @@ double *Measurement::getAverageTimesB(char *fileName, int nbRep, int minB, int m
     return averageTimes;
 }
 
+/**
+ * Tests the experiment 1 on all the files of the dataset
+ * @param B
+ * @return vector of objects containing each the length,
+ * the file name and the average execution time
+ */
 vector<Measurement::data> Measurement::testFiles(int B) {
     vector<data> vec;
-    char *fileNames[] = {"aka_name" , "aka_title" , "cast_info", "char_name", "comp_cast_type", "company_name",
+    char *fileNames[] = {"aka_name", "aka_title", "cast_info", "char_name", "comp_cast_type", "company_name",
                          "company_type", "complete_cast", "info_type", "keyword",
                          "kind_type", "link_type", "movie_companies", "movie_info", "movie_info_idx", "movie_keyword",
                          "movie_link", "name", "person_info", "role_type", "title"};
@@ -85,7 +102,12 @@ vector<Measurement::data> Measurement::testFiles(int B) {
 }
 
 /**
- * Functions for the second experiment
+ * Tests the experiment 2 on a given file a certain number of times
+ * @param fileName
+ * @param nbRep
+ * @param B
+ * @param iteration parameter J
+ * @return object containing the sum, the file name and the average execution time
  */
 Measurement::data Measurement::getAverageTimesJ(char *fileName, int nbRep, int B, int iteration) {
     Chrono *chrono = new Chrono();
@@ -115,25 +137,40 @@ Measurement::data Measurement::getAverageTimesJ(char *fileName, int nbRep, int B
     return x;
 }
 
+/**
+ * Computes the average time of execution of experiment 2 when varying B
+ * @param fileName
+ * @param nbRep
+ * @param minB
+ * @param maxB
+ * @param step
+ * @return array of average lengths corresponding to each B value
+ */
 double *Measurement::getAverageTimesB2(char *fileName, int nbRep, int minB, int maxB, int step) {
-    double *averageTimes = (double *) malloc((((maxB - minB)/step) + 1) * sizeof(double));
-    int *averageSums = (int *) malloc((((maxB - minB)/step) + 1) * sizeof(int));
+    double *averageTimes = (double *) malloc((((maxB - minB) / step) + 1) * sizeof(double));
+    int *averageSums = (int *) malloc((((maxB - minB) / step) + 1) * sizeof(int));
     int counter = 0;
     for (int i = minB; i < maxB + step; i += step) {
         data x = getAverageTimesJ(fileName, nbRep, i, 10000);
         averageTimes[counter] = x.time;
         averageSums[counter] = x.length;
-        cout << i << " " << averageTimes[counter] << " " << averageSums[counter]<< endl;
-        counter ++;
+        cout << i << " " << averageTimes[counter] << " " << averageSums[counter] << endl;
+        counter++;
     }
     free(averageTimes);
     free(averageSums);
     return averageTimes;
 }
 
+/**
+ * Tests experiment 2 on several files
+ * @param B
+ * @return vector of objects containing each the sum,
+ * the file name and the average execution time
+ */
 vector<Measurement::data> Measurement::testFiles2(int B) {
     vector<data> vec;
-    char *fileNames[] = {"comp_cast_type", "aka_title" , "aka_name" ,"cast_info",  "keyword", "movie_info_idx"};
+    char *fileNames[] = {"comp_cast_type", "aka_title", "aka_name", "cast_info", "keyword", "movie_info_idx"};
 
     for (int i = 0; i < sizeof(fileNames) / sizeof(fileNames[0]); i++) {
         char path[100];
@@ -153,6 +190,15 @@ vector<Measurement::data> Measurement::testFiles2(int B) {
     return vec;
 }
 
+/**
+ * Tests experiment 2 with varying values of j (number of iterations)
+ * @param fileName
+ * @param nbRep
+ * @param minJ
+ * @param maxJ
+ * @param step
+ * @return
+ */
 vector<Measurement::data> Measurement::testIterations(char *fileName, int nbRep, int minJ, int maxJ, int step) {
     vector<data> vec;
 
@@ -167,6 +213,6 @@ vector<Measurement::data> Measurement::testIterations(char *fileName, int nbRep,
         vec.push_back(y);
     }
     for (int i = 0; i < vec.size(); i++)
-        cout << i + 1<< " " << vec.at(i).time << " " << vec.at(i).length << endl;
+        cout << i + 1 << " " << vec.at(i).time << " " << vec.at(i).length << endl;
     return vec;
 }

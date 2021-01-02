@@ -15,6 +15,15 @@ MultiwayMerge::MultiwayMerge() {
 
 }
 
+/**
+ * Sorts a file on the k-th column using an external-memory multiway
+ * merge sort algorithm. InputStream2 and OutputStream4 were the used
+ * implementations for reading and writing to files.
+ * @param fileName : file to be sorted
+ * @param k : column index on which the file has to be sorted
+ * @param M : size of each subfile created when splitting the file the first time
+ * @param d : number of files that can be merged at each iteration
+ */
 void MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
     InputStream2 inputStream(fileName, 0);
     inputStream.open();
@@ -22,12 +31,12 @@ void MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
     int fileNb = 0;
     vector<InputStream2 *> files;
 
+    //Divide the file into N/M subfiles
     while (run) {
         vector<vector<string>> lines;
         int totalLength = 0;
         while (totalLength < M) {
             string stringLine = inputStream.readln();
-            //cout << stringLine << endl;
             if (stringLine.empty()) {
                 run = false;
                 break;
@@ -63,22 +72,21 @@ void MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
     }
     inputStream.close();
 
+    //Add d files at a time in a priority queue and use it to merge
+    //these files on the k-th column
     while (files.size() > 1) {
         int nbFilesToMerge = d;
         if (files.size() < d) {
             nbFilesToMerge = files.size();
         }
+        //Comparator used to sort along the k-th column
         auto comp = [k](QueueObject a, QueueObject b) {
-            //cout << a.line[k] << " " << b.line[k] << endl;
             return a.line[k] > b.line[k];
         };
         priority_queue<QueueObject, vector<QueueObject>, decltype(comp)> linesQueue(comp);
         for (int i = 0; i < nbFilesToMerge; i++) {
-            //cout << "OK " << files[i]->getFileName() << endl;
             files[i]->open();
-            //cout << "OPEN OK" << endl;
             string stringLine = files[i]->readln();
-            //cout << "READ OK" << endl;
             vector<string> line = stringToVector(stringLine);
             QueueObject q = {files[i], line};
             linesQueue.push(q);
@@ -91,31 +99,28 @@ void MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
         name[newFileName.length()] = '\0';
         OutputStream4 o(name, 65536);
         o.create();
+        //Merge the d files
         while (linesQueue.size() != 0) {
-            //cout << linesQueue.top().inputStream->getFileName() << endl;
-            //cout << "Line size " << linesQueue.top().line.size() << endl;
             vector<string> vectorLine = linesQueue.top().line;
             string stringLine = vectorToString(vectorLine);
-            //cout << "stringLine " << stringLine << endl;
             o.writeln(stringLine);
-            //cout << "Written" << endl;
             string nextLine = linesQueue.top().inputStream->readln();
-            //cout << "nextLine " << nextLine << endl;
             InputStream2 *tempInputStream = linesQueue.top().inputStream;
             linesQueue.pop();
             if (nextLine != "") {
                 QueueObject newObject = {tempInputStream, stringToVector(nextLine)};
                 linesQueue.push(newObject);
-            } else {
+            }
+                //If a file is empty, remove it from the queue and close it
+            else {
                 tempInputStream->close();
                 delete[] tempInputStream->getFileName();
                 free(tempInputStream);
             }
         }
+        //Remove the d files from the vector of files
         for (int i = 0; i < nbFilesToMerge; i++) {
-//            cout << files.size() << endl;
             files.erase(files.begin());
-//            cout << "OK" << endl;
         }
         o.close();
         InputStream2 *i = new InputStream2(name, 0);
@@ -123,9 +128,14 @@ void MultiwayMerge::extsort(char *fileName, int k, int M, int d) {
         fileNb++;
     }
     free(files[0]);
-
 }
 
+/**
+ * Converts a string into a vector by splitting on each comma
+ * of the string
+ * @param stringLine
+ * @return
+ */
 vector<string> MultiwayMerge::stringToVector(string stringLine) {
     vector<string> line;
     stringstream ss(stringLine);
@@ -137,6 +147,12 @@ vector<string> MultiwayMerge::stringToVector(string stringLine) {
     return line;
 }
 
+/**
+ * Converts a vector back into a string by adding commas in between
+ * the different elements
+ * @param vectorLine
+ * @return
+ */
 string MultiwayMerge::vectorToString(vector<string> vectorLine) {
     string stringLine;
     for (int wordNb = 0; wordNb < vectorLine.size(); wordNb++) {

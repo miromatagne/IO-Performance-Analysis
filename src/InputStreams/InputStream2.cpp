@@ -51,6 +51,13 @@ string InputStream2::readln() {
     return line;
 }
 
+/**
+ * Returns the file name
+ */
+char *InputStream2::getFileName() {
+    return fileName;
+}
+
 
 /**
  * Closes the file.

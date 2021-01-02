@@ -26,7 +26,7 @@ InputStream4::InputStream4(char *fName, int B) : InputStream(fName, B) {
  * Opens the file and stores it in the file field of the InputStream class.
  */
 void InputStream4::open() {
-    rhFile = CreateFile(_T(fileName), GENERIC_READ, 0, NULL, OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL, NULL);
+    rhFile = CreateFile(_T(fileName), GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
     if (rhFile == INVALID_HANDLE_VALUE) {
         printf("INVALID_HANDLE_VALUE");
     }
@@ -70,11 +70,11 @@ void InputStream4::map(DWORD toMap) {
     } else {
         end = start + toMap;
     }
-    rhMapFile = CreateFileMapping(rhFile,NULL,PAGE_READONLY,0,end,_T(fileName));
+    rhMapFile = CreateFileMapping(rhFile, NULL, PAGE_READONLY, 0, end, _T(fileName));
     if (rhMapFile == NULL) {
         printf("error with the function CreateFileMapping");
     }
-    readBuffer = (LPTSTR) MapViewOfFile(rhMapFile,FILE_MAP_READ,0,start,toMap);
+    readBuffer = (LPTSTR) MapViewOfFile(rhMapFile, FILE_MAP_READ, 0, start, toMap);
     if (readBuffer == NULL) {
         printf("error with the function MapViewOfFile");
         CloseHandle(rhMapFile);
