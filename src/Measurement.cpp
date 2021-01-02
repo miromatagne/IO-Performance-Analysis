@@ -116,13 +116,15 @@ Measurement::data Measurement::getAverageTimesJ(char *fileName, int nbRep, int B
 }
 
 double *Measurement::getAverageTimesB2(char *fileName, int nbRep, int minB, int maxB, int step) {
-    double *averageTimes = (double *) malloc((maxB - minB + step) * sizeof(double));
-    double *averageSums = (double *) malloc((maxB - minB + step) * sizeof(double));
+    double *averageTimes = (double *) malloc((((maxB - minB)/step) + 1) * sizeof(double));
+    int *averageSums = (int *) malloc((((maxB - minB)/step) + 1) * sizeof(int));
+    int counter = 0;
     for (int i = minB; i < maxB + step; i += step) {
         data x = getAverageTimesJ(fileName, nbRep, i, 10000);
-        averageTimes[i - minB] = x.time;
-        averageSums[i - minB] = x.length;
-        cout << i << " " << averageTimes[i - minB] << " " << averageSums[i - minB]<< endl;
+        averageTimes[counter] = x.time;
+        averageSums[counter] = x.length;
+        cout << i << " " << averageTimes[counter] << " " << averageSums[counter]<< endl;
+        counter ++;
     }
     free(averageTimes);
     free(averageSums);
