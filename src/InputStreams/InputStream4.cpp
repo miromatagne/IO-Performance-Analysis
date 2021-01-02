@@ -65,8 +65,8 @@ void InputStream4::close() {
 void InputStream4::map(DWORD toMap) {
     DWORD end = 0;
     if (start + toMap > sizeByteFile) {
-        end = 0;
-        toMap = NULL;
+        end = sizeByteFile;
+        toMap=sizeByteFile-start;
     } else {
         end = start + toMap;
     }
@@ -103,8 +103,7 @@ string InputStream4::readln() {
                     if (currentLine.length() == 0) {
                         currentLine = '\n';
                     } else {
-                        currentLine[currentLine.length() - 1] = readBuffer[i]; // pour exp2
-                        //currentLine.push_back(readBuffer[i]); // pour exp1
+                        currentLine.push_back(readBuffer[i]);
                     }
                     start_file += 1;
                 }

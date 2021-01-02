@@ -5,7 +5,13 @@
 #include <string>
 #include <vector>
 # include "InputStreams/InputStream.h"
+# include "InputStreams/InputStream1.h"
+# include "InputStreams/InputStream2.h"
+# include "InputStreams/InputStream3.h"
+# include "InputStreams/InputStream4.h"
 # include "OutputStreams/OutputStream.h"
+# include "OutputStreams/OutputStream1.h"
+# include "OutputStreams/OutputStream2.h"
 # include "OutputStreams/OutputStream3.h"
 # include "OutputStreams/OutputStream4.h"
 #include <Experiments/Experiment3.h>
@@ -38,22 +44,26 @@ public:
     std::vector<data> testFiles2(int B = 0);
 
     std::vector<data> testIterations(char *fileName, int nbRep, int minJ, int maxJ, int step);
-
+/**
+ * Tests experiment 3 on several set of files
+ * @param nbRep
+ * @param submeasurement different set of files depending on the submeasurement parameter
+ * @param minB minimum size buffer
+ * @param maxB maximum size buffer
+ * @param step value that is used to increase the size of the buffer
+ */
     template<class InputClass, class OutputClass>
-    void getAverageTime3(int nbRep,int submeasurement ,int minJ, int maxJ, int step) {
+    void getAverageTime3(int nbRep,int submeasurement ,int minB, int maxB, int step) {
         Experiment3 experiment3;
         Chrono *chrono = new Chrono();
-        //Experiment1 *experiment = new Experiment1();
-        //Experiment2 *experiment = new Experiment2();
-        int B =minJ;
+        int B =minB;
         double times=0;
-        double *timesB = new double[((maxJ-minJ)/step)+1];
+        double *timesB = new double[((maxB-minB)/step)+1];
         string filenames = "";
         int k =0;
-        for (int i = 0; i <(maxJ-minJ)/step+1; i++) {
+        for (int i = 0; i <(maxB-minB)/step+1; i++) {
             timesB[i]=0;
         }
-        int length = 0;
         bool needBuffer = (std::is_same<OutputClass, OutputStream3>::value) || (std::is_same<OutputClass, OutputStream4>::value);
         for (int i = 0; i < nbRep; i++) {
             int j=0;
@@ -67,7 +77,7 @@ public:
                     timesB[j] += chrono->getChrono();
                     j++;
                     B+=step;
-                }while ((needBuffer) && B<maxJ+1);
+                }while ((needBuffer) && B<maxB+1);
                 filenames = " link_type,kind_type ";
                 k = 2;
             }
@@ -82,7 +92,7 @@ public:
                     timesB[j] += chrono->getChrono();
                     j++;
                     B+=step;
-                }while ((needBuffer) && B<maxJ+1);
+                }while ((needBuffer) && B<maxB+1);
                 filenames = " link_type,kind_type,info_type,company_type,comp_cast_type,role_type,movie_link ";
                 k = 7;
             }
@@ -96,7 +106,7 @@ public:
                     timesB[j] += chrono->getChrono();
                     j++;
                     B+=step;
-                }while ((needBuffer) && B<maxJ+1);
+                }while ((needBuffer) && B<maxB+1);
                 filenames = " complete_cast,keyword ";
                 k=2;
             }
@@ -111,7 +121,7 @@ public:
                     timesB[j] += chrono->getChrono();
                     j++;
                     B+=step;
-                }while ((needBuffer) && B<maxJ+1);
+                }while ((needBuffer) && B<maxB+1);
                 filenames = " keyword,company_name,movie_info_idx,movie_keyword,movie_companies,aka_title,aka_name ";
                 k=7;
 
@@ -131,7 +141,7 @@ public:
                     timesB[j] += chrono->getChrono();
                     j++;
                     B+=step;
-                }while ((needBuffer) && B<maxJ+1);
+                }while ((needBuffer) && B<maxB+1);
                 filenames = " complete_cast,keyword,movie_link,company_name,movie_info_idx,link_type,kind_type,info_type,company_type,comp_cast_type,role_type,movie_keyword,movie_companies,aka_title,aka_name ";
                 k=15;
 
@@ -145,7 +155,7 @@ public:
                     timesB[j] += chrono->getChrono();
                     j++;
                     B+=step;
-                }while ((needBuffer) && B<maxJ+1);
+                }while ((needBuffer) && B<maxB+1);
                 filenames = " movie_info,person_info ";
                 k=2;
             }
@@ -159,7 +169,7 @@ public:
                     timesB[j] += chrono->getChrono();
                     j++;
                     B+=step;
-                }while ((needBuffer) && B<maxJ+1);
+                }while ((needBuffer) && B<maxB+1);
                 filenames = " movie_info,person_info,name,cast_info,title,movie_keyword,char_name";
                 k=7;
             }
@@ -180,17 +190,17 @@ public:
                     timesB[j] += chrono->getChrono();
                     j++;
                     B+=step;
-                }while ((needBuffer) && B<maxJ+1);
+                }while ((needBuffer) && B<maxB+1);
                 filenames = " title,link_type,kind_type,info_type,company_type,comp_cast_type,role_type,complete_cast,keyword,movie_link,company_name,movie_info_idx,movie_keyword,movie_companies,aka_title,aka_name,movie_info,person_info,name,cast_info,char_name ";
                 k=21;
             }
 
             times += chrono->getChrono();
-            B=minJ;
+            B=minB;
         }
         cout << k << filenames << endl;
         if(needBuffer){
-            for (int i = 0; i <(maxJ-minJ)/step+1; i++) {
+            for (int i = 0; i <(maxB-minB)/step+1; i++) {
                 timesB[i]=timesB[i]/nbRep;
                 cout << B << " " << timesB[i] << " " << endl;
                 B+=step;
@@ -201,7 +211,6 @@ public:
              cout << times << endl;
         }
         free(timesB);
-        // free(experiment);
         free(chrono);
 
 
