@@ -50,7 +50,7 @@ public:
  * @param submeasurement different set of files depending on the submeasurement parameter
  * @param minB minimum size buffer
  * @param maxB maximum size buffer
- * @param step value that is used to increase the size of the buffer
+ * @param step value used to increase the size of the buffer
  */
     template<class InputClass, class OutputClass>
     void getAverageTime3(int nbRep,int submeasurement ,int minB, int maxB, int step) {
